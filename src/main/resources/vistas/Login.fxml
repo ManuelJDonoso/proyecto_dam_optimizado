@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="781.0" style="-fx-background-color: #2d3447;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.LoginController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" text="ACADEMIA" textFill="#2196f3">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.66">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label text="DONOSO" textFill="#a0a2ab">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow spread="0.66">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="518.0" prefWidth="781.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER" prefHeight="518.0" prefWidth="270.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                     <image>
+                        <Image url="@../images/app/logo.png" />
+                     </image>
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.7789473533630371" green="0.6227732300758362" blue="0.4442884922027588" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </ImageView>
+                  <JFXButton fx:id="btn_whatsapp" focusTraversable="false" prefHeight="54.0" prefWidth="176.0" text="+34 655354312" textFill="#efefef">
+                     <graphic>
+                        <FontIcon fill="#10d748" iconLiteral="fa-whatsapp" iconSize="32" wrappingWidth="29.00006067752838" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_link" focusTraversable="false" onAction="#abrirweb" prefHeight="52.0" prefWidth="179.0" text="www.manueldonoso.es" textFill="#efe9e9">
+                     <graphic>
+                        <FontIcon iconColor="#7d8fcc" iconLiteral="fa-external-link" iconSize="32" wrappingWidth="32.20001220703125" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_Contrato" focusTraversable="false" onAction="#MostrarContrato" prefHeight="52.0" prefWidth="179.0" text="contrato" textFill="#efe9e9">
+                     <graphic>
+                        <FontIcon iconColor="#7d8fcc" iconLiteral="fa-book" iconSize="32" wrappingWidth="32.20001220703125" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <Separator maxHeight="1.7976931348623157E308" orientation="VERTICAL" prefHeight="470.0" prefWidth="21.0">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.8631578683853149" green="0.8279922008514404" blue="0.8279922008514404" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <HBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </HBox.margin>
+            </Separator>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <GridPane VBox.vgrow="ALWAYS">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <FontIcon iconColor="#969696" iconLiteral="fa-user" iconSize="32" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </FontIcon>
+                        <FontIcon GridPane.rowIndex="2" />
+                        <JFXButton fx:id="btn_olvideContraseña" focusTraversable="false" prefHeight="63.0" prefWidth="490.0" text="olvide mi contraseña" textFill="WHITE" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                        <Separator maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </GridPane.margin>
+                           <effect>
+                              <DropShadow>
+                                 <color>
+                                    <Color red="0.9868420958518982" green="0.9868420958518982" blue="0.9868420958518982" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Separator>
+                        <FontIcon iconColor="#969696" iconLiteral="fa-lock" iconSize="32" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <children>
+                              <ImageView fx:id="iv_base_conect" fitHeight="35.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../images/app/bbdd_down.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXComboBox fx:id="cb_selectBBDD" labelFloat="true" promptText="Seleciona la base de datos" style="-fx-text-fill: #C0C0C0; -fx-prompt-text-fill: #C0C0C0;" unFocusColor="#9a9a9a" />
+                              <JFXButton focusTraversable="false" onAction="#btn_ComprobarConexion" prefHeight="61.0" prefWidth="138.0" text="Comprobar Conexion" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="3">
+                           <children>
+                              <JFXCheckBox fx:id="ck_recorgar" text="Recuerdame" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                              <JFXButton fx:id="btn_iniciar" onAction="#Iniciar_Sesion" style="-fx-background-color: #2196f3;" text="Iniciar" textFill="WHITE">
+                                 <graphic>
+                                    <FontIcon iconColor="WHITE" iconLiteral="fa-sign-in" iconSize="22" wrappingWidth="31.657190322875977" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold Italic" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <JFXTextField fx:id="txt_nombre" promptText="Usuario" style="-fx-text-fill: #C0C0C0; -fx-prompt-text-fill: #C0C0C0;" text="admin" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="txt_pass" promptText="Introduce una contraseña" style="-fx-text-fill: #C0C0C0; -fx-prompt-text-fill: #C0C0C0;" text="admin" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                        </JFXPasswordField>
+                        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6" GridPane.valignment="TOP">
+                           <children>
+                              <JFXButton fx:id="btn_registrar" alignment="CENTER" contentDisplay="CENTER" onAction="#cargarContrato" prefHeight="25.0" prefWidth="453.0" text="Registrar" textFill="WHITE" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <ButtonBar prefHeight="78.0" prefWidth="781.0">
+         <padding>
+            <Insets bottom="20.0" right="30.0" />
+         </padding>
+         <buttons>
+            <JFXButton onAction="#btn_salir" style="-fx-background-color: #8E403A;" text="SALIR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="fa-sign-out" iconSize="22" />
+               </graphic>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </JFXButton>
+         </buttons>
+      </ButtonBar>
+   </children>
+</VBox>

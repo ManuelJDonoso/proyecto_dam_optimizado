@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane id="root" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.Contrato_registroController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <JFXTextArea fx:id="TA_contrato" editable="false" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="10" GridPane.rowIndex="1" GridPane.rowSpan="4" />
+      <JFXCheckBox fx:id="ck_aceptar" onAction="#instalar" text="Acepto el contrato" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label text="Nombre" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+      <Label text="Apellido" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+      <Label text="usuario" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+      <Label text="email" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+      <JFXButton fx:id="btn_cancelar" cancelButton="true" onAction="#cerrarventana" text="Cancelar" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+      <JFXButton fx:id="btn_Finalizar" disable="true" onAction="#crearContrato" text="Finalizar" GridPane.columnIndex="10" GridPane.rowIndex="7" />
+      <JFXTextField fx:id="tf_nombre" onKeyTyped="#instalar" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+      <JFXTextField fx:id="tf_user" onKeyTyped="#instalar" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+      <JFXTextField fx:id="tf_apellido" onKeyTyped="#instalar" GridPane.columnIndex="9" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+      <JFXTextField fx:id="tf_email" onKeyTyped="#instalar" GridPane.columnIndex="9" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+   </children>
+</GridPane>
