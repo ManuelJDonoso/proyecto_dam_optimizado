@@ -19,6 +19,7 @@ import es.manueldonoso.academia.main.main;
 import java.sql.Connection;
 import javafx.event.EventHandler;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -210,7 +211,7 @@ public class Stage_show {
             loader.setLocation(main.class.getResource("/vistas/DashBoard_Alumno.fxml"));
 
             // Ventana a cargar
-            AnchorPane ventana = (AnchorPane) loader.load();
+            BorderPane ventana = (BorderPane) loader.load();
             DashBoard_AlumnoController dashboard_AlumnoController =new DashBoard_AlumnoController();
             dashboard_AlumnoController.SetConn(conn);
 
@@ -220,6 +221,9 @@ public class Stage_show {
             // Modifico el stage
             primaryStage.setScene(scene);
             primaryStage.setTitle("DashBoard Alumno");
+            
+            
+            Efectos_visuales.darMovimientoStage(primaryStage);
 
             //detectar cierre de ventana
             primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
