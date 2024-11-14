@@ -13,8 +13,13 @@ import es.manueldonoso.academia.util.Efectos_visuales;
 import es.manueldonoso.academia.util.Stage_show;
 import es.manueldonoso.academia.util.Acciones;
 import es.manueldonoso.academia.util.Base_datos;
+import es.manueldonoso.academia.util.Session;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -54,6 +59,8 @@ public class LoginController implements Initializable {
     private ImageView iv_base_conect;
     @FXML
     private JFXButton btn_Contrato;
+    @FXML
+    private JFXButton btn_datosDefecto;
 
     /**
      * Initializes the controller class.
@@ -90,6 +97,8 @@ public class LoginController implements Initializable {
             btn_Contrato.setDisable(false);
             btn_registrar.setDisable(true);
         }
+
+        RecuperarUsuario();
     }
 
     @FXML
@@ -99,6 +108,14 @@ public class LoginController implements Initializable {
 
     @FXML
     private void Iniciar_Sesion(ActionEvent event) {
+
+        GuardarUsuario();
+        if (cb_selectBBDD.getValue() != null) {
+
+            mostrarDasboard( getConecConnection());
+
+        }
+
     }
 
     @FXML
@@ -121,6 +138,26 @@ public class LoginController implements Initializable {
         comprobarConexion();
     }
 
+    @FXML
+    private void btn_datosDefecto(ActionEvent event) {
+        try {
+            Base_datos.eliminarTodosUsuarios(Base_datos.conectarSqlite());
+            Base_datos.insertarUsuarios(Base_datos.conectarSqlite());
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * Comprueba la conexión a la base de datos seleccionada en la interfaz
+     * gráfica y actualiza la imagen de estado. Dependiendo del tipo de base de
+     * datos seleccionada en el `cb_selectBBDD`, intenta establecer la conexión
+     * usando diferentes métodos de conexión definidos en la clase `Base_datos`.
+     *
+     * Si la conexión es exitosa, se cambia la imagen `iv_base_conect` para
+     * indicar una conexión correcta; de lo contrario, se cambia para mostrar un
+     * estado de conexión fallido.
+     */
     private void comprobarConexion() {
         boolean conexion;
         switch (cb_selectBBDD.getValue().getText()) {
@@ -148,6 +185,150 @@ public class LoginController implements Initializable {
             Acciones.imagenView_cambiarImage(this.getClass(), iv_base_conect, "src/main/resources/images/app/bbdd_down.png");
 
         }
+    }
+
+    /**
+     * Recupera y carga el usuario y la contraseña memorizados en la interfaz de
+     * usuario. Establece los valores recuperados en los campos de texto
+     * `txt_nombre` y `txt_pass`. Si ambos campos contienen valores, el checkbox
+     * `ck_recorgar` se selecciona automáticamente para indicar que el usuario
+     * ha sido guardado anteriormente.
+     */
+    private void RecuperarUsuario() {
+        txt_nombre.setText(Base_datos.UsuarioMemorizado());
+        txt_pass.setText(Base_datos.PassMemorizado());
+        if (!txt_nombre.getText().isEmpty() && !txt_pass.getText().isEmpty()) {
+            ck_recorgar.setSelected(true);
+        }
+    }
+
+    /**
+     * Guarda el usuario y la contraseña ingresados en la base de datos si el
+     * checkbox `ck_recorgar` está seleccionado. Si el checkbox está
+     * seleccionado, los valores de `txt_nombre` y `txt_pass` se memorizan
+     * utilizando el método `MemorizarUsuario` de la clase `Base_datos`. Si no
+     * está seleccionado, se guardan valores vacíos.
+     */
+    private void GuardarUsuario() {
+
+        if (ck_recorgar.isSelected()) {
+            Base_datos.MemorizarUsuario(txt_nombre.getText(), txt_pass.getText());
+        } else {
+            Base_datos.MemorizarUsuario("", "");
+        }
+    }
+
+    /**
+     * Obtiene el tipo de usuario (`fk_tipo`) de la base de datos seleccionada
+     * según las credenciales ingresadas. Este método utiliza la opción
+     * seleccionada en el combo box `cb_selectBBDD` para determinar el tipo de
+     * conexión a la base de datos (EMBEDIDA, REMOTA, RED o LOCAL). Luego,
+     * intenta verificar el usuario y contraseña ingresados en `txt_nombre` y
+     * `txt_pass`.
+     *
+     * Dependiendo de la conexión seleccionada, se establece una conexión
+     * específica y se llama al método `verificarUsuario` de la clase
+     * `Base_datos` para comprobar las credenciales. Si el usuario existe y las
+     * credenciales son correctas, se devuelve el valor de `fk_tipo`
+     * correspondiente al usuario. En caso contrario, o si ocurre una excepción,
+     * devuelve `null`.
+     *
+     * @return El tipo de usuario (`fk_tipo`) si el usuario y la contraseña son
+     * correctos, o `null` si no coinciden o si ocurre algún error durante la
+     * consulta.
+     */
+    private String getTipoUsuario() {
+    
+
+        String Usuario = txt_nombre.getText();
+        String Pass = txt_pass.getText();
+        Connection conn= getConecConnection();
+      
+        try {
+            String tipo = Base_datos.verificarUsuario(conn, Usuario, Pass);
+
+            if (tipo != null) {
+                if (Pass.equals("cambiame")) {
+                    // Muestra la pantalla de cambio de contraseña
+                    Cambio_ContrasenaController cambioPassController = Stage_show.MostrarCambioPass(root);
+
+                    // Verifica si el botón aceptar fue pulsado antes de continuar
+                    if (cambioPassController != null && cambioPassController.isBotonAceptarPulsado()) {
+                        // Aquí puedes incluir cualquier acción adicional necesaria después de la confirmación
+                        return tipo;
+                    }
+                   Session.setPass(null);
+                   
+                }
+                 return tipo;
+            }
+            return "";
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    /**
+     * Muestra el panel de control (dashboard) correspondiente al tipo de
+     * usuario autenticado. Este método verifica el tipo de usuario actual
+     * llamando a `getTipoUsuario()` y, en función de este valor, muestra el
+     * dashboard específico de ese tipo de usuario.
+     *
+     * <ul>
+     * <li>Si el usuario es "ADMINISTRADOR", se muestra el dashboard de
+     * administrador.</li>
+     * <li>Si el usuario es "PROFESOR", se muestra el dashboard de
+     * profesor.</li>
+     * <li>Si el usuario es "ALUMNO", se muestra el dashboard de alumno.</li>
+     * </ul>
+     *
+     * El método no realiza ninguna acción si el tipo de usuario no coincide con
+     * ninguno de los valores especificados.
+     */
+    private void mostrarDasboard(Connection conn) {
+        Session.setUsuario(txt_nombre.getText());
+        switch (getTipoUsuario()) {
+            case "ADMINISTRADOR":
+                Stage_show.Mostrar_Dasboard_Administrador(conn);
+                break;
+            case "PROFESOR":
+                Stage_show.Mostrar_Dasboard_Profesor(conn);
+                break;
+
+            case "ALUMNO":
+                Stage_show.Mostrar_Dasboard_Alumno(conn);
+                break;
+
+            default:
+
+        }
+
+    }
+    
+    public Connection getConecConnection(){
+            String ddbb = cb_selectBBDD.getValue().getText();
+     Connection conn;
+        switch (ddbb) {
+            case "EMBEDIDA":
+                conn = Base_datos.conectarSqlite();
+                break;
+            case "REMOTA":
+                conn = Base_datos.connectMysqlRemota();
+                break;
+
+            case "RED":
+                conn = Base_datos.connectMysqlRed();
+                break;
+
+            case "LOCAL":
+                conn = Base_datos.connectMysqlLocal();
+                break;
+            default:
+                conn = null;
+
+        }
+        return conn;
     }
 
 }

@@ -77,16 +77,27 @@
                      <graphic>
                         <FontIcon fill="#10d748" iconLiteral="fa-whatsapp" iconSize="32" wrappingWidth="29.00006067752838" />
                      </graphic>
+                     <padding>
+                        <Insets right="35.0" />
+                     </padding>
                   </JFXButton>
                   <JFXButton fx:id="btn_link" focusTraversable="false" onAction="#abrirweb" prefHeight="52.0" prefWidth="179.0" text="www.manueldonoso.es" textFill="#efe9e9">
                      <graphic>
                         <FontIcon iconColor="#7d8fcc" iconLiteral="fa-external-link" iconSize="32" wrappingWidth="32.20001220703125" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="btn_Contrato" focusTraversable="false" onAction="#MostrarContrato" prefHeight="52.0" prefWidth="179.0" text="contrato" textFill="#efe9e9">
+                  <JFXButton fx:id="btn_Contrato" alignment="BOTTOM_LEFT" focusTraversable="false" onAction="#MostrarContrato" prefHeight="52.0" prefWidth="179.0" text="Contrato" textFill="#efe9e9">
                      <graphic>
                         <FontIcon iconColor="#7d8fcc" iconLiteral="fa-book" iconSize="32" wrappingWidth="32.20001220703125" />
                      </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_datosDefecto" focusTraversable="false" onAction="#btn_datosDefecto" prefHeight="52.0" prefWidth="179.0" text="Datos por defecto" textFill="#efe9e9">
+                     <graphic>
+                        <FontIcon iconColor="#7d8fcc" iconLiteral="fa-database" iconSize="32" wrappingWidth="32.20001220703125" />
+                     </graphic>
+                     <padding>
+                        <Insets right="25.0" />
+                     </padding>
                   </JFXButton>
                </children>
             </VBox>

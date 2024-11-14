@@ -4,6 +4,10 @@
  */
 package es.manueldonoso.academia.util;
 
+import es.manueldonoso.academia.controller.Cambio_ContrasenaController;
+import es.manueldonoso.academia.controller.DashBoard_AdministradorController;
+import es.manueldonoso.academia.controller.DashBoard_AlumnoController;
+import es.manueldonoso.academia.controller.DashBoard_ProfesorController;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,10 +16,13 @@ import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import es.manueldonoso.academia.main.main;
+import java.sql.Connection;
 import javafx.event.EventHandler;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
@@ -61,9 +68,22 @@ public class Stage_show {
         primaryStage.show();
     }
 
-    
-    public static void Mostrar_crearContrato(){
-         try {
+    /**
+     * Muestra una nueva ventana para la creación o registro de un contrato.
+     * Este método crea un nuevo `Stage` y carga una interfaz gráfica desde el
+     * archivo FXML ubicado en `/vistas/Contrato_registro.fxml`. Configura la
+     * escena con un título específico y define el comportamiento al cerrar la
+     * ventana.
+     *
+     * Al mostrar la ventana, se establece un título en el `Stage` y se define
+     * un manejador de eventos que detecta el cierre de la ventana, registrando
+     * un mensaje en consola. En caso de que ocurra una excepción al cargar el
+     * archivo FXML, se registra el error en el log.
+     *
+     * @throws IOException Si ocurre un error al cargar el archivo FXML.
+     */
+    public static void Mostrar_crearContrato() {
+        try {
             Stage primaryStage = new Stage();
             // Cargo la ventana inicial
             FXMLLoader loader = new FXMLLoader();
@@ -97,8 +117,163 @@ public class Stage_show {
         } catch (IOException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
+
     }
-    
-    
+
+    public static void Mostrar_Dasboard_Administrador(Connection conn) {
+        try {
+            Stage primaryStage = new Stage();
+            // Cargo la ventana inicial
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(main.class.getResource("/vistas/DashBoard_Administrador.fxml"));
+
+            // Ventana a cargar
+            AnchorPane ventana = (AnchorPane) loader.load();
+            
+            DashBoard_AdministradorController dashBoard_AdministradorController =new DashBoard_AdministradorController();
+            dashBoard_AdministradorController.SetConn(conn);
+
+            // Creo la escena
+            Scene scene = new Scene(ventana);
+
+            // Modifico el stage
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("DashBoard Administrador");
+
+            //detectar cierre de ventana
+            primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
+                @Override
+                public void handle(WindowEvent t) {
+
+                    System.out.println("se cerro la ventana de configuración");
+                    //comprobarInstalacion();
+
+                }
+            });
+
+            //mostrar ventana
+            primaryStage.show();
+
+            // primaryStage.setMaximized(true);
+        } catch (IOException ex) {
+            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public static void Mostrar_Dasboard_Profesor(Connection conn) {
+        try {
+            Stage primaryStage = new Stage();
+            // Cargo la ventana inicial
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(main.class.getResource("/vistas/DashBoard_Profesor.fxml"));
+            
+            DashBoard_ProfesorController dashBoard_ProfesorController = new DashBoard_ProfesorController();
+            dashBoard_ProfesorController.SetConn(conn);
+
+            // Ventana a cargar
+            AnchorPane ventana = (AnchorPane) loader.load();
+
+            // Creo la escena
+            Scene scene = new Scene(ventana);
+
+            // Modifico el stage
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("DashBoard Profesor");
+
+            //detectar cierre de ventana
+            primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
+                @Override
+                public void handle(WindowEvent t) {
+
+                    System.out.println("se cerro la ventana de configuración");
+                    //comprobarInstalacion();
+
+                }
+            });
+
+            //mostrar ventana
+            primaryStage.show();
+
+            // primaryStage.setMaximized(true);
+        } catch (IOException ex) {
+            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public static void Mostrar_Dasboard_Alumno(Connection conn) {
+        try {
+            Stage primaryStage = new Stage();
+            // Cargo la ventana inicial
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(main.class.getResource("/vistas/DashBoard_Alumno.fxml"));
+
+            // Ventana a cargar
+            AnchorPane ventana = (AnchorPane) loader.load();
+            DashBoard_AlumnoController dashboard_AlumnoController =new DashBoard_AlumnoController();
+            dashboard_AlumnoController.SetConn(conn);
+
+            // Creo la escena
+            Scene scene = new Scene(ventana);
+
+            // Modifico el stage
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("DashBoard Alumno");
+
+            //detectar cierre de ventana
+            primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
+                @Override
+                public void handle(WindowEvent t) {
+
+                    System.out.println("se cerro la ventana de configuración");
+                    //comprobarInstalacion();
+
+                }
+            });
+
+            //mostrar ventana
+            primaryStage.show();
+
+            // primaryStage.setMaximized(true);
+        } catch (IOException ex) {
+            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public static Cambio_ContrasenaController MostrarCambioPass(Pane root) {
+        try {
+
+            // Cargo la ventana inicial
+            FXMLLoader loader = new FXMLLoader();
+            Stage stage = new Stage();
+            loader.setLocation(main.class.getResource("/vistas/Cambio_Contrasena.fxml"));
+
+            // Ventana a cargar
+            AnchorPane ventana = (AnchorPane) loader.load();
+
+            // Obtener el controlador asociado
+            Cambio_ContrasenaController controller = loader.getController();
+
+            // Creo la escena
+            Scene scene = new Scene(ventana);
+
+            // Modifico el stage
+            stage.setScene(scene);
+            stage.initOwner(root.getScene().getWindow());
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.setResizable(false);
+            stage.setIconified(false);
+            stage.initStyle(StageStyle.UNDECORATED);
+            Efectos_visuales.darMovimientoStage(stage);
+            stage.showAndWait();
+            // Retorna el controlador para que pueda ser usado fuera de este método
+            return controller;
+        } catch (IOException ex) {
+            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;// Retorna null en caso de error
+
+    }
 }

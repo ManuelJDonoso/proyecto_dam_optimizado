@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="334.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.Cambio_ContrasenaController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/app/overay.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="439.0" layoutY="243.0" onAction="#btn_cancelar" prefHeight="37.0" prefWidth="108.0" text="CANCELAR">
+         <textFill>
+            <RadialGradient centerX="0.5088495490825282" centerY="0.5" cycleMethod="REFLECT" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.8999999761581421" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5894736647605896" green="0.09387914091348648" blue="0.09387914091348648" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </JFXButton>
+      <JFXButton fx:id="btn_aceptar" layoutX="317.0" layoutY="242.0" onAction="#btn_aceptar" prefHeight="38.0" prefWidth="102.0" text="ACEPTAR">
+         <textFill>
+            <RadialGradient centerX="0.5088495490825282" centerY="0.5" cycleMethod="REFLECT" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.8999999761581421" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.09341827780008316" green="0.5799999833106995" blue="0.09279999881982803" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </JFXButton>
+      <Text layoutX="137.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CAMBIO DE CONTRASEÑA">
+         <fill>
+            <LinearGradient cycleMethod="REFLECT" endX="0.594696940797748" endY="0.24999999277519452" startX="0.4924242740327662" startY="0.38920444430726947">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.5843137502670288" green="0.05882352963089943" blue="0.8078431487083435" opacity="0.8999999761581421" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5531628532974427">
+                     <color>
+                        <Color red="0.29411765933036804" green="0.7098039388656616" blue="0.9882352948188782" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7923316810557066">
+                     <color>
+                        <Color red="0.58160001039505" green="0.07199999690055847" blue="0.800000011920929" opacity="0.8999999761581421" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.58160001039505" green="0.07199999690055847" blue="0.800000011920929" opacity="0.8999999761581421" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <font>
+            <Font name="Comic Sans MS Bold Italic" size="24.0" />
+         </font>
+      </Text>
+      <JFXPasswordField fx:id="pf_contrasena" alignment="CENTER" layoutX="145.0" layoutY="126.0" prefHeight="26.0" prefWidth="310.0" promptText="INSERTAR NUEVA CONTRASEÑA" style="-fx-prompt-text-fill: #C0C0C0; -fx-text-fill: #C0C0C0;" />
+      <JFXPasswordField fx:id="pf_contrasena_rep" alignment="CENTER" layoutX="144.0" layoutY="178.0" prefHeight="26.0" prefWidth="310.0" promptText="REPETIR NUEVA CONTRASEÑA" style="-fx-prompt-text-fill: #C0C0C0; -fx-text-fill: #C0C0C0;" />
+   </children>
+</AnchorPane>

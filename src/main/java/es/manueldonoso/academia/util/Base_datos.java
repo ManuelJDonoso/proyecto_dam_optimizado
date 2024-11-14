@@ -11,6 +11,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -344,4 +348,232 @@ public class Base_datos {
         }
     }
 
+    /**
+     * Actualiza el usuario y la contraseña almacenados en la tabla
+     * Usuario_Guardado_tabla. Este método sobrescribe los valores de las
+     * columnas `Usuario` y `Pass` para el registro con `id = 1`.
+     *
+     * @param Usuario el nombre de usuario que se desea almacenar.
+     * @param Pass la contraseña asociada al usuario.
+     */
+    public static void MemorizarUsuario(String Usuario, String Pass) {
+        String sql = "UPDATE Usuario_Guardado_tabla SET Usuario = ?, Pass = ? WHERE id = 1";
+        try (PreparedStatement pstmtRegistro = conectarSqlite().prepareStatement(sql)) {
+            // Establecer los parámetros para la tabla Usuario_Guardado_tabla
+            pstmtRegistro.setString(1, Usuario);
+            pstmtRegistro.setString(2, Pass);
+            // Ejecutar la actualización en Usuario_Guardado_tabla
+            pstmtRegistro.executeUpdate();
+        } catch (SQLException e) {
+            // Manejo de errores omitido
+        }
+    }
+
+    /**
+     * Recupera el nombre de usuario almacenado en la tabla
+     * Usuario_Guardado_tabla para el registro con id = 1.
+     *
+     * @return el nombre de usuario almacenado, o null si no se encuentra o
+     * ocurre un error.
+     */
+    public static String UsuarioMemorizado() {
+        String sql = "SELECT Usuario FROM Usuario_Guardado_tabla WHERE id = 1";
+        String usuario = null;
+
+        try (Connection conn = conectarSqlite(); // Asumiendo que conectarSqlite() devuelve una conexión válida
+                 PreparedStatement pstmt = conn.prepareStatement(sql); ResultSet rs = pstmt.executeQuery()) {
+
+            // Si existe un registro con id = 1, se obtiene el valor del campo 'Usuario'
+            if (rs.next()) {
+                usuario = rs.getString("Usuario");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar el usuario memorizado: " + e.getMessage());
+        }
+
+        return usuario;
+    }
+
+    /**
+     * Recupera el nombre de usuario almacenado en la tabla
+     * Usuario_Guardado_tabla para el registro con id = 1.
+     *
+     * @return el pass de usuario almacenado, o null si no se encuentra o ocurre
+     * un error.
+     */
+    public static String PassMemorizado() {
+        String sql = "SELECT Pass FROM Usuario_Guardado_tabla WHERE id = 1";
+        String Pass = null;
+
+        try (Connection conn = conectarSqlite(); // Asumiendo que conectarSqlite() devuelve una conexión válida
+                 PreparedStatement pstmt = conn.prepareStatement(sql); ResultSet rs = pstmt.executeQuery()) {
+
+            // Si existe un registro con id = 1, se obtiene el valor del campo 'Usuario'
+            if (rs.next()) {
+                Pass = rs.getString("Pass");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar el Pass memorizado: " + e.getMessage());
+        }
+
+        return Pass;
+    }
+
+    /**
+     * Inserta quince registros de usuarios en la tabla `usuario_tabla`. Este
+     * método establece una conexión a la base de datos y usa
+     * `PreparedStatement` para insertar cinco filas de usuarios de tipo
+     * `ADMINISTRADOR`, cinco de tipo `PROFESOR` y cinco de tipo `ALUMNO`.
+     *
+     * Cada usuario tendrá valores específicos para los campos `Usuario`,
+     * `Nombre`, `Apellidos`, `Pass`, `Email`, `fk_tipo`, y la fecha de alta
+     * (`fechaAlta`).
+     *
+     * @param conn La conexión a la base de datos.
+     * @throws SQLException si ocurre un error durante la inserción.
+     */
+    public static void insertarUsuarios(Connection conn) throws SQLException {
+        String sql = "INSERT INTO usuario_tabla (Usuario, Nombre, Apellidos, Direccion, Telefono, Pass, Email, fk_tipo, fechaAlta, fechaBaja) "
+                + "VALUES (?, ?, ?, NULL, NULL, ?, ?, ?, ?, NULL)";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // Formato de la fecha de alta
+            String fechaAlta = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+
+            // Datos de los usuarios organizados por tipo
+            String[][] usuarios = {
+                {"administrador1", "Rocio", "Perez", "cambiame", "dev1@sdes.es", "ADMINISTRADOR"},
+                {"administrador2", "Carlos", "Lopez", "cambiame", "dev2@sdes.es", "ADMINISTRADOR"},
+                {"administrador3", "Maria", "Fernandez", "cambiame", "dev3@sdes.es", "ADMINISTRADOR"},
+                {"administrador4", "Luis", "Gomez", "cambiame", "dev4@sdes.es", "ADMINISTRADOR"},
+                {"administrador5", "Ana", "Martinez", "cambiame", "dev5@sdes.es", "ADMINISTRADOR"},
+                {"profesor1", "Jose", "Rodriguez", "cambiame", "prof1@sdes.es", "PROFESOR"},
+                {"profesor2", "Laura", "Diaz", "cambiame", "prof2@sdes.es", "PROFESOR"},
+                {"profesor3", "Miguel", "Santos", "cambiame", "prof3@sdes.es", "PROFESOR"},
+                {"profesor4", "Lucia", "Ramirez", "cambiame", "prof4@sdes.es", "PROFESOR"},
+                {"profesor5", "Sofia", "Ortega", "cambiame", "prof5@sdes.es", "PROFESOR"},
+                {"alumno1", "Pedro", "Suarez", "cambiame", "alumno1@sdes.es", "ALUMNO"},
+                {"alumno2", "Raquel", "Martinez", "cambiame", "alumno2@sdes.es", "ALUMNO"},
+                {"alumno3", "Julio", "Gonzalez", "cambiame", "alumno3@sdes.es", "ALUMNO"},
+                {"alumno4", "Andrea", "Lozano", "cambiame", "alumno4@sdes.es", "ALUMNO"},
+                {"alumno5", "Isabel", "Reyes", "cambiame", "alumno5@sdes.es", "ALUMNO"}
+            };
+
+            // Insertar cada usuario
+            for (String[] usuario : usuarios) {
+                pstmt.setString(1, usuario[0]); // Usuario
+                pstmt.setString(2, usuario[1]); // Nombre
+                pstmt.setString(3, usuario[2]); // Apellidos
+                pstmt.setString(4, usuario[3]); // Pass
+                pstmt.setString(5, usuario[4]); // Email
+                pstmt.setString(6, usuario[5]); // fk_tipo
+                pstmt.setString(7, fechaAlta);  // fechaAlta
+                pstmt.executeUpdate();
+            }
+
+            System.out.println("Registros insertados exitosamente.");
+        } catch (SQLException e) {
+            System.out.println("Error al insertar los registros: " + e.getMessage());
+            throw e; // Propagar la excepción
+        }
+    }
+
+    /**
+     * Verifica si un usuario con el nombre de usuario y contraseña
+     * proporcionados existe en la base de datos. Si el usuario existe, devuelve
+     * el valor de `fk_tipo` correspondiente; si no, devuelve `null`.
+     *
+     * @param conn La conexión a la base de datos.
+     * @param usuario El nombre de usuario a verificar.
+     * @param pass La contraseña del usuario.
+     * @return El valor de `fk_tipo` si el usuario existe y la contraseña es
+     * correcta, o `null` si no coincide.
+     * @throws SQLException si ocurre un error durante la consulta.
+     */
+    public static String verificarUsuario(Connection conn, String usuario, String pass) throws SQLException {
+        String sql = "SELECT fk_tipo FROM usuario_tabla WHERE Usuario = ? AND Pass = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, usuario); // Establecer el nombre de usuario en el primer parámetro
+            pstmt.setString(2, pass);    // Establecer la contraseña en el segundo parámetro
+            String tipo="";
+            // Ejecutar la consulta
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    // Retornar fk_tipo si el usuario y la contraseña son correctos
+                    tipo= rs.getString("fk_tipo");
+                    
+                      
+                    return tipo;
+                } else {
+                    // Retornar null si el usuario no existe o la contraseña es incorrecta
+                    return null;
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al verificar el usuario: " + e.getMessage());
+            throw e; // Propagar la excepción
+        }
+    }
+
+    /**
+     * Elimina todos los registros de la tabla `usuario_tabla` en la base de
+     * datos. Este método no requiere ningún parámetro adicional, ya que elimina
+     * todos los registros existentes en la tabla.
+     *
+     * @param conn La conexión a la base de datos.
+     * @return `true` si se eliminaron registros con éxito, `false` si no se
+     * afectaron registros o si ocurrió un error.
+     * @throws SQLException Si ocurre un error en la operación de eliminación.
+     */
+    public static boolean eliminarTodosUsuarios(Connection conn) throws SQLException {
+        String sql = "DELETE FROM usuario_tabla";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // Ejecutar la eliminación y verificar si se eliminó alguna fila
+            int filasAfectadas = pstmt.executeUpdate();
+            boolean borrada = filasAfectadas > 0;
+            System.out.println("Los datos de usuario se borraron correctamente");
+            return borrada;
+        } catch (SQLException e) {
+            System.out.println("Error al eliminar todos los usuarios: " + e.getMessage());
+            throw e; // Propagar la excepción
+        }
+    }
+
+    /**
+     * Cambia la contraseña de un usuario en la tabla usuario_tabla.
+     *
+     * Este método actualiza la contraseña de un usuario en la base de datos,
+     * guardándola en texto plano. Es importante recordar que almacenar
+     * contraseñas en texto plano no es seguro y solo debe usarse en entornos de
+     * desarrollo o cuando no se requiera seguridad.
+     *
+     * @param conn La conexión a la base de datos.
+     * @param usuario El nombre del usuario cuyo contraseña será cambiada.
+     * @param pass La nueva contraseña en texto plano.
+     * @throws SQLException Si ocurre un error al actualizar la base de datos.
+     */
+    public static void CambioContraseña(Connection conn, String usuario, String pass) {
+        // Consulta SQL para actualizar la contraseña
+        String sql = "UPDATE usuario_tabla SET Pass = ? WHERE Usuario = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // Configura los parámetros de la consulta
+            pstmt.setString(1, pass);      // Establece la nueva contraseña en texto plano
+            pstmt.setString(2, usuario);   // Establece el usuario
+
+            // Ejecuta la actualización
+            int filasActualizadas = pstmt.executeUpdate();
+
+            // Verifica si la actualización fue exitosa
+            if (filasActualizadas > 0) {
+                System.out.println("Contraseña actualizada correctamente para el usuario: " + usuario);
+            } else {
+                System.out.println("No se encontró el usuario: " + usuario);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Base_datos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
