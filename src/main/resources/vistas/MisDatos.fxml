@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="517.0" prefWidth="756.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="es.manueldonoso.academia.controller.MisDatosController">
+   <children>
+      <ImageView fx:id="iv_foto" fitHeight="200.0" fitWidth="303.0" layoutX="99.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/app/incorgnito.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="413.0" layoutY="212.0" prefHeight="181.0" prefWidth="269.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="225.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NOMBRE" underline="true" wrappingWidth="84.4482421875">
+                     <font>
+                        <Font name="Comic Sans MS Bold Italic" size="14.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="48.0" prefWidth="225.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="APELLIDOS" underline="true" wrappingWidth="89.4482421875">
+                     <font>
+                        <Font name="Comic Sans MS Bold Italic" size="14.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="58.0" prefHeight="48.0" prefWidth="225.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DIRECCIÓN" underline="true" wrappingWidth="93.4482421875">
+                     <font>
+                        <Font name="Comic Sans MS Bold Italic" size="14.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="106.0" prefHeight="48.0" prefWidth="225.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TELEFONO" underline="true" wrappingWidth="92.4482421875">
+                     <font>
+                        <Font name="Comic Sans MS Bold Italic" size="14.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="145.0" prefHeight="48.0" prefWidth="225.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL" underline="true" wrappingWidth="86.4482421875">
+                     <font>
+                        <Font name="Comic Sans MS Bold Italic" size="14.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXTextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <JFXButton fx:id="btn_aceptar" layoutX="21.0" layoutY="464.0" onAction="#btn_aceptar" prefHeight="39.0" prefWidth="145.0" text="ACEPTAR">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5167785234899329">
+                     <color>
+                        <Color red="0.10639999806880951" green="0.3799999952316284" blue="0.14809143543243408" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </JFXButton>
+      <JFXButton layoutX="593.0" layoutY="464.0" onAction="#tbn_cancelar" prefHeight="39.0" prefWidth="135.0" text="CANCELAR">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.9736841917037964" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.5167785234899329">
+                     <color>
+                        <Color red="0.3700000047683716" green="0.10360000282526016" blue="0.10360000282526016" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9605262875556946" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </JFXButton>
+      <JFXButton layoutX="79.0" layoutY="418.0" onAction="#btn_cargar" prefHeight="27.0" prefWidth="93.0" text="CARGAR" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="205.0" layoutY="418.0" onAction="#btn_Tomar" prefHeight="27.0" prefWidth="76.0" text="TOMAR" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="323.0" layoutY="418.0" onAction="#btn_eliminar" text="ELIMINAR" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

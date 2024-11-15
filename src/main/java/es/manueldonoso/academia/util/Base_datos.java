@@ -43,7 +43,7 @@ public class Base_datos {
 
         try {
             Class.forName("org.sqlite.JDBC");
-            System.out.println("Creando Conexion");
+            
             Connection conexion = DriverManager.getConnection(DB_URL);
             return conexion;
         } catch (Exception e) {

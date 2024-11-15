@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import es.manueldonoso.academia.main.main;
+import static es.manueldonoso.academia.util.Efectos_visuales.darMovimientoStage;
 import java.sql.Connection;
 import javafx.event.EventHandler;
 import javafx.scene.layout.AnchorPane;
@@ -129,9 +130,9 @@ public class Stage_show {
             loader.setLocation(main.class.getResource("/vistas/DashBoard_Administrador.fxml"));
 
             // Ventana a cargar
-            AnchorPane ventana = (AnchorPane) loader.load();
-            
-            DashBoard_AdministradorController dashBoard_AdministradorController =new DashBoard_AdministradorController();
+            BorderPane ventana = (BorderPane) loader.load();
+
+            DashBoard_AdministradorController dashBoard_AdministradorController = new DashBoard_AdministradorController();
             dashBoard_AdministradorController.SetConn(conn);
 
             // Creo la escena
@@ -168,12 +169,12 @@ public class Stage_show {
             // Cargo la ventana inicial
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(main.class.getResource("/vistas/DashBoard_Profesor.fxml"));
-            
+
             DashBoard_ProfesorController dashBoard_ProfesorController = new DashBoard_ProfesorController();
             dashBoard_ProfesorController.SetConn(conn);
 
             // Ventana a cargar
-            AnchorPane ventana = (AnchorPane) loader.load();
+            BorderPane ventana = (BorderPane) loader.load();
 
             // Creo la escena
             Scene scene = new Scene(ventana);
@@ -212,7 +213,7 @@ public class Stage_show {
 
             // Ventana a cargar
             BorderPane ventana = (BorderPane) loader.load();
-            DashBoard_AlumnoController dashboard_AlumnoController =new DashBoard_AlumnoController();
+            DashBoard_AlumnoController dashboard_AlumnoController = new DashBoard_AlumnoController();
             dashboard_AlumnoController.SetConn(conn);
 
             // Creo la escena
@@ -221,8 +222,7 @@ public class Stage_show {
             // Modifico el stage
             primaryStage.setScene(scene);
             primaryStage.setTitle("DashBoard Alumno");
-            
-            
+
             Efectos_visuales.darMovimientoStage(primaryStage);
 
             //detectar cierre de ventana
@@ -280,4 +280,30 @@ public class Stage_show {
         return null;// Retorna null en caso de error
 
     }
+
+    public static void Mostrar_Mis_Datos(Connection conn, Pane root) throws IOException {
+        // Cargo la ventana inicial
+        FXMLLoader loader = new FXMLLoader();
+        Stage stage = new Stage();
+        loader.setLocation(main.class.getResource("/vistas/MisDatos.fxml"));
+
+        // Ventana a cargar
+        AnchorPane ventana = (AnchorPane) loader.load();
+
+        // Creo la escena
+        Scene scene = new Scene(ventana);
+
+        // Modifico el stage
+        stage.setScene(scene);
+        stage.initOwner(root.getScene().getWindow());
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.setResizable(false);
+        stage.setIconified(false);
+        stage.initStyle(StageStyle.UNDECORATED);
+        darMovimientoStage(stage);
+        stage.showAndWait();
+
+    }
+    
+
 }
