@@ -11,7 +11,6 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -166,7 +165,6 @@ public class Efectos_visuales {
     /**
      * Establece una imagen como fondo en el AnchorPane proporcionado.
      *
-     * @param anchorPane El AnchorPane al que se le aplicará la imagen de fondo.
      * @param imagePath La ruta de la imagen que se usará como fondo.
      */
     public static void setBackgroundImage(Pane pane, String imagePath) {

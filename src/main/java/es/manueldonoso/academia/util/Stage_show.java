@@ -82,7 +82,6 @@ public class Stage_show {
      * un mensaje en consola. En caso de que ocurra una excepción al cargar el
      * archivo FXML, se registra el error en el log.
      *
-     * @throws IOException Si ocurre un error al cargar el archivo FXML.
      */
     public static void Mostrar_crearContrato() {
         try {

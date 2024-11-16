@@ -49,17 +49,6 @@ public class Acciones {
      * verifica si el sistema soporta la operación
      * {@link java.awt.Desktop.Action#BROWSE}.
      * </p>
-     *
-     * @throws URISyntaxException Si la dirección URL proporcionada no es
-     * válida.
-     * @throws IOException Si ocurre un error de entrada/salida al intentar
-     * abrir el navegador.
-     *
-     * <p>
-     * <strong>Ejemplo de uso:</strong></p>
-     * <pre>
-     *     abrirWeb("https://www.ejemplo.com");
-     * </pre>
      */
     public static void abrirWeb(String dir) {
         if (java.awt.Desktop.isDesktopSupported()) {
@@ -76,6 +65,36 @@ public class Acciones {
                     Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
+            }
+        }
+    }
+
+    /**
+     * Abre un archivo HTML local en el navegador predeterminado del sistema. La
+     * ruta al archivo debe estar dentro del directorio de recursos del
+     * proyecto, típicamente `src/main/resources`, y se debe proporcionar como
+     * ruta relativa.
+     *
+     * @param dir La ruta relativa al archivo HTML dentro del directorio de
+     * recursos, por ejemplo, "/documentacion/html/index.html".
+     */
+    public static void abrirWebLocal(String dir) {
+        if (java.awt.Desktop.isDesktopSupported()) {
+            java.awt.Desktop Dt = java.awt.Desktop.getDesktop();
+            if (Dt.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                try {
+                    // Obtén la URL del archivo dentro de resources
+                    java.net.URL url = main.class.getResource(dir);  // `main.class` depende de la clase donde se encuentra este método
+                    if (url != null) {
+                        // Convierte la URL a URI y ábrela
+                        java.net.URI uri = url.toURI();
+                        Dt.browse(uri);
+                    } else {
+                        System.err.println("Archivo no encontrado en la ruta especificada: " + dir);
+                    }
+                } catch (URISyntaxException | IOException ex) {
+                    Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
     }
@@ -244,9 +263,9 @@ public class Acciones {
      * Ejemplo de uso:</p>
      * <pre>
      * BooleanProperty estadoCamara = new SimpleBooleanProperty(false);
-     * AtomicReference<Webcam> selWebCam = new AtomicReference<>();
-     * AtomicReference<BufferedImage> bufferedImage = new AtomicReference<>();
-     * ObjectProperty<Image> imageProperty = new SimpleObjectProperty<>();
+     * AtomicReference Webcam selWebCam = new AtomicReference();
+     * AtomicReference BufferedImage bufferedImage = new AtomicReference();
+     * ObjectProperty Image imageProperty = new SimpleObjectProperty();
      *
      * byte[] foto = CapturarFoto(imageView, estadoCamara, selWebCam, bufferedImage, imageProperty);
      * if (foto != null) {

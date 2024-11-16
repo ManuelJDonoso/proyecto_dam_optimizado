@@ -222,7 +222,7 @@ public class Usuario {
     /**
      * Establece el Email del usuario.
      * 
-     * @param Email 
+     * @param Email Establece el Email del usuario.
      */
     public void setEmail(String Email) {
         this.Email = Email;

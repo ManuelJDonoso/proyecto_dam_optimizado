@@ -61,6 +61,8 @@ public class LoginController implements Initializable {
     private JFXButton btn_Contrato;
     @FXML
     private JFXButton btn_datosDefecto;
+    @FXML
+    private JFXButton btn_Contrato1;
 
     /**
      * Initializes the controller class.
@@ -329,6 +331,11 @@ public class LoginController implements Initializable {
 
         }
         return conn;
+    }
+
+    @FXML
+    private void MostrarDocumentacion(ActionEvent event) {
+        Acciones.abrirWebLocal("/documentacion/html/index.html");
     }
 
 }

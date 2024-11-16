@@ -48,8 +48,9 @@ public class DashBoard_ProfesorController implements Initializable {
         }
       
         Efectos_visuales.modificarTamañoImagen(iv_avatar, 50,0.5);
-Platform.runLater(() -> root.requestFocus());
-    
+        //evitar que al cargar nada temga eñ foco
+        Platform.runLater(() -> root.requestFocus());
+
     }
 
     Connection conn;

@@ -10,19 +10,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" fx:id="root" prefHeight="517.0" prefWidth="756.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="es.manueldonoso.academia.controller.MisDatosController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="517.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.MisDatosController">
    <children>
       <ImageView fx:id="iv_foto" fitHeight="200.0" fitWidth="303.0" layoutX="99.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/app/incorgnito.png" />
          </image>
       </ImageView>
-      <VBox layoutX="413.0" layoutY="212.0" prefHeight="181.0" prefWidth="269.0">
+      <VBox layoutX="398.0" layoutY="115.0" prefHeight="182.0" prefWidth="322.0">
          <children>
             <HBox alignment="CENTER" prefHeight="48.0" prefWidth="225.0">
                <children>
@@ -31,10 +31,36 @@
                         <Font name="Comic Sans MS Bold Italic" size="14.0" />
                      </font>
                   </Text>
-                  <JFXTextField onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0">
+                  <JFXTextField fx:id="tf_nombre" onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0" style="-fx-text-fill: white;" unFocusColor="#760000">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <focusColor>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" green="0.02222222276031971" blue="0.02222222276031971" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="1.0" green="0.02222222276031971" blue="0.02222222276031971" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.4853658536585365">
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </focusColor>
                   </JFXTextField>
                </children>
             </HBox>
@@ -45,10 +71,36 @@
                         <Font name="Comic Sans MS Bold Italic" size="14.0" />
                      </font>
                   </Text>
-                  <JFXTextField onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0">
+                  <JFXTextField fx:id="tf_apellido" onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0" style="-fx-text-fill: white;" unFocusColor="#750000">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <focusColor>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" green="0.02222222276031971" blue="0.02222222276031971" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="1.0" green="0.02222222276031971" blue="0.02222222276031971" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.4853658536585365">
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </focusColor>
                   </JFXTextField>
                </children>
             </HBox>
@@ -59,10 +111,36 @@
                         <Font name="Comic Sans MS Bold Italic" size="14.0" />
                      </font>
                   </Text>
-                  <JFXTextField onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0">
+                  <JFXTextField fx:id="tf_dir" onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0" style="-fx-text-fill: white;" unFocusColor="#750000">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <focusColor>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" green="0.02222222276031971" blue="0.02222222276031971" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="1.0" green="0.02222222276031971" blue="0.02222222276031971" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.4853658536585365">
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </focusColor>
                   </JFXTextField>
                </children>
             </HBox>
@@ -73,10 +151,36 @@
                         <Font name="Comic Sans MS Bold Italic" size="14.0" />
                      </font>
                   </Text>
-                  <JFXTextField onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0">
+                  <JFXTextField fx:id="tf_tel" onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0" style="-fx-text-fill: white;" unFocusColor="#760000">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <focusColor>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" green="0.02222222276031971" blue="0.02222222276031971" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="1.0" green="0.02222222276031971" blue="0.02222222276031971" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.4853658536585365">
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </focusColor>
                   </JFXTextField>
                </children>
             </HBox>
@@ -87,16 +191,42 @@
                         <Font name="Comic Sans MS Bold Italic" size="14.0" />
                      </font>
                   </Text>
-                  <JFXTextField onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0">
+                  <JFXTextField fx:id="tf_email" onKeyTyped="#acep_btn_enable" prefHeight="25.0" prefWidth="126.0" style="-fx-text-fill: white;" unFocusColor="#750000">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
+                     <focusColor>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" green="0.02222222276031971" blue="0.02222222276031971" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="1.0" green="0.02222222276031971" blue="0.02222222276031971" opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.4853658536585365">
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </focusColor>
                   </JFXTextField>
                </children>
             </HBox>
          </children>
       </VBox>
-      <JFXButton fx:id="btn_aceptar" layoutX="21.0" layoutY="464.0" onAction="#btn_aceptar" prefHeight="39.0" prefWidth="145.0" text="ACEPTAR">
+      <JFXButton fx:id="btn_aceptar" layoutX="428.0" layoutY="464.0" onAction="#btn_aceptar" prefHeight="39.0" prefWidth="145.0" text="ACEPTAR">
          <font>
             <Font size="18.0" />
          </font>
@@ -158,17 +288,24 @@
             </LinearGradient>
          </textFill>
       </JFXButton>
-      <JFXButton layoutX="79.0" layoutY="418.0" onAction="#btn_cargar" prefHeight="27.0" prefWidth="93.0" text="CARGAR" textFill="WHITE">
+      <JFXButton layoutX="99.0" layoutY="323.0" onAction="#btn_cargar" prefHeight="27.0" prefWidth="93.0" text="CARGAR" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="205.0" layoutY="418.0" onAction="#btn_Tomar" prefHeight="27.0" prefWidth="76.0" text="TOMAR" textFill="WHITE">
+      <JFXButton layoutX="207.0" layoutY="314.0" onAction="#btn_Tomar" prefHeight="46.0" prefWidth="84.0" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/app/camara.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
-      <JFXButton layoutX="323.0" layoutY="418.0" onAction="#btn_eliminar" text="ELIMINAR" textFill="WHITE">
+      <JFXButton layoutX="302.0" layoutY="323.0" onAction="#btn_eliminar" text="ELIMINAR" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>

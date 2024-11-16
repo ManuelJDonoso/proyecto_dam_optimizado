@@ -33,9 +33,6 @@ public class Base_datos {
      *
      * @return un objeto {@link Connection} si la conexión es exitosa; null si
      * ocurre una excepción.
-     * @throws ClassNotFoundException si el controlador de SQLite no está
-     * presente.
-     * @throws SQLException si ocurre un error al establecer la conexión.
      */
     public static Connection conectarSqlite() {
 
@@ -180,12 +177,7 @@ public class Base_datos {
      * tablas. El parámetro `Usuario` debe tener los métodos `getUsuario()`,
      * `getNombre()`, `getApellidos()` y `getEmail()` para obtener los valores
      * que se insertarán en la base de datos.
-     *
-     * @throws SQLException Si ocurre un error durante la conexión o la
-     * ejecución de las consultas SQL.
-     * @throws NullPointerException Si el objeto `user` es `null` o cualquiera
-     * de sus métodos `getUsuario()`, `getNombre()`, `getApellidos()` o
-     * `getEmail()` retorna `null`.
+     * 
      */
     public static void RegistrarProductoContrato(Usuario user) {
         String usuario = user.getUsuario(), nombre = user.getNombre(), apellidos = user.getApellidos(), email = user.getEmail();
@@ -430,8 +422,8 @@ public class Base_datos {
      * (`fechaAlta`).
      *
      * @param conn La conexión a la base de datos.
-     * @throws SQLException si ocurre un error durante la inserción.
-     */
+     * @throws java.sql.SQLException
+      */
     public static void insertarUsuarios(Connection conn) throws SQLException {
         String sql = "INSERT INTO usuario_tabla (Usuario, Nombre, Apellidos, Direccion, Telefono, Pass, Email, fk_tipo, fechaAlta, fechaBaja) "
                 + "VALUES (?, ?, ?, NULL, NULL, ?, ?, ?, ?, NULL)";
@@ -488,8 +480,8 @@ public class Base_datos {
      * @param pass La contraseña del usuario.
      * @return El valor de `fk_tipo` si el usuario existe y la contraseña es
      * correcta, o `null` si no coincide.
-     * @throws SQLException si ocurre un error durante la consulta.
-     */
+     * @throws java.sql.SQLException
+    */
     public static String verificarUsuario(Connection conn, String usuario, String pass) throws SQLException {
         String sql = "SELECT fk_tipo FROM usuario_tabla WHERE Usuario = ? AND Pass = ?";
 
@@ -524,7 +516,7 @@ public class Base_datos {
      * @param conn La conexión a la base de datos.
      * @return `true` si se eliminaron registros con éxito, `false` si no se
      * afectaron registros o si ocurrió un error.
-     * @throws SQLException Si ocurre un error en la operación de eliminación.
+     * @throws java.sql.SQLException
      */
     public static boolean eliminarTodosUsuarios(Connection conn) throws SQLException {
         String sql = "DELETE FROM usuario_tabla";
@@ -552,7 +544,6 @@ public class Base_datos {
      * @param conn La conexión a la base de datos.
      * @param usuario El nombre del usuario cuyo contraseña será cambiada.
      * @param pass La nueva contraseña en texto plano.
-     * @throws SQLException Si ocurre un error al actualizar la base de datos.
      */
     public static void CambioContraseña(Connection conn, String usuario, String pass) {
         // Consulta SQL para actualizar la contraseña
