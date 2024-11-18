@@ -41,7 +41,7 @@ public class DashBoard_ProfesorController implements Initializable {
     @FXML
     private AnchorPane ac_center;
 
-    private Usuario user ;
+    private Usuario user;
 
     /**
      * Initializes the controller class.
@@ -55,12 +55,10 @@ public class DashBoard_ProfesorController implements Initializable {
             Session.setPass(null);
         }
 
-      
-    
         Efectos_visuales.modificarTamañoImagen(iv_avatar, 50, 0.5);
         //evitar que al cargar nada temga eñ foco
         Platform.runLater(() -> root.requestFocus());
-      
+
     }
 
     Connection conn;
@@ -79,12 +77,11 @@ public class DashBoard_ProfesorController implements Initializable {
 
     @FXML
     private void btn_MisDatos(ActionEvent event) {
-        utilidades.log("pulso boton Datos");
-        System.out.println(this.conn);
-        utilidades.log("mostrando conn");
-        System.out.println(conn);
+
         try {
-            Stage_show.Mostrar_Mis_Datos(conn, root, user);
+            if (Stage_show.Mostrar_Mis_Datos(conn, root, user)) {
+                CargarUsuario();
+            }
         } catch (IOException ex) {
             Logger.getLogger(DashBoard_ProfesorController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -120,21 +117,14 @@ public class DashBoard_ProfesorController implements Initializable {
     }
 
     public void CargarUsuario() {
-        
- 
+
         try {
             user = Base_datos.BuscarUsuario_Usuario(conn, Session.getUsuario());
             Acciones.imagenView_cambiarImage(this.getClass(), iv_avatar, user.getFoto());
-            
-            
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(DashBoard_ProfesorController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-
-    
-    
 
 }

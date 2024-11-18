@@ -13,6 +13,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -589,16 +593,15 @@ public class Base_datos {
                         case "ALUMNO":
                             user.setTipo(Usuario.TipoUsuario.ALUMNO);
                             break;
-                              case "ADMINISTRADOR":
+                        case "ADMINISTRADOR":
                             user.setTipo(Usuario.TipoUsuario.ADMINISTRADOR);
                             break;
-                              case "PROFESOR":
+                        case "PROFESOR":
                             user.setTipo(Usuario.TipoUsuario.PROFESOR);
                             break;
                         default:
-                          
+
                     }
-                 
 
                     return user;
                 } else {
@@ -612,7 +615,7 @@ public class Base_datos {
         }
     }
 
-    public static boolean ModificarUsuario(Connection conn,Usuario user) {
+    public static boolean ModificarUsuario(Connection conn, Usuario user) {
         String sql = "UPDATE usuario_tabla "
                 + "SET Nombre = ?, Apellidos = ?, Direccion = ?, Telefono = ?, Foto = ?, "
                 + "Email = ?, fk_tipo = ?, fechaAlta = ?, fechaBaja = ? "
@@ -627,12 +630,12 @@ public class Base_datos {
             pstmt.setString(4, user.getTelefono());
             pstmt.setBytes(5, user.getFoto());
             pstmt.setString(6, user.getEmail());
-             // Manejar el tipo de usuario, convirtiendo a String o asignando NULL si no está definido
-        if (user.getTipo() != null) {
-            pstmt.setString(7, user.getTipo().toString());
-        } else {
-            pstmt.setNull(7, java.sql.Types.VARCHAR);
-        }
+            // Manejar el tipo de usuario, convirtiendo a String o asignando NULL si no está definido
+            if (user.getTipo() != null) {
+                pstmt.setString(7, user.getTipo().toString());
+            } else {
+                pstmt.setNull(7, java.sql.Types.VARCHAR);
+            }
             pstmt.setDate(8, user.getFechaAlta());
             pstmt.setDate(9, user.getFechaBaja());
             pstmt.setString(10, user.getUsuario());
@@ -645,6 +648,125 @@ public class Base_datos {
 
         } catch (SQLException e) {
             return false;
+        }
+    }
+
+    public static void AltaAsignatura(Connection conn, String Asignatura) {
+        // Consulta para verificar si la asignatura ya existe
+        String checkSql = "SELECT COUNT(*) FROM Asignaturas_tabla WHERE asignatura = ?";
+
+        // Consulta para insertar una nueva asignatura
+        String insertSql = "INSERT INTO Asignaturas_tabla (asignatura) VALUES (?)";
+
+        try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
+            // Configuramos el parámetro para verificar
+            checkStmt.setString(1, Asignatura);
+
+            // Ejecutamos la consulta de verificación
+            ResultSet rs = checkStmt.executeQuery();
+            if (rs.next() && rs.getInt(1) > 0) {
+                System.out.println("La asignatura '" + Asignatura + "' ya existe en la base de datos.");
+                return; // Salimos del método si ya existe
+            }
+
+            // Si no existe, la insertamos
+            try (PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
+                insertStmt.setString(1, Asignatura);
+                insertStmt.executeUpdate();
+                System.out.println("Asignatura '" + Asignatura + "' dada de alta exitosamente.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al verificar o insertar la asignatura: " + e.getMessage());
+        }
+    }
+
+    public static List<String> obtenerAsignaturasActivas(Connection conn) {
+        List<String> asignaturasActivas = new ArrayList<>();
+        String sql = "SELECT asignatura FROM Asignaturas_tabla WHERE activo = 1";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql); ResultSet rs = pstmt.executeQuery()) {
+
+            // Recorremos el ResultSet para obtener las asignaturas activas
+            while (rs.next()) {
+                asignaturasActivas.add(rs.getString("asignatura"));
+            }
+
+            // Imprimimos las asignaturas activas para verificar
+            if (asignaturasActivas.isEmpty()) {
+                System.out.println("No hay asignaturas activas.");
+            } else {
+                System.out.println("Asignaturas activas: " + asignaturasActivas);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al obtener las asignaturas activas: " + e.getMessage());
+        }
+        Collections.sort(asignaturasActivas);
+        return asignaturasActivas;
+    }
+
+    public static List<String> obtenerAsignaturasInActivas(Connection conn) {
+        List<String> asignaturasinActivas = new ArrayList<>();
+        String sql = "SELECT asignatura FROM Asignaturas_tabla WHERE activo = 0";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql); ResultSet rs = pstmt.executeQuery()) {
+
+            // Recorremos el ResultSet para obtener las asignaturas activas
+            while (rs.next()) {
+                asignaturasinActivas.add(rs.getString("asignatura"));
+            }
+
+            // Imprimimos las asignaturas activas para verificar
+            if (asignaturasinActivas.isEmpty()) {
+                System.out.println("No hay asignaturas activas.");
+            } else {
+                System.out.println("Asignaturas activas: " + asignaturasinActivas);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al obtener las asignaturas activas: " + e.getMessage());
+        }
+        Collections.sort(asignaturasinActivas);
+        return asignaturasinActivas;
+    }
+
+    public static void desactivarAsignatura(Connection conn, String asignatura) {
+        String sql = "UPDATE Asignaturas_tabla SET activo = 0 WHERE asignatura= ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // Establecer el valor para el parámetro "asignatura"
+            pstmt.setString(1, asignatura);
+
+            // Ejecutar la actualización
+            int rowsAffected = pstmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Asignatura '" + asignatura + "' desactivada correctamente.");
+            } else {
+                System.out.println("No se encontró la asignatura '" + asignatura + "' para desactivarla.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al desactivar la asignatura: " + e.getMessage());
+        }
+    }
+    
+    public static void activarAsignatura(Connection conn, String asignatura) {
+        String sql = "UPDATE Asignaturas_tabla SET activo = 1 WHERE asignatura= ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // Establecer el valor para el parámetro "asignatura"
+            pstmt.setString(1, asignatura);
+
+            // Ejecutar la actualización
+            int rowsAffected = pstmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Asignatura '" + asignatura + "' desactivada correctamente.");
+            } else {
+                System.out.println("No se encontró la asignatura '" + asignatura + "' para desactivarla.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al desactivar la asignatura: " + e.getMessage());
         }
     }
 }
