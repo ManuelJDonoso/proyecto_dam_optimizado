@@ -7,8 +7,10 @@ package es.manueldonoso.academia.controller;
 import com.github.sarxos.webcam.Webcam;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import es.manueldonoso.academia.modelos.Usuario;
 import es.manueldonoso.academia.util.Acciones;
 import es.manueldonoso.academia.util.Alerta;
+import es.manueldonoso.academia.util.Base_datos;
 import es.manueldonoso.academia.util.Efectos_visuales;
 import java.awt.image.BufferedImage;
 import java.net.URL;
@@ -28,6 +30,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import es.manueldonoso.academia.util.validaciones;
+import java.sql.Connection;
 
 /**
  * FXML Controller class
@@ -35,14 +38,14 @@ import es.manueldonoso.academia.util.validaciones;
  * @author "Manuel Jesús Donoso Pérez";
  */
 public class MisDatosController implements Initializable {
-    
+
     @FXML
     private AnchorPane root;
     @FXML
     private ImageView iv_foto;
     @FXML
     private JFXButton btn_aceptar;
-    
+
     private byte[] foto;
     @FXML
     private JFXTextField tf_nombre;
@@ -55,6 +58,9 @@ public class MisDatosController implements Initializable {
     @FXML
     private JFXTextField tf_email;
 
+    private Connection conn;
+    private Usuario user;
+
     /**
      * Initializes the controller class.
      */
@@ -62,55 +68,73 @@ public class MisDatosController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         Efectos_visuales.setBackgroundImage(root, "/images/app/fondo2.jpg");
+        System.out.println("Mostrando mis Datos");
         btn_aceptar.setDisable(true);
-        
+
         Platform.runLater(() -> root.requestFocus());
     }
-    
+
     @FXML
     private void acep_btn_enable(KeyEvent event) {
         btn_aceptar.setDisable(false);
-        
+
     }
-    
+
     @FXML
     private void btn_aceptar(ActionEvent event) {
         if (validacionesDatos()) {
-            
-            if(Alerta.Confirmacion("Advertencia", "Modificacion de datos", "¿Desea Continuar?"))
-            Efectos_visuales.closeEffectReducion(root);
+
+            if (Alerta.Confirmacion("Advertencia", "Modificacion de datos", "¿Desea Continuar?")) {
+                capturarDAtos();
+                Base_datos.ModificarUsuario(conn, user);
+                Efectos_visuales.closeEffectReducion(root);
+            }
         }
-        
+
     }
-    
+
     @FXML
     private void tbn_cancelar(ActionEvent event) {
+   
         Efectos_visuales.closeEffectReducion(root);
     }
-    
+
     @FXML
     private void btn_cargar(ActionEvent event) {
+
         Stage stage = new Stage();
-        foto = Acciones.ImageToByte(stage);
+    byte[] fototomada = Acciones.ImageToByte(stage);
+
+    if (fototomada.length == 0) {
+        // Si no se seleccionó archivo, deshabilitar el botón
+        btn_aceptar.setDisable(true);
+    } else {
+        // Si se seleccionó un archivo, habilitar el botón y actualizar la imagen
+        foto = fototomada;
+        btn_aceptar.setDisable(false);
         Acciones.imagenView_cambiarImage(this.getClass(), iv_foto, foto);
     }
-    
+
+    }
+
     @FXML
     private void btn_eliminar(ActionEvent event) {
         foto = null;
         Acciones.imagenView_cambiarImage(this.getClass(), iv_foto, "src/main/resources/images/app/incorgnito.png");
+             btn_aceptar.setDisable(false);
     }
-    
+
     private BooleanProperty estadoCamara = new SimpleBooleanProperty(false);
     private AtomicReference<Webcam> selWebCam = new AtomicReference<>(null); // Usar AtomicReference para Webcam
     private AtomicReference<BufferedImage> bufferedImage = new AtomicReference<>(null); // Usar AtomicReference para BufferedImage
     private ObjectProperty<Image> imageProperty = new SimpleObjectProperty<>();
-    
+
     @FXML
     private void btn_Tomar(ActionEvent event) {
         foto = Acciones.CapturarFoto(iv_foto, estadoCamara, selWebCam, bufferedImage, imageProperty);
+        btn_aceptar.setDisable(false);
     }
-    
+
     private boolean validacionesDatos() {
         String mensaje = "";
         String nombre = tf_nombre.getText();
@@ -121,7 +145,7 @@ public class MisDatosController implements Initializable {
         if (!validaciones.min3letras(nombre)) {
             mensaje += " Error en los datos Nombre";
         }
-        
+
         if (!validaciones.min3letras(Apellidos)) {
             if (!mensaje.isEmpty()) {
                 mensaje += "\n ";
@@ -134,24 +158,69 @@ public class MisDatosController implements Initializable {
             }
             mensaje += "Error en la Telefono";
         }
-        
+
         if (tf_dir.getText().isEmpty()) {
             if (!mensaje.isEmpty()) {
                 mensaje += "\n ";
             }
             mensaje += "Error en la Dirección";
         }
-        
+
         if (!validaciones.Email(Email)) {
             if (!mensaje.isEmpty()) {
                 mensaje += "\n";
             }
             mensaje += " Error en los datos Email";
         }
-        
+
         if (!mensaje.isBlank()) {
             Alerta.Error("Error", "Error en captura de datos", mensaje);
         }
         return mensaje.isEmpty();
     }
+
+    public void CargarDatos(Usuario user) {
+        this.user = user;
+        tf_nombre.setText(user.getNombre());
+        tf_apellido.setText(user.getApellidos());
+        tf_email.setText(user.getEmail());
+        tf_tel.setText(user.getTelefono());
+        tf_dir.setText(user.getDireccion());
+        foto = user.getFoto();
+        System.out.println(user.toString());
+        System.out.println(user.toString());
+        if (foto != null) {
+            Acciones.imagenView_cambiarImage(this.getClass(), iv_foto, foto);
+        } else {
+            Acciones.imagenView_cambiarImage(this.getClass(), iv_foto, "src/main/resources/images/app/incorgnito.png");
+        }
+
+    }
+
+    public void capturarDAtos() {
+        Usuario usuario = this.user;
+
+        // Capturar datos de los campos de texto
+        usuario.setNombre(tf_nombre.getText());
+        usuario.setApellidos(tf_apellido.getText());
+        usuario.setEmail(tf_email.getText());
+        usuario.setTelefono(tf_tel.getText());
+        usuario.setDireccion(tf_dir.getText());
+
+        // Capturar la foto, si está disponible
+        usuario.setFoto(foto);
+
+        // Imprimir el objeto para depuración
+        System.out.println("Datos capturados: " + usuario.toString());
+
+    }
+
+    public Connection getConn() {
+        return conn;
+    }
+
+    public void setConn(Connection conn) {
+        this.conn = conn;
+    }
+
 }

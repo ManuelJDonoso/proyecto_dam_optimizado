@@ -227,6 +227,13 @@ public class Usuario {
     public void setEmail(String Email) {
         this.Email = Email;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "Usuario=" + Usuario + ", Nombre=" + Nombre + ", Apellidos=" + Apellidos + ", Direccion=" + Direccion + ", Telefono=" + Telefono + ", Pass=" + Pass + ", Email=" + Email + ", Tipo=" + Tipo + ", Foto=" + Foto + ", FechaAlta=" + FechaAlta + ", FechaBaja=" + FechaBaja + '}';
+    }
+    
+    
     
     
 }

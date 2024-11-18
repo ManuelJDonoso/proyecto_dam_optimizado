@@ -14,6 +14,7 @@ import es.manueldonoso.academia.util.Stage_show;
 import es.manueldonoso.academia.util.Acciones;
 import es.manueldonoso.academia.util.Base_datos;
 import es.manueldonoso.academia.util.Session;
+import es.manueldonoso.academia.util.utilidades;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -114,6 +115,7 @@ public class LoginController implements Initializable {
         GuardarUsuario();
         if (cb_selectBBDD.getValue() != null) {
 
+         
             mostrarDasboard( getConecConnection());
 
         }
@@ -290,11 +292,15 @@ public class LoginController implements Initializable {
      */
     private void mostrarDasboard(Connection conn) {
         Session.setUsuario(txt_nombre.getText());
+       
         switch (getTipoUsuario()) {
             case "ADMINISTRADOR":
                 Stage_show.Mostrar_Dasboard_Administrador(conn);
                 break;
             case "PROFESOR":
+                utilidades.log("usuario tipo profesor");
+                
+                System.out.println(conn);
                 Stage_show.Mostrar_Dasboard_Profesor(conn);
                 break;
 

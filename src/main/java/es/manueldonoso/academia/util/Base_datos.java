@@ -40,7 +40,7 @@ public class Base_datos {
 
         try {
             Class.forName("org.sqlite.JDBC");
-            
+
             Connection conexion = DriverManager.getConnection(DB_URL);
             return conexion;
         } catch (Exception e) {
@@ -177,7 +177,7 @@ public class Base_datos {
      * tablas. El parámetro `Usuario` debe tener los métodos `getUsuario()`,
      * `getNombre()`, `getApellidos()` y `getEmail()` para obtener los valores
      * que se insertarán en la base de datos.
-     * 
+     *
      */
     public static void RegistrarProductoContrato(Usuario user) {
         String usuario = user.getUsuario(), nombre = user.getNombre(), apellidos = user.getApellidos(), email = user.getEmail();
@@ -423,7 +423,7 @@ public class Base_datos {
      *
      * @param conn La conexión a la base de datos.
      * @throws java.sql.SQLException
-      */
+     */
     public static void insertarUsuarios(Connection conn) throws SQLException {
         String sql = "INSERT INTO usuario_tabla (Usuario, Nombre, Apellidos, Direccion, Telefono, Pass, Email, fk_tipo, fechaAlta, fechaBaja) "
                 + "VALUES (?, ?, ?, NULL, NULL, ?, ?, ?, ?, NULL)";
@@ -481,21 +481,20 @@ public class Base_datos {
      * @return El valor de `fk_tipo` si el usuario existe y la contraseña es
      * correcta, o `null` si no coincide.
      * @throws java.sql.SQLException
-    */
+     */
     public static String verificarUsuario(Connection conn, String usuario, String pass) throws SQLException {
         String sql = "SELECT fk_tipo FROM usuario_tabla WHERE Usuario = ? AND Pass = ?";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, usuario); // Establecer el nombre de usuario en el primer parámetro
             pstmt.setString(2, pass);    // Establecer la contraseña en el segundo parámetro
-            String tipo="";
+            String tipo = "";
             // Ejecutar la consulta
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     // Retornar fk_tipo si el usuario y la contraseña son correctos
-                    tipo= rs.getString("fk_tipo");
-                    
-                      
+                    tipo = rs.getString("fk_tipo");
+
                     return tipo;
                 } else {
                     // Retornar null si el usuario no existe o la contraseña es incorrecta
@@ -565,6 +564,87 @@ public class Base_datos {
             }
         } catch (SQLException ex) {
             Logger.getLogger(Base_datos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public static Usuario BuscarUsuario_Usuario(Connection conn, String usuario) throws SQLException {
+        String sql = "SELECT * FROM usuario_tabla WHERE Usuario = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, usuario); // Establecer el nombre de usuario en el primer parámetro
+
+            // Ejecutar la consulta
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    // Retornar fk_tipo si el usuario y la contraseña son correctos
+                    Usuario user = new Usuario();
+                    user.setNombre(rs.getString("Nombre"));
+                    user.setApellidos(rs.getString("Apellidos"));
+                    user.setDireccion(rs.getString("Direccion"));
+                    user.setTelefono(rs.getString("Telefono"));
+                    user.setFoto(rs.getBytes("Foto"));
+                    user.setEmail(rs.getString("Email"));
+                    user.setUsuario(rs.getString("Usuario"));
+                    utilidades.log(rs.getString("fk_tipo"));
+                    switch (rs.getString("fk_tipo")) {
+                        case "ALUMNO":
+                            user.setTipo(Usuario.TipoUsuario.ALUMNO);
+                            break;
+                              case "ADMINISTRADOR":
+                            user.setTipo(Usuario.TipoUsuario.ADMINISTRADOR);
+                            break;
+                              case "PROFESOR":
+                            user.setTipo(Usuario.TipoUsuario.PROFESOR);
+                            break;
+                        default:
+                          
+                    }
+                 
+
+                    return user;
+                } else {
+                    // Retornar null si el usuario no existe o la contraseña es incorrecta
+                    return null;
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al verificar el usuario: " + e.getMessage());
+            throw e; // Propagar la excepción
+        }
+    }
+
+    public static boolean ModificarUsuario(Connection conn,Usuario user) {
+        String sql = "UPDATE usuario_tabla "
+                + "SET Nombre = ?, Apellidos = ?, Direccion = ?, Telefono = ?, Foto = ?, "
+                + "Email = ?, fk_tipo = ?, fechaAlta = ?, fechaBaja = ? "
+                + "WHERE Usuario = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // Asignar valores a los parámetros de la consulta
+            pstmt.setString(1, user.getNombre());
+            pstmt.setString(2, user.getApellidos());
+            pstmt.setString(3, user.getDireccion());
+            pstmt.setString(4, user.getTelefono());
+            pstmt.setBytes(5, user.getFoto());
+            pstmt.setString(6, user.getEmail());
+             // Manejar el tipo de usuario, convirtiendo a String o asignando NULL si no está definido
+        if (user.getTipo() != null) {
+            pstmt.setString(7, user.getTipo().toString());
+        } else {
+            pstmt.setNull(7, java.sql.Types.VARCHAR);
+        }
+            pstmt.setDate(8, user.getFechaAlta());
+            pstmt.setDate(9, user.getFechaBaja());
+            pstmt.setString(10, user.getUsuario());
+
+            // Ejecutar la consulta
+            int filasActualizadas = pstmt.executeUpdate();
+
+            // Retornar true si se actualizó al menos un registro
+            return filasActualizadas > 0;
+
+        } catch (SQLException e) {
+            return false;
         }
     }
 }

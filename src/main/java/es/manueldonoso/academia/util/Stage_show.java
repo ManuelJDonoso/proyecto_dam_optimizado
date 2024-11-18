@@ -8,6 +8,8 @@ import es.manueldonoso.academia.controller.Cambio_ContrasenaController;
 import es.manueldonoso.academia.controller.DashBoard_AdministradorController;
 import es.manueldonoso.academia.controller.DashBoard_AlumnoController;
 import es.manueldonoso.academia.controller.DashBoard_ProfesorController;
+import es.manueldonoso.academia.controller.MisDatosController;
+import es.manueldonoso.academia.util.utilidades;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,8 +18,10 @@ import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import es.manueldonoso.academia.main.main;
+import es.manueldonoso.academia.modelos.Usuario;
 import static es.manueldonoso.academia.util.Efectos_visuales.darMovimientoStage;
 import java.sql.Connection;
+import java.sql.SQLException;
 import javafx.event.EventHandler;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -163,43 +167,43 @@ public class Stage_show {
     }
 
     public static void Mostrar_Dasboard_Profesor(Connection conn) {
-        try {
-            Stage primaryStage = new Stage();
-            // Cargo la ventana inicial
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(main.class.getResource("/vistas/DashBoard_Profesor.fxml"));
 
-            DashBoard_ProfesorController dashBoard_ProfesorController = new DashBoard_ProfesorController();
-            dashBoard_ProfesorController.SetConn(conn);
+       try {
+        Stage primaryStage = new Stage();
+        // Cargo la ventana inicial
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(main.class.getResource("/vistas/DashBoard_Profesor.fxml"));
 
-            // Ventana a cargar
-            BorderPane ventana = (BorderPane) loader.load();
+        // Ventana a cargar
+        BorderPane ventana = (BorderPane) loader.load();
 
-            // Creo la escena
-            Scene scene = new Scene(ventana);
+        // Obtén la instancia del controlador desde el FXMLLoader
+        DashBoard_ProfesorController dashBoard_ProfesorController = loader.getController();
 
-            // Modifico el stage
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("DashBoard Profesor");
+        
+        // Configura la conexión en la instancia correcta
+        dashBoard_ProfesorController.SetConn(conn);
 
-            //detectar cierre de ventana
-            primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
-                @Override
-                public void handle(WindowEvent t) {
+        // Carga el usuario
+        dashBoard_ProfesorController.CargarUsuario();
 
-                    System.out.println("se cerro la ventana de configuración");
-                    //comprobarInstalacion();
+        // Creo la escena
+        Scene scene = new Scene(ventana);
 
-                }
-            });
+        // Modifico el stage
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("DashBoard Profesor");
 
-            //mostrar ventana
-            primaryStage.show();
+        // Detectar cierre de ventana
+        primaryStage.setOnHidden(event -> {
+            System.out.println("Se cerró la ventana de configuración");
+        });
 
-            // primaryStage.setMaximized(true);
-        } catch (IOException ex) {
-            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        // Mostrar ventana
+        primaryStage.show();
+    } catch (IOException ex) {
+        Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+    }
 
     }
 
@@ -280,7 +284,7 @@ public class Stage_show {
 
     }
 
-    public static void Mostrar_Mis_Datos(Connection conn, Pane root) throws IOException {
+    public static void Mostrar_Mis_Datos(Connection conn, Pane root, Usuario user) throws IOException {
         // Cargo la ventana inicial
         FXMLLoader loader = new FXMLLoader();
         Stage stage = new Stage();
@@ -292,6 +296,18 @@ public class Stage_show {
         // Creo la escena
         Scene scene = new Scene(ventana);
 
+        // Obtener el controlador asociado
+        MisDatosController controller = loader.getController();
+        controller.setConn(conn);
+       
+
+        try {
+            Usuario u=Base_datos.BuscarUsuario_Usuario(conn, Session.getUsuario());
+            controller.CargarDatos(user);
+        } catch (SQLException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         // Modifico el stage
         stage.setScene(scene);
         stage.initOwner(root.getScene().getWindow());
@@ -300,9 +316,14 @@ public class Stage_show {
         stage.setIconified(false);
         stage.initStyle(StageStyle.UNDECORATED);
         darMovimientoStage(stage);
+
+         // Detectar cierre de ventana
+        stage.setOnHidden(event -> {
+            System.out.println("Se cerró la ventana de Datos");
+        });
+        
         stage.showAndWait();
 
     }
-    
 
 }
