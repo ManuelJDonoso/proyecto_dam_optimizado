@@ -5,22 +5,27 @@
 package es.manueldonoso.academia.modelos;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
- * Representa un usuario en el sistema con información básica de contacto y autenticación.
- * 
- * La clase `Usuario` contiene los datos de un usuario, incluyendo su nombre, apellidos,
- * dirección, teléfono, contraseña, tipo de usuario, una foto en formato de arreglo de bytes,
- * y fechas de alta y baja en el sistema.
- * El tipo de usuario está limitado a los valores "ADMINISTRADOR", "PROFESOR" o "ALUMNO".
- * 
+ * Representa un usuario en el sistema con información básica de contacto y
+ * autenticación.
+ *
+ * La clase `Usuario` contiene los datos de un usuario, incluyendo su nombre,
+ * apellidos, dirección, teléfono, contraseña, tipo de usuario, una foto en
+ * formato de arreglo de bytes, y fechas de alta y baja en el sistema. El tipo
+ * de usuario está limitado a los valores "ADMINISTRADOR", "PROFESOR" o
+ * "ALUMNO".
+ *
  * @author Manuel Jesús Donoso Pérez
  */
 public class Usuario {
-    private String Usuario, Nombre, Apellidos, Direccion, Telefono, Pass,Email;
+
+    private String Usuario, Nombre, Apellidos, Direccion, Telefono, Pass, Email;
     private TipoUsuario Tipo;
     private byte[] Foto;
-    private Date FechaAlta,FechaBaja;
+    private Date FechaAlta, FechaBaja;
+    private List Asignaturas;
 
     /**
      * Enum que define los tipos de usuario permitidos en el sistema.
@@ -33,7 +38,7 @@ public class Usuario {
 
     /**
      * Obtiene el nombre de usuario.
-     * 
+     *
      * @return El nombre de usuario.
      */
     public String getUsuario() {
@@ -42,7 +47,7 @@ public class Usuario {
 
     /**
      * Establece el nombre de usuario.
-     * 
+     *
      * @param Usuario El nombre de usuario a asignar.
      */
     public void setUsuario(String Usuario) {
@@ -51,7 +56,7 @@ public class Usuario {
 
     /**
      * Obtiene el nombre del usuario.
-     * 
+     *
      * @return El nombre del usuario.
      */
     public String getNombre() {
@@ -60,7 +65,7 @@ public class Usuario {
 
     /**
      * Establece el nombre del usuario.
-     * 
+     *
      * @param Nombre El nombre a asignar al usuario.
      */
     public void setNombre(String Nombre) {
@@ -69,7 +74,7 @@ public class Usuario {
 
     /**
      * Obtiene los apellidos del usuario.
-     * 
+     *
      * @return Los apellidos del usuario.
      */
     public String getApellidos() {
@@ -78,7 +83,7 @@ public class Usuario {
 
     /**
      * Establece los apellidos del usuario.
-     * 
+     *
      * @param Apellidos Los apellidos a asignar al usuario.
      */
     public void setApellidos(String Apellidos) {
@@ -87,7 +92,7 @@ public class Usuario {
 
     /**
      * Obtiene la dirección del usuario.
-     * 
+     *
      * @return La dirección del usuario.
      */
     public String getDireccion() {
@@ -96,7 +101,7 @@ public class Usuario {
 
     /**
      * Establece la dirección del usuario.
-     * 
+     *
      * @param Direccion La dirección a asignar al usuario.
      */
     public void setDireccion(String Direccion) {
@@ -105,7 +110,7 @@ public class Usuario {
 
     /**
      * Obtiene el número de teléfono del usuario.
-     * 
+     *
      * @return El número de teléfono del usuario.
      */
     public String getTelefono() {
@@ -114,7 +119,7 @@ public class Usuario {
 
     /**
      * Establece el número de teléfono del usuario.
-     * 
+     *
      * @param Telefono El número de teléfono a asignar al usuario.
      */
     public void setTelefono(String Telefono) {
@@ -123,7 +128,7 @@ public class Usuario {
 
     /**
      * Obtiene la contraseña del usuario.
-     * 
+     *
      * @return La contraseña del usuario.
      */
     public String getPass() {
@@ -132,7 +137,7 @@ public class Usuario {
 
     /**
      * Establece la contraseña del usuario.
-     * 
+     *
      * @param Pass La contraseña a asignar al usuario.
      */
     public void setPass(String Pass) {
@@ -141,8 +146,9 @@ public class Usuario {
 
     /**
      * Obtiene el tipo de usuario.
-     * 
-     * @return El tipo de usuario como uno de los valores de {@link TipoUsuario}.
+     *
+     * @return El tipo de usuario como uno de los valores de
+     * {@link TipoUsuario}.
      */
     public TipoUsuario getTipo() {
         return Tipo;
@@ -150,8 +156,9 @@ public class Usuario {
 
     /**
      * Establece el tipo de usuario.
-     * 
-     * @param Tipo El tipo de usuario, que debe ser uno de los valores de {@link TipoUsuario}.
+     *
+     * @param Tipo El tipo de usuario, que debe ser uno de los valores de
+     * {@link TipoUsuario}.
      */
     public void setTipo(TipoUsuario Tipo) {
         this.Tipo = Tipo;
@@ -159,7 +166,7 @@ public class Usuario {
 
     /**
      * Obtiene la foto del usuario.
-     * 
+     *
      * @return La foto del usuario en formato de arreglo de bytes.
      */
     public byte[] getFoto() {
@@ -168,16 +175,16 @@ public class Usuario {
 
     /**
      * Establece la foto del usuario.
-     * 
+     *
      * @param Foto La foto a asignar al usuario en formato de arreglo de bytes.
      */
     public void setFoto(byte[] Foto) {
         this.Foto = Foto;
     }
 
- /**
+    /**
      * Obtiene la fecha de alta del usuario en el sistema.
-     * 
+     *
      * @return La fecha de alta del usuario.
      */
     public Date getFechaAlta() {
@@ -186,7 +193,7 @@ public class Usuario {
 
     /**
      * Establece la fecha de alta del usuario en el sistema.
-     * 
+     *
      * @param FechaAlta La fecha de alta a asignar.
      */
     public void setFechaAlta(Date FechaAlta) {
@@ -195,7 +202,7 @@ public class Usuario {
 
     /**
      * Obtiene la fecha de baja del usuario en el sistema.
-     * 
+     *
      * @return La fecha de baja del usuario.
      */
     public Date getFechaBaja() {
@@ -204,36 +211,42 @@ public class Usuario {
 
     /**
      * Establece la fecha de baja del usuario en el sistema.
-     * 
+     *
      * @param FechaBaja La fecha de baja a asignar.
      */
     public void setFechaBaja(Date FechaBaja) {
         this.FechaBaja = FechaBaja;
     }
-/**
- * Obtiene el Email del usuario.
- * 
- * @return 
- */
+
+    /**
+     * Obtiene el Email del usuario.
+     *
+     * @return
+     */
     public String getEmail() {
         return Email;
     }
-    
+
     /**
      * Establece el Email del usuario.
-     * 
+     *
      * @param Email Establece el Email del usuario.
      */
     public void setEmail(String Email) {
         this.Email = Email;
     }
 
+    public List getAsignaturas() {
+        return Asignaturas;
+    }
+
+    public void setAsignaturas(List Asignaturas) {
+        this.Asignaturas = Asignaturas;
+    }
+
     @Override
     public String toString() {
-        return "Usuario{" + "Usuario=" + Usuario + ", Nombre=" + Nombre + ", Apellidos=" + Apellidos + ", Direccion=" + Direccion + ", Telefono=" + Telefono + ", Pass=" + Pass + ", Email=" + Email + ", Tipo=" + Tipo + ", Foto=" + Foto + ", FechaAlta=" + FechaAlta + ", FechaBaja=" + FechaBaja + '}';
+        return "Usuario{" + "Usuario=" + Usuario + ", Nombre=" + Nombre + ", Apellidos=" + Apellidos + ", Direccion=" + Direccion + ", Telefono=" + Telefono + ", Pass=" + Pass + ", Email=" + Email + ", Tipo=" + Tipo + ", Foto=" + Foto + ", FechaAlta=" + FechaAlta + ", FechaBaja=" + FechaBaja + ", Asignaturas=" + Asignaturas + '}';
     }
-    
-    
-    
-    
+
 }

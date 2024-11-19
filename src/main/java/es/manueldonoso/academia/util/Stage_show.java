@@ -5,11 +5,13 @@
 package es.manueldonoso.academia.util;
 
 import es.manueldonoso.academia.controller.Asignaturas_PanelController;
+import es.manueldonoso.academia.controller.BuscarUsuarioController;
 import es.manueldonoso.academia.controller.Cambio_ContrasenaController;
 import es.manueldonoso.academia.controller.DashBoard_AdministradorController;
 import es.manueldonoso.academia.controller.DashBoard_AlumnoController;
 import es.manueldonoso.academia.controller.DashBoard_ProfesorController;
 import es.manueldonoso.academia.controller.MisDatosController;
+import es.manueldonoso.academia.controller.Registrar_usuario_nuevoController;
 import es.manueldonoso.academia.util.utilidades;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -69,7 +71,7 @@ public class Stage_show {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Login");
             primaryStage.initStyle(StageStyle.UNDECORATED);
-
+            
             Efectos_visuales.darMovimientoStage(primaryStage);
         } catch (IOException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
@@ -111,7 +113,7 @@ public class Stage_show {
             primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
                 @Override
                 public void handle(WindowEvent t) {
-
+                    
                     System.out.println("se cerro la ventana de configuración");
                     //comprobarInstalacion();
 
@@ -125,9 +127,9 @@ public class Stage_show {
         } catch (IOException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
-
+    
     public static void Mostrar_Dasboard_Administrador(Connection conn) {
         try {
             Stage primaryStage = new Stage();
@@ -137,7 +139,7 @@ public class Stage_show {
 
             // Ventana a cargar
             BorderPane ventana = (BorderPane) loader.load();
-
+            
             DashBoard_AdministradorController dashBoard_AdministradorController = loader.getController();
             dashBoard_AdministradorController.SetConn(conn);
 
@@ -155,7 +157,7 @@ public class Stage_show {
             primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
                 @Override
                 public void handle(WindowEvent t) {
-
+                    
                     System.out.println("se cerro la ventana de configuración");
                     //comprobarInstalacion();
 
@@ -169,11 +171,11 @@ public class Stage_show {
         } catch (IOException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
-
+    
     public static void Mostrar_Dasboard_Profesor(Connection conn) {
-
+        
         try {
             Stage primaryStage = new Stage();
             // Cargo la ventana inicial
@@ -185,8 +187,8 @@ public class Stage_show {
 
             // Obtén la instancia del controlador desde el FXMLLoader
             DashBoard_ProfesorController dashBoard_ProfesorController = loader.getController();
-
-             darMovimientoStage(primaryStage);
+            
+            darMovimientoStage(primaryStage);
             // Configura la conexión en la instancia correcta
             dashBoard_ProfesorController.SetConn(conn);
 
@@ -210,9 +212,9 @@ public class Stage_show {
         } catch (IOException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
-
+    
     public static void Mostrar_Dasboard_Alumno(Connection conn) {
         try {
             Stage primaryStage = new Stage();
@@ -231,14 +233,14 @@ public class Stage_show {
             // Modifico el stage
             primaryStage.setScene(scene);
             primaryStage.setTitle("DashBoard Alumno");
-
+            
             Efectos_visuales.darMovimientoStage(primaryStage);
 
             //detectar cierre de ventana
             primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
                 @Override
                 public void handle(WindowEvent t) {
-
+                    
                     System.out.println("se cerro la ventana de configuración");
                     //comprobarInstalacion();
 
@@ -252,9 +254,9 @@ public class Stage_show {
         } catch (IOException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
-
+    
     public static Cambio_ContrasenaController MostrarCambioPass(Pane root) {
         try {
 
@@ -289,7 +291,7 @@ public class Stage_show {
         return null;// Retorna null en caso de error
 
     }
-
+    
     public static boolean Mostrar_Mis_Datos(Connection conn, Pane root, Usuario user) throws IOException {
         // Variable para el estado del cierre
         final boolean[] ventanaCerradaCorrectamente = {false};
@@ -308,7 +310,7 @@ public class Stage_show {
         // Obtener el controlador asociado
         MisDatosController controller = loader.getController();
         controller.setConn(conn);
-
+        
         try {
             Usuario u = Base_datos.BuscarUsuario_Usuario(conn, Session.getUsuario());
             controller.CargarDatos(user);
@@ -330,45 +332,114 @@ public class Stage_show {
             System.out.println("Se cerró la ventana de Datos");
             ventanaCerradaCorrectamente[0] = true; // Indicar que se cerró correctamente
         });
-
+        
         stage.showAndWait();
 
         // Retornar el estado
         return ventanaCerradaCorrectamente[0];
-
-    }
-
-    public static void cargar_asignaturaPanel(Connection conn ,Pane pane) {
-         // Cargar el archivo FXML de la vista asignatura
-    FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(main.class.getResource("/vistas/Asignaturas_Panel.fxml"));
-
-    try {
-        // Cargar el contenido desde el FXML
-        Node contenido = loader.load();
-        Asignaturas_PanelController controller = loader.getController();
-        controller.setConn(conn);
-        controller.CargarAct();
-        controller.CargarDes();
         
-        // Asegurar que el contenido cargado tenga el fondo transparente
-        if (contenido instanceof Pane) {
-            ((Pane) contenido).setStyle("-fx-background-color: transparent;");
-        }
-
-        // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
-        if (contenido instanceof Region) {
-            Region region = (Region) contenido;
-            region.prefWidthProperty().bind(pane.widthProperty());
-            region.prefHeightProperty().bind(pane.heightProperty());
-        }
-
-        // Limpiar el contenido actual del pane y añadir el nuevo
-        pane.getChildren().clear();
-        pane.getChildren().add(contenido);
-
-    } catch (IOException ex) {
-        Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
     }
+    
+    public static void cargar_asignaturaPanel(Connection conn, Pane pane) {
+        // Cargar el archivo FXML de la vista asignatura
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(main.class.getResource("/vistas/Asignaturas_Panel.fxml"));
+        
+        try {
+            // Cargar el contenido desde el FXML
+            Node contenido = loader.load();
+            Asignaturas_PanelController controller = loader.getController();
+            controller.setConn(conn);
+            controller.CargarAct();
+            controller.CargarDes();
+
+            // Asegurar que el contenido cargado tenga el fondo transparente
+            if (contenido instanceof Pane) {
+                ((Pane) contenido).setStyle("-fx-background-color: transparent;");
+            }
+
+            // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
+            if (contenido instanceof Region) {
+                Region region = (Region) contenido;
+                region.prefWidthProperty().bind(pane.widthProperty());
+                region.prefHeightProperty().bind(pane.heightProperty());
+            }
+
+            // Limpiar el contenido actual del pane y añadir el nuevo
+            pane.getChildren().clear();
+            pane.getChildren().add(contenido);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public static void cargar_BuscarUsuaroPanel(Connection conn, Pane pane) {
+        // Cargar el archivo FXML de la vista asignatura
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(main.class.getResource("/vistas/BuscarUsuario.fxml"));
+        
+        try {
+            // Cargar el contenido desde el FXML
+            Node contenido = loader.load();
+            BuscarUsuarioController controller = loader.getController();
+            controller.setConn(conn);
+
+            // Asegurar que el contenido cargado tenga el fondo transparente
+            if (contenido instanceof Pane) {
+                ((Pane) contenido).setStyle("-fx-background-color: transparent;");
+            }
+
+            // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
+            if (contenido instanceof Region) {
+                Region region = (Region) contenido;
+                region.prefWidthProperty().bind(pane.widthProperty());
+                region.prefHeightProperty().bind(pane.heightProperty());
+            }
+
+            // Limpiar el contenido actual del pane y añadir el nuevo
+            pane.getChildren().clear();
+            pane.getChildren().add(contenido);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public static Registrar_usuario_nuevoController Mostrar_Registrar_usuario_nuevo(Connection conn, Pane root) {
+        try {
+
+            // Cargo la ventana inicial
+            FXMLLoader loader = new FXMLLoader();
+            Stage stage = new Stage();
+            loader.setLocation(main.class.getResource("/vistas/Registrar_usuario_nuevo.fxml"));
+
+            // Ventana a cargar
+            AnchorPane ventana = (AnchorPane) loader.load();
+
+            // Obtener el controlador asociado
+            Registrar_usuario_nuevoController controller = loader.getController();
+            controller.setConn(conn);
+            controller.setCB_asignaturas();
+
+            // Creo la escena
+            Scene scene = new Scene(ventana);
+
+            // Modifico el stage
+            stage.setScene(scene);
+            stage.initOwner(root.getScene().getWindow());
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.setResizable(false);
+            stage.setIconified(false);
+            stage.initStyle(StageStyle.UNDECORATED);
+            Efectos_visuales.darMovimientoStage(stage);
+            stage.showAndWait();
+            // Retorna el controlador para que pueda ser usado fuera de este método
+            return controller;
+        } catch (IOException ex) {
+            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;// Retorna null en caso de error
+
     }
 }

@@ -14,6 +14,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -447,5 +449,17 @@ public class Acciones {
             System.out.println(e.getMessage());
             return new byte[0];
         }
+    }
+
+    public static String generaUsuario(Connection conn, String nombre, String apellido) {
+        String usuario = nombre.substring(0, 3) + apellido.substring(0, 3);
+        usuario = usuario.toUpperCase();
+        int i = 0;
+        while (Base_datos.IsUsuario(conn, usuario)) {
+            i++;
+            usuario = usuario.substring(0, 5) + i;
+        }
+        System.out.println(usuario);
+        return usuario;
     }
 }

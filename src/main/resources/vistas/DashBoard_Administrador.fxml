@@ -69,15 +69,6 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="11.0" layoutY="188.0" onAction="#mod_asignatura" prefHeight="54.0" prefWidth="196.0" text="MODIFICAR ASIGNATURA">
-               <graphic>
-                  <ImageView fitHeight="34.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/app/libro.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
          </children>
       </VBox>
    </left>

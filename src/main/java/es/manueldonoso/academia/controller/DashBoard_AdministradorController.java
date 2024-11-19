@@ -87,6 +87,7 @@ public class DashBoard_AdministradorController implements Initializable {
 
     @FXML
     private void agregar_usuario(ActionEvent event) {
+        Stage_show.Mostrar_Registrar_usuario_nuevo(conn, root);
     }
 
     @FXML
@@ -94,12 +95,10 @@ public class DashBoard_AdministradorController implements Initializable {
         Stage_show.cargar_asignaturaPanel(conn,ac_center);
     }
 
-    @FXML
-    private void mod_asignatura(ActionEvent event) {
-    }
 
     @FXML
     private void BUSCAR_USUARIO(ActionEvent event) {
+        Stage_show.cargar_BuscarUsuaroPanel(conn, ac_center);
     }
 
     public Usuario getUser() {
@@ -120,4 +119,6 @@ public class DashBoard_AdministradorController implements Initializable {
             Logger.getLogger(DashBoard_ProfesorController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
 }

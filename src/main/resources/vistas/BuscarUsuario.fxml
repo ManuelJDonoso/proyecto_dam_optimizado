@@ -1,11 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.BuscarUsuarioController">
-    
-</AnchorPane>
+<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.BuscarUsuarioController">
+   <children>
+      <TextFlow prefHeight="92.0" prefWidth="600.0" textAlignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Buscar Usuario" wrappingWidth="254.162109375">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+            </Text>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="15.0" top="15.0" />
+         </padding>
+      </TextFlow>
+      <SplitPane dividerPositions="0.38250283125707807" maxWidth="1.7976931348623157E308" prefHeight="470.0" prefWidth="600.0">
+         <items>
+            <FlowPane maxWidth="-Infinity" prefHeight="320.0" prefWidth="294.0">
+               <children>
+                  <TextFlow prefHeight="34.0" prefWidth="104.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NOMBRE" wrappingWidth="102.52575302124023" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="8.0" />
+                     </padding>
+                  </TextFlow>
+                  <JFXTextField fx:id="tf_Nombre" onKeyTyped="#buscarUsuarios" />
+                  <TextFlow prefHeight="34.0" prefWidth="104.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="APELLIDOS" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="8.0" />
+                     </padding>
+                  </TextFlow>
+                  <JFXTextField fx:id="tf_Apellidos" onKeyTyped="#buscarUsuarios" />
+                  <TextFlow layoutX="10.0" layoutY="44.0" prefHeight="34.0" prefWidth="104.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DIRECCIÓN" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="8.0" />
+                     </padding>
+                  </TextFlow>
+                  <JFXTextField fx:id="tf_Direccion" layoutX="114.0" layoutY="49.0" onKeyTyped="#buscarUsuarios" />
+                  <TextFlow layoutX="10.0" layoutY="79.0" prefHeight="34.0" prefWidth="104.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="8.0" />
+                     </padding>
+                  </TextFlow>
+                  <JFXTextField fx:id="tf_Email" layoutX="114.0" layoutY="83.0" onKeyTyped="#buscarUsuarios" />
+                  <TextFlow layoutX="10.0" layoutY="113.0" prefHeight="34.0" prefWidth="104.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TELEFONO" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="8.0" />
+                     </padding>
+                  </TextFlow>
+                  <JFXTextField fx:id="tf_Telefono" layoutX="114.0" layoutY="118.0" onKeyTyped="#buscarUsuarios" />
+                  <TextFlow layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="104.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="USUARIO" wrappingWidth="102.52575302124023" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" top="8.0" />
+                     </padding>
+                  </TextFlow>
+                  <JFXTextField fx:id="tf_Usuario" layoutX="114.0" layoutY="14.0" onKeyTyped="#buscarUsuarios" />
+               </children>
+            </FlowPane>
+            <VBox prefHeight="360.0" prefWidth="432.0">
+               <children>
+                  <Accordion>
+                     <panes>
+                        <TitledPane animated="false" text="Administador">
+                           <content>
+                              <ScrollPane>
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                       <children>
+                                          <TableView fx:id="tabla_admin" layoutX="-4.0" prefHeight="200.0" prefWidth="434.0">
+                                             <columns>
+                                                <TableColumn fx:id="colum_usuario_admin" prefWidth="338.4000005722046" text="Usuario" />
+                                                <TableColumn fx:id="columna_Accion_administrador" minWidth="6.4000244140625" prefWidth="103.2000732421875" text="Accion" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <Accordion>
+                     <panes>
+                        <TitledPane animated="false" text="Profesor">
+                           <content>
+                              <ScrollPane>
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                       <children>
+                                          <TableView fx:id="tabla_profesor" layoutX="-14.0" prefHeight="200.0" prefWidth="443.0">
+                                             <columns>
+                                                <TableColumn fx:id="usuario_profesor" prefWidth="338.4000005722046" text="Usuario" />
+                                                <TableColumn fx:id="accion_profesor" minWidth="6.4000244140625" prefWidth="103.2000732421875" text="Accion" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <Accordion>
+                     <panes>
+                        <TitledPane animated="false" text="Alumno">
+                           <content>
+                              <ScrollPane>
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0">
+                                       <children>
+                                          <TableView fx:id="tabla_alumnoa" layoutX="-14.0" prefHeight="200.0" prefWidth="443.0">
+                                             <columns>
+                                                <TableColumn fx:id="Usuario_alumno" prefWidth="338.4000005722046" text="Usuario" />
+                                                <TableColumn fx:id="accion_alumno" minWidth="6.4000244140625" prefWidth="103.2000732421875" text="Accion" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0">
+         <buttons>
+            <Button mnemonicParsing="false" onAction="#btn_cerrar" text="Cerrar" />
+         </buttons>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </VBox.margin>
+      </ButtonBar>
+   </children>
+</VBox>

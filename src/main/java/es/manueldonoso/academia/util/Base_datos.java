@@ -26,6 +26,7 @@ import java.util.logging.Logger;
  */
 public class Base_datos {
 
+//------------------------------------------------Conexiones-------------------------------------------------------------
     /**
      * Establece una conexión con una base de datos SQLite.
      * <p>
@@ -162,6 +163,7 @@ public class Base_datos {
 
     }
 
+    //--------------------------------------------------contrato------------------------------------------------------------------------------
     /**
      * Registra un nuevo producto en las tablas "Registro_tabla" y
      * "usuario_tabla" utilizando los datos de un objeto `Usuario`. Inserta un
@@ -344,6 +346,7 @@ public class Base_datos {
         }
     }
 
+//---------------------------------------usuarios----------------------------------------------------------------------------------------
     /**
      * Actualiza el usuario y la contraseña almacenados en la tabla
      * Usuario_Guardado_tabla. Este método sobrescribe los valores de las
@@ -651,6 +654,28 @@ public class Base_datos {
         }
     }
 
+    public static boolean IsUsuario(Connection conn, String usuario) {
+        String sql = "SELECT fk_tipo FROM usuario_tabla WHERE Usuario = ? ";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, usuario); // Establecer el nombre de usuario en el primer parámetro
+
+            String tipo = "";
+            // Ejecutar la consulta
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+
+                    return true;
+                }
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Base_datos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+    //----------------------------------------------------Asignaturas---------------------------------------------------------
+
     public static void AltaAsignatura(Connection conn, String Asignatura) {
         // Consulta para verificar si la asignatura ya existe
         String checkSql = "SELECT COUNT(*) FROM Asignaturas_tabla WHERE asignatura = ?";
@@ -749,7 +774,7 @@ public class Base_datos {
             System.out.println("Error al desactivar la asignatura: " + e.getMessage());
         }
     }
-    
+
     public static void activarAsignatura(Connection conn, String asignatura) {
         String sql = "UPDATE Asignaturas_tabla SET activo = 1 WHERE asignatura= ?";
 
@@ -767,6 +792,54 @@ public class Base_datos {
             }
         } catch (SQLException e) {
             System.out.println("Error al desactivar la asignatura: " + e.getMessage());
+        }
+    }
+
+    public static void GuardarUsuarioNuevo(Connection conn, Usuario user) throws SQLException {
+        String sql = "INSERT INTO usuario_tabla (Usuario, Nombre, Apellidos, Direccion, Telefono, Pass, Email, fk_tipo, fechaAlta, fechaBaja) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)";
+        String sqlRegistroAsignaturas = "INSERT INTO usuario_asignatura (usuario, asignatura) VALUES (?, ?)";
+
+        try (PreparedStatement pstmtUsuario = conn.prepareStatement(sql); PreparedStatement pstmtAsignaturas = conn.prepareStatement(sqlRegistroAsignaturas)) {
+
+            // Formato de la fecha de alta
+            String fechaAlta = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+
+            // Insertar datos del usuario
+            pstmtUsuario.setString(1, user.getUsuario()); // Usuario
+            pstmtUsuario.setString(2, user.getNombre()); // Nombre
+            pstmtUsuario.setString(3, user.getApellidos()); // Apellidos
+            pstmtUsuario.setString(4, user.getDireccion()); // Direccion
+            pstmtUsuario.setString(5, user.getTelefono()); // Telefono
+            pstmtUsuario.setString(6, user.getPass()); // Pass
+            pstmtUsuario.setString(7, user.getEmail()); // Email
+
+            // Manejar el tipo de usuario, asignando NULL si no está definido
+            if (user.getTipo() != null) {
+                pstmtUsuario.setString(8, user.getTipo().toString());
+            } else {
+                pstmtUsuario.setNull(8, java.sql.Types.VARCHAR);
+            }
+
+            pstmtUsuario.setString(9, fechaAlta); // fechaAlta
+            pstmtUsuario.executeUpdate();
+
+            System.out.println("Usuario registrado exitosamente.");
+
+            // Insertar asignaturas asociadas al usuario
+            List<String> asignaturas = user.getAsignaturas();
+            if (asignaturas != null) {
+                for (String asignatura : asignaturas) {
+                    pstmtAsignaturas.setString(1, user.getUsuario()); // Usuario
+                    pstmtAsignaturas.setString(2, asignatura); // Asignatura
+                    pstmtAsignaturas.executeUpdate();
+                }
+                System.out.println("Asignaturas asociadas exitosamente.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al insertar los registros: " + e.getMessage());
+            throw e; // Propagar la excepción
         }
     }
 }
