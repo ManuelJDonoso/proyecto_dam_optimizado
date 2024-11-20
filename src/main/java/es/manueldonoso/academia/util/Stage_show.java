@@ -11,6 +11,7 @@ import es.manueldonoso.academia.controller.DashBoard_AdministradorController;
 import es.manueldonoso.academia.controller.DashBoard_AlumnoController;
 import es.manueldonoso.academia.controller.DashBoard_ProfesorController;
 import es.manueldonoso.academia.controller.MisDatosController;
+import es.manueldonoso.academia.controller.ModificarDatosUsuarioController;
 import es.manueldonoso.academia.controller.Registrar_usuario_nuevoController;
 import es.manueldonoso.academia.util.utilidades;
 import java.io.IOException;
@@ -188,7 +189,7 @@ public class Stage_show {
             // Obtén la instancia del controlador desde el FXMLLoader
             DashBoard_ProfesorController dashBoard_ProfesorController = loader.getController();
             
-            darMovimientoStage(primaryStage);
+            
             // Configura la conexión en la instancia correcta
             dashBoard_ProfesorController.SetConn(conn);
 
@@ -207,6 +208,7 @@ public class Stage_show {
                 System.out.println("Se cerró la ventana de configuración");
             });
 
+            darMovimientoStage(primaryStage);
             // Mostrar ventana
             primaryStage.show();
         } catch (IOException ex) {
@@ -384,6 +386,7 @@ public class Stage_show {
             Node contenido = loader.load();
             BuscarUsuarioController controller = loader.getController();
             controller.setConn(conn);
+            controller.iniciar();
 
             // Asegurar que el contenido cargado tenga el fondo transparente
             if (contenido instanceof Pane) {
@@ -441,5 +444,53 @@ public class Stage_show {
         }
         return null;// Retorna null en caso de error
 
+    }
+    
+    
+    public static void Mostrar_ModificarDastos(Connection conn, Pane root, String user)  {
+        // Variable para el estado del cierre
+        final boolean[] ventanaCerradaCorrectamente = {false};
+
+        // Cargo la ventana inicial
+        FXMLLoader loader = new FXMLLoader();
+        Stage stage = new Stage();
+        loader.setLocation(main.class.getResource("/vistas/ModificarDatosUsuario.fxml"));
+
+        // Ventana a cargar
+        AnchorPane ventana = null;
+        try {
+            ventana = (AnchorPane) loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        // Creo la escena
+        Scene scene = new Scene(ventana);
+
+        // Obtener el controlador asociado
+        ModificarDatosUsuarioController controller = loader.getController();
+        controller.setConn(conn);
+        controller.loadUserData(user);
+        controller.setCB_asignaturas();
+     
+
+        // Modifico el stage
+        stage.setScene(scene);
+        stage.initOwner(root.getScene().getWindow());
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.setResizable(false);
+        stage.setIconified(false);
+        stage.initStyle(StageStyle.UNDECORATED);
+        darMovimientoStage(stage);
+
+        // Detectar cierre de ventana y actualizar el estado
+        stage.setOnHidden(event -> {
+            System.out.println("Se cerró la ventana de modificar Datos");
+            ventanaCerradaCorrectamente[0] = true; // Indicar que se cerró correctamente
+        });
+        
+        stage.showAndWait();
+
+        
     }
 }

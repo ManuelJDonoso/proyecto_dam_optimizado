@@ -95,7 +95,7 @@ public class MisDatosController implements Initializable {
 
     @FXML
     private void tbn_cancelar(ActionEvent event) {
-   
+
         Efectos_visuales.closeEffectReducion(root);
     }
 
@@ -103,17 +103,17 @@ public class MisDatosController implements Initializable {
     private void btn_cargar(ActionEvent event) {
 
         Stage stage = new Stage();
-    byte[] fototomada = Acciones.ImageToByte(stage);
+        byte[] fototomada = Acciones.ImageToByte(stage);
 
-    if (fototomada.length == 0) {
-        // Si no se seleccionó archivo, deshabilitar el botón
-        btn_aceptar.setDisable(true);
-    } else {
-        // Si se seleccionó un archivo, habilitar el botón y actualizar la imagen
-        foto = fototomada;
-        btn_aceptar.setDisable(false);
-        Acciones.imagenView_cambiarImage(this.getClass(), iv_foto, foto);
-    }
+        if (fototomada.length == 0) {
+            // Si no se seleccionó archivo, deshabilitar el botón
+            btn_aceptar.setDisable(true);
+        } else {
+            // Si se seleccionó un archivo, habilitar el botón y actualizar la imagen
+            foto = fototomada;
+            btn_aceptar.setDisable(false);
+            Acciones.imagenView_cambiarImage(this.getClass(), iv_foto, foto);
+        }
 
     }
 
@@ -121,7 +121,7 @@ public class MisDatosController implements Initializable {
     private void btn_eliminar(ActionEvent event) {
         foto = null;
         Acciones.imagenView_cambiarImage(this.getClass(), iv_foto, "src/main/resources/images/app/incorgnito.png");
-             btn_aceptar.setDisable(false);
+        btn_aceptar.setDisable(false);
     }
 
     private BooleanProperty estadoCamara = new SimpleBooleanProperty(false);

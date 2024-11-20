@@ -6,19 +6,25 @@ package es.manueldonoso.academia.util;
 
 import es.manueldonoso.academia.modelos.Usuario;
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -433,7 +439,7 @@ public class Base_datos {
      */
     public static void insertarUsuarios(Connection conn) throws SQLException {
         String sql = "INSERT INTO usuario_tabla (Usuario, Nombre, Apellidos, Direccion, Telefono, Pass, Email, fk_tipo, fechaAlta, fechaBaja) "
-                + "VALUES (?, ?, ?, NULL, NULL, ?, ?, ?, ?, NULL)";
+                + "VALUES (?, ?, ?, '', '', ?, ?, ?, ?, NULL)";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             // Formato de la fecha de alta
@@ -576,7 +582,10 @@ public class Base_datos {
 
     public static Usuario BuscarUsuario_Usuario(Connection conn, String usuario) throws SQLException {
         String sql = "SELECT * FROM usuario_tabla WHERE Usuario = ?";
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        String sqlAsignaturas = "SELECT * FROM usuario_asignatura WHERE usuario =?";
+        List<String> asignaturasExistentes = new ArrayList<>();
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql); PreparedStatement pstmtAsignaturas = conn.prepareStatement(sqlAsignaturas)) {
             pstmt.setString(1, usuario); // Establecer el nombre de usuario en el primer parámetro
 
             // Ejecutar la consulta
@@ -591,7 +600,7 @@ public class Base_datos {
                     user.setFoto(rs.getBytes("Foto"));
                     user.setEmail(rs.getString("Email"));
                     user.setUsuario(rs.getString("Usuario"));
-                    utilidades.log(rs.getString("fk_tipo"));
+
                     switch (rs.getString("fk_tipo")) {
                         case "ALUMNO":
                             user.setTipo(Usuario.TipoUsuario.ALUMNO);
@@ -605,6 +614,40 @@ public class Base_datos {
                         default:
 
                     }
+
+                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                    if (rs.getString("fechaAlta") != null && !rs.getString("fechaAlta").isBlank()) {
+                        try {
+                            java.util.Date fechaAlta = formatter.parse(rs.getString("fechaAlta"));
+
+                            user.setFechaAlta(Acciones.utilDate_to_sqlDate(fechaAlta));
+                        } catch (ParseException ex) {
+                            Logger.getLogger(Base_datos.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+
+                    if (rs.getString("fechaBaja") != null && !rs.getString("fechaBaja").isBlank()) {
+                        try {
+                            java.util.Date fechaBaja = formatter.parse(rs.getString("fechaBaja"));
+
+                            user.setFechaBaja(Acciones.utilDate_to_sqlDate(fechaBaja));
+                        } catch (ParseException ex) {
+                            Logger.getLogger(Base_datos.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+
+                    }
+
+                    pstmtAsignaturas.setString(1, user.getUsuario());
+                    try (ResultSet rs2 = pstmtAsignaturas.executeQuery()) {
+                        while (rs2.next()) {
+                            asignaturasExistentes.add(rs2.getString("asignatura"));
+                            
+
+                        }
+                    }
+                    
+                    user.setAsignaturas(asignaturasExistentes);
 
                     return user;
                 } else {
@@ -666,13 +709,63 @@ public class Base_datos {
                 if (rs.next()) {
 
                     return true;
+
                 }
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Base_datos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Base_datos.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         return false;
+    }
+
+    public static void GuardarUsuarioNuevo(Connection conn, Usuario user) throws SQLException {
+        String sql = "INSERT INTO usuario_tabla (Usuario, Nombre, Apellidos, Direccion, Telefono, Pass, Email, fk_tipo, fechaAlta, fechaBaja) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)";
+        String sqlRegistroAsignaturas = "INSERT INTO usuario_asignatura (usuario, asignatura) VALUES (?, ?)";
+
+        try (PreparedStatement pstmtUsuario = conn.prepareStatement(sql); PreparedStatement pstmtAsignaturas = conn.prepareStatement(sqlRegistroAsignaturas)) {
+
+            // Formato de la fecha de alta
+            String fechaAlta = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+
+            // Insertar datos del usuario
+            pstmtUsuario.setString(1, user.getUsuario()); // Usuario
+            pstmtUsuario.setString(2, user.getNombre()); // Nombre
+            pstmtUsuario.setString(3, user.getApellidos()); // Apellidos
+            pstmtUsuario.setString(4, user.getDireccion()); // Direccion
+            pstmtUsuario.setString(5, user.getTelefono()); // Telefono
+            pstmtUsuario.setString(6, user.getPass()); // Pass
+            pstmtUsuario.setString(7, user.getEmail()); // Email
+
+            // Manejar el tipo de usuario, asignando NULL si no está definido
+            if (user.getTipo() != null) {
+                pstmtUsuario.setString(8, user.getTipo().toString());
+            } else {
+                pstmtUsuario.setNull(8, java.sql.Types.VARCHAR);
+            }
+
+            pstmtUsuario.setString(9, fechaAlta); // fechaAlta
+            pstmtUsuario.executeUpdate();
+
+            System.out.println("Usuario registrado exitosamente.");
+
+            // Insertar asignaturas asociadas al usuario
+            List<String> asignaturas = user.getAsignaturas();
+            if (asignaturas != null) {
+                for (String asignatura : asignaturas) {
+                    pstmtAsignaturas.setString(1, user.getUsuario()); // Usuario
+                    pstmtAsignaturas.setString(2, asignatura); // Asignatura
+                    pstmtAsignaturas.executeUpdate();
+                }
+                System.out.println("Asignaturas asociadas exitosamente.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al insertar los registros: " + e.getMessage());
+            throw e; // Propagar la excepción
+        }
     }
     //----------------------------------------------------Asignaturas---------------------------------------------------------
 
@@ -795,51 +888,169 @@ public class Base_datos {
         }
     }
 
-    public static void GuardarUsuarioNuevo(Connection conn, Usuario user) throws SQLException {
-        String sql = "INSERT INTO usuario_tabla (Usuario, Nombre, Apellidos, Direccion, Telefono, Pass, Email, fk_tipo, fechaAlta, fechaBaja) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)";
-        String sqlRegistroAsignaturas = "INSERT INTO usuario_asignatura (usuario, asignatura) VALUES (?, ?)";
+    public static ObservableList<Usuario> buscarUser(Connection conn, String fk_ClaseUser, String Nombre, String Apellidos,
+            String Telefono, String Email, String Usuario, String Direccion) {
 
-        try (PreparedStatement pstmtUsuario = conn.prepareStatement(sql); PreparedStatement pstmtAsignaturas = conn.prepareStatement(sqlRegistroAsignaturas)) {
+        String sql = "SELECT Nombre, Apellidos, Telefono, Email, Usuario, Direccion, fk_tipo "
+                + "FROM usuario_tabla "
+                + "WHERE (fk_tipo LIKE COALESCE(?, '%')) " // 1
+                + "AND (Nombre LIKE COALESCE(?, '%')) " // 2
+                + "AND (Apellidos LIKE COALESCE(?, '%')) " // 3
+                + "AND (Email LIKE COALESCE(?, '%')) " // 4
+                + "AND (COALESCE(Telefono, '') LIKE COALESCE(?, '%')) " // 5
+                + "AND (Usuario LIKE COALESCE(?, '%')) " // 6
+                + "AND (Direccion LIKE COALESCE(?, '%'))";   // 7
 
-            // Formato de la fecha de alta
-            String fechaAlta = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        ObservableList<Usuario> data = FXCollections.observableArrayList();
 
-            // Insertar datos del usuario
-            pstmtUsuario.setString(1, user.getUsuario()); // Usuario
-            pstmtUsuario.setString(2, user.getNombre()); // Nombre
-            pstmtUsuario.setString(3, user.getApellidos()); // Apellidos
-            pstmtUsuario.setString(4, user.getDireccion()); // Direccion
-            pstmtUsuario.setString(5, user.getTelefono()); // Telefono
-            pstmtUsuario.setString(6, user.getPass()); // Pass
-            pstmtUsuario.setString(7, user.getEmail()); // Email
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // Configurar los parámetros para COALESCE
+            pstmt.setString(1, fk_ClaseUser != null && !fk_ClaseUser.isEmpty() ? "%" + fk_ClaseUser + "%" : "%");
+            pstmt.setString(2, Nombre != null && !Nombre.isEmpty() ? "%" + Nombre + "%" : "%");
+            pstmt.setString(3, Apellidos != null && !Apellidos.isEmpty() ? "%" + Apellidos + "%" : "%");
+            pstmt.setString(4, Email != null && !Email.isEmpty() ? "%" + Email + "%" : "%");
+            pstmt.setString(5, Telefono != null && !Telefono.isEmpty() ? "%" + Telefono + "%" : "%");
+            pstmt.setString(6, Usuario != null && !Usuario.isEmpty() ? "%" + Usuario + "%" : "%");
+            pstmt.setString(7, Direccion != null && !Direccion.isEmpty() ? "%" + Direccion + "%" : "%");
 
-            // Manejar el tipo de usuario, asignando NULL si no está definido
-            if (user.getTipo() != null) {
-                pstmtUsuario.setString(8, user.getTipo().toString());
-            } else {
-                pstmtUsuario.setNull(8, java.sql.Types.VARCHAR);
-            }
+            // Ejecutar la consulta
+            ResultSet rs = pstmt.executeQuery();
 
-            pstmtUsuario.setString(9, fechaAlta); // fechaAlta
-            pstmtUsuario.executeUpdate();
+            // Procesar los resultados
+            while (rs.next()) {
+                Usuario user = new Usuario();
+                user.setNombre(rs.getString("Nombre"));
+                user.setApellidos(rs.getString("Apellidos"));
+                user.setTelefono(rs.getString("Telefono"));
+                user.setEmail(rs.getString("Email"));
+                user.setUsuario(rs.getString("Usuario"));
+                user.setDireccion(rs.getString("Direccion"));
 
-            System.out.println("Usuario registrado exitosamente.");
+                // Mapear el tipo de usuario
+                String claseUser = rs.getString("fk_tipo");
+                user.setTipo(mapearTipoUsuario(claseUser));
 
-            // Insertar asignaturas asociadas al usuario
-            List<String> asignaturas = user.getAsignaturas();
-            if (asignaturas != null) {
-                for (String asignatura : asignaturas) {
-                    pstmtAsignaturas.setString(1, user.getUsuario()); // Usuario
-                    pstmtAsignaturas.setString(2, asignatura); // Asignatura
-                    pstmtAsignaturas.executeUpdate();
-                }
-                System.out.println("Asignaturas asociadas exitosamente.");
+                // Imprimir para depuración y agregar a la lista
+                data.add(user);
             }
 
         } catch (SQLException e) {
-            System.out.println("Error al insertar los registros: " + e.getMessage());
-            throw e; // Propagar la excepción
+            System.err.println("Error al buscar usuarios: " + e.getMessage());
+        }
+
+        return data;
+    }
+
+    private static Usuario.TipoUsuario mapearTipoUsuario(String claseUser) {
+        if (claseUser == null) {
+            return null; // O un valor predeterminado
+        }
+        switch (claseUser) {
+            case "ALUMNO":
+                return Usuario.TipoUsuario.ALUMNO;
+            case "ADMINISTRADOR":
+                return Usuario.TipoUsuario.ADMINISTRADOR;
+            case "PROFESOR":
+                return Usuario.TipoUsuario.PROFESOR;
+            default:
+                return null; // O Usuario.TipoUsuario.GENERICO
         }
     }
+
+    public static void ActualizarUsuario(Connection conn, Usuario user) {
+        List<String> asignaturasExistentes = new ArrayList<>();
+        List<String> asignaturas = user.getAsignaturas();
+
+        String sqlActualizar = "UPDATE usuario_tabla SET "
+                + "Nombre = ?, Apellidos = ?, Direccion = ?, Telefono = ?, Foto=?, Email = ?, fk_tipo = ?, fechaAlta=?, fechaBaja = ? "
+                + "WHERE Usuario = ?";
+
+        String sqlAsignaturaUsuario = "SELECT asignatura FROM usuario_asignatura WHERE usuario = ?";
+
+        String sqlInsertarAsignaturas = "INSERT INTO usuario_asignatura (usuario, asignatura) VALUES (?, ?)";
+        String deleteSQL = "DELETE FROM usuario_asignatura WHERE usuario = ? AND asignatura = ?";
+
+        try {
+            // 1. Deshabilitar auto-commit
+            conn.setAutoCommit(false);
+
+            // Preparar sentencias
+            try (PreparedStatement pstmtActualizar = conn.prepareStatement(sqlActualizar); PreparedStatement pstmtAsignaturaUsuario = conn.prepareStatement(sqlAsignaturaUsuario); PreparedStatement pstmtInsertarAsignatura = conn.prepareStatement(sqlInsertarAsignaturas); PreparedStatement pstmtEliminarAsignatura = conn.prepareStatement(deleteSQL)) {
+
+                // 2. Actualizar usuario
+                pstmtActualizar.setString(1, user.getNombre());
+                pstmtActualizar.setString(2, user.getApellidos());
+                pstmtActualizar.setString(3, user.getDireccion());
+                pstmtActualizar.setString(4, user.getTelefono());
+                pstmtActualizar.setBytes(5, user.getFoto());
+                pstmtActualizar.setString(6, user.getEmail());
+
+                if (user.getTipo() != null) {
+                    pstmtActualizar.setString(7, user.getTipo().toString());
+                } else {
+                    pstmtActualizar.setNull(7, java.sql.Types.VARCHAR);
+                }
+
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                if (user.getFechaAlta() != null) {
+                    pstmtActualizar.setString(8, formatter.format(user.getFechaAlta()));
+                } else {
+                    pstmtActualizar.setNull(8, java.sql.Types.TIMESTAMP);
+                }
+
+                if (user.getFechaBaja() != null) {
+                    pstmtActualizar.setString(9, formatter.format(user.getFechaBaja()));
+                } else {
+                    pstmtActualizar.setNull(9, java.sql.Types.TIMESTAMP);
+                }
+
+                pstmtActualizar.setString(10, user.getUsuario());
+                pstmtActualizar.executeUpdate();
+
+                // 3. Obtener asignaturas existentes
+                pstmtAsignaturaUsuario.setString(1, user.getUsuario());
+                try (ResultSet rs = pstmtAsignaturaUsuario.executeQuery()) {
+                    while (rs.next()) {
+                        asignaturasExistentes.add(rs.getString("asignatura"));
+                    }
+                }
+
+                // 4. Insertar nuevas asignaturas
+                for (String asignatura : asignaturas) {
+                    if (!asignaturasExistentes.contains(asignatura)) {
+                        pstmtInsertarAsignatura.setString(1, user.getUsuario());
+                        pstmtInsertarAsignatura.setString(2, asignatura);
+                        pstmtInsertarAsignatura.executeUpdate();
+                    }
+                }
+
+                // 5. Eliminar asignaturas que ya no están en la lista
+                for (String asignatura : asignaturasExistentes) {
+                    if (!asignaturas.contains(asignatura)) {
+                        pstmtEliminarAsignatura.setString(1, user.getUsuario());
+                        pstmtEliminarAsignatura.setString(2, asignatura);
+                        pstmtEliminarAsignatura.executeUpdate();
+                    }
+                }
+
+                // 6. Confirmar transacción
+                conn.commit();
+            } catch (SQLException ex) {
+                // En caso de error, revertir transacción
+                conn.rollback();
+                Logger
+                        .getLogger(Base_datos.class
+                                .getName()).log(Level.SEVERE, "Error durante la transacción, cambios revertidos", ex);
+            } finally {
+                // Volver a habilitar auto-commit
+                conn.setAutoCommit(true);
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Base_datos.class
+                    .getName()).log(Level.SEVERE, "Error al configurar la conexión", ex);
+        }
+    }
+
 }

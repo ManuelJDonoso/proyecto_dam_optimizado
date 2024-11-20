@@ -210,6 +210,7 @@ public class Registrar_usuario_nuevoController implements Initializable {
             tipo = "ALUMNO";
         }
 
+        user.setTelefono(tf_tel.getText());
         switch (tipo) {
             case "ADMINISTRADOR":
                 user.setTipo(Usuario.TipoUsuario.ADMINISTRADOR);

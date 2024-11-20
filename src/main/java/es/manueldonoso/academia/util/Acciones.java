@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -461,5 +462,19 @@ public class Acciones {
         }
         System.out.println(usuario);
         return usuario;
+    }
+
+    public static String generarConsultaSQL(String sql, Object... parametros) {
+        for (Object param : parametros) {
+            String valor = (param != null) ? param.toString() : "NULL";
+            sql = sql.replaceFirst("\\?", "'" + valor + "'");
+        }
+        return sql;
+    }
+
+    public static java.sql.Date utilDate_to_sqlDate(java.util.Date date) {
+        java.util.Date utilDate = date; // Fecha actual
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        return sqlDate;
     }
 }
