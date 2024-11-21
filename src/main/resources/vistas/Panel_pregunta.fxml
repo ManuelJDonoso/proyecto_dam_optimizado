@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox fx:id="root" prefHeight="406.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.Panel_preguntaController">
+   <children>
+      <VBox fx:id="panel_principal" prefHeight="393.0" prefWidth="945.0">
+         <children>
+            <VBox fx:id="pregunta" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox fx:id="lb1" alignment="CENTER" prefHeight="44.0" prefWidth="945.0">
+                     <children>
+                        <Text fx:id="lb" strokeType="OUTSIDE" strokeWidth="0.0" text="PREGUNTA">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fx:id="lb10" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <JFXTextArea fx:id="ta_pregunta" prefHeight="161.0" prefWidth="945.0" promptText="INSERTA LA PREGUNTA" wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+               </children>
+            </VBox>
+            <VBox fx:id="verdadera" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox fx:id="panel3" alignment="CENTER" prefHeight="44.0" prefWidth="945.0">
+                     <children>
+                        <Text fx:id="lb2" strokeType="OUTSIDE" strokeWidth="0.0" text="RESPUESTA">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fx:id="lb3" strokeType="OUTSIDE" strokeWidth="0.0" text="VERDADEDA">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <JFXTextArea fx:id="ta_res_v" prefHeight="161.0" prefWidth="945.0" promptText="INSERTA LA RESPUESTA VERDADERA" wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox fx:id="falsa1" layoutX="10.0" layoutY="110.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox fx:id="panel454" alignment="CENTER" prefHeight="44.0" prefWidth="945.0">
+                     <children>
+                        <Text fx:id="lb4" strokeType="OUTSIDE" strokeWidth="0.0" text="RESPUESTA">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fx:id="lb5" strokeType="OUTSIDE" strokeWidth="0.0" text="FALSA 1">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <JFXTextArea fx:id="ta_resF1" prefHeight="161.0" prefWidth="945.0" promptText="INSERTA RESPUESTA ERRONEA" wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox fx:id="falsa2" layoutX="10.0" layoutY="143.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox fx:id="panel366" alignment="CENTER" prefHeight="44.0" prefWidth="945.0">
+                     <children>
+                        <Text fx:id="lb6" strokeType="OUTSIDE" strokeWidth="0.0" text="RESPUESTA">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fx:id="lb7" strokeType="OUTSIDE" strokeWidth="0.0" text="FALSA 2">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <JFXTextArea fx:id="ta_resF2" prefHeight="161.0" prefWidth="945.0" promptText="INSERTA RESPUESTA ERRONEA" wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox fx:id="falsa3" layoutX="10.0" layoutY="175.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox fx:id="lb9" alignment="CENTER" prefHeight="44.0" prefWidth="945.0">
+                     <children>
+                        <Text fx:id="lb8" strokeType="OUTSIDE" strokeWidth="0.0" text="RESPUESTA">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fx:id="lb11" strokeType="OUTSIDE" strokeWidth="0.0" text="FALSA3">
+                           <font>
+                              <Font name="Comic Sans MS" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <JFXTextArea fx:id="ta_resF3" prefHeight="161.0" prefWidth="945.0" promptText="INSERTA REPUESTA ERRONEA" wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </JFXTextArea>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

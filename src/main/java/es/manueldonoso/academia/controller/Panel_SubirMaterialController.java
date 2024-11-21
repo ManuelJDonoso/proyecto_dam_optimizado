@@ -21,12 +21,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -75,7 +78,6 @@ public class Panel_SubirMaterialController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
 
         colum_Asignatura.setCellValueFactory(new PropertyValueFactory<>("asignatura"));
         colum_tema.setCellValueFactory(new PropertyValueFactory<>("tema"));
@@ -97,7 +99,18 @@ public class Panel_SubirMaterialController implements Initializable {
 
                 btnEliminar.setOnAction(event -> {
                     Material material = getTableView().getItems().get(getIndex());
-                    // eliminarMaterial(material);
+
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle("Confirmar eliminación");
+                    alert.setHeaderText("¿Estás seguro de que deseas eliminar el archivo?");
+                    alert.setContentText(material.getNombre());
+
+                    Optional<ButtonType> result = alert.showAndWait();
+                    if (result.isPresent() && result.get() == ButtonType.OK) {
+                        Base_datos.eliminarArchivo(conn, material.getId(), material.getNombre());
+                        cargarDatosDesdeBaseDeDatos();
+                    }
+
                 });
                 activo.setOnAction(event -> {
                     Material material = getTableView().getItems().get(getIndex());

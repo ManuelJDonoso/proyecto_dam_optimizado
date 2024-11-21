@@ -27,6 +27,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -1084,7 +1085,7 @@ public class Base_datos {
         }
     }
 
-    public static void descargarArchivo(Connection conn, String id,String nombreArchivo) {
+    public static void descargarArchivo(Connection conn, String id, String nombreArchivo) {
         String consulta = "SELECT archivo FROM Material WHERE id = ?";
         FileOutputStream fos = null;
 
@@ -1136,4 +1137,60 @@ public class Base_datos {
             }
         }
     }
+
+    public static void eliminarArchivo(Connection conn, String id, String nombreArchivo) {
+        String consulta = "DELETE FROM Material WHERE id = ?";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(consulta)) {
+            pstmt.setString(1, id); // Establece el nombre del archivo como parámetro
+
+            int filasAfectadas = pstmt.executeUpdate(); // Ejecuta la consulta
+
+            if (filasAfectadas > 0) {
+                System.out.println("Archivo eliminado correctamente de la base de datos: " + nombreArchivo);
+            } else {
+                System.out.println("No se encontró un archivo con el nombre especificado: " + nombreArchivo);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error al eliminar el archivo de la base de datos.");
+        }
+    }
+    
+    public static void guardarExamenGeneradoEnBaseDeDatos(Connection conn, String asignatura,String tema, List<Map<String, String>> respuestas) {
+    String sql = "INSERT INTO Examenes_tabla (asignatura,tema, pregunta, rverdadera, rf1, rf2, rf3) VALUES (?,?, ?, ?, ?, ?, ?)";
+
+    try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        // Recorrer las respuestas
+        for (Map<String, String> respuestasPanel : respuestas) {
+            // Obtener los valores de las respuestas del mapa
+            String pregunta = respuestasPanel.get("ta_pregunta");
+            String rverdadera = respuestasPanel.get("ta_res_v");
+            String rf1 = respuestasPanel.get("ta_resF1");
+            String rf2 = respuestasPanel.get("ta_resF2");
+            String rf3 = respuestasPanel.get("ta_resF3");
+
+            // Configurar los parámetros de la consulta
+            pstmt.setString(1, asignatura);
+            pstmt.setString(2, tema);
+            pstmt.setString(3, pregunta);
+            pstmt.setString(4, rverdadera);
+            pstmt.setString(5, rf1);
+            pstmt.setString(6, rf2);
+            pstmt.setString(7, rf3);
+     
+            // Ejecutar la inserción
+            pstmt.addBatch();
+        }
+
+        // Ejecutar todos los inserts de una sola vez (mejor rendimiento)
+        pstmt.executeBatch();
+        System.out.println("Respuestas guardadas con éxito.");
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        System.out.println("Error al guardar las respuestas.");
+    }
+}
+
 }

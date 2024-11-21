@@ -96,12 +96,10 @@ public class DashBoard_ProfesorController implements Initializable {
         Stage_show.cargar_MaterialPanel(conn, ac_center,user);
     }
 
-    @FXML
-    private void Eliminar_material(ActionEvent event) {
-    }
 
     @FXML
     private void crear_Examen(ActionEvent event) {
+        Stage_show.cargar_Generar_ExamenPanel(conn, ac_center, user);
     }
 
     @FXML

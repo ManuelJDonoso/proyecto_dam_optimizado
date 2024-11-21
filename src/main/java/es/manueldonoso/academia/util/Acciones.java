@@ -5,6 +5,7 @@
 package es.manueldonoso.academia.util;
 
 import com.github.sarxos.webcam.Webcam;
+import com.jfoenix.controls.JFXTextArea;
 import es.manueldonoso.academia.main.main;
 import java.awt.Desktop;
 import java.awt.image.BufferedImage;
@@ -16,7 +17,11 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,10 +30,12 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.concurrent.Task;
 import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
@@ -476,5 +483,46 @@ public class Acciones {
         java.util.Date utilDate = date; // Fecha actual
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         return sqlDate;
+    }
+
+    public static List<Map<String, String>> capturarContenidoTextAreas(VBox preguntas) {
+        List<Map<String, String>> listaRespuestas = new ArrayList<>();
+
+        // Iterar sobre los VBox hijos del VBox principal (preguntas)
+        for (Node nodo : preguntas.getChildren()) {
+            if (nodo instanceof VBox) { // Cada panel es un VBox
+                VBox panel = (VBox) nodo;
+
+                // Mapa para guardar el contenido del panel actual
+                Map<String, String> respuestasPanel = new HashMap<>();
+
+                // Llamar al método recursivo para obtener los TextAreas dentro del panel
+                obtenerTextAreasRecursivos(panel, respuestasPanel);
+
+                // Añadir el mapa del panel a la lista
+                listaRespuestas.add(respuestasPanel);
+            }
+        }
+
+        return listaRespuestas;
+    }
+
+// Método recursivo para buscar TextAreas dentro de un VBox
+    private static void obtenerTextAreasRecursivos(VBox vbox, Map<String, String> respuestasPanel) {
+        // Iterar sobre todos los nodos dentro del VBox
+        for (Node nodo : vbox.getChildren()) {
+            if (nodo instanceof VBox) {
+                // Llamar recursivamente a sub-vbox
+                obtenerTextAreasRecursivos((VBox) nodo, respuestasPanel);
+            } else if (nodo instanceof JFXTextArea) {
+                // Verificar si el nodo es un JFXTextArea
+                JFXTextArea textArea = (JFXTextArea) nodo;
+
+                // Guardar el contenido si el JFXTextArea tiene un id
+                if (textArea.getId() != null) {
+                    respuestasPanel.put(textArea.getId(), textArea.getText());
+                }
+            }
+        }
     }
 }
