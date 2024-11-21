@@ -115,8 +115,7 @@ public class LoginController implements Initializable {
         GuardarUsuario();
         if (cb_selectBBDD.getValue() != null) {
 
-         
-            mostrarDasboard( getConecConnection());
+            mostrarDasboard(getConecConnection());
 
         }
 
@@ -242,12 +241,11 @@ public class LoginController implements Initializable {
      * consulta.
      */
     private String getTipoUsuario() {
-    
 
         String Usuario = txt_nombre.getText();
         String Pass = txt_pass.getText();
-        Connection conn= getConecConnection();
-      
+        Connection conn = getConecConnection();
+
         try {
             String tipo = Base_datos.verificarUsuario(conn, Usuario, Pass);
 
@@ -261,10 +259,10 @@ public class LoginController implements Initializable {
                         // Aquí puedes incluir cualquier acción adicional necesaria después de la confirmación
                         return tipo;
                     }
-                   Session.setPass(null);
-                   
+                    Session.setPass(null);
+
                 }
-                 return tipo;
+                return tipo;
             }
             return "";
         } catch (SQLException ex) {
@@ -292,15 +290,13 @@ public class LoginController implements Initializable {
      */
     private void mostrarDasboard(Connection conn) {
         Session.setUsuario(txt_nombre.getText());
-       
+
         switch (getTipoUsuario()) {
             case "ADMINISTRADOR":
                 Stage_show.Mostrar_Dasboard_Administrador(conn);
                 break;
             case "PROFESOR":
-                utilidades.log("usuario tipo profesor");
-                
-                System.out.println(conn);
+
                 Stage_show.Mostrar_Dasboard_Profesor(conn);
                 break;
 
@@ -313,10 +309,10 @@ public class LoginController implements Initializable {
         }
 
     }
-    
-    public Connection getConecConnection(){
-            String ddbb = cb_selectBBDD.getValue().getText();
-     Connection conn;
+
+    public Connection getConecConnection() {
+        String ddbb = cb_selectBBDD.getValue().getText();
+        Connection conn;
         switch (ddbb) {
             case "EMBEDIDA":
                 conn = Base_datos.conectarSqlite();

@@ -12,6 +12,7 @@ import es.manueldonoso.academia.controller.DashBoard_AlumnoController;
 import es.manueldonoso.academia.controller.DashBoard_ProfesorController;
 import es.manueldonoso.academia.controller.MisDatosController;
 import es.manueldonoso.academia.controller.ModificarDatosUsuarioController;
+import es.manueldonoso.academia.controller.Panel_SubirMaterialController;
 import es.manueldonoso.academia.controller.Registrar_usuario_nuevoController;
 import es.manueldonoso.academia.util.utilidades;
 import java.io.IOException;
@@ -492,5 +493,43 @@ public class Stage_show {
         stage.showAndWait();
 
         
+    }
+    
+    //-------------------------profesor---------------------------------
+    
+    public static void cargar_MaterialPanel(Connection conn, Pane pane,Usuario user) {
+        // Cargar el archivo FXML de la vista asignatura
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(main.class.getResource("/vistas/Panel_SubirMaterial.fxml"));
+        
+        try {
+            // Cargar el contenido desde el FXML
+            Node contenido = loader.load();
+            Panel_SubirMaterialController controller = loader.getController();
+            controller.setConn(conn);
+            controller.loadCbAsignaturas(user);
+            controller.cargarDatosDesdeBaseDeDatos();
+            
+    
+
+            // Asegurar que el contenido cargado tenga el fondo transparente
+            if (contenido instanceof Pane) {
+                ((Pane) contenido).setStyle("-fx-background-color: transparent;");
+            }
+
+            // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
+            if (contenido instanceof Region) {
+                Region region = (Region) contenido;
+                region.prefWidthProperty().bind(pane.widthProperty());
+                region.prefHeightProperty().bind(pane.heightProperty());
+            }
+
+            // Limpiar el contenido actual del pane y añadir el nuevo
+            pane.getChildren().clear();
+            pane.getChildren().add(contenido);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

@@ -65,8 +65,7 @@ public class DashBoard_ProfesorController implements Initializable {
 
     public void SetConn(Connection conn) {
         this.conn = conn;
-        utilidades.log("conexion con la base de datos");
-        System.out.println(this.conn);
+     
     }
 
     @FXML
@@ -94,6 +93,7 @@ public class DashBoard_ProfesorController implements Initializable {
 
     @FXML
     private void subir_material(ActionEvent event) {
+        Stage_show.cargar_MaterialPanel(conn, ac_center,user);
     }
 
     @FXML
@@ -117,9 +117,10 @@ public class DashBoard_ProfesorController implements Initializable {
     }
 
     public void CargarUsuario() {
-
+        String usuario=Session.getUsuario();
+        
         try {
-            user = Base_datos.BuscarUsuario_Usuario(conn, Session.getUsuario());
+            user = Base_datos.BuscarUsuario_Usuario(conn, usuario);
             Acciones.imagenView_cambiarImage(this.getClass(), iv_avatar, user.getFoto());
 
         } catch (SQLException ex) {

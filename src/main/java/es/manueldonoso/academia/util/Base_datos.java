@@ -5,7 +5,13 @@
 package es.manueldonoso.academia.util;
 
 import es.manueldonoso.academia.modelos.Usuario;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -25,6 +31,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.stage.FileChooser;
 
 /**
  *
@@ -618,12 +625,15 @@ public class Base_datos {
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
                     if (rs.getString("fechaAlta") != null && !rs.getString("fechaAlta").isBlank()) {
+                        System.out.println(rs.getString("fechaAlta"));
                         try {
+
                             java.util.Date fechaAlta = formatter.parse(rs.getString("fechaAlta"));
 
                             user.setFechaAlta(Acciones.utilDate_to_sqlDate(fechaAlta));
                         } catch (ParseException ex) {
-                            Logger.getLogger(Base_datos.class.getName()).log(Level.SEVERE, null, ex);
+                            long timeStamp = Long.parseLong(rs.getString("fechaAlta"));
+                            user.setFechaAlta(new Date(timeStamp));
                         }
                     }
 
@@ -633,7 +643,8 @@ public class Base_datos {
 
                             user.setFechaBaja(Acciones.utilDate_to_sqlDate(fechaBaja));
                         } catch (ParseException ex) {
-                            Logger.getLogger(Base_datos.class.getName()).log(Level.SEVERE, null, ex);
+                            long timeStamp = Long.parseLong(rs.getString("fechaBaja"));
+                            user.setFechaAlta(new Date(timeStamp));
                         }
 
                     }
@@ -642,13 +653,12 @@ public class Base_datos {
                     try (ResultSet rs2 = pstmtAsignaturas.executeQuery()) {
                         while (rs2.next()) {
                             asignaturasExistentes.add(rs2.getString("asignatura"));
-                            
 
                         }
                     }
-                    
-                    user.setAsignaturas(asignaturasExistentes);
 
+                    user.setAsignaturas(asignaturasExistentes);
+                    System.out.println(user.toString());
                     return user;
                 } else {
                     // Retornar null si el usuario no existe o la contraseña es incorrecta
@@ -1053,4 +1063,77 @@ public class Base_datos {
         }
     }
 
+    public static void insertarFichero(Connection conn, String asignatura, String nombreArchivo, String rutaArchivo, String tema) {
+        String sql = "INSERT INTO Material (Asignatura, Nombre, archivo,Tema) VALUES (?, ?, ?,?)";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql); FileInputStream fis = new FileInputStream(new File(rutaArchivo))) {
+
+            // Establecer los parámetros
+            pstmt.setString(1, asignatura); // Asignatura
+            pstmt.setString(2, nombreArchivo); // Nombre del archivo
+            pstmt.setBinaryStream(3, fis, (int) new File(rutaArchivo).length()); // Contenido del archivo
+            pstmt.setString(4, tema);
+
+            // Ejecutar la inserción
+            int filasInsertadas = pstmt.executeUpdate();
+            if (filasInsertadas > 0) {
+                System.out.println("El archivo se ha insertado correctamente.");
+            }
+        } catch (Exception e) {
+            System.out.println("El archivo NO se ha insertado: " + e.getMessage());
+        }
+    }
+
+    public static void descargarArchivo(Connection conn, String id,String nombreArchivo) {
+        String consulta = "SELECT archivo FROM Material WHERE id = ?";
+        FileOutputStream fos = null;
+
+        try (PreparedStatement pstmt = conn.prepareStatement(consulta)) {
+            pstmt.setString(1, id); // Establece el nombre del archivo como parámetro
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    // Obtener los datos binarios del archivo
+                    byte[] archivoBytes = rs.getBytes("archivo");
+
+                    if (archivoBytes != null) {
+                        // Elegir dónde guardar el archivo
+                        FileChooser fileChooser = new FileChooser();
+                        fileChooser.setInitialFileName(nombreArchivo);
+                        File file = fileChooser.showSaveDialog(null);
+
+                        if (file != null) {
+                            // Escribir los datos en el archivo seleccionado
+                            fos = new FileOutputStream(file);
+                            fos.write(archivoBytes);
+                            fos.flush();
+
+                            System.out.println("Archivo descargado correctamente: " + file.getAbsolutePath());
+                        } else {
+                            System.out.println("Operación cancelada por el usuario.");
+                        }
+                    } else {
+                        System.out.println("El archivo no existe en la base de datos.");
+                    }
+                } else {
+                    System.out.println("No se encontró un archivo con el nombre especificado.");
+                }
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Base_datos.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(Base_datos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error al acceder a la base de datos.");
+        } finally {
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }
