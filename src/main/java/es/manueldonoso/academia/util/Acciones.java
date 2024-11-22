@@ -44,18 +44,18 @@ import javax.imageio.ImageIO;
  * imágenes, cámaras web y abrir recursos en el navegador o aplicaciones
  * predeterminadas.
  *
- * <p>
+ * 
  * Incluye funcionalidades como abrir páginas web, cargar imágenes en
  * componentes de interfaz, capturar fotos desde la cámara web, y manipular
  * datos de imágenes y archivos.
- * </p>
  *
- * <p>
+ *
+ *
  * Ejemplo de uso:
  * <pre>
  * Acciones.abrirWeb("https://ejemplo.com");
  * </pre>
- * </p>
+ *
  *
  * @author "Manuel Jesús Donoso Pérez";
  * @version 1.0
@@ -522,7 +522,7 @@ public class Acciones {
     }
 
     /**
-     * Captura el contenido de varios {@link TextArea} en un contenedor
+     * Captura el contenido de varios  TextArea en un contenedor
      * {@link VBox}.
      *
      * @param preguntas Contenedor principal con varios {@link VBox} hijos.
