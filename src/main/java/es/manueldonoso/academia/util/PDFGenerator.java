@@ -10,11 +10,17 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import java.io.FileNotFoundException;
 /**
- *
+* Clase para generar documentos PDF de manera sencilla.
+ * Utiliza la biblioteca iText para crear un archivo PDF a partir de un texto dado.
  * @author "Manuel Jesús Donoso Pérez";
  */
 public class PDFGenerator {
-
+/**
+     * Genera un archivo PDF con el contenido proporcionado.
+     *
+     * @param textContent     El contenido de texto que se incluirá en el PDF.
+     * @param outputFilePath  La ruta completa donde se guardará el archivo PDF generado.
+     */
     public static void generatePDF(String textContent, String outputFilePath) {
         try {
             // Crear un objeto PdfWriter

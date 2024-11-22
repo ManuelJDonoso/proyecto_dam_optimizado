@@ -9,6 +9,9 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 /**
+ * Clase para gestionar la generación de un contrato de licencia de uso de
+ * software. Permite personalizar el contrato con el nombre del usuario final y
+ * la fecha del acuerdo.
  *
  * @author donpe
  */
@@ -71,17 +74,35 @@ public class Contrato {
             + "dev@manueldonoso.es";
 
     /**
-     * Devuelve el contrato con los datos personalizados.
-     * @return el contrato personalizado como String.
+     * Genera el contrato personalizado con el nombre del usuario final y la
+     * fecha.
+     *
+     * @return El contrato personalizado como un {@code String}.
+     *
+     * <p>
+     * Ejemplo de contrato generado:
+     * </p>
+     * <pre>
+     * Contrato de Licencia de Uso de Software
+     * ...
+     * Usuario final: Juan Pérez
+     * Fecha de contrato: lunes 20 noviembre de 2024
+     * </pre>
      */
     public static String getContrato() {
         return String.format(plantillaContrato, usuarioFinal, fecha);
     }
 
     /**
-     * Establece el usuario final y la fecha en el formato deseado.
-     * @param usuario Nombre del usuario final.
-     * @param fechaContrato Fecha del contrato.
+     * Configura el nombre del usuario final y la fecha del contrato.
+     *
+     * @param usuario El nombre del usuario final.
+     * @param fechaContrato La fecha del contrato en formato de texto.
+     *
+     * <p>
+     * Este método debe llamarse antes de generar el contrato mediante
+     * {@link #getContrato()}.
+     * </p>
      */
     public static void setUsuarioFinal(String usuario, String fechaContrato) {
         usuarioFinal = usuario;
@@ -89,13 +110,28 @@ public class Contrato {
     }
 
     /**
-     * Formatea una fecha en el formato "martes 7 diciembre de 2024".
-     * @param fecha Fecha a formatear.
-     * @return la fecha en el formato especificado.
+     * Formatea una fecha en el formato "día de la semana día mes de año" (por
+     * ejemplo: "martes 7 diciembre de 2024").
+     *
+     * @param fecha La fecha a formatear.
+     * @return La fecha formateada como un {@code String}.
+     *
+     * <p>
+     * Este método utiliza la configuración regional de España para generar el
+     * texto en español.
+     * </p>
+     *
+     * <p>
+     * Ejemplo:
+     * </p>
+     * <pre>
+     * Date fechaActual = new Date();
+     * String fechaFormateada = Contrato.formatearFecha(fechaActual);
+     * System.out.println(fechaFormateada); // "martes 7 diciembre de 2024"
+     * </pre>
      */
     private static String formatearFecha(Date fecha) {
         SimpleDateFormat formateador = new SimpleDateFormat("EEEE d MMMM 'de' yyyy", new Locale("es", "ES"));
         return formateador.format(fecha);
     }
 }
-

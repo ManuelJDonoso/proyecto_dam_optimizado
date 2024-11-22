@@ -16,9 +16,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,8 +40,25 @@ import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 
 /**
+ * Clase que proporciona métodos utilitarios para trabajar con archivos,
+ * imágenes, cámaras web y abrir recursos en el navegador o aplicaciones
+ * predeterminadas.
+ *
+ * <p>
+ * Incluye funcionalidades como abrir páginas web, cargar imágenes en
+ * componentes de interfaz, capturar fotos desde la cámara web, y manipular
+ * datos de imágenes y archivos.
+ * </p>
+ *
+ * <p>
+ * Ejemplo de uso:
+ * <pre>
+ * Acciones.abrirWeb("https://ejemplo.com");
+ * </pre>
+ * </p>
  *
  * @author "Manuel Jesús Donoso Pérez";
+ * @version 1.0
  */
 public class Acciones {
 
@@ -70,9 +85,7 @@ public class Acciones {
                 try {
                     uri = new java.net.URI(dir);
                     Dt.browse(uri);
-                } catch (URISyntaxException ex) {
-                    Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
+                } catch (URISyntaxException | IOException ex) {
                     Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -460,6 +473,14 @@ public class Acciones {
         }
     }
 
+    /**
+     * Genera un nombre de usuario único basado en el nombre y apellido.
+     *
+     * @param conn Conexión a la base de datos.
+     * @param nombre El nombre del usuario.
+     * @param apellido El apellido del usuario.
+     * @return Nombre de usuario único.
+     */
     public static String generaUsuario(Connection conn, String nombre, String apellido) {
         String usuario = nombre.substring(0, 3) + apellido.substring(0, 3);
         usuario = usuario.toUpperCase();
@@ -472,6 +493,14 @@ public class Acciones {
         return usuario;
     }
 
+    /**
+     * Genera una consulta SQL reemplazando los marcadores de posición con
+     * valores específicos.
+     *
+     * @param sql La consulta SQL con marcadores de posición.
+     * @param parametros Los valores a reemplazar en los marcadores.
+     * @return Consulta SQL con valores reemplazados.
+     */
     public static String generarConsultaSQL(String sql, Object... parametros) {
         for (Object param : parametros) {
             String valor = (param != null) ? param.toString() : "NULL";
@@ -480,12 +509,25 @@ public class Acciones {
         return sql;
     }
 
+    /**
+     * Convierte un objeto {@link java.util.Date} en un {@link java.sql.Date}.
+     *
+     * @param date La fecha de tipo {@link java.util.Date}.
+     * @return Fecha convertida a {@link java.sql.Date}.
+     */
     public static java.sql.Date utilDate_to_sqlDate(java.util.Date date) {
         java.util.Date utilDate = date; // Fecha actual
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         return sqlDate;
     }
 
+    /**
+     * Captura el contenido de varios {@link TextArea} en un contenedor
+     * {@link VBox}.
+     *
+     * @param preguntas Contenedor principal con varios {@link VBox} hijos.
+     * @return Lista de mapas con las respuestas capturadas.
+     */
     public static List<Map<String, String>> capturarContenidoTextAreas(VBox preguntas) {
         List<Map<String, String>> listaRespuestas = new ArrayList<>();
 
@@ -508,7 +550,30 @@ public class Acciones {
         return listaRespuestas;
     }
 
-// Método recursivo para buscar TextAreas dentro de un VBox
+    /**
+     * Método recursivo para obtener el contenido de todos los
+     * {@link JFXTextArea} dentro de un {@link VBox}, almacenando el contenido
+     * en un mapa con la clave correspondiente al ID del {@code JFXTextArea}.
+     *
+     * @param vbox El {@link VBox} raíz desde donde se inicia la búsqueda de los
+     * {@code JFXTextArea}.
+     * @param respuestasPanel Un mapa donde se almacenan las respuestas. La
+     * clave es el ID del {@code JFXTextArea}, y el valor es el texto contenido
+     * en él.
+     *
+     * <p>
+     * Este método recorre recursivamente los nodos hijos de un {@code VBox},
+     * permitiendo capturar el contenido de estructuras complejas que contienen
+     * múltiples {@link VBox} anidados.</p>
+     *
+     * <p>
+     * <strong>Ejemplo de uso:</strong></p>
+     * <pre>
+     *     VBox preguntas = new VBox();
+     *     Map&lt;String, String&gt; respuestas = new HashMap&lt;&gt;();
+     *     obtenerTextAreasRecursivos(preguntas, respuestas);
+     * </pre>
+     */
     private static void obtenerTextAreasRecursivos(VBox vbox, Map<String, String> respuestasPanel) {
         // Iterar sobre todos los nodos dentro del VBox
         for (Node nodo : vbox.getChildren()) {
@@ -526,7 +591,26 @@ public class Acciones {
             }
         }
     }
-    
+
+    /**
+     * Genera un número aleatorio dentro de un rango específico.
+     *
+     * @param min El valor mínimo del rango, inclusivo.
+     * @param max El valor máximo del rango, inclusivo.
+     * @return Un número entero aleatorio dentro del rango especificado
+     * ({@code [min, max]}).
+     * @throws IllegalArgumentException Si {@code min} es mayor que {@code max}.
+     *
+     * <p>
+     * Este método utiliza la clase {@link Random} para generar el número
+     * aleatorio.</p>
+     *
+     * <p>
+     * <strong>Ejemplo de uso:</strong></p>
+     * <pre>
+     *     int numeroAleatorio = generarNumeroAleatorio(1, 10);
+     * </pre>
+     */
     public static int generarNumeroAleatorio(int min, int max) {
         if (min > max) {
             throw new IllegalArgumentException("El valor mínimo no puede ser mayor que el valor máximo.");
@@ -534,7 +618,5 @@ public class Acciones {
         Random random = new Random();
         return random.nextInt(max - min + 1) + min;
     }
-    
-   
-    
+
 }

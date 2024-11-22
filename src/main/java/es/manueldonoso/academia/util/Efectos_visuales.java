@@ -22,7 +22,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
- *
+ *Esta clase contiene métodos para aplicar efectos visuales y realizar ajustes estéticos en nodos, ventanas y otros elementos de la interfaz de usuario en JavaFX. 
+ * Aquí se incluyen funcionalidades para cerrar ventanas con animaciones, moverlas, trabajar con imágenes circulares y establecer fondos personalizados en paneles.
  * @author "Manuel Jesús Donoso Pérez";
  */
 public class Efectos_visuales {
@@ -165,6 +166,7 @@ public class Efectos_visuales {
     /**
      * Establece una imagen como fondo en el AnchorPane proporcionado.
      *
+     * @param pane Nodo al que se le va a modificar el fondo
      * @param imagePath La ruta de la imagen que se usará como fondo.
      */
     public static void setBackgroundImage(Pane pane, String imagePath) {

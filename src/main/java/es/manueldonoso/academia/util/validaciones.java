@@ -5,6 +5,9 @@
 package es.manueldonoso.academia.util;
 
 /**
+ * Clase que contiene métodos estáticos para realizar validaciones comunes como
+ * correos electrónicos, números de teléfono y textos con un mínimo de tres
+ * letras.
  *
  * @author "Manuel Jesús Donoso Pérez";
  */
