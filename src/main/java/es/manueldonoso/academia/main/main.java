@@ -4,6 +4,7 @@
  */
 package es.manueldonoso.academia.main;
 
+import es.manueldonoso.academia.util.Acciones;
 import es.manueldonoso.academia.util.Stage_show;
 import es.manueldonoso.academia.util.Base_datos;
 import javafx.application.Application;
@@ -27,6 +28,8 @@ public class main extends Application{
     public void start(Stage stage) throws Exception {
         System.out.println("Iniciando el programa");
         Stage_show.Mostrar_login(); // Aquí puedes mostrar la ventana de inicio de sesión
+        
+       
         
        // System.out.println(Base_datos.isConnection(Base_datos.conectarSqlite()));
        //   System.out.println(Base_datos.isConnection(Base_datos.conectarSqlite()));

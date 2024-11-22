@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<HBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.PanelMaterialController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="347.0" HBox.hgrow="ALWAYS">
+         <children>
+            <TableView fx:id="tabla_Material" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colum_Asignatura" prefWidth="137.0" text="ASIGNATURA" />
+                  <TableColumn fx:id="colum_tema" prefWidth="88.0" text="TEMA" />
+                  <TableColumn fx:id="column_archivo" minWidth="0.0" prefWidth="75.0" text="ARCHIVO" />
+                  <TableColumn fx:id="column_accion" minWidth="0.0" prefWidth="120.0" text="ACCION" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</HBox>

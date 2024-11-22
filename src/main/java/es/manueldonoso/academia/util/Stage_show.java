@@ -12,9 +12,12 @@ import es.manueldonoso.academia.controller.DashBoard_AlumnoController;
 import es.manueldonoso.academia.controller.DashBoard_ProfesorController;
 import es.manueldonoso.academia.controller.MisDatosController;
 import es.manueldonoso.academia.controller.ModificarDatosUsuarioController;
+import es.manueldonoso.academia.controller.PanelMaterialController;
+import es.manueldonoso.academia.controller.Panel_ExamenMenuController;
 import es.manueldonoso.academia.controller.Panel_SubirMaterialController;
 import es.manueldonoso.academia.controller.Panel_generar_ExamenController;
 import es.manueldonoso.academia.controller.Panel_preguntaController;
+import es.manueldonoso.academia.controller.Plantilla_preguntaController;
 import es.manueldonoso.academia.controller.Registrar_usuario_nuevoController;
 import es.manueldonoso.academia.util.utilidades;
 import java.io.IOException;
@@ -25,6 +28,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import es.manueldonoso.academia.main.main;
+import es.manueldonoso.academia.modelos.Pregunta;
 import es.manueldonoso.academia.modelos.Usuario;
 import static es.manueldonoso.academia.util.Efectos_visuales.darMovimientoStage;
 import java.sql.Connection;
@@ -156,6 +160,7 @@ public class Stage_show {
             // Modifico el stage
             primaryStage.setScene(scene);
             primaryStage.setTitle("DashBoard Administrador");
+            primaryStage.setMaximized(true);
 
             //detectar cierre de ventana
             primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
@@ -204,6 +209,7 @@ public class Stage_show {
             // Modifico el stage
             primaryStage.setScene(scene);
             primaryStage.setTitle("DashBoard Profesor");
+            primaryStage.setMaximized(true);
 
             // Detectar cierre de ventana
             primaryStage.setOnHidden(event -> {
@@ -211,6 +217,7 @@ public class Stage_show {
             });
 
             darMovimientoStage(primaryStage);
+            primaryStage.initStyle(StageStyle.UNDECORATED);
             // Mostrar ventana
             primaryStage.show();
         } catch (IOException ex) {
@@ -228,8 +235,9 @@ public class Stage_show {
 
             // Ventana a cargar
             BorderPane ventana = (BorderPane) loader.load();
-            DashBoard_AlumnoController dashboard_AlumnoController = new DashBoard_AlumnoController();
+            DashBoard_AlumnoController dashboard_AlumnoController = loader.getController();
             dashboard_AlumnoController.SetConn(conn);
+            dashboard_AlumnoController.CargarUsuario();
 
             // Creo la escena
             Scene scene = new Scene(ventana);
@@ -238,8 +246,7 @@ public class Stage_show {
             primaryStage.setScene(scene);
             primaryStage.setTitle("DashBoard Alumno");
 
-            Efectos_visuales.darMovimientoStage(primaryStage);
-
+            //Efectos_visuales.darMovimientoStage(primaryStage);
             //detectar cierre de ventana
             primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
                 @Override
@@ -251,6 +258,8 @@ public class Stage_show {
                 }
             });
 
+            primaryStage.setMaximized(true);
+            primaryStage.initStyle(StageStyle.UNDECORATED);
             //mostrar ventana
             primaryStage.show();
 
@@ -560,36 +569,134 @@ public class Stage_show {
             Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public static void anadirPanelPreguntas(VBox preguntas,int numeroPregunta) {
-    // Cargar el archivo FXML de la vista asignatura
-    FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(main.class.getResource("/vistas/Panel_pregunta.fxml"));
 
-    try {
-        // Cargar el contenido desde el FXML
-        Node contenido = loader.load();
-        Panel_preguntaController controller = loader.getController();
-        controller.cargarpregunta(numeroPregunta);
+    public static void anadirPanelPreguntas(VBox preguntas, int numeroPregunta) {
+        // Cargar el archivo FXML de la vista asignatura
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(main.class.getResource("/vistas/Panel_pregunta.fxml"));
 
-        // Asegurar que el contenido cargado tenga el fondo transparente
-        if (contenido instanceof Pane) {
-            ((Pane) contenido).setStyle("-fx-background-color: transparent;");
+        try {
+            // Cargar el contenido desde el FXML
+            Node contenido = loader.load();
+            Panel_preguntaController controller = loader.getController();
+            controller.cargarpregunta(numeroPregunta);
+
+            // Asegurar que el contenido cargado tenga el fondo transparente
+            if (contenido instanceof Pane) {
+                ((Pane) contenido).setStyle("-fx-background-color: transparent;");
+            }
+
+            // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
+            if (contenido instanceof Region) {
+                Region region = (Region) contenido;
+                region.prefWidthProperty().bind(preguntas.widthProperty());
+            }
+
+            // Añadir el contenido al VBox
+            preguntas.getChildren().add(contenido);
+            preguntas.setSpacing(30); //esoacui ebtre paneles
+
+        } catch (IOException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
-        if (contenido instanceof Region) {
-            Region region = (Region) contenido;
-            region.prefWidthProperty().bind(preguntas.widthProperty());
-        }
-
-        // Añadir el contenido al VBox
-        preguntas.getChildren().add(contenido);
-        preguntas.setSpacing(30); //esoacui ebtre paneles
-
-    } catch (IOException ex) {
-        Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
     }
-}
 
+    //------------------------Alumno-----------------------------------------
+    public static void cargar_MaterialPanelAlumno(Connection conn, Pane pane, Usuario user) {
+        // Cargar el archivo FXML de la vista asignatura
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(main.class.getResource("/vistas/PanelMaterial.fxml"));
+
+        try {
+            // Cargar el contenido desde el FXML
+            Node contenido = loader.load();
+            PanelMaterialController controller = loader.getController();
+            controller.setConn(conn);
+
+            // Asegurar que el contenido cargado tenga el fondo transparente
+            if (contenido instanceof Pane) {
+                ((Pane) contenido).setStyle("-fx-background-color: transparent;");
+            }
+
+            // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
+            if (contenido instanceof Region) {
+                Region region = (Region) contenido;
+                region.prefWidthProperty().bind(pane.widthProperty());
+                region.prefHeightProperty().bind(pane.heightProperty());
+            }
+
+            // Limpiar el contenido actual del pane y añadir el nuevo
+            pane.getChildren().clear();
+            pane.getChildren().add(contenido);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
+
+    public static void cargar_Panel_Examen(Pane pane, Connection conn) {
+        // Cargar el archivo FXML de la vista asignatura
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(main.class.getResource("/vistas/Panel_ExamenMenu.fxml"));
+
+        try {
+            // Cargar el contenido desde el FXML
+            Node contenido = loader.load();
+            Panel_ExamenMenuController controller = loader.getController();
+            controller.setConn(conn);
+
+            // Asegurar que el contenido cargado tenga el fondo transparente
+            if (contenido instanceof Pane) {
+                ((Pane) contenido).setStyle("-fx-background-color: transparent;");
+            }
+
+            // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
+            if (contenido instanceof Region) {
+                Region region = (Region) contenido;
+                region.prefWidthProperty().bind(pane.widthProperty());
+                region.prefHeightProperty().bind(pane.heightProperty());
+            }
+
+            // Limpiar el contenido actual del pane y añadir el nuevo
+            pane.getChildren().clear();
+            pane.getChildren().add(contenido);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+        public static void cargar_Pregunta(Pane pane, Pregunta p) {
+        // Cargar el archivo FXML de la vista asignatura
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(main.class.getResource("/vistas/Plantilla_pregunta.fxml"));
+
+        try {
+            // Cargar el contenido desde el FXML
+            Node contenido = loader.load();
+            Plantilla_preguntaController controller = loader.getController();
+            controller.CargarPregunta(p);
+
+            // Asegurar que el contenido cargado tenga el fondo transparente
+            if (contenido instanceof Pane) {
+                ((Pane) contenido).setStyle("-fx-background-color: transparent;");
+            }
+
+            // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
+            if (contenido instanceof Region) {
+                Region region = (Region) contenido;
+                region.prefWidthProperty().bind(pane.widthProperty());
+                region.prefHeightProperty().bind(pane.heightProperty());
+            }
+
+            // Limpiar el contenido actual del pane y añadir el nuevo
+           // pane.getChildren().clear();
+            pane.getChildren().add(contenido);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

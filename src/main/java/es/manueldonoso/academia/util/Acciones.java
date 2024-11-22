@@ -22,6 +22,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -525,4 +526,15 @@ public class Acciones {
             }
         }
     }
+    
+    public static int generarNumeroAleatorio(int min, int max) {
+        if (min > max) {
+            throw new IllegalArgumentException("El valor mínimo no puede ser mayor que el valor máximo.");
+        }
+        Random random = new Random();
+        return random.nextInt(max - min + 1) + min;
+    }
+    
+   
+    
 }
