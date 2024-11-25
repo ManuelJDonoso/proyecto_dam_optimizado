@@ -22,7 +22,7 @@
                <graphic>
                   <ImageView fx:id="iv_avatar" fitHeight="68.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/app/incorgnito.png" />
+                        <Image url="@../../images/app/incorgnito.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -31,7 +31,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/app/MisDatos.png" />
+                              <Image url="@../../images/app/MisDatos.png" />
                            </image>
                         </ImageView>
                      </graphic></MenuItem>
@@ -48,7 +48,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/app/search_user.png" />
+                        <Image url="@../../images/app/search_user.png" />
                      </image>
                   </ImageView>
                </graphic></JFXButton>
@@ -56,7 +56,7 @@
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/app/add_user.png" />
+                        <Image url="@../../images/app/add_user.png" />
                      </image>
                   </ImageView>
                </graphic></JFXButton>
@@ -64,7 +64,7 @@
                <graphic>
                   <ImageView fitHeight="33.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/app/blue_books_binders.png" />
+                        <Image url="@../../images/app/blue_books_binders.png" />
                      </image>
                   </ImageView>
                </graphic>

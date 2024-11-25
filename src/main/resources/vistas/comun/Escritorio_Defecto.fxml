@@ -4,12 +4,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="363.0" prefWidth="566.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="es.manueldonoso.academia.controller.Escritorio_DefectoController">
+<AnchorPane id="AnchorPane" prefHeight="363.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.Escritorio_DefectoController">
    <children>
       <ImageView fitHeight="406.0" fitWidth="565.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/app/fondo1.png" />
+            <Image url="@../../images/app/fondo1.png" />
          </image>
       </ImageView>
    </children>

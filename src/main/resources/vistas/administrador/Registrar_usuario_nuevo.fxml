@@ -18,12 +18,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" fx:id="root" prefHeight="690.0" prefWidth="491.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="es.manueldonoso.academia.controller.Registrar_usuario_nuevoController">
+<AnchorPane id="AnchorPane" fx:id="root" prefHeight="690.0" prefWidth="491.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.Registrar_usuario_nuevoController">
    <children>
       <ImageView fitHeight="754.0" fitWidth="481.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/app/fondo_papiro.jpg" />
+            <Image url="@../../images/app/fondo_papiro.jpg" />
          </image>
       </ImageView>
       <Text layoutX="88.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USUARIO NUEVO">

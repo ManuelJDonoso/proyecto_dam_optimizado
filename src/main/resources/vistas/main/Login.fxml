@@ -63,7 +63,7 @@
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                      <image>
-                        <Image url="@../images/app/logo.png" />
+                        <Image url="@../../images/app/logo.png" />
                      </image>
                      <effect>
                         <DropShadow>
@@ -165,7 +165,7 @@
                                     <Insets right="20.0" />
                                  </HBox.margin>
                                  <image>
-                                    <Image url="@../images/app/bbdd_down.png" />
+                                    <Image url="@../../images/app/bbdd_down.png" />
                                  </image>
                               </ImageView>
                               <JFXComboBox fx:id="cb_selectBBDD" labelFloat="true" promptText="Seleciona la base de datos" style="-fx-text-fill: #C0C0C0; -fx-prompt-text-fill: #C0C0C0;" unFocusColor="#9a9a9a" />

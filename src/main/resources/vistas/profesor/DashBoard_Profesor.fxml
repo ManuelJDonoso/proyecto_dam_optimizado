@@ -22,7 +22,7 @@
                <graphic>
                   <ImageView fx:id="iv_avatar" fitHeight="68.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/app/incorgnito.png" />
+                        <Image url="@../../images/app/incorgnito.png" />
                      </image>
                   </ImageView>
                </graphic>

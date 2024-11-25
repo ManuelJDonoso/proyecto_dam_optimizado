@@ -52,7 +52,7 @@
                      <children>
                         <ImageView fitHeight="67.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/app/arrow.png" />
+                              <Image url="@../../images/app/arrow.png" />
                            </image>
                         </ImageView>
                      </children>
