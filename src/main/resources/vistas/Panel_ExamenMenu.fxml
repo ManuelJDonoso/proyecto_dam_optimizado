@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox fx:id="root" prefHeight="528.0" prefWidth="916.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.Panel_ExamenMenuController">
    <children>
       <HBox alignment="CENTER" prefHeight="76.0" prefWidth="916.0">
@@ -37,7 +36,7 @@
       </ScrollPane>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
          <items>
-            <JFXButton onAction="#btn_Corregir" prefHeight="25.0" prefWidth="240.0" text="Corregir" />
+            <JFXButton contentDisplay="CENTER" onAction="#btn_Corregir" prefHeight="25.0" prefWidth="837.0" text="Corregir" />
          </items>
       </ToolBar>
    </children>

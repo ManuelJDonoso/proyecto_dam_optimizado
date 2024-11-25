@@ -9,22 +9,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Representa una pregunta con una respuesta correcta y tres respuestas incorrectas.
- * Las respuestas se asignan de forma aleatoria a cuatro opciones (A, B, C, D).
- * 
+ * Representa una pregunta con una respuesta correcta y tres respuestas
+ * incorrectas. Las respuestas se asignan de forma aleatoria a cuatro opciones
+ * (A, B, C, D).
+ *
  * @author "Manuel Jesús Donoso Pérez";
  */
 public class Pregunta {
 
     private String pregunta, respuestaV, respuesta1, respuesta2, respuesta3;
     private String respuestaA, respuestaB, respuestaC, respuestaD;
+    private int numero;
     private boolean Sol_A = false, Sol_B = false, Sol_C = false, Sol_D = false;
     private List orden;
 
     /**
      * Crea una instancia de pregunta con los datos proporcionados.
      *
-     * @param pregunta   el texto de la pregunta.
+     * @param pregunta el texto de la pregunta.
      * @param respuestaV la respuesta correcta.
      * @param respuesta1 la primera respuesta incorrecta.
      * @param respuesta2 la segunda respuesta incorrecta.
@@ -37,12 +39,106 @@ public class Pregunta {
         this.respuesta2 = respuesta2;
         this.respuesta3 = respuesta3;
         orden = ordenAleatorioRespuesta();
-        asignarRepuesta((int) orden.get(0), respuestaV, Sol_A);
-        asignarRepuesta((int) orden.get(1), respuesta1, Sol_B);
-        asignarRepuesta((int) orden.get(2), respuesta2, Sol_C);
-        asignarRepuesta((int) orden.get(3), respuesta3, Sol_D);
+        asignarRepuesta((int) orden.get(0), respuestaV);
+        asignarRepuesta((int) orden.get(1), respuesta1);
+        asignarRepuesta((int) orden.get(2), respuesta2);
+        asignarRepuesta((int) orden.get(3), respuesta3);
+
+        if ((int) orden.get(0) == 1) {
+            asignarCorrecta(1);
+        }
+        if ((int) orden.get(1) == 1) {
+            asignarCorrecta(2);
+        }
+        if ((int) orden.get(2) == 1) {
+            asignarCorrecta(3);
+        }
+        if ((int) orden.get(3) == 1) {
+            asignarCorrecta(4);
+        }
+
+        //asignarCorrecta();
     }
 
+    /**
+     * Crea una instancia de pregunta con los datos proporcionados.
+     *
+     * @param pregunta el texto de la pregunta.
+     * @param respuestaV la respuesta correcta.
+     * @param respuesta1 la primera respuesta incorrecta.
+     * @param respuesta2 la segunda respuesta incorrecta.
+     * @param respuesta3 la tercera respuesta incorrecta.
+     */
+    public Pregunta(int numero, String pregunta, String respuestaV, String respuesta1, String respuesta2, String respuesta3) {
+        this.numero = numero;
+        this.pregunta = pregunta;
+        this.respuestaV = respuestaV;
+        this.respuesta1 = respuesta1;
+        this.respuesta2 = respuesta2;
+        this.respuesta3 = respuesta3;
+        orden = ordenAleatorioRespuesta();
+        asignarRepuesta((int) orden.get(0), respuestaV);
+        asignarRepuesta((int) orden.get(1), respuesta1);
+        asignarRepuesta((int) orden.get(2), respuesta2);
+        asignarRepuesta((int) orden.get(3), respuesta3);
+       
+         if ((int) orden.get(0) == 1) {
+            asignarCorrecta(1);
+        }
+        if ((int) orden.get(1) == 1) {
+            asignarCorrecta(2);
+        }
+        if ((int) orden.get(2) == 1) {
+            asignarCorrecta(3);
+        }
+        if ((int) orden.get(3) == 1) {
+            asignarCorrecta(4);
+        }
+
+    }
+
+    
+    
+    
+    /**
+     * Crea una instancia de pregunta con los datos proporcionados.Con las respuestas  en la posicion que se decida
+     *
+     * @param pregunta el texto de la pregunta.
+     * @param respuestaV la respuesta correcta.
+     * @param respuesta1 la primera respuesta incorrecta.
+     * @param respuesta2 la segunda respuesta incorrecta.
+     * @param respuesta3 la tercera respuesta incorrecta.
+     */
+    public Pregunta(List orden,int numero, String pregunta, String respuestaV, String respuesta1, String respuesta2, String respuesta3) {
+        this.numero = numero;
+        this.pregunta = pregunta;
+        this.respuestaV = respuestaV;
+        this.respuesta1 = respuesta1;
+        this.respuesta2 = respuesta2;
+        this.respuesta3 = respuesta3;
+       
+        
+        asignarRepuesta((int) orden.get(0), respuestaV);
+        asignarRepuesta((int) orden.get(1), respuesta1);
+        asignarRepuesta((int) orden.get(2), respuesta2);
+        asignarRepuesta((int) orden.get(3), respuesta3);
+       
+         if ((int) orden.get(0) == 1) {
+            asignarCorrecta(1);
+        }
+        if ((int) orden.get(1) == 1) {
+            asignarCorrecta(2);
+        }
+        if ((int) orden.get(2) == 1) {
+            asignarCorrecta(3);
+        }
+        if ((int) orden.get(3) == 1) {
+            asignarCorrecta(4);
+        }
+
+    }
+
+    
     /**
      * Genera un orden aleatorio para asignar las respuestas a las opciones.
      *
@@ -68,15 +164,16 @@ public class Pregunta {
     /**
      * Asigna una respuesta a una opción específica (A, B, C, D).
      *
-     * @param i         el índice de la opción (1 para A, 2 para B, 3 para C, 4 para D).
+     * @param i el índice de la opción (1 para A, 2 para B, 3 para C, 4 para D).
      * @param respuesta el texto de la respuesta.
-     * @param correcta  indica si la respuesta es correcta.
+     * @param correcta indica si la respuesta es correcta.
      */
-    private void asignarRepuesta(int i, String respuesta, boolean correcta) {
+    private void asignarRepuesta(int i, String respuesta) {
+        System.out.println("Asignar Respuesta" + i);
         switch (i) {
             case 1:
                 respuestaA = respuesta;
-                correcta = true;
+
                 break;
             case 2:
                 respuestaB = respuesta;
@@ -86,6 +183,27 @@ public class Pregunta {
                 break;
             case 4:
                 respuestaD = respuesta;
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }
+
+    private void asignarCorrecta(int i) {
+
+        switch (i) {
+            case 1:
+                Sol_A = true;
+
+                break;
+            case 2:
+                Sol_B = true;
+                break;
+            case 3:
+                Sol_C = true;
+                break;
+            case 4:
+                Sol_D = true;
                 break;
             default:
                 throw new AssertionError();
@@ -174,18 +292,22 @@ public class Pregunta {
     }
 
     /**
-     * Devuelve una representación en formato texto de la Pregunta y sus respuestas.
+     * Devuelve una representación en formato texto de la Pregunta y sus
+     * respuestas.
      *
      * @return una cadena que representa la Pregunta y sus datos.
      */
     @Override
     public String toString() {
-        return "pregunta{" + "pregunta=" + pregunta + ", \n respuestaV=" + respuestaV
-                + ", \n respuesta1=" + respuesta1 + ", \n respuesta2=" + respuesta2
-                + ", \n respuesta3=" + respuesta3 + ", \n respuestaA=" + respuestaA
-                + ", \n respuestaB=" + respuestaB + ",\n  respuestaC=" + respuestaC
-                + ", \n respuestaD=" + respuestaD + ",\n  Sol_A=" + Sol_A
-                + ", \n Sol_B=" + Sol_B + ",\n  Sol_C=" + Sol_C + ", \n Sol_D=" + Sol_D + "}";
+        return "Pregunta{" + "pregunta=" + pregunta + ", respuestaV=" + respuestaV + ", respuesta1=" + respuesta1 + ", respuesta2=" + respuesta2 + ", respuesta3=" + respuesta3 + ", respuestaA=" + respuestaA + ", respuestaB=" + respuestaB + ", respuestaC=" + respuestaC + ", respuestaD=" + respuestaD + ", numero=" + numero + ", Sol_A=" + Sol_A + ", Sol_B=" + Sol_B + ", Sol_C=" + Sol_C + ", Sol_D=" + Sol_D + ", orden=" + orden + '}';
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
 }

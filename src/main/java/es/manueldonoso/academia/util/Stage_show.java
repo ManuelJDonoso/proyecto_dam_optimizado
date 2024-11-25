@@ -756,7 +756,7 @@ public class Stage_show {
      * @param pane El pane en el que se insertará el contenido cargado.
      * @param conn La conexión a la base de datos.
      */
-    public static void cargar_Panel_Examen(Pane pane, Connection conn) {
+    public static void cargar_Panel_Examen(Pane pane, Connection conn,Usuario user) {
         // Cargar el archivo FXML de la vista asignatura
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(main.class.getResource("/vistas/Panel_ExamenMenu.fxml"));
@@ -766,6 +766,8 @@ public class Stage_show {
             Node contenido = loader.load();
             Panel_ExamenMenuController controller = loader.getController();
             controller.setConn(conn);
+            controller.setUser(user);
+            controller.loadDatos();
 
             // Asegurar que el contenido cargado tenga el fondo transparente
             if (contenido instanceof Pane) {
@@ -800,13 +802,14 @@ public class Stage_show {
         // Cargar el archivo FXML de la vista asignatura
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(main.class.getResource("/vistas/Plantilla_pregunta.fxml"));
-
+        Plantilla_preguntaController controller =null;
         try {
             // Cargar el contenido desde el FXML
             Node contenido = loader.load();
-            Plantilla_preguntaController controller = loader.getController();
+            controller = loader.getController();
             controller.CargarPregunta(p);
 
+            contenido.getProperties().put("controller", loader);
             // Asegurar que el contenido cargado tenga el fondo transparente
             if (contenido instanceof Pane) {
                 ((Pane) contenido).setStyle("-fx-background-color: transparent;");
@@ -826,5 +829,6 @@ public class Stage_show {
         } catch (IOException ex) {
             Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
     }
 }

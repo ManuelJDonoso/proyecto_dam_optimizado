@@ -90,7 +90,7 @@ public class DashBoard_AlumnoController implements Initializable {
     
     @FXML
     private void btn_examenes(ActionEvent event) {
-     Stage_show.cargar_Panel_Examen(ac_center, conn);
+     Stage_show.cargar_Panel_Examen(ac_center, conn,user);
     }
     
     public void CargarUsuario() {

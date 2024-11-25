@@ -6,13 +6,28 @@ package es.manueldonoso.academia.controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import es.manueldonoso.academia.modelos.Pregunta;
+import es.manueldonoso.academia.modelos.Usuario;
+import es.manueldonoso.academia.util.Base_datos;
+import es.manueldonoso.academia.util.Session;
 import es.manueldonoso.academia.util.Stage_show;
 import java.net.URL;
 import java.sql.Connection;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 /**
@@ -30,8 +45,9 @@ public class Panel_ExamenMenuController implements Initializable {
     private JFXComboBox<String> cb_Tema;
     @FXML
     private VBox Panel_Preguntas;
-    Connection conn;
-    
+    private Connection conn;
+    private Usuario user;
+    private int acierto = 0;
 
     /**
      * Initializes the controller class.
@@ -39,16 +55,71 @@ public class Panel_ExamenMenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void btn_generar_examen(ActionEvent event) {
-        Pregunta p = new Pregunta("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno ", "verdad", "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno ", "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno ", "falsa3");
-        Stage_show.cargar_Pregunta(Panel_Preguntas, p);
+        Session.setPuntuacion(0);
+        Pregunta p;
+        String pregunta, respuestaV, respuesta1, respuesta2, respuesta3;
+        Panel_Preguntas.getChildren().clear();
+
+        if (cb_Tema.getValue() != null) {
+            Map<Integer, Map<String, String>> examen = Base_datos.Examen(conn, cb_Asignatura.getValue(), cb_Tema.getValue());
+
+            for (int i = 0; i < examen.size(); i++) {
+                Map<String, String> preguntaselec = examen.get(i + 1);
+                pregunta = preguntaselec.get("Pregunta");
+                respuestaV = preguntaselec.get("correcta");
+                respuesta1 = preguntaselec.get("incorrecta1");
+                respuesta2 = preguntaselec.get("incorrecta2");
+                respuesta3 = preguntaselec.get("incorrecta3");
+
+//                System.out.println(i+1);
+//                System.out.println(pregunta);
+//                System.out.println(respuestaV);
+//                System.out.println(respuesta1);
+//                System.out.println(respuesta2);
+//                 System.out.println(respuesta3);
+                 
+                // Crea una nueva pregunta
+              
+                
+              //  p = new Pregunta(i + 1, pregunta, respuestaV, respuesta1, respuesta2, respuesta3);
+               p = new Pregunta(i + 1, "pre", "verdad", "false", "falsa", "falsa");
+
+             //    Carga la plantilla de la pregunta
+                Stage_show.cargar_Pregunta(Panel_Preguntas, p);
+                System.out.println(p.toString());
+
+            }
+        }
     }
 
     @FXML
     private void btn_Corregir(ActionEvent event) {
+        // Muestra el total de aciertos al usuario
+        Alert corregir = new Alert(Alert.AlertType.CONFIRMATION);
+        corregir.setTitle("Corregir el examen");
+        corregir.setHeaderText(null);
+        corregir.setContentText("¿Desea Finalizar el examen?");
+        corregir.showAndWait();
+
+        if (corregir.getResult() == ButtonType.OK) {
+            String Asignatura=cb_Asignatura.getValue();
+            String Nota=Session.getPuntuacion()+"";
+            String Tema=cb_Tema.getValue();
+            String usuario=user.getUsuario();
+           
+            Base_datos.GuardarExamenRealizado(conn, Asignatura, Tema, Nota, usuario);
+            // Muestra el total de aciertos al usuario
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Resultados del Examen");
+            alert.setHeaderText(null);
+            alert.setContentText("Has tenido " + Session.getPuntuacion() + " acierto(s).");
+            alert.showAndWait();
+        }
+
     }
 
     public Connection getConn() {
@@ -58,6 +129,25 @@ public class Panel_ExamenMenuController implements Initializable {
     public void setConn(Connection conn) {
         this.conn = conn;
     }
-    
-    
+
+    public void setUser(Usuario user) {
+        this.user = user;
+    }
+
+    public void loadDatos() {
+
+        ObservableList<String> asignaturas = FXCollections.observableList(user.getAsignaturas());
+        cb_Asignatura.setItems(asignaturas);
+
+        // Agregar un Listener al valueProperty()
+        cb_Asignatura.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                ObservableList<String> temas = FXCollections.observableList(Base_datos.BuscarExamenes(conn, newValue));
+                System.out.println("Elemento seleccionado: " + newValue);
+                cb_Tema.setItems(temas);
+            }
+        });
+    }
+
 }

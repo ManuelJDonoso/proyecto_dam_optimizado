@@ -25,6 +25,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 
 import java.util.List;
 import java.util.Map;
@@ -1156,41 +1157,170 @@ public class Base_datos {
             System.out.println("Error al eliminar el archivo de la base de datos.");
         }
     }
-    
-    public static void guardarExamenGeneradoEnBaseDeDatos(Connection conn, String asignatura,String tema, List<Map<String, String>> respuestas) {
-    String sql = "INSERT INTO Examenes_tabla (asignatura,tema, pregunta, rverdadera, rf1, rf2, rf3) VALUES (?,?, ?, ?, ?, ?, ?)";
 
-    try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-        // Recorrer las respuestas
-        for (Map<String, String> respuestasPanel : respuestas) {
-            // Obtener los valores de las respuestas del mapa
-            String pregunta = respuestasPanel.get("ta_pregunta");
-            String rverdadera = respuestasPanel.get("ta_res_v");
-            String rf1 = respuestasPanel.get("ta_resF1");
-            String rf2 = respuestasPanel.get("ta_resF2");
-            String rf3 = respuestasPanel.get("ta_resF3");
+    public static void guardarExamenGeneradoEnBaseDeDatos(Connection conn, String asignatura, String tema, List<Map<String, String>> respuestas) {
+        String sql = "INSERT INTO Examenes_tabla (asignatura,tema, pregunta, rverdadera, rf1, rf2, rf3) VALUES (?,?, ?, ?, ?, ?, ?)";
 
-            // Configurar los parámetros de la consulta
-            pstmt.setString(1, asignatura);
-            pstmt.setString(2, tema);
-            pstmt.setString(3, pregunta);
-            pstmt.setString(4, rverdadera);
-            pstmt.setString(5, rf1);
-            pstmt.setString(6, rf2);
-            pstmt.setString(7, rf3);
-     
-            // Ejecutar la inserción
-            pstmt.addBatch();
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // Recorrer las respuestas
+            for (Map<String, String> respuestasPanel : respuestas) {
+                // Obtener los valores de las respuestas del mapa
+                String pregunta = respuestasPanel.get("ta_pregunta");
+                String rverdadera = respuestasPanel.get("ta_res_v");
+                String rf1 = respuestasPanel.get("ta_resF1");
+                String rf2 = respuestasPanel.get("ta_resF2");
+                String rf3 = respuestasPanel.get("ta_resF3");
+
+                // Configurar los parámetros de la consulta
+                pstmt.setString(1, asignatura);
+                pstmt.setString(2, tema);
+                pstmt.setString(3, pregunta);
+                pstmt.setString(4, rverdadera);
+                pstmt.setString(5, rf1);
+                pstmt.setString(6, rf2);
+                pstmt.setString(7, rf3);
+
+                // Ejecutar la inserción
+                pstmt.addBatch();
+            }
+
+            // Ejecutar todos los inserts de una sola vez (mejor rendimiento)
+            pstmt.executeBatch();
+            System.out.println("Respuestas guardadas con éxito.");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error al guardar las respuestas.");
+        }
+    }
+
+    /**
+     * Busca los temas de examen correspondientes a una asignatura en la base de
+     * datos.
+     *
+     * @param conn La conexión activa a la base de datos.
+     * @param asignatura El nombre de la asignatura cuyos temas se desean
+     * buscar.
+     * @return Una lista con los temas asociados con la asignatura, o una lista
+     * vacía si no se encuentran temas.
+     */
+    public static List<String> BuscarExamenes(Connection conn, String asignatura) {
+        // Definir la consulta SQL para obtener los temas de la asignatura
+        String query = "SELECT tema FROM Examenes_tabla WHERE asignatura = ? GROUP BY tema";
+
+        // Crear una lista para almacenar los temas encontrados
+        List<String> temas = new ArrayList<>();
+
+        // Intentar ejecutar la consulta y obtener los resultados
+        try (PreparedStatement stmt = conn.prepareStatement(query)) {
+            // Establecer el valor del parámetro 'asignatura' en la consulta
+            stmt.setString(1, asignatura);
+
+            // Ejecutar la consulta
+            try (ResultSet rs = stmt.executeQuery()) {
+                // Iterar sobre los resultados y agregar cada tema a la lista
+                while (rs.next()) {
+                    temas.add(rs.getString("tema"));
+                }
+            }
+        } catch (SQLException e) {
+            // Manejar posibles errores de SQL
+            e.printStackTrace();
         }
 
-        // Ejecutar todos los inserts de una sola vez (mejor rendimiento)
-        pstmt.executeBatch();
-        System.out.println("Respuestas guardadas con éxito.");
-
-    } catch (SQLException e) {
-        e.printStackTrace();
-        System.out.println("Error al guardar las respuestas.");
+        // Retornar la lista de temas (vacía si no se encontró ningún tema)
+        return temas;
     }
-}
 
+    /**
+     * Busca las preguntas de examen, junto con las respuestas correctas y
+     * opciones incorrectas, para una asignatura y tema específicos. El mapa
+     * contiene el número de la pregunta como clave y otro mapa con las
+     * respuestas como valor.
+     *
+     * @param conn La conexión activa a la base de datos.
+     * @param asignatura El nombre de la asignatura cuyo examen se desea
+     * consultar.
+     * @param tema El tema específico dentro de la asignatura cuyo examen se
+     * desea consultar.
+     * @return Un mapa con el número de pregunta como clave, y otro mapa con las
+     * respuestas (correcta e incorrectas) como valores.
+     */
+    public static Map<Integer, Map<String, String>> Examen(Connection conn, String asignatura, String tema) {
+        // Consulta SQL para obtener las preguntas y respuestas relacionadas con la asignatura y el tema
+        String query = "SELECT pregunta, rverdadera, rf1, rf2, rf3 FROM Examenes_tabla WHERE asignatura = ? AND tema = ?";
+
+        // Crear el mapa para almacenar las preguntas, con el número de pregunta como clave
+        Map<Integer, Map<String, String>> examen = new HashMap<>();
+
+        // Ejecutar la consulta y procesar los resultados
+        try (PreparedStatement stmt = conn.prepareStatement(query)) {
+            // Establecer los parámetros de la consulta
+            stmt.setString(1, asignatura);
+            stmt.setString(2, tema);
+
+            // Ejecutar la consulta
+            try (ResultSet rs = stmt.executeQuery()) {
+                int numeroPregunta = 1; // Variable para llevar el conteo del número de pregunta
+                // Recorrer los resultados y agregarlos al mapa
+                while (rs.next()) {
+                    String pregunta = rs.getString("pregunta");
+                    String respuestaCorrecta = rs.getString("rverdadera");
+                    String respuestaIncorrecta1 = rs.getString("rf1");
+                    String respuestaIncorrecta2 = rs.getString("rf2");
+                    String respuestaIncorrecta3 = rs.getString("rf3");
+
+                    // Crear un submapa para las respuestas
+                    Map<String, String> respuestas = new HashMap<>();
+                    respuestas.put("numero", numeroPregunta + "");
+                    respuestas.put("Pregunta", pregunta);
+                    respuestas.put("correcta", respuestaCorrecta);
+                    respuestas.put("incorrecta1", respuestaIncorrecta1);
+                    respuestas.put("incorrecta2", respuestaIncorrecta2);
+                    respuestas.put("incorrecta3", respuestaIncorrecta3);
+
+                    // Agregar el número de pregunta y las respuestas al mapa principal
+                    examen.put(numeroPregunta, respuestas);
+
+                    // Incrementar el número de pregunta
+                    numeroPregunta++;
+                }
+            }
+        } catch (SQLException e) {
+            // Manejo de posibles errores de SQL
+            e.printStackTrace();
+        }
+
+        // Retornar el mapa con las preguntas y respuestas (vacío si no hay resultados)
+        return examen;
+    }
+
+    /**
+     * Guarda un examen realizado en la tabla Examenes_Realizados_Tabla.
+     *
+     * @param conn La conexión a la base de datos.
+     * @param asignatura La asignatura del examen.
+     * @param tema El tema del examen.
+     * @param nota La nota obtenida en el examen.
+     * @param usuario El usuario que realizó el examen.
+     */
+    public static void GuardarExamenRealizado(Connection conn, String asignatura, String tema, String nota, String usuario) {
+        String sql = "INSERT INTO Examenes_Realizados_Tabla (asignatura, tema, nota, usuario) VALUES (?, ?, ?, ?)";
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            // Asignar los valores a los parámetros de la consulta
+            pstmt.setString(1, asignatura);
+            pstmt.setString(2, tema);
+            pstmt.setString(3, nota);
+            pstmt.setString(4, usuario);
+
+            // Ejecutar la consulta
+            int filasInsertadas = pstmt.executeUpdate();
+            if (filasInsertadas > 0) {
+                System.out.println("Examen guardado exitosamente.");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al guardar el examen realizado: " + e.getMessage());
+        }
+    }
 }

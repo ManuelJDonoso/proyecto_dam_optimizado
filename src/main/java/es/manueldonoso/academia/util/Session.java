@@ -19,6 +19,11 @@ public class Session {
     private static String Usuario;
 
     /**
+     * puntuacion para los examentes
+     */
+    private static int Puntuacion;
+
+    /**
      * Contraseña del usuario de la sesión actual.
      */
     private static String pass;
@@ -58,5 +63,30 @@ public class Session {
     public static void setPass(String pass) {
         Session.pass = pass;
     }
+
+    /**
+     *devuelve la puntuacion del examen que esta realizando el usuario en esta session 
+     * @return Nota
+     */
+    public static int getPuntuacion() {
+        return Puntuacion;
+    }
+
+    /**
+     *establece la puntuacion del examen que esta realizando el usuario en esta session 
+     * @param Puntuacion Nota
+     */
+    public static void setPuntuacion(int Puntuacion) {
+        Session.Puntuacion = Puntuacion;
+    }
+    /**
+     * altera el valor del resultado de la nota sin borrar el dato anterior.
+     * @param modifificar  valor para añadir o restar.
+     */
+    public static void sumar_Punto(int modifificar){
+        Puntuacion=Puntuacion+modifificar;
+    }
+    
+   
 
 }
