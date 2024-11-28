@@ -663,5 +663,39 @@ public class Acciones {
             System.err.println("Error al enviar el email: " + e.getMessage());
         }
     }
+    
+      /**
+     * Abre WhatsApp en el navegador o en la aplicación de escritorio/móvil predeterminada para enviar un mensaje
+     * a un número de teléfono específico.
+     *
+     * @param numeroTelefono El número de teléfono en formato internacional (incluyendo el código de país, 
+     *                       por ejemplo, "34600111222" para España).
+     * @param mensaje        El mensaje a enviar. Puede contener caracteres especiales, que serán codificados automáticamente.
+     * @throws UnsupportedOperationException Si la funcionalidad de navegador no está soportada.
+     * @throws IllegalArgumentException      Si el número de teléfono no es válido o el formato de URI falla.
+     */
+    public static void enviarWhatsApp(String numeroTelefono, String mensaje) {
+        try {
+            // Verifica si Desktop es compatible
+            if (!Desktop.isDesktopSupported()) {
+                throw new UnsupportedOperationException("La funcionalidad de navegador no está soportada.");
+            }
+
+            // Codifica el mensaje para evitar problemas con caracteres especiales
+            String encodedMensaje = URLEncoder.encode(mensaje, "UTF-8");
+
+            // Construye el URI de WhatsApp
+            String uriString = String.format("https://wa.me/%s?text=%s", numeroTelefono, encodedMensaje);
+            URI whatsappURI = new URI(uriString);
+
+            // Abre el enlace en el navegador
+            Desktop.getDesktop().browse(whatsappURI);
+
+        } catch (UnsupportedEncodingException e) {
+            System.err.println("Error al codificar el mensaje: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Error al abrir WhatsApp: " + e.getMessage());
+        }
+    }
   
 }

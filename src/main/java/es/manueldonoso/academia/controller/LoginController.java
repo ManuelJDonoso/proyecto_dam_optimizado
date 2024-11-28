@@ -347,4 +347,9 @@ public class LoginController implements Initializable {
         Acciones.enviarEmail("donperma@gmail.com", "recuperar contraseña", "el usuario "+txt_nombre.getText());
     }
 
+    @FXML
+    private void btn_whatsapp(ActionEvent event) {
+        Acciones.enviarWhatsApp("655354312", "Esta es el wathsapp del desarrollador, para cualquier duda envie un mensaje.");
+    }
+
 }

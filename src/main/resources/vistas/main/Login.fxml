@@ -73,7 +73,7 @@
                         </DropShadow>
                      </effect>
                   </ImageView>
-                  <JFXButton fx:id="btn_whatsapp" focusTraversable="false" prefHeight="54.0" prefWidth="176.0" text="+34 655354312" textFill="#efefef">
+                  <JFXButton fx:id="btn_whatsapp" focusTraversable="false" onAction="#btn_whatsapp" prefHeight="54.0" prefWidth="176.0" text="+34 655354312" textFill="#efefef">
                      <graphic>
                         <FontIcon fill="#10d748" iconLiteral="fa-whatsapp" iconSize="32" wrappingWidth="29.00006067752838" />
                      </graphic>
