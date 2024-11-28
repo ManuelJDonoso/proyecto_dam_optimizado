@@ -15,11 +15,7 @@
             <artifactId>javafx-controls</artifactId>
             <version>22</version>
         </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>13</version>
-        </dependency>
+
         <!--dependecias para iconos-->
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
@@ -117,6 +113,21 @@
             <scope>test</scope>
             <type>jar</type>
         </dependency>
+        
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>22</version>
+        </dependency>
+
+                
+ 
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>22</version>
+        </dependency>
+    
     </dependencies>
     <build>
         <plugins>
@@ -176,18 +187,18 @@
                 </executions>
             </plugin>
             
-              <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.3.0</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>javadoc</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>javadoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>

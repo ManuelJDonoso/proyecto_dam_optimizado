@@ -1423,4 +1423,33 @@ public class Base_datos {
             return "Error al obtener la nota más alta: " + e.getMessage();
         }
     }
+    
+    
+    /**
+     * Actualiza el valor de la columna 'activo' en la tabla 'Material'.
+     *
+     * @param conn La conexión existente a la base de datos.
+     * @param id El ID del material a actualizar (como String).
+     * @param activo El nuevo valor de la columna activo (como String, valores "0" o "1").
+     * @return true si la actualización fue exitosa, false en caso contrario.
+     */
+    public static  boolean actualizarActivo(Connection conn, String id, String activo) {
+        String sql = "UPDATE Material SET activo = ? WHERE id = ?";
+        try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+
+            // Establecer los parámetros
+            preparedStatement.setString(1, activo); // Valor del campo activo
+            preparedStatement.setString(2, id);    // ID del registro
+
+            // Ejecutar la actualización
+            int filasActualizadas = preparedStatement.executeUpdate();
+            return filasActualizadas > 0;
+
+        } catch (SQLException e) {
+            System.err.println("Error al actualizar la columna activo: " + e.getMessage());
+            return false;
+        }
+    }
+
+   
 }

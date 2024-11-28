@@ -104,6 +104,11 @@
                         <FontIcon iconColor="#7d8fcc" iconLiteral="fa-book" iconSize="32" wrappingWidth="32.20001220703125" />
                      </graphic>
                   </JFXButton>
+                  <JFXButton fx:id="btn_VideoAyuda" alignment="BOTTOM_LEFT" focusTraversable="false" layoutX="56.0" layoutY="403.0" onAction="#MostrarvideoAyuda" prefHeight="52.0" prefWidth="179.0" text="Video Ayuda" textFill="#efe9e9">
+                     <graphic>
+                        <FontIcon iconColor="#7d8fcc" iconLiteral="fa-file-video-o" iconSize="32" wrappingWidth="32.20001220703125" />
+                     </graphic>
+                  </JFXButton>
                </children>
             </VBox>
             <Separator maxHeight="1.7976931348623157E308" orientation="VERTICAL" prefHeight="470.0" prefWidth="21.0">

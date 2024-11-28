@@ -115,8 +115,12 @@ public class Panel_SubirMaterialController implements Initializable {
                 activo.setOnAction(event -> {
                     Material material = getTableView().getItems().get(getIndex());
                     material.setActivo(activo.isSelected()); // Actualiza el estado activo del material
-                    // Aquí puedes implementar la lógica para actualizar la base de datos
-                    System.out.println("Estado activo actualizado: " + material.isActivo());
+                    String activo = "0";
+                    if (material.isActivo()) {
+                        activo = "1";
+                    }
+
+                    Base_datos.actualizarActivo(conn, material.getId(), activo);
                 });
             }
 

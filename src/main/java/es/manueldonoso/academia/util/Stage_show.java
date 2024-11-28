@@ -234,6 +234,36 @@ public class Stage_show {
 
     }
 
+    
+    
+        public static void Mostrar_VideoAyuda() {
+        Stage primaryStage = new Stage();
+        try {
+            // Cargo la ventana inicial
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(main.class.getResource("/vistas/comun/videoAyuda.fxml"));
+
+            // Ventana a cargar
+            AnchorPane ventana = (AnchorPane) loader.load();
+
+            // Creo la escena
+            Scene scene = new Scene(ventana);
+
+            // Modifico el stage
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("Video Ayuda");
+            //primaryStage.initStyle(StageStyle.UNDECORATED);
+
+            Efectos_visuales.darMovimientoStage(primaryStage);
+        } catch (IOException ex) {
+            Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        primaryStage.show();
+    }
+    
+    
+    
+    
     //------------------------------administrador--------------------------------------
     /**
      * Muestra el dashboard del administrador en una nueva ventana.
@@ -666,6 +696,7 @@ public class Stage_show {
             DashBoard_AlumnoController dashboard_AlumnoController = loader.getController();
             dashboard_AlumnoController.SetConn(conn);
             dashboard_AlumnoController.CargarUsuario();
+            
 
             // Creo la escena
             Scene scene = new Scene(ventana);
@@ -716,6 +747,8 @@ public class Stage_show {
             Node contenido = loader.load();
             PanelMaterialController controller = loader.getController();
             controller.setConn(conn);
+            controller.loadUser(user);
+            controller.cargarDatosDesdeBaseDeDatos();
 
             // Asegurar que el contenido cargado tenga el fondo transparente
             if (contenido instanceof Pane) {

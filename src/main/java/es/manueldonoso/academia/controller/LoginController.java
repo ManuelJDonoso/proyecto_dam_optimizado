@@ -64,6 +64,8 @@ public class LoginController implements Initializable {
     private JFXButton btn_datosDefecto;
     @FXML
     private JFXButton btn_Contrato1;
+    @FXML
+    private JFXButton btn_VideoAyuda;
 
     /**
      * Initializes the controller class.
@@ -350,6 +352,11 @@ public class LoginController implements Initializable {
     @FXML
     private void btn_whatsapp(ActionEvent event) {
         Acciones.enviarWhatsApp("655354312", "Esta es el wathsapp del desarrollador, para cualquier duda envie un mensaje.");
+    }
+
+    @FXML
+    private void MostrarvideoAyuda(ActionEvent event) {
+        Stage_show.Mostrar_VideoAyuda();
     }
 
 }

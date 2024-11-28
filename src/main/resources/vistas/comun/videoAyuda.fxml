@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="es.manueldonoso.academia.controller.VideoAyudaController">
-    
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="477.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.manueldonoso.academia.controller.VideoAyudaController">
+   <children>
+      <ImageView fitHeight="537.0" fitWidth="699.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/app/fondovideo.png" />
+         </image>
+      </ImageView>
+      <MediaView fx:id="mediaVideo" fitHeight="350.0" fitWidth="600.0" layoutX="54.0" layoutY="44.0" />
+      <Slider fx:id="Slider_tiempo" layoutX="150.0" layoutY="444.0" prefHeight="14.0" prefWidth="408.0" />
+      <JFXButton fx:id="brn_play" contentDisplay="GRAPHIC_ONLY" layoutX="45.0" layoutY="439.0" prefHeight="35.0" prefWidth="80.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/app/play_pause_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
 </AnchorPane>
