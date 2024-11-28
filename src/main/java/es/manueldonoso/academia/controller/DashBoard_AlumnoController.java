@@ -105,4 +105,10 @@ public class DashBoard_AlumnoController implements Initializable {
             Logger.getLogger(DashBoard_ProfesorController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @FXML
+    private void btn_misNotas(ActionEvent event) {
+        Stage_show.cargar_panel_Notas(ac_center, user, conn);
+    }
+    
 }

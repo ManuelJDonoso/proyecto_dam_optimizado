@@ -5,6 +5,7 @@
 package es.manueldonoso.academia.util;
 
 import es.manueldonoso.academia.modelos.Usuario;
+import es.manueldonoso.academia.modelos.examen;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -1321,6 +1322,105 @@ public class Base_datos {
             }
         } catch (SQLException e) {
             System.err.println("Error al guardar el examen realizado: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Obtiene una lista de temas de la tabla Examen_Realizados_Tablas según el
+     * usuario y asignatura.
+     *
+     * @param conn La conexión a la base de datos.
+     * @param usuario El usuario para filtrar la consulta.
+     * @param asignatura La asignatura para filtrar la consulta.
+     * @return Una lista de temas encontrados o una lista vacía si no hay
+     * resultados.
+     * @throws SQLException Si ocurre un error al realizar la consulta SQL.
+     */
+    public static List<String> obtenerTemasPorUsuarioYAsignatura(Connection conn, String usuario, String asignatura) throws SQLException {
+        String sql = "SELECT tema FROM Examenes_Realizados_Tabla WHERE usuario = ? AND asignatura = ?";
+        List<String> temas = new ArrayList<>();
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, usuario);
+            stmt.setString(2, asignatura);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    temas.add(rs.getString("tema"));
+                }
+            }
+        }
+
+        return temas;
+    }
+
+    /**
+     * Obtiene una lista de exámenes de la tabla Examen_Realizados_Tablas según
+     * el usuario y asignatura.
+     *
+     * @param conn La conexión a la base de datos.
+     * @param usuario El usuario para filtrar la consulta.
+     * @param asignatura La asignatura para filtrar la consulta.
+     * @return Una lista de exámenes encontrados o una lista vacía si no hay
+     * resultados.
+     * @throws SQLException Si ocurre un error al realizar la consulta SQL.
+     */
+    public static List<examen> obtenerExamenesPorUsuarioYAsignatura(Connection conn, String usuario, String asignatura) throws SQLException {
+        String sql = "SELECT nota, tema FROM Examenes_Realizados_Tabla WHERE usuario = ? AND asignatura = ? ORDER BY tema";
+        List<examen> examenes = new ArrayList<>();
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, usuario);
+            stmt.setString(2, asignatura);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    double nota = rs.getDouble("nota");
+                    String tema = rs.getString("tema");
+                    examenes.add(new examen(tema, nota));
+                }
+            }
+        }
+
+        return examenes;
+    }
+
+    /**
+     * Obtiene la nota más alta registrada para un usuario, asignatura y tema
+     * específicos.
+     *
+     * @param conn La conexión activa a la base de datos.
+     * @param usuario El nombre de usuario para el cual se quiere obtener la
+     * nota.
+     * @param asignatura El nombre de la asignatura del examen.
+     * @param tema El tema específico del examen.
+     * @return La nota más alta como un String, o un mensaje de error si no se
+     * encuentran registros o si ocurre un problema.
+     */
+    public static String NotaExamenMax(Connection conn, String usuario, String asignatura, String tema) {
+        // Definir la consulta SQL para obtener la nota más alta
+        String sql = "SELECT MAX(nota) AS nota_maxima FROM Examenes_Realizados_Tabla WHERE usuario = ? AND asignatura = ? AND tema = ?";
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            // Establecer los parámetros de la consulta
+            stmt.setString(1, usuario);
+            stmt.setString(2, asignatura);
+            stmt.setString(3, tema);
+
+            // Ejecutar la consulta
+            ResultSet rs = stmt.executeQuery();
+
+            // Verificar si se obtuvo un resultado
+            if (rs.next()) {
+                // Obtener la nota más alta como String
+                double notaMaxima = rs.getDouble("nota_maxima");
+                return String.valueOf(notaMaxima);  // Convertir la nota a String
+            } else {
+                return "No se encontraron registros para los parámetros especificados.";
+            }
+
+        } catch (SQLException e) {
+            return "Error al obtener la nota más alta: " + e.getMessage();
         }
     }
 }

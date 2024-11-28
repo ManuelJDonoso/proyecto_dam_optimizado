@@ -4,21 +4,8 @@
  */
 package es.manueldonoso.academia.util;
 
-import es.manueldonoso.academia.controller.Asignaturas_PanelController;
-import es.manueldonoso.academia.controller.BuscarUsuarioController;
-import es.manueldonoso.academia.controller.Cambio_ContrasenaController;
-import es.manueldonoso.academia.controller.DashBoard_AdministradorController;
-import es.manueldonoso.academia.controller.DashBoard_AlumnoController;
-import es.manueldonoso.academia.controller.DashBoard_ProfesorController;
-import es.manueldonoso.academia.controller.MisDatosController;
-import es.manueldonoso.academia.controller.ModificarDatosUsuarioController;
-import es.manueldonoso.academia.controller.PanelMaterialController;
-import es.manueldonoso.academia.controller.Panel_ExamenMenuController;
-import es.manueldonoso.academia.controller.Panel_SubirMaterialController;
-import es.manueldonoso.academia.controller.Panel_generar_ExamenController;
-import es.manueldonoso.academia.controller.Panel_preguntaController;
-import es.manueldonoso.academia.controller.Plantilla_preguntaController;
-import es.manueldonoso.academia.controller.Registrar_usuario_nuevoController;
+import es.manueldonoso.academia.controller.*;
+import es.manueldonoso.academia.controller.alumno.Panel_notas_generalController;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -832,5 +819,38 @@ public class Stage_show {
             Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+    
+    public static void cargar_panel_Notas(Pane pane,Usuario user,Connection conn){
+         // Cargar el archivo FXML de la vista asignatura
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(main.class.getResource("/vistas/alumno/Panel_notas_general.fxml"));
+
+        try {
+            // Cargar el contenido desde el FXML
+            Node contenido = loader.load();
+            Panel_notas_generalController controller = loader.getController();
+            controller.setConn(conn);
+            controller.CargarNotas(user);
+
+            // Asegurar que el contenido cargado tenga el fondo transparente
+            if (contenido instanceof Pane) {
+                ((Pane) contenido).setStyle("-fx-background-color: transparent;");
+            }
+
+            // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
+            if (contenido instanceof Region) {
+                Region region = (Region) contenido;
+                region.prefWidthProperty().bind(pane.widthProperty());
+                region.prefHeightProperty().bind(pane.heightProperty());
+            }
+
+            // Limpiar el contenido actual del pane y añadir el nuevo
+            pane.getChildren().clear();
+            pane.getChildren().add(contenido);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

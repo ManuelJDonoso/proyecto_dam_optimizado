@@ -144,6 +144,7 @@ public class LoginController implements Initializable {
     @FXML
     private void btn_datosDefecto(ActionEvent event) {
         try {
+           
             Base_datos.eliminarTodosUsuarios(Base_datos.conectarSqlite());
             Base_datos.insertarUsuarios(Base_datos.conectarSqlite());
         } catch (SQLException ex) {
@@ -338,6 +339,12 @@ public class LoginController implements Initializable {
     @FXML
     private void MostrarDocumentacion(ActionEvent event) {
         Acciones.abrirWebLocal("/documentacion/html/index.html");
+    }
+
+    @FXML
+    private void btn_olvideContraseña(ActionEvent event) {
+        
+        Acciones.enviarEmail("donperma@gmail.com", "recuperar contraseña", "el usuario "+txt_nombre.getText());
     }
 
 }

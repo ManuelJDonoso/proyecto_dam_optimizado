@@ -14,7 +14,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URLEncoder;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -619,4 +622,46 @@ public class Acciones {
         return random.nextInt(max - min + 1) + min;
     }
 
+        /**
+     * Abre el cliente de correo predeterminado del sistema con un borrador de email 
+     * preconfigurado utilizando los parámetros proporcionados.
+     *
+     * @param destinatario La dirección de correo electrónico del destinatario. Debe ser válida.
+     * @param asunto       El asunto del correo. Puede incluir caracteres especiales, 
+     *                     que serán codificados automáticamente.
+     * @param mensaje      El cuerpo del mensaje. También será codificado para evitar errores
+     *                     con caracteres especiales.
+     * @throws UnsupportedOperationException Si la funcionalidad de correo no es soportada
+     *                                       en el sistema operativo.
+     * @throws IllegalArgumentException      Si el formato del URI no es válido.
+     */
+    public static void enviarEmail(String destinatario, String asunto, String mensaje) {
+        try {
+            // Codifica los parámetros para evitar problemas con caracteres especiales
+            String encodedAsunto = URLEncoder.encode(asunto, "UTF-8");
+            String encodedMensaje = URLEncoder.encode(mensaje, "UTF-8");
+
+            // Construye el URI para el email
+            String uriString = String.format(
+                "mailto:%s?subject=%s&body=%s",
+                destinatario,
+                encodedAsunto,
+                encodedMensaje
+            );
+
+            URI mailto = new URI(uriString);
+
+            // Abre el cliente de correo predeterminado
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.MAIL)) {
+                Desktop.getDesktop().mail(mailto);
+            } else {
+                System.out.println("El cliente de correo no está soportado en este sistema.");
+            }
+        } catch (UnsupportedEncodingException e) {
+            System.err.println("Error al codificar los parámetros: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Error al enviar el email: " + e.getMessage());
+        }
+    }
+  
 }
