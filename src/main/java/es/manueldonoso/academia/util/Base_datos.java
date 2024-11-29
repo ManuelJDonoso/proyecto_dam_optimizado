@@ -628,7 +628,7 @@ public class Base_datos {
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
                     if (rs.getString("fechaAlta") != null && !rs.getString("fechaAlta").isBlank()) {
-                        System.out.println(rs.getString("fechaAlta"));
+                       
                         try {
 
                             java.util.Date fechaAlta = formatter.parse(rs.getString("fechaAlta"));
@@ -661,7 +661,7 @@ public class Base_datos {
                     }
 
                     user.setAsignaturas(asignaturasExistentes);
-                    System.out.println(user.toString());
+                   
                     return user;
                 } else {
                     // Retornar null si el usuario no existe o la contraseña es incorrecta
@@ -1217,10 +1217,54 @@ public class Base_datos {
             // Establecer el valor del parámetro 'asignatura' en la consulta
             stmt.setString(1, asignatura);
 
+            // Imprimir la consulta con los valores de los parámetros (debe reemplazar el '?')
+            // System.out.println("Ejecutando consulta: " + query.replace("?", "'" + asignatura + "'"));
             // Ejecutar la consulta
             try (ResultSet rs = stmt.executeQuery()) {
                 // Iterar sobre los resultados y agregar cada tema a la lista
                 while (rs.next()) {
+
+                    temas.add(rs.getString("tema"));
+                }
+            }
+        } catch (SQLException e) {
+            // Manejar posibles errores de SQL
+            e.printStackTrace();
+        }
+
+        // Retornar la lista de temas (vacía si no se encontró ningún tema)
+        return temas;
+    }
+    
+    /**
+     * Busca los temas de examen correspondientes a una asignatura en la base de
+     * datos.
+     *
+     * @param conn La conexión activa a la base de datos.
+     * @param asignatura El nombre de la asignatura cuyos temas se desean
+     * buscar.
+     * @return Una lista con los temas asociados con la asignatura, o una lista
+     * vacía si no se encuentran temas.
+     */
+    public static List<String> BuscarExamenesRealizados(Connection conn, String asignatura) {
+        // Definir la consulta SQL para obtener los temas de la asignatura
+        String query = "SELECT tema FROM Examenes_Realizados_Tabla WHERE asignatura = ? GROUP BY tema";
+
+        // Crear una lista para almacenar los temas encontrados
+        List<String> temas = new ArrayList<>();
+
+        // Intentar ejecutar la consulta y obtener los resultados
+        try (PreparedStatement stmt = conn.prepareStatement(query)) {
+            // Establecer el valor del parámetro 'asignatura' en la consulta
+            stmt.setString(1, asignatura);
+
+            // Imprimir la consulta con los valores de los parámetros (debe reemplazar el '?')
+            // System.out.println("Ejecutando consulta: " + query.replace("?", "'" + asignatura + "'"));
+            // Ejecutar la consulta
+            try (ResultSet rs = stmt.executeQuery()) {
+                // Iterar sobre los resultados y agregar cada tema a la lista
+                while (rs.next()) {
+
                     temas.add(rs.getString("tema"));
                 }
             }
@@ -1423,17 +1467,17 @@ public class Base_datos {
             return "Error al obtener la nota más alta: " + e.getMessage();
         }
     }
-    
-    
+
     /**
      * Actualiza el valor de la columna 'activo' en la tabla 'Material'.
      *
      * @param conn La conexión existente a la base de datos.
      * @param id El ID del material a actualizar (como String).
-     * @param activo El nuevo valor de la columna activo (como String, valores "0" o "1").
+     * @param activo El nuevo valor de la columna activo (como String, valores
+     * "0" o "1").
      * @return true si la actualización fue exitosa, false en caso contrario.
      */
-    public static  boolean actualizarActivo(Connection conn, String id, String activo) {
+    public static boolean actualizarActivo(Connection conn, String id, String activo) {
         String sql = "UPDATE Material SET activo = ? WHERE id = ?";
         try (PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
 
@@ -1451,5 +1495,4 @@ public class Base_datos {
         }
     }
 
-   
 }

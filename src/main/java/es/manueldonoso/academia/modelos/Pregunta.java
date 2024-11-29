@@ -117,22 +117,23 @@ public class Pregunta {
         this.respuesta2 = respuesta2;
         this.respuesta3 = respuesta3;
        
-        
+   
         asignarRepuesta((int) orden.get(0), respuestaV);
         asignarRepuesta((int) orden.get(1), respuesta1);
         asignarRepuesta((int) orden.get(2), respuesta2);
         asignarRepuesta((int) orden.get(3), respuesta3);
-       
-         if ((int) orden.get(0) == 1) {
+        this.orden = orden;
+        
+        if ((int) orden.get(0) == 1) {
             asignarCorrecta(1);
         }
-        if ((int) orden.get(1) == 1) {
+        if ((int) orden.get(0) == 2) {
             asignarCorrecta(2);
         }
-        if ((int) orden.get(2) == 1) {
+        if ((int) orden.get(0) == 3) {
             asignarCorrecta(3);
         }
-        if ((int) orden.get(3) == 1) {
+        if ((int) orden.get(0) == 4) {
             asignarCorrecta(4);
         }
 
@@ -169,7 +170,7 @@ public class Pregunta {
      * @param correcta indica si la respuesta es correcta.
      */
     private void asignarRepuesta(int i, String respuesta) {
-        System.out.println("Asignar Respuesta" + i);
+       // System.out.println("Asignar Respuesta" + i);
         switch (i) {
             case 1:
                 respuestaA = respuesta;
@@ -301,7 +302,9 @@ public class Pregunta {
     public String toString() {
         return "Pregunta{" + "pregunta=" + pregunta + ", respuestaV=" + respuestaV + ", respuesta1=" + respuesta1 + ", respuesta2=" + respuesta2 + ", respuesta3=" + respuesta3 + ", respuestaA=" + respuestaA + ", respuestaB=" + respuestaB + ", respuestaC=" + respuestaC + ", respuestaD=" + respuestaD + ", numero=" + numero + ", Sol_A=" + Sol_A + ", Sol_B=" + Sol_B + ", Sol_C=" + Sol_C + ", Sol_D=" + Sol_D + ", orden=" + orden + '}';
     }
-
+  public String respuestas() {
+        return "Pregunta{" +  ", respuestaA=" + respuestaA + ", respuestaB=" + respuestaB + ", respuestaC=" + respuestaC + ", respuestaD=" + respuestaD + ", \n numero=" + numero + ", Sol_A=" + Sol_A + ", Sol_B=" + Sol_B + ", Sol_C=" + Sol_C + ", Sol_D=" + Sol_D + ", orden=" + orden + '}';
+    }
     public int getNumero() {
         return numero;
     }

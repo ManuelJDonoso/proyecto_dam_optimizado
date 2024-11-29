@@ -4,6 +4,8 @@
  */
 package es.manueldonoso.academia.modelos;
 
+import static es.manueldonoso.academia.util.Acciones.generarNumeroAleatorio;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -15,7 +17,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
-
 
 /**
  *
@@ -72,9 +73,8 @@ public class PreguntaTest {
         assertFalse(pregunta.isSol_D());
 
     }
-    
-    
-     /**
+
+    /**
      * Test of getPregunta method, of class Pregunta.
      */
     @RepeatedTest(10)
@@ -105,8 +105,7 @@ public class PreguntaTest {
 
     }
 
-
-     /**
+    /**
      * Test of getPregunta method, of class Pregunta.
      */
     @RepeatedTest(10)
@@ -118,14 +117,14 @@ public class PreguntaTest {
         String respuestaIncorrecta1 = "Londres";
         String respuestaIncorrecta2 = "Madrid";
         String respuestaIncorrecta3 = "Berlín";
-        List<Integer> orden = Arrays.asList(2, 3, 1, 4);
+        List<Integer> orden = Arrays.asList(3, 2, 1, 4);
 
         // Crear instancia de Pregunta con un orden predefinido
         Pregunta pregunta = new Pregunta(orden, 1, preguntaTexto, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3);
 
         // Verificar que las respuestas están en el orden esperado
-        assertEquals(respuestaCorrecta, pregunta.getRespuestaB());
-        assertEquals(respuestaIncorrecta1, pregunta.getRespuestaC());
+        assertEquals(respuestaCorrecta, pregunta.getRespuestaC());
+        assertEquals(respuestaIncorrecta1, pregunta.getRespuestaB());
         assertEquals(respuestaIncorrecta2, pregunta.getRespuestaA());
         assertEquals(respuestaIncorrecta3, pregunta.getRespuestaD());
 
@@ -137,7 +136,7 @@ public class PreguntaTest {
 
     }
 
-     /**
+    /**
      * Test of getPregunta method, of class Pregunta.
      */
     @RepeatedTest(10)
@@ -149,14 +148,14 @@ public class PreguntaTest {
         String respuestaIncorrecta1 = "Londres";
         String respuestaIncorrecta2 = "Madrid";
         String respuestaIncorrecta3 = "Berlín";
-        List<Integer> orden = Arrays.asList(2, 4, 3, 1);
+        List<Integer> orden = Arrays.asList(4, 2, 3, 1);
 
         // Crear instancia de Pregunta con un orden predefinido
         Pregunta pregunta = new Pregunta(orden, 1, preguntaTexto, respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3);
 
-        // Verificar que las respuestas están en el orden esperado
-        assertEquals(respuestaCorrecta, pregunta.getRespuestaB());
-        assertEquals(respuestaIncorrecta1, pregunta.getRespuestaD());
+        // Verificar que las respuestas están en el orden esperado 
+        assertEquals(respuestaCorrecta, pregunta.getRespuestaD());
+        assertEquals(respuestaIncorrecta1, pregunta.getRespuestaB());
         assertEquals(respuestaIncorrecta2, pregunta.getRespuestaC());
         assertEquals(respuestaIncorrecta3, pregunta.getRespuestaA());
 

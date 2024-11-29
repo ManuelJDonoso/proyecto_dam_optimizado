@@ -22,7 +22,11 @@ public class Session {
      * puntuacion para los examentes
      */
     private static int Puntuacion;
-
+   
+    /**
+     * total pregunta examenes
+     */
+     public static int totalPregunstas;
     /**
      * Contraseña del usuario de la sesión actual.
      */
@@ -72,6 +76,7 @@ public class Session {
         return Puntuacion;
     }
 
+   
     /**
      *establece la puntuacion del examen que esta realizando el usuario en esta session 
      * @param Puntuacion Nota
@@ -85,6 +90,14 @@ public class Session {
      */
     public static void sumar_Punto(int modifificar){
         Puntuacion=Puntuacion+modifificar;
+    }
+
+    public static int getTotalPregunstas() {
+        return totalPregunstas;
+    }
+
+    public static void setTotalPregunstas(int totalPregunstas) {
+        Session.totalPregunstas = totalPregunstas;
     }
     
    

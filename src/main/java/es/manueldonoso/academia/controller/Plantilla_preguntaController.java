@@ -123,14 +123,18 @@ public class Plantilla_preguntaController implements Initializable {
     }
 
     public void CargarPregunta(Pregunta pregunta) {
-        this.numero_pregunta.setText(pregunta.getNumero() + "");
-        this.pregunta.setText(pregunta.getPregunta());
-        this.respuestaA.setText(pregunta.getRespuestaA());
-        this.respuestaB.setText(pregunta.getRespuestaB());
-        this.respuestaC.setText(pregunta.getRespuestaC());
-        this.respuestaD.setText(pregunta.getRespuestaD());
-        p = pregunta;
-        isAcierto();
+         p = pregunta;
+        
+        numero_pregunta.setText(p.getNumero()+"");
+         //escribir las preguntas
+        this.pregunta.setText(p.getPregunta());
+        this.respuestaA.setText(p.getRespuestaA());
+        this.respuestaB.setText(p.getRespuestaB());
+        this.respuestaC.setText(p.getRespuestaC());
+        this.respuestaD.setText(p.getRespuestaD());
+        
+    
+      
     }
 
     public boolean isAcierto() {
@@ -142,15 +146,8 @@ public class Plantilla_preguntaController implements Initializable {
     }
 
     private void setAcierto(boolean value) {
-//            System.out.println("solucion resuesta A");
-//            System.out.println(p.isSol_A());
-//             System.out.println("solucion resuesta b");
-//            System.out.println(p.isSol_B());
-//             System.out.println("solucion resuesta c");
-//            System.out.println(p.isSol_C());
-//             System.out.println("solucion resuesta d");
-//            System.out.println(p.isSol_D());
-            System.out.println(p.toString());
+
+       
         
         
         System.out.println(value);

@@ -7,11 +7,15 @@ package es.manueldonoso.academia.controller;
 import com.jfoenix.controls.JFXComboBox;
 import es.manueldonoso.academia.modelos.Pregunta;
 import es.manueldonoso.academia.modelos.Usuario;
+import static es.manueldonoso.academia.util.Acciones.generarNumeroAleatorio;
 import es.manueldonoso.academia.util.Base_datos;
 import es.manueldonoso.academia.util.Session;
 import es.manueldonoso.academia.util.Stage_show;
 import java.net.URL;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -65,8 +69,9 @@ public class Panel_ExamenMenuController implements Initializable {
         Panel_Preguntas.getChildren().clear();
 
         if (cb_Tema.getValue() != null) {
+            
             Map<Integer, Map<String, String>> examen = Base_datos.Examen(conn, cb_Asignatura.getValue(), cb_Tema.getValue());
-
+            Session.setTotalPregunstas(examen.size());
             for (int i = 0; i < examen.size(); i++) {
                 Map<String, String> preguntaselec = examen.get(i + 1);
                 pregunta = preguntaselec.get("Pregunta");
@@ -75,22 +80,16 @@ public class Panel_ExamenMenuController implements Initializable {
                 respuesta2 = preguntaselec.get("incorrecta2");
                 respuesta3 = preguntaselec.get("incorrecta3");
 
-//                System.out.println(i+1);
-//                System.out.println(pregunta);
-//                System.out.println(respuestaV);
-//                System.out.println(respuesta1);
-//                System.out.println(respuesta2);
-//                 System.out.println(respuesta3);
+
                  
-                // Crea una nueva pregunta
-              
+                List<Integer> orden =  ordenAleatorioRespuesta();
                 
-              //  p = new Pregunta(i + 1, pregunta, respuestaV, respuesta1, respuesta2, respuesta3);
-               p = new Pregunta(i + 1, "pre", "verdad", "false", "falsa", "falsa");
+                p = new Pregunta(orden,i + 1, pregunta, respuestaV, respuesta1, respuesta2, respuesta3);
+              
 
              //    Carga la plantilla de la pregunta
                 Stage_show.cargar_Pregunta(Panel_Preguntas, p);
-                System.out.println(p.toString());
+               
 
             }
         }
@@ -103,11 +102,15 @@ public class Panel_ExamenMenuController implements Initializable {
         corregir.setTitle("Corregir el examen");
         corregir.setHeaderText(null);
         corregir.setContentText("¿Desea Finalizar el examen?");
+        System.out.println(Session.getTotalPregunstas());
+        System.out.println(Session.getPuntuacion());
+       
+       
         corregir.showAndWait();
 
         if (corregir.getResult() == ButtonType.OK) {
             String Asignatura=cb_Asignatura.getValue();
-            String Nota=Session.getPuntuacion()+"";
+            String Nota=String.format("%.2f",((double)Session.getPuntuacion()/Session.getTotalPregunstas())*10);
             String Tema=cb_Tema.getValue();
             String usuario=user.getUsuario();
            
@@ -116,7 +119,7 @@ public class Panel_ExamenMenuController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Resultados del Examen");
             alert.setHeaderText(null);
-            alert.setContentText("Has tenido " + Session.getPuntuacion() + " acierto(s).");
+            alert.setContentText("Has tenido " + Session.getPuntuacion() + " acierto(s), Nota : "+Nota);
             alert.showAndWait();
         }
 
@@ -145,9 +148,30 @@ public class Panel_ExamenMenuController implements Initializable {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 ObservableList<String> temas = FXCollections.observableList(Base_datos.BuscarExamenes(conn, newValue));
                 System.out.println("Elemento seleccionado: " + newValue);
+                System.out.println(temas);
                 cb_Tema.setItems(temas);
             }
         });
     }
+    /**
+     * Genera un orden aleatorio para asignar las respuestas a las opciones.
+     *
+     * @return una lista con el orden aleatorio de las respuestas.
+     */
+    private List ordenAleatorioRespuesta() {
+        List orden = new ArrayList();
+        int numeros = 0;
+        int j;
 
+        for (int i = 0; numeros < 4; i++) {
+            j = generarNumeroAleatorio(1, 4);
+            if (!orden.contains(j)) {
+                orden.add(j);
+            }
+            numeros = orden.size();
+        }
+
+        return orden;
+
+    }
 }

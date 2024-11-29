@@ -55,6 +55,7 @@ public class DashBoard_AlumnoController implements Initializable {
         
         Efectos_visuales.modificarTamañoImagen(iv_avatar, 50, 0.5);
         Platform.runLater(() -> root.requestFocus());
+        System.out.println("Mostrando Dasboard Alumno");
         
     }
     
