@@ -7,6 +7,7 @@ package es.manueldonoso.academia.controller;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import com.sun.glass.ui.GlassRobot;
 import es.manueldonoso.academia.modelos.Usuario;
 import es.manueldonoso.academia.util.Acciones;
 import es.manueldonoso.academia.util.Alerta;
@@ -27,6 +28,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -75,6 +77,7 @@ public class Registrar_usuario_nuevoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+     
         Efectos_visuales.setBackgroundImage(root, "/images/app/fondo_papiro.jpg");
         Platform.runLater(() -> root.requestFocus());
         add_listener_focusoff_TF();

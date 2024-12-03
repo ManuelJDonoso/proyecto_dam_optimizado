@@ -12,6 +12,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -213,5 +214,13 @@ public class Efectos_visuales {
 
     public static void AnimacionComponenteTada(Node node) {
         new animatefx.animation.Tada(node).play();
+    }
+    
+    public static void efectoGaussian(Node node,double radio){
+           node.setEffect(new GaussianBlur(radio));
+    }
+    
+      public static void eliminarEfecto(Node node){
+           node.setEffect(null);
     }
 }

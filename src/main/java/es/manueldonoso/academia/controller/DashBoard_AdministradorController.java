@@ -87,7 +87,9 @@ public class DashBoard_AdministradorController implements Initializable {
 
     @FXML
     private void agregar_usuario(ActionEvent event) {
+        Efectos_visuales.efectoGaussian(root, 7);
         Stage_show.Mostrar_Registrar_usuario_nuevo(conn, root);
+        Efectos_visuales.eliminarEfecto(root);
     }
 
     @FXML
