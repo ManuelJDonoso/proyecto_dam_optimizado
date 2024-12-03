@@ -24,10 +24,12 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -116,13 +118,23 @@ public class LoginController implements Initializable {
 
         GuardarUsuario();
         if (cb_selectBBDD.getValue() != null) {
-
+               
             mostrarDasboard(getConecConnection());
 
+        }else{
+           // mostrarNotificacion();
+            Efectos_visuales.mensajeNotificacionError("Advertencia", "Debe seleccionar una fuente de datos");
         }
 
     }
 
+     private void mostrarNotificacion() {
+        Notifications.create()
+                .title("Advertencia") // Título de la notificación
+                .text("Debe seleccionar una fuente de datos") // Mensaje de la notificación
+                .position(Pos.CENTER) // Posición de la notificación
+                .showWarning(); // Tipo de notificación (advertencia)
+    }
     @FXML
     private void cargarContrato(ActionEvent event) {
         Stage_show.Mostrar_crearContrato();
@@ -308,6 +320,9 @@ public class LoginController implements Initializable {
                 break;
 
             default:
+                Efectos_visuales.AnimacionComponenteTada(txt_nombre);
+                  Efectos_visuales.AnimacionComponenteTada(txt_pass);
+                  Efectos_visuales.mensajeNotificacionError("error", "Usuario o contraseña erroneos");
 
         }
 
