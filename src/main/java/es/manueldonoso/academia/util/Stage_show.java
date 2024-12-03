@@ -6,6 +6,7 @@ package es.manueldonoso.academia.util;
 
 import es.manueldonoso.academia.controller.*;
 import es.manueldonoso.academia.controller.alumno.Panel_notas_generalController;
+import es.manueldonoso.academia.controller.profesor.Panel_Nota_estadisticasController;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -234,9 +235,7 @@ public class Stage_show {
 
     }
 
-    
-    
-        public static void Mostrar_VideoAyuda() {
+    public static void Mostrar_VideoAyuda() {
         Stage primaryStage = new Stage();
         try {
             // Cargo la ventana inicial
@@ -260,10 +259,7 @@ public class Stage_show {
         }
         primaryStage.show();
     }
-    
-    
-    
-    
+
     //------------------------------administrador--------------------------------------
     /**
      * Muestra el dashboard del administrador en una nueva ventana.
@@ -675,6 +671,48 @@ public class Stage_show {
         }
     }
 
+    /**
+     * Añade un nuevo panel de pregunta al VBox proporcionado.
+     *
+     * @param pane El VBox en el que se añadirá .
+     * @param numeroPregunta El número de la pregunta que se cargará en el
+     * panel.
+     */
+    public static void anadirPanelEstadisticasNotas(Pane pane, Connection conn,Usuario user) {
+        // Cargar el archivo FXML de la vista asignatura
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(main.class.getResource("/vistas/profesor/Panel_Nota_estadisticas.fxml"));
+       
+        
+
+        try {
+            // Cargar el contenido desde el FXML
+            Node contenido = loader.load();
+            Panel_Nota_estadisticasController controller = loader.getController();
+            controller.setConn(conn);
+            controller.setUsuario(user);
+            controller.LoadDatas();
+
+            // Asegurar que el contenido cargado tenga el fondo transparente
+            if (contenido instanceof Pane) {
+                ((Pane) contenido).setStyle("-fx-background-color: transparent;");
+            }
+
+            // Verificar si el contenido cargado es una instancia de Region para ajustar el tamaño
+            if (contenido instanceof Region) {
+                Region region = (Region) contenido;
+                region.prefWidthProperty().bind(pane.widthProperty());
+                region.prefHeightProperty().bind(pane.heightProperty());
+            }
+            
+            pane.getChildren().clear();
+            pane.getChildren().add(contenido);
+
+        } catch (IOException ex) {
+            Logger.getLogger(Stage_show.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     //------------------------Alumno-----------------------------------------
     /**
      * Muestra el dashboard del alumno en una nueva ventana.
@@ -696,7 +734,6 @@ public class Stage_show {
             DashBoard_AlumnoController dashboard_AlumnoController = loader.getController();
             dashboard_AlumnoController.SetConn(conn);
             dashboard_AlumnoController.CargarUsuario();
-            
 
             // Creo la escena
             Scene scene = new Scene(ventana);
@@ -853,9 +890,9 @@ public class Stage_show {
         }
 
     }
-    
-    public static void cargar_panel_Notas(Pane pane,Usuario user,Connection conn){
-         // Cargar el archivo FXML de la vista asignatura
+
+    public static void cargar_panel_Notas(Pane pane, Usuario user, Connection conn) {
+        // Cargar el archivo FXML de la vista asignatura
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(main.class.getResource("/vistas/alumno/Panel_notas_general.fxml"));
 

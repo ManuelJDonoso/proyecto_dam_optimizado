@@ -175,7 +175,7 @@ public class Base_datos {
      * conexión.
      */
     public static Connection connectMysqlRemota() {
-        return connectMysql("jdbc:mysql://manueldonoso.duckdns.org:3306/proyecto_dam", "manuel", "manuel");
+        return connectMysql("jdbc:mysql://manueldonoso.duckdns.org:3306/    ", "manuel", "manuel");
 
     }
 
@@ -1429,6 +1429,40 @@ public class Base_datos {
         return examenes;
     }
 
+      /**
+     * Obtiene una lista de exámenes de la tabla Examen_Realizados_Tablas según
+     * el usuario y asignatura.
+     *
+     * @param conn La conexión a la base de datos.
+     * @param usuario El usuario para filtrar la consulta.
+     * @param asignatura La asignatura para filtrar la consulta.
+     * @return Una lista de exámenes encontrados o una lista vacía si no hay
+     * resultados.
+     * @throws SQLException Si ocurre un error al realizar la consulta SQL.
+     */
+    public static List<examen> obtenerExamenesPorUsuarioYAsignaturaSinProfesor(Connection conn, String usuario, String asignatura) throws SQLException {
+        String sql = "SELECT er.nota, er.tema " +
+      "FROM Examenes_Realizados_Tabla er " +
+      "JOIN usuario_tabla u ON er.usuario = u.Usuario " +
+      "WHERE er.usuario = ? AND er.asignatura = ? AND u.fk_tipo != 'ADMINISTRADOR' " +
+      "ORDER BY er.tema";
+        List<examen> examenes = new ArrayList<>();
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, usuario);
+            stmt.setString(2, asignatura);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    double nota = rs.getDouble("nota");
+                    String tema = rs.getString("tema");
+                    examenes.add(new examen(tema, nota));
+                }
+            }
+        }
+
+        return examenes;
+    }
     /**
      * Obtiene la nota más alta registrada para un usuario, asignatura y tema
      * específicos.
@@ -1495,4 +1529,57 @@ public class Base_datos {
         }
     }
 
+    
+     /**
+     * Obtiene una lista de usuarios que han realizado exámenes en una asignatura específica.
+     *
+     * @param conn       La conexión a la base de datos.
+     * @param asignatura El nombre de la asignatura para filtrar.
+     * @return Una lista de usuarios que han realizado exámenes en la asignatura.
+     * @throws SQLException Si ocurre un error en la consulta SQL.
+     */
+    public static List<String> obtenerUsuariosPorAsignatura(Connection conn, String asignatura) throws SQLException {
+        List<String> usuarios = new ArrayList<>();
+
+        String query = "SELECT usuario FROM usuario_asignatura WHERE asignatura = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, asignatura);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    usuarios.add(rs.getString("usuario"));
+                }
+            }
+        }
+
+        return usuarios;
+    }
+    
+     /**
+     * Obtiene una lista de usuarios que han realizado exámenes en una asignatura específica.
+     *
+     * @param conn       La conexión a la base de datos.
+     * @param asignatura El nombre de la asignatura para filtrar.
+     * @return Una lista de usuarios que han realizado exámenes en la asignatura.
+     * @throws SQLException Si ocurre un error en la consulta SQL.
+     */
+    public static List<String> obtenerUsuariosPorAsignaturaSinProfesor(Connection conn, String asignatura) throws SQLException {
+        List<String> usuarios = new ArrayList<>();
+
+        String query = "SELECT ua.usuario " +
+"      FROM usuario_asignatura ua " +
+"      JOIN usuario_tabla u ON ua.usuario = u.Usuario " +
+"      WHERE ua.asignatura = ? AND u.fk_tipo != 'PROFESOR' ";
+        try (PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, asignatura);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    usuarios.add(rs.getString("usuario"));
+                }
+            }
+        }
+
+        return usuarios;
+    }
 }

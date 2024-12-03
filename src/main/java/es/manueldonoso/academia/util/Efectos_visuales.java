@@ -4,9 +4,12 @@
  */
 package es.manueldonoso.academia.util;
 
+import java.net.URI;
 import javafx.animation.ScaleTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
@@ -22,8 +25,12 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
- *Esta clase contiene métodos para aplicar efectos visuales y realizar ajustes estéticos en nodos, ventanas y otros elementos de la interfaz de usuario en JavaFX. 
- * Aquí se incluyen funcionalidades para cerrar ventanas con animaciones, moverlas, trabajar con imágenes circulares y establecer fondos personalizados en paneles.
+ * Esta clase contiene métodos para aplicar efectos visuales y realizar ajustes
+ * estéticos en nodos, ventanas y otros elementos de la interfaz de usuario en
+ * JavaFX. Aquí se incluyen funcionalidades para cerrar ventanas con
+ * animaciones, moverlas, trabajar con imágenes circulares y establecer fondos
+ * personalizados en paneles.
+ *
  * @author "Manuel Jesús Donoso Pérez";
  */
 public class Efectos_visuales {
@@ -193,4 +200,18 @@ public class Efectos_visuales {
         pane.setBackground(new Background(background));
     }
 
+    public static void mensajeNotificacionError(String titulo, String mensaje) {
+            Platform.runLater(() -> {
+        org.controlsfx.control.Notifications
+                .create()
+                .title(titulo)
+                .text(mensaje)
+                .position(Pos.CENTER)
+                .showError();
+    });
+    }
+
+    public static void AnimacionComponenteTada(Node node) {
+        new animatefx.animation.Tada(node).play();
+    }
 }

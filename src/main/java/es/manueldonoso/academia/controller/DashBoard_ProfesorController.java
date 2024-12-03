@@ -104,6 +104,7 @@ public class DashBoard_ProfesorController implements Initializable {
 
     @FXML
     private void Ver_examen(ActionEvent event) {
+        Stage_show.anadirPanelEstadisticasNotas(ac_center, conn,user);
     }
 
     public Usuario getUser() {
