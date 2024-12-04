@@ -45,11 +45,11 @@ public class VideoAyudaController implements Initializable {
         // Crear el objeto Media y MediaPlayer
         Media media = new Media(videoUrl.toExternalForm());
         mediaPlayer = new MediaPlayer(media);
-              if (videoUrl == null) {
+        if (videoUrl == null) {
             System.err.println("El archivo de video no se encontró.");
             return;
         }
-        
+
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setOnError(() -> System.err.println("Error en MediaPlayer: " + mediaPlayer.getError().getMessage()));
         mediaVideo.setMediaPlayer(mediaPlayer);
@@ -65,8 +65,10 @@ public class VideoAyudaController implements Initializable {
 
         // Permitir que el usuario busque en el video con el deslizador
         Slider_tiempo.setOnMouseReleased(event -> {
-            double position = Slider_tiempo.getValue() / 100;
-            mediaPlayer.seek(mediaPlayer.getTotalDuration().multiply(position));
+            if (mediaPlayer.getTotalDuration() != null) {
+                double position = Slider_tiempo.getValue() / 100;
+                mediaPlayer.seek(mediaPlayer.getTotalDuration().multiply(position));
+            }
         });
 
         // Configurar el botón Play/Pause

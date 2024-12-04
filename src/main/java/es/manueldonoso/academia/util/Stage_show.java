@@ -253,7 +253,8 @@ public class Stage_show {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Video Ayuda");
             //primaryStage.initStyle(StageStyle.UNDECORATED);
-
+            // Evitar que el Stage sea redimensionable
+            primaryStage.setResizable(false);
             Efectos_visuales.darMovimientoStage(primaryStage);
         } catch (IOException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
