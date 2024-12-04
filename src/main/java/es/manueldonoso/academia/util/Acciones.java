@@ -173,8 +173,11 @@ public class Acciones {
      */
     public static boolean existeArchivo(String filePath) {
         File archivo = new File(filePath);
-
-        return archivo.exists();
+    System.out.println("Ruta absoluta: " + archivo.getAbsolutePath());
+    System.out.println("Existe: " + archivo.exists());
+    System.out.println("Es archivo: " + archivo.isFile());
+    System.out.println("Es directorio: " + archivo.isDirectory());
+    return archivo.exists();
     }
 
     /**

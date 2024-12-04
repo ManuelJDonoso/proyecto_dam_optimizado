@@ -123,7 +123,7 @@ public class Stage_show {
             });
 
             //mostrar ventana
-            primaryStage.show();
+            primaryStage.showAndWait();
 
             // primaryStage.setMaximized(true);
         } catch (IOException ex) {

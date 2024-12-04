@@ -99,15 +99,20 @@ public class LoginController implements Initializable {
 
         System.out.println("Mostrando pantalla login");
 
-        if (Acciones.existeArchivo("Contrato.pfd")) {
-            btn_Contrato.setDisable(true);
-            btn_registrar.setDisable(false);
-        } else {
-            btn_Contrato.setDisable(false);
-            btn_registrar.setDisable(true);
-        }
+        botonContratoEnable();
 
         RecuperarUsuario();
+    }
+
+    private void botonContratoEnable() {
+        if (Acciones.existeArchivo("contrato.pdf")) {
+            btn_Contrato.setDisable(false);
+            btn_registrar.setDisable(true);
+
+        } else {
+            btn_Contrato.setDisable(true);
+            btn_registrar.setDisable(false);
+        }
     }
 
     @FXML
@@ -120,26 +125,28 @@ public class LoginController implements Initializable {
 
         GuardarUsuario();
         if (cb_selectBBDD.getValue() != null) {
-               
+
             mostrarDasboard(getConecConnection());
 
-        }else{
-           // mostrarNotificacion();
+        } else {
+            // mostrarNotificacion();
             Efectos_visuales.mensajeNotificacionError("Advertencia", "Debe seleccionar una fuente de datos");
         }
 
     }
 
-     private void mostrarNotificacion() {
+    private void mostrarNotificacion() {
         Notifications.create()
                 .title("Advertencia") // Título de la notificación
                 .text("Debe seleccionar una fuente de datos") // Mensaje de la notificación
                 .position(Pos.CENTER) // Posición de la notificación
                 .showWarning(); // Tipo de notificación (advertencia)
     }
+
     @FXML
     private void cargarContrato(ActionEvent event) {
         Stage_show.Mostrar_crearContrato();
+         botonContratoEnable();
     }
 
     @FXML
@@ -160,7 +167,7 @@ public class LoginController implements Initializable {
     @FXML
     private void btn_datosDefecto(ActionEvent event) {
         try {
-           
+
             Base_datos.eliminarTodosUsuarios(Base_datos.conectarSqlite());
             Base_datos.insertarUsuarios(Base_datos.conectarSqlite());
         } catch (SQLException ex) {
@@ -323,8 +330,8 @@ public class LoginController implements Initializable {
 
             default:
                 Efectos_visuales.AnimacionComponenteTada(txt_nombre);
-                  Efectos_visuales.AnimacionComponenteTada(txt_pass);
-                  Efectos_visuales.mensajeNotificacionError("error", "Usuario o contraseña erroneos");
+                Efectos_visuales.AnimacionComponenteTada(txt_pass);
+                Efectos_visuales.mensajeNotificacionError("error", "Usuario o contraseña erroneos");
 
         }
 
@@ -362,8 +369,8 @@ public class LoginController implements Initializable {
 
     @FXML
     private void btn_olvideContraseña(ActionEvent event) {
-        
-        Acciones.enviarEmail("donperma@gmail.com", "recuperar contraseña", "el usuario "+txt_nombre.getText());
+
+        Acciones.enviarEmail("donperma@gmail.com", "recuperar contraseña", "el usuario " + txt_nombre.getText());
     }
 
     @FXML
@@ -378,7 +385,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private void abrirweb_git(ActionEvent event) {
-          Acciones.abrirWeb("https://github.com/ManuelJDonoso/proyecto_dam_optimizado");
+        Acciones.abrirWeb("https://github.com/ManuelJDonoso/proyecto_dam_optimizado");
     }
 
 }
