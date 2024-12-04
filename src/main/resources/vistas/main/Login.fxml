@@ -86,6 +86,11 @@
                         <FontIcon iconColor="#7d8fcc" iconLiteral="fa-external-link" iconSize="32" wrappingWidth="32.20001220703125" />
                      </graphic>
                   </JFXButton>
+                  <JFXButton fx:id="btn_link1" alignment="TOP_LEFT" focusTraversable="false" layoutX="56.0" layoutY="221.0" onAction="#abrirweb_git" prefHeight="52.0" prefWidth="179.0" text=" github" textFill="#efe9e9">
+                     <graphic>
+                        <FontIcon iconColor="#7d8fcc" iconLiteral="fa-github" iconSize="32" selectionEnd="0" wrappingWidth="32.20001220703125" />
+                     </graphic>
+                  </JFXButton>
                   <JFXButton fx:id="btn_Contrato" alignment="BOTTOM_LEFT" focusTraversable="false" onAction="#MostrarContrato" prefHeight="52.0" prefWidth="179.0" text="Contrato" textFill="#efe9e9">
                      <graphic>
                         <FontIcon iconColor="#7d8fcc" iconLiteral="fa-book" iconSize="32" wrappingWidth="32.20001220703125" />

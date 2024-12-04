@@ -30,7 +30,8 @@ import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 
 /**
- *
+ *Controlador para el panel de dashboard del alumno. 
+ * Implementa la interfaz Initializable para la inicialización de los componentes gráficos.
  * @author "Manuel Jesús Donoso Pérez";
  */
 public class DashBoard_AlumnoController implements Initializable {

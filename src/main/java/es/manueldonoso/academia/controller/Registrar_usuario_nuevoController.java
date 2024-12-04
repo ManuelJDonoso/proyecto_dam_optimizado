@@ -77,7 +77,7 @@ public class Registrar_usuario_nuevoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-     
+        
         Efectos_visuales.setBackgroundImage(root, "/images/app/fondo_papiro.jpg");
         Platform.runLater(() -> root.requestFocus());
         add_listener_focusoff_TF();

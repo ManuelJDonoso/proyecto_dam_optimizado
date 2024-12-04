@@ -68,6 +68,8 @@ public class LoginController implements Initializable {
     private JFXButton btn_Contrato1;
     @FXML
     private JFXButton btn_VideoAyuda;
+    @FXML
+    private JFXButton btn_link1;
 
     /**
      * Initializes the controller class.
@@ -110,7 +112,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private void abrirweb(ActionEvent event) {
-        Acciones.abrirWeb("https://www.manueldonoso.es");
+        Acciones.abrirWeb("http://www.manueldonoso.es");
     }
 
     @FXML
@@ -372,6 +374,11 @@ public class LoginController implements Initializable {
     @FXML
     private void MostrarvideoAyuda(ActionEvent event) {
         Stage_show.Mostrar_VideoAyuda();
+    }
+
+    @FXML
+    private void abrirweb_git(ActionEvent event) {
+          Acciones.abrirWeb("https://github.com/ManuelJDonoso/proyecto_dam_optimizado");
     }
 
 }

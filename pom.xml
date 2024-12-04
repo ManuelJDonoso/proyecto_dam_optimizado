@@ -133,9 +133,11 @@
             <artifactId>javafx-fxml</artifactId>
             <version>22</version>
         </dependency>
-    
-    
-    
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.3.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -195,18 +197,7 @@
                 </executions>
             </plugin>
             
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>javadoc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+          
         </plugins>
     </build>
 </project>

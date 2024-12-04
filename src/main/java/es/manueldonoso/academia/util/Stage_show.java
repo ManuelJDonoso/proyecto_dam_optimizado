@@ -293,7 +293,7 @@ public class Stage_show {
             primaryStage.setScene(scene);
             primaryStage.setTitle("DashBoard Administrador");
             primaryStage.setMaximized(true);
-
+            primaryStage.initStyle(StageStyle.UNDECORATED);
             //detectar cierre de ventana
             primaryStage.setOnHidden(new EventHandler<WindowEvent>() {
                 @Override
@@ -675,8 +675,6 @@ public class Stage_show {
      * Añade un nuevo panel de pregunta al VBox proporcionado.
      *
      * @param pane El VBox en el que se añadirá .
-     * @param numeroPregunta El número de la pregunta que se cargará en el
-     * panel.
      */
     public static void anadirPanelEstadisticasNotas(Pane pane, Connection conn,Usuario user) {
         // Cargar el archivo FXML de la vista asignatura
