@@ -39,7 +39,7 @@ import org.controlsfx.control.Notifications;
 public class LoginController implements Initializable {
 
     @FXML
-    private VBox root;
+    public VBox root;
     @FXML
     private JFXButton btn_whatsapp;
     @FXML
@@ -47,21 +47,21 @@ public class LoginController implements Initializable {
     @FXML
     private JFXButton btn_olvideContraseña;
     @FXML
-    private JFXComboBox<Label> cb_selectBBDD;
+     JFXComboBox<Label> cb_selectBBDD;
     @FXML
     private JFXCheckBox ck_recorgar;
     @FXML
-    private JFXButton btn_iniciar;
+    public JFXButton btn_iniciar;
     @FXML
-    private JFXTextField txt_nombre;
+    public JFXTextField txt_nombre;
     @FXML
-    private JFXPasswordField txt_pass;
+    public JFXPasswordField txt_pass;
     @FXML
-    private JFXButton btn_registrar;
+     JFXButton btn_registrar;
     @FXML
-    private ImageView iv_base_conect;
+    public ImageView iv_base_conect;
     @FXML
-    private JFXButton btn_Contrato;
+     JFXButton btn_Contrato;
     @FXML
     private JFXButton btn_datosDefecto;
     @FXML
@@ -104,7 +104,7 @@ public class LoginController implements Initializable {
         RecuperarUsuario();
     }
 
-    private void botonContratoEnable() {
+    public void botonContratoEnable() {
         if (Acciones.existeArchivo("contrato.pdf")) {
             btn_Contrato.setDisable(false);
             btn_registrar.setDisable(true);
@@ -236,7 +236,7 @@ public class LoginController implements Initializable {
      * utilizando el método `MemorizarUsuario` de la clase `Base_datos`. Si no
      * está seleccionado, se guardan valores vacíos.
      */
-    private void GuardarUsuario() {
+    void GuardarUsuario() {
 
         if (ck_recorgar.isSelected()) {
             Base_datos.MemorizarUsuario(txt_nombre.getText(), txt_pass.getText());

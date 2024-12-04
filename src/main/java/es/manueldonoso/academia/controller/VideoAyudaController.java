@@ -14,6 +14,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -30,6 +31,7 @@ public class VideoAyudaController implements Initializable {
     private MediaPlayer mediaPlayer;
     @FXML
     private MediaView mediaVideo;
+    private Stage stage;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -81,4 +83,15 @@ public class VideoAyudaController implements Initializable {
         }
     }
 
+    public void setStage(Stage stage) {
+        this.stage = stage;
+
+        // Configurar el cierre de la ventana para detener el MediaPlayer
+        stage.setOnCloseRequest(event -> {
+            if (mediaPlayer != null) {
+                mediaPlayer.stop();
+                mediaPlayer.dispose();
+            }
+        });
+    }
 }

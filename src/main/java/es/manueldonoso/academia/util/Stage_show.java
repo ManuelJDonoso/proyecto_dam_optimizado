@@ -241,10 +241,11 @@ public class Stage_show {
             // Cargo la ventana inicial
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(main.class.getResource("/vistas/comun/videoAyuda.fxml"));
-
+            
             // Ventana a cargar
             AnchorPane ventana = (AnchorPane) loader.load();
-
+            VideoAyudaController controller = loader.getController();
+            controller.setStage(primaryStage);
             // Creo la escena
             Scene scene = new Scene(ventana);
 
@@ -257,6 +258,7 @@ public class Stage_show {
         } catch (IOException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         primaryStage.show();
     }
 
