@@ -175,7 +175,7 @@ public class Base_datos {
      * conexión.
      */
     public static Connection connectMysqlRemota() {
-        return connectMysql("jdbc:mysql://manueldonoso.duckdns.org:3306/    ", "manuel", "manuel");
+        return connectMysql("jdbc:mysql://manueldonoso.duckdns.org:3306/proyecto_dam", "manuel", "manuel");
 
     }
 
@@ -590,89 +590,88 @@ public class Base_datos {
         }
     }
 
-    public static Usuario BuscarUsuario_Usuario(Connection conn, String usuario) throws SQLException {
-        String sql = "SELECT * FROM usuario_tabla WHERE Usuario = ?";
-        String sqlAsignaturas = "SELECT * FROM usuario_asignatura WHERE usuario =?";
-        List<String> asignaturasExistentes = new ArrayList<>();
+  public static Usuario BuscarUsuario_Usuario(Connection conn, String usuario) throws SQLException {
+    String sql = "SELECT * FROM usuario_tabla WHERE Usuario = ?";
+    String sqlAsignaturas = "SELECT * FROM usuario_asignatura WHERE usuario =?";
+    List<String> asignaturasExistentes = new ArrayList<>();
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        try (PreparedStatement pstmt = conn.prepareStatement(sql); PreparedStatement pstmtAsignaturas = conn.prepareStatement(sqlAsignaturas)) {
-            pstmt.setString(1, usuario); // Establecer el nombre de usuario en el primer parámetro
+    try (PreparedStatement pstmt = conn.prepareStatement(sql); PreparedStatement pstmtAsignaturas = conn.prepareStatement(sqlAsignaturas)) {
+        pstmt.setString(1, usuario);
 
-            // Ejecutar la consulta
-            try (ResultSet rs = pstmt.executeQuery()) {
-                if (rs.next()) {
-                    // Retornar fk_tipo si el usuario y la contraseña son correctos
-                    Usuario user = new Usuario();
-                    user.setNombre(rs.getString("Nombre"));
-                    user.setApellidos(rs.getString("Apellidos"));
-                    user.setDireccion(rs.getString("Direccion"));
-                    user.setTelefono(rs.getString("Telefono"));
-                    user.setFoto(rs.getBytes("Foto"));
-                    user.setEmail(rs.getString("Email"));
-                    user.setUsuario(rs.getString("Usuario"));
+        try (ResultSet rs = pstmt.executeQuery()) {
+            if (rs.next()) {
+                Usuario user = new Usuario();
+                user.setNombre(rs.getString("Nombre"));
+                user.setApellidos(rs.getString("Apellidos"));
+                user.setDireccion(rs.getString("Direccion"));
+                user.setTelefono(rs.getString("Telefono"));
+                user.setFoto(rs.getBytes("Foto"));
+                user.setEmail(rs.getString("Email"));
+                user.setUsuario(rs.getString("Usuario"));
 
-                    switch (rs.getString("fk_tipo")) {
-                        case "ALUMNO":
-                            user.setTipo(Usuario.TipoUsuario.ALUMNO);
-                            break;
-                        case "ADMINISTRADOR":
-                            user.setTipo(Usuario.TipoUsuario.ADMINISTRADOR);
-                            break;
-                        case "PROFESOR":
-                            user.setTipo(Usuario.TipoUsuario.PROFESOR);
-                            break;
-                        default:
-
-                    }
-
-                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-                    if (rs.getString("fechaAlta") != null && !rs.getString("fechaAlta").isBlank()) {
-                       
-                        try {
-
-                            java.util.Date fechaAlta = formatter.parse(rs.getString("fechaAlta"));
-
-                            user.setFechaAlta(Acciones.utilDate_to_sqlDate(fechaAlta));
-                        } catch (ParseException ex) {
-                            long timeStamp = Long.parseLong(rs.getString("fechaAlta"));
-                            user.setFechaAlta(new Date(timeStamp));
-                        }
-                    }
-
-                    if (rs.getString("fechaBaja") != null && !rs.getString("fechaBaja").isBlank()) {
-                        try {
-                            java.util.Date fechaBaja = formatter.parse(rs.getString("fechaBaja"));
-
-                            user.setFechaBaja(Acciones.utilDate_to_sqlDate(fechaBaja));
-                        } catch (ParseException ex) {
-                            long timeStamp = Long.parseLong(rs.getString("fechaBaja"));
-                            user.setFechaAlta(new Date(timeStamp));
-                        }
-
-                    }
-
-                    pstmtAsignaturas.setString(1, user.getUsuario());
-                    try (ResultSet rs2 = pstmtAsignaturas.executeQuery()) {
-                        while (rs2.next()) {
-                            asignaturasExistentes.add(rs2.getString("asignatura"));
-
-                        }
-                    }
-
-                    user.setAsignaturas(asignaturasExistentes);
-                   
-                    return user;
-                } else {
-                    // Retornar null si el usuario no existe o la contraseña es incorrecta
-                    return null;
+                // Set tipo de usuario
+                switch (rs.getString("fk_tipo")) {
+                    case "ALUMNO":
+                        user.setTipo(Usuario.TipoUsuario.ALUMNO);
+                        break;
+                    case "ADMINISTRADOR":
+                        user.setTipo(Usuario.TipoUsuario.ADMINISTRADOR);
+                        break;
+                    case "PROFESOR":
+                        user.setTipo(Usuario.TipoUsuario.PROFESOR);
+                        break;
+                    default:
+                        break;
                 }
+
+                // Manejo seguro de fechaAlta
+                user.setFechaAlta(parseFecha(rs.getString("fechaAlta"), formatter));
+
+                // Manejo seguro de fechaBaja
+                user.setFechaBaja(parseFecha(rs.getString("fechaBaja"), formatter));
+
+                // Cargar asignaturas
+                pstmtAsignaturas.setString(1, user.getUsuario());
+                try (ResultSet rs2 = pstmtAsignaturas.executeQuery()) {
+                    while (rs2.next()) {
+                        asignaturasExistentes.add(rs2.getString("asignatura"));
+                    }
+                }
+
+                user.setAsignaturas(asignaturasExistentes);
+                return user;
+            } else {
+                return null;
             }
-        } catch (SQLException e) {
-            System.out.println("Error al verificar el usuario: " + e.getMessage());
-            throw e; // Propagar la excepción
+        }
+    } catch (SQLException e) {
+        System.out.println("Error al verificar el usuario: " + e.getMessage());
+        throw e;
+    }
+}
+
+// Método auxiliar para parsear fechas de forma segura
+private static Date parseFecha(String fechaStr, SimpleDateFormat formatter) {
+    if (fechaStr != null && !fechaStr.isBlank()) {
+        try {
+            // Intentar parsear como "yyyy-MM-dd HH:mm:ss"
+            java.util.Date fecha = formatter.parse(fechaStr);
+            return Acciones.utilDate_to_sqlDate(fecha);
+        } catch (ParseException e) {
+            try {
+                // Si falla, intentar convertir como timestamp
+                long timeStamp = Long.parseLong(fechaStr);
+                return new Date(timeStamp);
+            } catch (NumberFormatException ex) {
+                // Loggear el error y retornar null si el formato es inválido
+                System.out.println("Formato de fecha inválido: " + fechaStr);
+                return null;
+            }
         }
     }
+    return null; // Si la cadena es null o vacía
+}
 
     public static boolean ModificarUsuario(Connection conn, Usuario user) {
         String sql = "UPDATE usuario_tabla "
