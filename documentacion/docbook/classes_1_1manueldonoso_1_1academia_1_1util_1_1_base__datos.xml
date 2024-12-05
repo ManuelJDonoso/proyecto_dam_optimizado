@@ -1,0 +1,1143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos" xml:lang="en-US">
+<title>es.manueldonoso.academia.util.Base_datos Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static Connection <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a0c77c4bf25a70cdca7931785658a123f">conectarSqlite</link> ()</para>
+</listitem>
+            <listitem><para>static boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a9390cf7d7d4161f666a9ebdbfd4b4deb">isConnection</link> (Connection conn)</para>
+</listitem>
+            <listitem><para>static Connection <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1adbc97c94512b04f30401e54aba6d8ce5">connectMysql</link> (String URL, String USER, String PASSWORD)</para>
+</listitem>
+            <listitem><para>static Connection <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1acf3c198b87e6389df1a35d64fd00f8f8">connectMysqlLocal</link> ()</para>
+</listitem>
+            <listitem><para>static Connection <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1aac2fe1401d7a453b80f554e837656918">connectMysqlRed</link> ()</para>
+</listitem>
+            <listitem><para>static Connection <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a3a1d50c7fcec18194e0d8d220250ab21">connectMysqlRemota</link> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a2dda68faae09c0ba0a22bcc330d5c84c">RegistrarProductoContrato</link> (<link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)</para>
+</listitem>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a549291cd9b93e10b1c60c0f66209f6bf">nombreUsuarioContrato</link> ()</para>
+</listitem>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ab3aa99787f62f82f192b10100bb732ec">fechaContrato</link> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a6af2c1133d0516a75fe3bc5803c35026">MemorizarUsuario</link> (String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link>, String Pass)</para>
+</listitem>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a8c0fb04eebf69ff5f6b4ba343856d3f0">UsuarioMemorizado</link> ()</para>
+</listitem>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ae1b27bcc48e2ea35e984f14d7101dc8a">PassMemorizado</link> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ab4a1b9ade69e6f225fc368d385cb4784">insertarUsuarios</link> (Connection conn)  throws SQLException </para>
+</listitem>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1adc2415a489c8e2d286577c7a783de317">verificarUsuario</link> (Connection conn, String usuario, String pass)  throws SQLException </para>
+</listitem>
+            <listitem><para>static boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ab424eac1eacb17481807b6fc0b185642">eliminarTodosUsuarios</link> (Connection conn)  throws SQLException </para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a50bbcc4456fe6ef9a28759a17c6cddb1">CambioContraseña</link> (Connection conn, String usuario, String pass)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a85af2f6e312bdc2965cb46623804c279"/>static <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> <emphasis role="strong">BuscarUsuario_Usuario</emphasis> (Connection conn, String usuario)  throws SQLException </para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ae6c9d4a2ddc8a7df04e5daa29c2df0f4"/>static boolean <emphasis role="strong">ModificarUsuario</emphasis> (Connection conn, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a6706351deb4788bdd539c587fb8066b2"/>static boolean <emphasis role="strong">IsUsuario</emphasis> (Connection conn, String usuario)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a9827bc4e976b6eb2cdd8d7589619ba35"/>static void <emphasis role="strong">GuardarUsuarioNuevo</emphasis> (Connection conn, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)  throws SQLException </para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ae86d9b49b604d65821cb04120ff98e92"/>static void <emphasis role="strong">AltaAsignatura</emphasis> (Connection conn, String Asignatura)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a5fe0cac8128ad6f3931017c2e2f8784f"/>static List&lt; String &gt; <emphasis role="strong">obtenerAsignaturasActivas</emphasis> (Connection conn)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1acfb6f7a068c443b733b3f81d5629dade"/>static List&lt; String &gt; <emphasis role="strong">obtenerAsignaturasInActivas</emphasis> (Connection conn)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a4313dea660bced7b38e35e10d2588286"/>static void <emphasis role="strong">desactivarAsignatura</emphasis> (Connection conn, String asignatura)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1acdfe0d79e6e5734f74db3d7afe54843d"/>static void <emphasis role="strong">activarAsignatura</emphasis> (Connection conn, String asignatura)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a96cf74ddd496cdd659ff0b972eb496f5"/>static ObservableList&lt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> &gt; <emphasis role="strong">buscarUser</emphasis> (Connection conn, String fk_ClaseUser, String Nombre, String Apellidos, String Telefono, String Email, String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link>, String Direccion)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a848e5e3cf40184ef19cbc3ea25e25abe"/>static void <emphasis role="strong">ActualizarUsuario</emphasis> (Connection conn, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1acd8523ebfce3fe2752e872d6e69b5526"/>static void <emphasis role="strong">insertarFichero</emphasis> (Connection conn, String asignatura, String nombreArchivo, String rutaArchivo, String tema)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a859cd9bf60c727c50e3595162b499db7"/>static void <emphasis role="strong">descargarArchivo</emphasis> (Connection conn, String id, String nombreArchivo)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a7448fa1157222051e949f2f9a34a5a9f"/>static void <emphasis role="strong">eliminarArchivo</emphasis> (Connection conn, String id, String nombreArchivo)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ac1dd97d7d98e6f819a8aab28ee4353ed"/>static void <emphasis role="strong">guardarExamenGeneradoEnBaseDeDatos</emphasis> (Connection conn, String asignatura, String tema, List&lt; Map&lt; String, String &gt; &gt; respuestas)</para>
+</listitem>
+            <listitem><para>static List&lt; String &gt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1af78bde446fb8ea048ba7802b15dc34a0">BuscarExamenes</link> (Connection conn, String asignatura)</para>
+</listitem>
+            <listitem><para>static List&lt; String &gt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a93dc1042ce3fb389461ef7325b692fcb">BuscarExamenesRealizados</link> (Connection conn, String asignatura)</para>
+</listitem>
+            <listitem><para>static Map&lt; Integer, Map&lt; String, String &gt; &gt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a1457beef6f5b6c560f408657c1162470">Examen</link> (Connection conn, String asignatura, String tema)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a3d93532804811fd55e5b5a636a63df07">GuardarExamenRealizado</link> (Connection conn, String asignatura, String tema, String nota, String usuario)</para>
+</listitem>
+            <listitem><para>static List&lt; String &gt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ab98230a6a34f152f614ac7005614ba9b">obtenerTemasPorUsuarioYAsignatura</link> (Connection conn, String usuario, String asignatura)  throws SQLException </para>
+</listitem>
+            <listitem><para>static List&lt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen">examen</link> &gt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ae41d2e58293ad3edaf10352ea6105810">obtenerExamenesPorUsuarioYAsignatura</link> (Connection conn, String usuario, String asignatura)  throws SQLException </para>
+</listitem>
+            <listitem><para>static List&lt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen">examen</link> &gt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a46e4722fe84014a389d646e5cc5107c4">obtenerExamenesPorUsuarioYAsignaturaSinProfesor</link> (Connection conn, String usuario, String asignatura)  throws SQLException </para>
+</listitem>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a71804755ac108b1310fd6b3b4d568514">NotaExamenMax</link> (Connection conn, String usuario, String asignatura, String tema)</para>
+</listitem>
+            <listitem><para>static boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a7f8e89f471ecf1878412f8669c8a7a73">actualizarActivo</link> (Connection conn, String id, String activo)</para>
+</listitem>
+            <listitem><para>static List&lt; String &gt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ac38d1aaea9f174f1c3bade87cd3f8b65">obtenerUsuariosPorAsignatura</link> (Connection conn, String asignatura)  throws SQLException </para>
+</listitem>
+            <listitem><para>static List&lt; String &gt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a70278b6231a4337c7b004b55183a1f48">obtenerUsuariosPorAsignaturaSinProfesor</link> (Connection conn, String asignatura)  throws SQLException </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a7f8e89f471ecf1878412f8669c8a7a73"/><section>
+    <title>actualizarActivo()</title>
+<indexterm><primary>actualizarActivo</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>actualizarActivo</secondary></indexterm>
+<para><computeroutput>static boolean es.manueldonoso.academia.util.Base_datos.actualizarActivo (Connection conn, String id, String activo)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Actualiza el valor de la columna &apos;activo&apos; en la tabla &apos;Material&apos;.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión existente a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>id</entry><entry>
+<para>El ID del material a actualizar (como String). </para>
+</entry>
+                            </row>
+                            <row>
+<entry>activo</entry><entry>
+<para>El nuevo valor de la columna activo (como String, valores &quot;0&quot; o &quot;1&quot;). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true si la actualización fue exitosa, false en caso contrario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1af78bde446fb8ea048ba7802b15dc34a0"/><section>
+    <title>BuscarExamenes()</title>
+<indexterm><primary>BuscarExamenes</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>BuscarExamenes</secondary></indexterm>
+<para><computeroutput>static List&lt; String &gt; es.manueldonoso.academia.util.Base_datos.BuscarExamenes (Connection conn, String asignatura)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Busca los temas de examen correspondientes a una asignatura en la base de datos.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión activa a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asignatura</entry><entry>
+<para>El nombre de la asignatura cuyos temas se desean buscar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una lista con los temas asociados con la asignatura, o una lista vacía si no se encuentran temas. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a93dc1042ce3fb389461ef7325b692fcb"/><section>
+    <title>BuscarExamenesRealizados()</title>
+<indexterm><primary>BuscarExamenesRealizados</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>BuscarExamenesRealizados</secondary></indexterm>
+<para><computeroutput>static List&lt; String &gt; es.manueldonoso.academia.util.Base_datos.BuscarExamenesRealizados (Connection conn, String asignatura)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Busca los temas de examen correspondientes a una asignatura en la base de datos.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión activa a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asignatura</entry><entry>
+<para>El nombre de la asignatura cuyos temas se desean buscar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una lista con los temas asociados con la asignatura, o una lista vacía si no se encuentran temas. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a50bbcc4456fe6ef9a28759a17c6cddb1"/><section>
+    <title>CambioContraseña()</title>
+<indexterm><primary>CambioContraseña</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>CambioContraseña</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Base_datos.CambioContraseña (Connection conn, String usuario, String pass)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Cambia la contraseña de un usuario en la tabla usuario_tabla.</para>
+
+<para>Este método actualiza la contraseña de un usuario en la base de datos, guardándola en texto plano. Es importante recordar que almacenar contraseñas en texto plano no es seguro y solo debe usarse en entornos de desarrollo o cuando no se requiera seguridad.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>usuario</entry><entry>
+<para>El nombre del usuario cuyo contraseña será cambiada. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pass</entry><entry>
+<para>La nueva contraseña en texto plano. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a0c77c4bf25a70cdca7931785658a123f"/><section>
+    <title>conectarSqlite()</title>
+<indexterm><primary>conectarSqlite</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>conectarSqlite</secondary></indexterm>
+<para><computeroutput>static Connection es.manueldonoso.academia.util.Base_datos.conectarSqlite ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Establece una conexión con una base de datos SQLite. </para>
+
+<para>Este método crea una conexión a la base de datos ubicada en &quot;src/main/resources/db/db.db&quot;. Si la conexión se establece correctamente, se devuelve un objeto <computeroutput><link linkend="_">Connection</link></computeroutput>. En caso de que ocurra algún error, se imprime el mensaje de error y se devuelve null. </para>
+
+<para><formalpara><title>Returns</title>
+
+<para>un objeto <computeroutput><link linkend="_">Connection</link></computeroutput> si la conexión es exitosa; null si ocurre una excepción. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1adbc97c94512b04f30401e54aba6d8ce5"/><section>
+    <title>connectMysql()</title>
+<indexterm><primary>connectMysql</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>connectMysql</secondary></indexterm>
+<para><computeroutput>static Connection es.manueldonoso.academia.util.Base_datos.connectMysql (String URL, String USER, String PASSWORD)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Establece una conexión con una base de datos MySQL utilizando JDBC.</para>
+
+<para>Este método se encarga de crear una conexión a una base de datos MySQL especificando la URL de la base de datos, el nombre de usuario y la contraseña. Si la conexión es exitosa, se devuelve un objeto <computeroutput><link linkend="_">Connection</link></computeroutput>, de lo contrario, se maneja la excepción y se imprime un mensaje de error.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>URL</entry><entry>
+<para>La URL de la base de datos, que incluye el nombre del host, el puerto y el nombre de la base de datos (por ejemplo, jdbc:mysql://localhost:3306/mi_base). </para>
+</entry>
+                            </row>
+                            <row>
+<entry>USER</entry><entry>
+<para>El nombre de usuario para la conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>PASSWORD</entry><entry>
+<para>La contraseña asociada al usuario de la base de datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una conexión <computeroutput><link linkend="_">Connection</link></computeroutput> a la base de datos, o <computeroutput>null</computeroutput> si no se pudo establecer la conexión. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1acf3c198b87e6389df1a35d64fd00f8f8"/><section>
+    <title>connectMysqlLocal()</title>
+<indexterm><primary>connectMysqlLocal</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>connectMysqlLocal</secondary></indexterm>
+<para><computeroutput>static Connection es.manueldonoso.academia.util.Base_datos.connectMysqlLocal ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Establece una conexión con la base de datos MySQL local.</para>
+
+<para>Este método simplifica la conexión a una base de datos MySQL local utilizando las credenciales predeterminadas (usuario &quot;root&quot; y contraseña vacía). Utiliza el método <computeroutput><link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1adbc97c94512b04f30401e54aba6d8ce5">connectMysql(String, String, String)</link></computeroutput> para establecer la conexión con la base de datos ubicada en &quot;localhost&quot; en el puerto 3306, y la base de datos &quot;proyecto_dam&quot;.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Una conexión <computeroutput><link linkend="_">Connection</link></computeroutput> a la base de datos &quot;proyecto_dam&quot; en el servidor local, o <computeroutput>null</computeroutput> si no se pudo establecer la conexión. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1aac2fe1401d7a453b80f554e837656918"/><section>
+    <title>connectMysqlRed()</title>
+<indexterm><primary>connectMysqlRed</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>connectMysqlRed</secondary></indexterm>
+<para><computeroutput>static Connection es.manueldonoso.academia.util.Base_datos.connectMysqlRed ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Establece una conexión con la base de datos MySQL en una red remota.</para>
+
+<para>Este método simplifica la conexión a una base de datos MySQL que se encuentra en un servidor remoto, utilizando el método <computeroutput><link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1adbc97c94512b04f30401e54aba6d8ce5">connectMysql(String, String, String)</link></computeroutput>. La base de datos se encuentra en la dirección IP &quot;192.168.1.100&quot;, en el puerto 3306, y se conecta a la base de datos &quot;proyecto_dam&quot; utilizando el usuario &quot;manuel&quot; y una contraseña &quot;manuel&quot;.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Una conexión <computeroutput><link linkend="_">Connection</link></computeroutput> a la base de datos &quot;proyecto_dam&quot; en el servidor remoto, o <computeroutput>null</computeroutput> si no se pudo establecer la conexión. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a3a1d50c7fcec18194e0d8d220250ab21"/><section>
+    <title>connectMysqlRemota()</title>
+<indexterm><primary>connectMysqlRemota</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>connectMysqlRemota</secondary></indexterm>
+<para><computeroutput>static Connection es.manueldonoso.academia.util.Base_datos.connectMysqlRemota ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Establece una conexión con la base de datos MySQL en un servidor remoto a través de un dominio.</para>
+
+<para>Este método simplifica la conexión a una base de datos MySQL que se encuentra en un servidor remoto accesible a través del dominio &quot;manueldonoso.duckdns.org&quot;, en el puerto 3306. Utiliza el método <computeroutput><link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1adbc97c94512b04f30401e54aba6d8ce5">connectMysql(String, String, String)</link></computeroutput> para establecer la conexión con la base de datos &quot;proyecto_dam&quot; utilizando el usuario &quot;manuel&quot; y la contraseña &quot;manuel&quot;.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Una conexión <computeroutput><link linkend="_">Connection</link></computeroutput> a la base de datos &quot;proyecto_dam&quot; en el servidor remoto, o <computeroutput>null</computeroutput> si no se pudo establecer la conexión. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ab424eac1eacb17481807b6fc0b185642"/><section>
+    <title>eliminarTodosUsuarios()</title>
+<indexterm><primary>eliminarTodosUsuarios</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>eliminarTodosUsuarios</secondary></indexterm>
+<para><computeroutput>static boolean es.manueldonoso.academia.util.Base_datos.eliminarTodosUsuarios (Connection conn) throws SQLException<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Elimina todos los registros de la tabla <computeroutput>usuario_tabla</computeroutput> en la base de datos. Este método no requiere ningún parámetro adicional, ya que elimina todos los registros existentes en la tabla.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><computeroutput>true</computeroutput> si se eliminaron registros con éxito, <computeroutput>false</computeroutput> si no se afectaron registros o si ocurrió un error. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>java.sql.SQLException</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a1457beef6f5b6c560f408657c1162470"/><section>
+    <title>Examen()</title>
+<indexterm><primary>Examen</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>Examen</secondary></indexterm>
+<para><computeroutput>static Map&lt; Integer, Map&lt; String, String &gt; &gt; es.manueldonoso.academia.util.Base_datos.Examen (Connection conn, String asignatura, String tema)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Busca las preguntas de examen, junto con las respuestas correctas y opciones incorrectas, para una asignatura y tema específicos. El mapa contiene el número de la pregunta como clave y otro mapa con las respuestas como valor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión activa a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asignatura</entry><entry>
+<para>El nombre de la asignatura cuyo examen se desea consultar. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tema</entry><entry>
+<para>El tema específico dentro de la asignatura cuyo examen se desea consultar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Un mapa con el número de pregunta como clave, y otro mapa con las respuestas (correcta e incorrectas) como valores. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ab3aa99787f62f82f192b10100bb732ec"/><section>
+    <title>fechaContrato()</title>
+<indexterm><primary>fechaContrato</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>fechaContrato</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Base_datos.fechaContrato ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene una fecha formateada de la tabla <computeroutput>Registro_tabla</computeroutput> en el formato &quot;día de la semana día mes año&quot; (ejemplo: &quot;martes 7 diciembre 2024&quot;). La función utiliza <computeroutput>strftime</computeroutput> para extraer los componentes de la fecha y concatenarlos en el formato requerido.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Una cadena que representa la fecha en el formato especificado, o <computeroutput>null</computeroutput> si no hay registros en la tabla. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a3d93532804811fd55e5b5a636a63df07"/><section>
+    <title>GuardarExamenRealizado()</title>
+<indexterm><primary>GuardarExamenRealizado</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>GuardarExamenRealizado</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Base_datos.GuardarExamenRealizado (Connection conn, String asignatura, String tema, String nota, String usuario)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Guarda un examen realizado en la tabla Examenes_Realizados_Tabla.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asignatura</entry><entry>
+<para>La asignatura del examen. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tema</entry><entry>
+<para>El tema del examen. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nota</entry><entry>
+<para>La nota obtenida en el examen. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>usuario</entry><entry>
+<para>El usuario que realizó el examen. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ab4a1b9ade69e6f225fc368d385cb4784"/><section>
+    <title>insertarUsuarios()</title>
+<indexterm><primary>insertarUsuarios</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>insertarUsuarios</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Base_datos.insertarUsuarios (Connection conn) throws SQLException<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Inserta quince registros de usuarios en la tabla <computeroutput>usuario_tabla</computeroutput>. Este método establece una conexión a la base de datos y usa <computeroutput>PreparedStatement</computeroutput> para insertar cinco filas de usuarios de tipo <computeroutput>ADMINISTRADOR</computeroutput>, cinco de tipo <computeroutput>PROFESOR</computeroutput> y cinco de tipo <computeroutput>ALUMNO</computeroutput>.</para>
+
+<para>Cada usuario tendrá valores específicos para los campos <computeroutput>Usuario</computeroutput>, <computeroutput>Nombre</computeroutput>, <computeroutput>Apellidos</computeroutput>, <computeroutput>Pass</computeroutput>, <computeroutput>Email</computeroutput>, <computeroutput>fk_tipo</computeroutput>, y la fecha de alta (<computeroutput>fechaAlta</computeroutput>).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>java.sql.SQLException</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a9390cf7d7d4161f666a9ebdbfd4b4deb"/><section>
+    <title>isConnection()</title>
+<indexterm><primary>isConnection</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>isConnection</secondary></indexterm>
+<para><computeroutput>static boolean es.manueldonoso.academia.util.Base_datos.isConnection (Connection conn)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Verifica si la conexión a la base de datos es válida (no es nula).</para>
+
+<para>Este método se utiliza para comprobar si una conexión a la base de datos es válida antes de intentar usarla en operaciones posteriores. Retorna <computeroutput>true</computeroutput> si la conexión no es nula, lo que indica que está activa y lista para su uso; de lo contrario, devuelve <computeroutput>false</computeroutput>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos que se desea verificar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><computeroutput>true</computeroutput> si la conexión no es nula, <computeroutput>false</computeroutput> si la conexión es nula. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a6af2c1133d0516a75fe3bc5803c35026"/><section>
+    <title>MemorizarUsuario()</title>
+<indexterm><primary>MemorizarUsuario</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>MemorizarUsuario</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Base_datos.MemorizarUsuario (String Usuario, String Pass)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Actualiza el usuario y la contraseña almacenados en la tabla Usuario_Guardado_tabla. Este método sobrescribe los valores de las columnas <computeroutput>Usuario</computeroutput> y <computeroutput>Pass</computeroutput> para el registro con <computeroutput>id = 1</computeroutput>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Usuario</entry><entry>
+<para>el nombre de usuario que se desea almacenar. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Pass</entry><entry>
+<para>la contraseña asociada al usuario. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a549291cd9b93e10b1c60c0f66209f6bf"/><section>
+    <title>nombreUsuarioContrato()</title>
+<indexterm><primary>nombreUsuarioContrato</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>nombreUsuarioContrato</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Base_datos.nombreUsuarioContrato ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene el nombre completo de un usuario desde la base de datos, concatenando los campos &quot;nombre&quot; y &quot;Apellidos&quot; de la tabla &quot;Registro_tabla&quot;.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>el nombre completo del usuario como un String (formato: &quot;nombre
+Apellidos&quot;), o <computeroutput>null</computeroutput> si no se encuentra ningún registro o ocurre un error en la conexión. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a71804755ac108b1310fd6b3b4d568514"/><section>
+    <title>NotaExamenMax()</title>
+<indexterm><primary>NotaExamenMax</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>NotaExamenMax</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Base_datos.NotaExamenMax (Connection conn, String usuario, String asignatura, String tema)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene la nota más alta registrada para un usuario, asignatura y tema específicos.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión activa a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>usuario</entry><entry>
+<para>El nombre de usuario para el cual se quiere obtener la nota. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asignatura</entry><entry>
+<para>El nombre de la asignatura del examen. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tema</entry><entry>
+<para>El tema específico del examen. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>La nota más alta como un String, o un mensaje de error si no se encuentran registros o si ocurre un problema. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ae41d2e58293ad3edaf10352ea6105810"/><section>
+    <title>obtenerExamenesPorUsuarioYAsignatura()</title>
+<indexterm><primary>obtenerExamenesPorUsuarioYAsignatura</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>obtenerExamenesPorUsuarioYAsignatura</secondary></indexterm>
+<para><computeroutput>static List&lt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen">examen</link> &gt; es.manueldonoso.academia.util.Base_datos.obtenerExamenesPorUsuarioYAsignatura (Connection conn, String usuario, String asignatura) throws SQLException<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene una lista de exámenes de la tabla Examen_Realizados_Tablas según el usuario y asignatura.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>usuario</entry><entry>
+<para>El usuario para filtrar la consulta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asignatura</entry><entry>
+<para>La asignatura para filtrar la consulta. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una lista de exámenes encontrados o una lista vacía si no hay resultados. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>SQLException</entry><entry>
+<para>Si ocurre un error al realizar la consulta SQL. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a46e4722fe84014a389d646e5cc5107c4"/><section>
+    <title>obtenerExamenesPorUsuarioYAsignaturaSinProfesor()</title>
+<indexterm><primary>obtenerExamenesPorUsuarioYAsignaturaSinProfesor</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>obtenerExamenesPorUsuarioYAsignaturaSinProfesor</secondary></indexterm>
+<para><computeroutput>static List&lt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen">examen</link> &gt; es.manueldonoso.academia.util.Base_datos.obtenerExamenesPorUsuarioYAsignaturaSinProfesor (Connection conn, String usuario, String asignatura) throws SQLException<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene una lista de exámenes de la tabla Examen_Realizados_Tablas según el usuario y asignatura.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>usuario</entry><entry>
+<para>El usuario para filtrar la consulta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asignatura</entry><entry>
+<para>La asignatura para filtrar la consulta. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una lista de exámenes encontrados o una lista vacía si no hay resultados. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>SQLException</entry><entry>
+<para>Si ocurre un error al realizar la consulta SQL. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ab98230a6a34f152f614ac7005614ba9b"/><section>
+    <title>obtenerTemasPorUsuarioYAsignatura()</title>
+<indexterm><primary>obtenerTemasPorUsuarioYAsignatura</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>obtenerTemasPorUsuarioYAsignatura</secondary></indexterm>
+<para><computeroutput>static List&lt; String &gt; es.manueldonoso.academia.util.Base_datos.obtenerTemasPorUsuarioYAsignatura (Connection conn, String usuario, String asignatura) throws SQLException<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene una lista de temas de la tabla Examen_Realizados_Tablas según el usuario y asignatura.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>usuario</entry><entry>
+<para>El usuario para filtrar la consulta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asignatura</entry><entry>
+<para>La asignatura para filtrar la consulta. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una lista de temas encontrados o una lista vacía si no hay resultados. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>SQLException</entry><entry>
+<para>Si ocurre un error al realizar la consulta SQL. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ac38d1aaea9f174f1c3bade87cd3f8b65"/><section>
+    <title>obtenerUsuariosPorAsignatura()</title>
+<indexterm><primary>obtenerUsuariosPorAsignatura</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>obtenerUsuariosPorAsignatura</secondary></indexterm>
+<para><computeroutput>static List&lt; String &gt; es.manueldonoso.academia.util.Base_datos.obtenerUsuariosPorAsignatura (Connection conn, String asignatura) throws SQLException<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene una lista de usuarios que han realizado exámenes en una asignatura específica.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asignatura</entry><entry>
+<para>El nombre de la asignatura para filtrar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una lista de usuarios que han realizado exámenes en la asignatura. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>SQLException</entry><entry>
+<para>Si ocurre un error en la consulta SQL. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a70278b6231a4337c7b004b55183a1f48"/><section>
+    <title>obtenerUsuariosPorAsignaturaSinProfesor()</title>
+<indexterm><primary>obtenerUsuariosPorAsignaturaSinProfesor</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>obtenerUsuariosPorAsignaturaSinProfesor</secondary></indexterm>
+<para><computeroutput>static List&lt; String &gt; es.manueldonoso.academia.util.Base_datos.obtenerUsuariosPorAsignaturaSinProfesor (Connection conn, String asignatura) throws SQLException<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene una lista de usuarios que han realizado exámenes en una asignatura específica.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asignatura</entry><entry>
+<para>El nombre de la asignatura para filtrar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una lista de usuarios que han realizado exámenes en la asignatura. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>SQLException</entry><entry>
+<para>Si ocurre un error en la consulta SQL. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1ae1b27bcc48e2ea35e984f14d7101dc8a"/><section>
+    <title>PassMemorizado()</title>
+<indexterm><primary>PassMemorizado</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>PassMemorizado</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Base_datos.PassMemorizado ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Recupera el nombre de usuario almacenado en la tabla Usuario_Guardado_tabla para el registro con id = 1.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>el pass de usuario almacenado, o null si no se encuentra o ocurre un error. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a2dda68faae09c0ba0a22bcc330d5c84c"/><section>
+    <title>RegistrarProductoContrato()</title>
+<indexterm><primary>RegistrarProductoContrato</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>RegistrarProductoContrato</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Base_datos.RegistrarProductoContrato (<link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Registra un nuevo producto en las tablas &quot;Registro_tabla&quot; y &quot;usuario_tabla&quot; utilizando los datos de un objeto <computeroutput>Usuario</computeroutput>. Inserta un nuevo registro en la tabla &quot;Registro_tabla&quot; con un valor fijo de <computeroutput>id</computeroutput> igual a <computeroutput>1</computeroutput>, y en la tabla &quot;usuario_tabla&quot; con los valores de <computeroutput>Usuario</computeroutput>, <computeroutput>Nombre</computeroutput>, <computeroutput>Apellidos</computeroutput>, y <computeroutput>Email</computeroutput>. La operación se realiza dentro de una transacción para garantizar la consistencia de ambas inserciones.</para>
+
+<para>Ejemplo de uso:</para>
+
+<para><literallayout><computeroutput><literallayout>&#160;&#xa;</literallayout>
+Usuario user = new Usuario(&quot;usuario123&quot;, &quot;Manuel&quot;, &quot;Donoso&quot;, &quot;Manuel.Donoso@example.com&quot;);<literallayout>&#160;&#xa;</literallayout>
+RegistrarProductoContrato(user);<literallayout>&#160;&#xa;</literallayout>
+</computeroutput></literallayout></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>user</entry><entry>
+<para>El objeto <computeroutput>Usuario</computeroutput> que contiene los datos a insertar en las tablas. El parámetro <computeroutput>Usuario</computeroutput> debe tener los métodos <computeroutput>getUsuario()</computeroutput>, <computeroutput>getNombre()</computeroutput>, <computeroutput>getApellidos()</computeroutput> y <computeroutput>getEmail()</computeroutput> para obtener los valores que se insertarán en la base de datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1a8c0fb04eebf69ff5f6b4ba343856d3f0"/><section>
+    <title>UsuarioMemorizado()</title>
+<indexterm><primary>UsuarioMemorizado</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>UsuarioMemorizado</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Base_datos.UsuarioMemorizado ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Recupera el nombre de usuario almacenado en la tabla Usuario_Guardado_tabla para el registro con id = 1.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>el nombre de usuario almacenado, o null si no se encuentra o ocurre un error. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_1adc2415a489c8e2d286577c7a783de317"/><section>
+    <title>verificarUsuario()</title>
+<indexterm><primary>verificarUsuario</primary><secondary>es.manueldonoso.academia.util.Base_datos</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Base_datos</primary><secondary>verificarUsuario</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Base_datos.verificarUsuario (Connection conn, String usuario, String pass) throws SQLException<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Verifica si un usuario con el nombre de usuario y contraseña proporcionados existe en la base de datos. Si el usuario existe, devuelve el valor de <computeroutput>fk_tipo</computeroutput> correspondiente; si no, devuelve <computeroutput>null</computeroutput>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>usuario</entry><entry>
+<para>El nombre de usuario a verificar. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pass</entry><entry>
+<para>La contraseña del usuario. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>El valor de <computeroutput>fk_tipo</computeroutput> si el usuario existe y la contraseña es correcta, o <computeroutput>null</computeroutput> si no coincide. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>java.sql.SQLException</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/util/Base_datos.java</section>
+</section>

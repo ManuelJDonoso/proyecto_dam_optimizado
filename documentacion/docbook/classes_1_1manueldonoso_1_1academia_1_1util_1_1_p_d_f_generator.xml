@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_p_d_f_generator" xml:lang="en-US">
+<title>es.manueldonoso.academia.util.PDFGenerator Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.util.PDFGenerator</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_p_d_f_generator_1aa04c920f560cb86abb0ec27f94ef678e">generatePDF</link> (String textContent, String outputFilePath)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Clase para generar documentos PDF de manera sencilla. Utiliza la biblioteca iText para crear un archivo PDF a partir de un texto dado. <formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_p_d_f_generator_1aa04c920f560cb86abb0ec27f94ef678e"/><section>
+    <title>generatePDF()</title>
+<indexterm><primary>generatePDF</primary><secondary>es.manueldonoso.academia.util.PDFGenerator</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.PDFGenerator</primary><secondary>generatePDF</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.PDFGenerator.generatePDF (String textContent, String outputFilePath)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Genera un archivo PDF con el contenido proporcionado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>textContent</entry><entry>
+<para>El contenido de texto que se incluirá en el PDF. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>outputFilePath</entry><entry>
+<para>La ruta completa donde se guardará el archivo PDF generado. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/util/PDFGenerator.java</section>
+</section>

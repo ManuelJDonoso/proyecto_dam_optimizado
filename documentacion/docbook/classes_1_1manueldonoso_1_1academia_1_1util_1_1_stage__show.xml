@@ -1,0 +1,674 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show" xml:lang="en-US">
+<title>es.manueldonoso.academia.util.Stage_show Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1ae15f7e6ab3d61810c3d582b34c2dab51">Mostrar_login</link> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a1acaa481a87babd833bb9f0af7fb68db">Mostrar_crearContrato</link> ()</para>
+</listitem>
+            <listitem><para>static <link linkend="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_cambio___contrasena_controller">Cambio_ContrasenaController</link> <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a4cc55d00f1f03dd932be3d1482cacf80">MostrarCambioPass</link> (Pane root)</para>
+</listitem>
+            <listitem><para>static boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a8ed4ef2373fd6c7673578d8bf953e971">Mostrar_Mis_Datos</link> (Connection conn, Pane root, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)  throws IOException </para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a26407ccbe86c3bea6a35b53e19036936"/>static void <emphasis role="strong">Mostrar_VideoAyuda</emphasis> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1ab77a1f8f9a8e31c8d87c933268bbae1a">Mostrar_Dasboard_Administrador</link> (Connection conn)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a21761ef1a2c0a016c0dbd2f1ffa68846">cargar_asignaturaPanel</link> (Connection conn, Pane pane)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a5706f2af83fc04075f16af72b3bde810">cargar_BuscarUsuaroPanel</link> (Connection conn, Pane pane)</para>
+</listitem>
+            <listitem><para>static <link linkend="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller">Registrar_usuario_nuevoController</link> <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a153ff3efb239b3ba48b6aa42fc0f168a">Mostrar_Registrar_usuario_nuevo</link> (Connection conn, Pane root)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a7128ecd3df7d2845d40e8a3ec7773ae9">Mostrar_ModificarDastos</link> (Connection conn, Pane root, String user)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a3d780caaa2ce2c3ba5701da6560396e9">Mostrar_Dasboard_Profesor</link> (Connection conn)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a06ff27d50607cb51532848451c527a6d">cargar_MaterialPanel</link> (Connection conn, Pane pane, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1abadebc960ad70c80c907e1ef37503760">cargar_Generar_ExamenPanel</link> (Connection conn, Pane pane, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1ab5cef7e373db2d9f32244c6bf401ef62">anadirPanelPreguntas</link> (VBox preguntas, int numeroPregunta)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a9012c09510bfcdf4aed8fde40385df89">anadirPanelEstadisticasNotas</link> (Pane pane, Connection conn, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a49f8ff718386591dace9d10ece454a58">Mostrar_Dasboard_Alumno</link> (Connection conn)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1ac3f8869cebcff4bbb94187a4ca8f0134">cargar_MaterialPanelAlumno</link> (Connection conn, Pane pane, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a891a0697982dd37f3a84479f6acb9cc7">cargar_Panel_Examen</link> (Pane pane, Connection conn, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1ae3e7f96404b5e82d7aca6c8ab9b8c837">cargar_Pregunta</link> (Pane pane, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta">Pregunta</link> p)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a25e82c59300f159e6c6631a0f0ef8459"/>static void <emphasis role="strong">cargar_panel_Notas</emphasis> (Pane pane, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user, Connection conn)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>La clase <computeroutput><link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show">Stage_show</link></computeroutput> se encarga de gestionar la visualización de diferentes ventanas (Stages) en la aplicación, incluyendo ventanas de login, dashboards, y paneles de gestión de datos. Utiliza archivos FXML para cargar las interfaces de usuario y configurar el comportamiento de las ventanas.</para>
+
+<para>La clase también maneja la creación de escenas, el estilo visual de las ventanas y la gestión de efectos visuales. Cada método corresponde a una ventana o panel específico de la aplicación.</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a9012c09510bfcdf4aed8fde40385df89"/><section>
+    <title>anadirPanelEstadisticasNotas()</title>
+<indexterm><primary>anadirPanelEstadisticasNotas</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>anadirPanelEstadisticasNotas</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.anadirPanelEstadisticasNotas (Pane pane, Connection conn, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Añade un nuevo panel de pregunta al VBox proporcionado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pane</entry><entry>
+<para>El VBox en el que se añadirá . </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1ab5cef7e373db2d9f32244c6bf401ef62"/><section>
+    <title>anadirPanelPreguntas()</title>
+<indexterm><primary>anadirPanelPreguntas</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>anadirPanelPreguntas</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.anadirPanelPreguntas (VBox preguntas, int numeroPregunta)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Añade un nuevo panel de pregunta al VBox proporcionado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>preguntas</entry><entry>
+<para>El VBox en el que se añadirá el panel de pregunta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>numeroPregunta</entry><entry>
+<para>El número de la pregunta que se cargará en el panel. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a21761ef1a2c0a016c0dbd2f1ffa68846"/><section>
+    <title>cargar_asignaturaPanel()</title>
+<indexterm><primary>cargar_asignaturaPanel</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>cargar_asignaturaPanel</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.cargar_asignaturaPanel (Connection conn, Pane pane)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Carga el panel de asignaturas en el <computeroutput>Pane</computeroutput> especificado.</para>
+
+<para>Este método carga el archivo FXML correspondiente al panel de asignaturas y lo inserta en el <computeroutput>Pane</computeroutput>. Si el contenido cargado es una instancia de <computeroutput>Region</computeroutput>, ajusta el tamaño al tamaño del <computeroutput>Pane</computeroutput>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>Conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pane</entry><entry>
+<para>El <computeroutput>Pane</computeroutput> donde se cargará el contenido. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a5706f2af83fc04075f16af72b3bde810"/><section>
+    <title>cargar_BuscarUsuaroPanel()</title>
+<indexterm><primary>cargar_BuscarUsuaroPanel</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>cargar_BuscarUsuaroPanel</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.cargar_BuscarUsuaroPanel (Connection conn, Pane pane)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Carga el panel de la vista &quot;BuscarUsuario&quot; y lo inserta en el pane proporcionado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pane</entry><entry>
+<para>El pane en el que se insertará el contenido cargado. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1abadebc960ad70c80c907e1ef37503760"/><section>
+    <title>cargar_Generar_ExamenPanel()</title>
+<indexterm><primary>cargar_Generar_ExamenPanel</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>cargar_Generar_ExamenPanel</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.cargar_Generar_ExamenPanel (Connection conn, Pane pane, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Carga el panel para generar un examen y lo inserta en el pane proporcionado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pane</entry><entry>
+<para>El pane en el que se insertará el contenido cargado. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>user</entry><entry>
+<para>El usuario para cargar las asignaturas relacionadas. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a06ff27d50607cb51532848451c527a6d"/><section>
+    <title>cargar_MaterialPanel()</title>
+<indexterm><primary>cargar_MaterialPanel</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>cargar_MaterialPanel</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.cargar_MaterialPanel (Connection conn, Pane pane, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Carga el panel para subir materiales y lo inserta en el pane proporcionado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pane</entry><entry>
+<para>El pane en el que se insertará el contenido cargado. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>user</entry><entry>
+<para>El usuario para cargar las asignaturas relacionadas. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1ac3f8869cebcff4bbb94187a4ca8f0134"/><section>
+    <title>cargar_MaterialPanelAlumno()</title>
+<indexterm><primary>cargar_MaterialPanelAlumno</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>cargar_MaterialPanelAlumno</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.cargar_MaterialPanelAlumno (Connection conn, Pane pane, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Carga el panel de materiales para el alumno y lo inserta en el pane proporcionado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pane</entry><entry>
+<para>El pane en el que se insertará el contenido cargado. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>user</entry><entry>
+<para>El usuario para cargar los materiales relacionados. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a891a0697982dd37f3a84479f6acb9cc7"/><section>
+    <title>cargar_Panel_Examen()</title>
+<indexterm><primary>cargar_Panel_Examen</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>cargar_Panel_Examen</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.cargar_Panel_Examen (Pane pane, Connection conn, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Carga el panel del menú de exámenes y lo inserta en el pane proporcionado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pane</entry><entry>
+<para>El pane en el que se insertará el contenido cargado. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1ae3e7f96404b5e82d7aca6c8ab9b8c837"/><section>
+    <title>cargar_Pregunta()</title>
+<indexterm><primary>cargar_Pregunta</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>cargar_Pregunta</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.cargar_Pregunta (Pane pane, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta">Pregunta</link> p)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Carga la vista de una pregunta específica y la inserta en el pane proporcionado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pane</entry><entry>
+<para>El pane en el que se insertará el contenido cargado. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>p</entry><entry>
+<para>El objeto Pregunta que contiene los datos de la pregunta a cargar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a1acaa481a87babd833bb9f0af7fb68db"/><section>
+    <title>Mostrar_crearContrato()</title>
+<indexterm><primary>Mostrar_crearContrato</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>Mostrar_crearContrato</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.Mostrar_crearContrato ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra una nueva ventana para la creación o registro de un contrato. Este método crea un nuevo <computeroutput>Stage</computeroutput> y carga una interfaz gráfica desde el archivo FXML ubicado en <computeroutput>/vistas/Contrato_registro.fxml</computeroutput>. Configura la escena con un título específico y define el comportamiento al cerrar la ventana.</para>
+
+<para>Al mostrar la ventana, se establece un título en el <computeroutput>Stage</computeroutput> y se define un manejador de eventos que detecta el cierre de la ventana, registrando un mensaje en consola. En caso de que ocurra una excepción al cargar el archivo FXML, se registra el error en el log. </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1ab77a1f8f9a8e31c8d87c933268bbae1a"/><section>
+    <title>Mostrar_Dasboard_Administrador()</title>
+<indexterm><primary>Mostrar_Dasboard_Administrador</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>Mostrar_Dasboard_Administrador</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.Mostrar_Dasboard_Administrador (Connection conn)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra el dashboard del administrador en una nueva ventana.</para>
+
+<para>Este método crea un <computeroutput>Stage</computeroutput> para mostrar la interfaz correspondiente al dashboard del administrador. En caso de error, se captura y se registra la excepción.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>Conexión a la base de datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a49f8ff718386591dace9d10ece454a58"/><section>
+    <title>Mostrar_Dasboard_Alumno()</title>
+<indexterm><primary>Mostrar_Dasboard_Alumno</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>Mostrar_Dasboard_Alumno</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.Mostrar_Dasboard_Alumno (Connection conn)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra el dashboard del alumno en una nueva ventana.</para>
+
+<para>Este método crea un <computeroutput>Stage</computeroutput> para mostrar la interfaz correspondiente al dashboard del alumno.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>Conexión a la base de datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a3d780caaa2ce2c3ba5701da6560396e9"/><section>
+    <title>Mostrar_Dasboard_Profesor()</title>
+<indexterm><primary>Mostrar_Dasboard_Profesor</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>Mostrar_Dasboard_Profesor</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.Mostrar_Dasboard_Profesor (Connection conn)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra el dashboard del profesor en una nueva ventana.</para>
+
+<para>Este método crea un <computeroutput>Stage</computeroutput> para mostrar la interfaz correspondiente al dashboard del profesor. Si ocurre un error durante el proceso, se captura y se registra en el log.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>Conexión a la base de datos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1ae15f7e6ab3d61810c3d582b34c2dab51"/><section>
+    <title>Mostrar_login()</title>
+<indexterm><primary>Mostrar_login</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>Mostrar_login</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.Mostrar_login ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra la ventana de login en una nueva ventana (Stage).</para>
+
+<para>Este método crea una nueva instancia de Stage, carga el archivo FXML de la ventana de login, crea una escena con el contenido de la ventana y la asigna al stage. Luego, se configura el estilo de la ventana y se aplica un efecto visual para el movimiento de la ventana. Si ocurre algún error al cargar el archivo FXML, se captura la excepción y se muestra un mensaje de error en el log. </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a8ed4ef2373fd6c7673578d8bf953e971"/><section>
+    <title>Mostrar_Mis_Datos()</title>
+<indexterm><primary>Mostrar_Mis_Datos</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>Mostrar_Mis_Datos</secondary></indexterm>
+<para><computeroutput>static boolean es.manueldonoso.academia.util.Stage_show.Mostrar_Mis_Datos (Connection conn, Pane root, <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user) throws IOException<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra una ventana para modificar los datos del usuario.</para>
+
+<para>Este método carga el archivo FXML correspondiente a la ventana de modificación de datos del usuario. Al cerrar la ventana, se actualiza el estado del cierre y se retorna un valor indicando si la ventana se cerró correctamente.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>Conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>root</entry><entry>
+<para>El <computeroutput>Pane</computeroutput> de la ventana actual. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>user</entry><entry>
+<para>El objeto de tipo <computeroutput>Usuario</computeroutput> que contiene los datos del usuario. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Un valor booleano indicando si la ventana se cerró correctamente. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>IOException</entry><entry>
+<para>Si ocurre un error al cargar el archivo FXML. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a7128ecd3df7d2845d40e8a3ec7773ae9"/><section>
+    <title>Mostrar_ModificarDastos()</title>
+<indexterm><primary>Mostrar_ModificarDastos</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>Mostrar_ModificarDastos</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Stage_show.Mostrar_ModificarDastos (Connection conn, Pane root, String user)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra una ventana para modificar los datos de un usuario específico.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>root</entry><entry>
+<para>El pane raíz desde el cual se abre la ventana. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>user</entry><entry>
+<para>El nombre de usuario cuyos datos se van a modificar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a153ff3efb239b3ba48b6aa42fc0f168a"/><section>
+    <title>Mostrar_Registrar_usuario_nuevo()</title>
+<indexterm><primary>Mostrar_Registrar_usuario_nuevo</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>Mostrar_Registrar_usuario_nuevo</secondary></indexterm>
+<para><computeroutput>static <link linkend="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller">Registrar_usuario_nuevoController</link> es.manueldonoso.academia.util.Stage_show.Mostrar_Registrar_usuario_nuevo (Connection conn, Pane root)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra una ventana para registrar un nuevo usuario y retorna el controlador asociado a la vista.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>La conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>root</entry><entry>
+<para>El pane raíz desde el cual se abre la ventana. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>El controlador asociado a la ventana de registro de usuario, o null si ocurre un error. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show_1a4cc55d00f1f03dd932be3d1482cacf80"/><section>
+    <title>MostrarCambioPass()</title>
+<indexterm><primary>MostrarCambioPass</primary><secondary>es.manueldonoso.academia.util.Stage_show</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Stage_show</primary><secondary>MostrarCambioPass</secondary></indexterm>
+<para><computeroutput>static <link linkend="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_cambio___contrasena_controller">Cambio_ContrasenaController</link> es.manueldonoso.academia.util.Stage_show.MostrarCambioPass (Pane root)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra una ventana de cambio de contraseña en una nueva ventana (Stage).</para>
+
+<para>Este método crea un <computeroutput>Stage</computeroutput> para mostrar la ventana de cambio de contraseña utilizando un archivo FXML. El controlador asociado es retornado para que pueda ser utilizado fuera del método.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>root</entry><entry>
+<para>El <computeroutput>Pane</computeroutput> de la ventana actual. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>El controlador del cambio de contraseña. </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/util/Stage_show.java</section>
+</section>

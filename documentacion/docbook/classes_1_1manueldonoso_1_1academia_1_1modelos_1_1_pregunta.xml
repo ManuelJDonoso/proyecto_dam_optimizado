@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta" xml:lang="en-US">
+<title>es.manueldonoso.academia.modelos.Pregunta Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a2975cc613fa4876b6d06086b54ca0f96">Pregunta</link> (String pregunta, String respuestaV, String respuesta1, String respuesta2, String respuesta3)</para>
+</listitem>
+            <listitem><para><link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a0237876654d93966c04d4f3b8dd1ce82">Pregunta</link> (int numero, String pregunta, String respuestaV, String respuesta1, String respuesta2, String respuesta3)</para>
+</listitem>
+            <listitem><para><link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a068300b9ba6264390283e62162161f7f">Pregunta</link> (List orden, int numero, String pregunta, String respuestaV, String respuesta1, String respuesta2, String respuesta3)</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1ae23adc65086ea1183fad01323749369b">getPregunta</link> ()</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a60025c495c288ea8067f6d097465f80f">getRespuestaA</link> ()</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a5480e592cb572e5f61d530ad489442b2">getRespuestaB</link> ()</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a5afd04f4e281222f752d30c722520584">getRespuestaC</link> ()</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1aec2c22048e4283b53cf405e3cb97721f">getRespuestaD</link> ()</para>
+</listitem>
+            <listitem><para>boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a6542fdb9c1a52a2d93428d0a364a55c4">isSol_A</link> ()</para>
+</listitem>
+            <listitem><para>boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1af0e3bd303ac0f757a9c2c8bc594d2a0a">isSol_B</link> ()</para>
+</listitem>
+            <listitem><para>boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a45001884e558e8d02580923280fc189d">isSol_C</link> ()</para>
+</listitem>
+            <listitem><para>boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a433dac423b42131cd68a9a5d51d1c639">isSol_D</link> ()</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1adcb0d482beed56ba8fac3b08e95523c8">toString</link> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1ab8f391ca16cc12e3ad21de3528edaade"/>String <emphasis role="strong">respuestas</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a9e7fd3aa683010eb76a4cebe31fa4441"/>int <emphasis role="strong">getNumero</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1ab7ff441584cf55ee9229c20c6d0641a7"/>void <emphasis role="strong">setNumero</emphasis> (int numero)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Representa una pregunta con una respuesta correcta y tres respuestas incorrectas. Las respuestas se asignan de forma aleatoria a cuatro opciones (A, B, C, D).</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a2975cc613fa4876b6d06086b54ca0f96"/><section>
+    <title>Pregunta()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>Pregunta</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>Pregunta</secondary></indexterm>
+<para><computeroutput>es.manueldonoso.academia.modelos.Pregunta.Pregunta (String pregunta, String respuestaV, String respuesta1, String respuesta2, String respuesta3)</computeroutput></para>
+<para>Crea una instancia de pregunta con los datos proporcionados.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pregunta</entry><entry>
+<para>el texto de la pregunta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuestaV</entry><entry>
+<para>la respuesta correcta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuesta1</entry><entry>
+<para>la primera respuesta incorrecta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuesta2</entry><entry>
+<para>la segunda respuesta incorrecta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuesta3</entry><entry>
+<para>la tercera respuesta incorrecta. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a0237876654d93966c04d4f3b8dd1ce82"/><section>
+    <title>Pregunta()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>Pregunta</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>Pregunta</secondary></indexterm>
+<para><computeroutput>es.manueldonoso.academia.modelos.Pregunta.Pregunta (int numero, String pregunta, String respuestaV, String respuesta1, String respuesta2, String respuesta3)</computeroutput></para>
+<para>Crea una instancia de pregunta con los datos proporcionados.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pregunta</entry><entry>
+<para>el texto de la pregunta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuestaV</entry><entry>
+<para>la respuesta correcta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuesta1</entry><entry>
+<para>la primera respuesta incorrecta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuesta2</entry><entry>
+<para>la segunda respuesta incorrecta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuesta3</entry><entry>
+<para>la tercera respuesta incorrecta. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a068300b9ba6264390283e62162161f7f"/><section>
+    <title>Pregunta()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>Pregunta</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>Pregunta</secondary></indexterm>
+<para><computeroutput>es.manueldonoso.academia.modelos.Pregunta.Pregunta (List orden, int numero, String pregunta, String respuestaV, String respuesta1, String respuesta2, String respuesta3)</computeroutput></para>
+<para>Crea una instancia de pregunta con los datos proporcionados.Con las respuestas en la posicion que se decida</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pregunta</entry><entry>
+<para>el texto de la pregunta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuestaV</entry><entry>
+<para>la respuesta correcta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuesta1</entry><entry>
+<para>la primera respuesta incorrecta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuesta2</entry><entry>
+<para>la segunda respuesta incorrecta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>respuesta3</entry><entry>
+<para>la tercera respuesta incorrecta. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1ae23adc65086ea1183fad01323749369b"/><section>
+    <title>getPregunta()</title>
+<indexterm><primary>getPregunta</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>getPregunta</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Pregunta.getPregunta ( )</computeroutput></para>
+<para>Devuelve el texto de la <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta">Pregunta</link>.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>el texto de la <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta">Pregunta</link>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a60025c495c288ea8067f6d097465f80f"/><section>
+    <title>getRespuestaA()</title>
+<indexterm><primary>getRespuestaA</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>getRespuestaA</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Pregunta.getRespuestaA ( )</computeroutput></para>
+<para>Devuelve la opción A.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>el texto de la opción A. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a5480e592cb572e5f61d530ad489442b2"/><section>
+    <title>getRespuestaB()</title>
+<indexterm><primary>getRespuestaB</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>getRespuestaB</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Pregunta.getRespuestaB ( )</computeroutput></para>
+<para>Devuelve la opción B.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>el texto de la opción B. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a5afd04f4e281222f752d30c722520584"/><section>
+    <title>getRespuestaC()</title>
+<indexterm><primary>getRespuestaC</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>getRespuestaC</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Pregunta.getRespuestaC ( )</computeroutput></para>
+<para>Devuelve la opción C.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>el texto de la opción C. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1aec2c22048e4283b53cf405e3cb97721f"/><section>
+    <title>getRespuestaD()</title>
+<indexterm><primary>getRespuestaD</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>getRespuestaD</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Pregunta.getRespuestaD ( )</computeroutput></para>
+<para>Devuelve la opción D.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>el texto de la opción D. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a6542fdb9c1a52a2d93428d0a364a55c4"/><section>
+    <title>isSol_A()</title>
+<indexterm><primary>isSol_A</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>isSol_A</secondary></indexterm>
+<para><computeroutput>boolean es.manueldonoso.academia.modelos.Pregunta.isSol_A ( )</computeroutput></para>
+<para>Verifica si la opción A es la respuesta correcta.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true si la opción A es correcta, false en caso contrario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1af0e3bd303ac0f757a9c2c8bc594d2a0a"/><section>
+    <title>isSol_B()</title>
+<indexterm><primary>isSol_B</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>isSol_B</secondary></indexterm>
+<para><computeroutput>boolean es.manueldonoso.academia.modelos.Pregunta.isSol_B ( )</computeroutput></para>
+<para>Verifica si la opción B es la respuesta correcta.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true si la opción B es correcta, false en caso contrario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a45001884e558e8d02580923280fc189d"/><section>
+    <title>isSol_C()</title>
+<indexterm><primary>isSol_C</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>isSol_C</secondary></indexterm>
+<para><computeroutput>boolean es.manueldonoso.academia.modelos.Pregunta.isSol_C ( )</computeroutput></para>
+<para>Verifica si la opción C es la respuesta correcta.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true si la opción C es correcta, false en caso contrario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1a433dac423b42131cd68a9a5d51d1c639"/><section>
+    <title>isSol_D()</title>
+<indexterm><primary>isSol_D</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>isSol_D</secondary></indexterm>
+<para><computeroutput>boolean es.manueldonoso.academia.modelos.Pregunta.isSol_D ( )</computeroutput></para>
+<para>Verifica si la opción D es la respuesta correcta.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>true si la opción D es correcta, false en caso contrario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta_1adcb0d482beed56ba8fac3b08e95523c8"/><section>
+    <title>toString()</title>
+<indexterm><primary>toString</primary><secondary>es.manueldonoso.academia.modelos.Pregunta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Pregunta</primary><secondary>toString</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Pregunta.toString ( )</computeroutput></para>
+<para>Devuelve una representación en formato texto de la <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta">Pregunta</link> y sus respuestas.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>una cadena que representa la <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta">Pregunta</link> y sus datos. </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/modelos/Pregunta.java</section>
+</section>

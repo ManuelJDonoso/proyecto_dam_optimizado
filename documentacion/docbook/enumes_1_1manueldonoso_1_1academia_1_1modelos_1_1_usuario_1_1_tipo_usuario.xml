@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario" xml:lang="en-US">
+<title>es.manueldonoso.academia.modelos.Usuario.TipoUsuario Enum Reference</title>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario.TipoUsuario</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario_1a7f1c2eb72c968f9e0219eeee4ab6a42e"/><emphasis role="strong">ADMINISTRADOR</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario_1aa5b263a55bd88aa031741e4ccba6c6ab"/><emphasis role="strong">PROFESOR</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario_1a73768f02b426abfdfc07bc6f7c5af35d"/><emphasis role="strong">ALUMNO</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Enum que define los tipos de usuario permitidos en el sistema. </para>
+<para>
+The documentation for this enum was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/modelos/Usuario.java</section>
+</section>

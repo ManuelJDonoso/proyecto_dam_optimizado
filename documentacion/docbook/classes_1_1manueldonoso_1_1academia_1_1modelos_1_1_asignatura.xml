@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_asignatura" xml:lang="en-US">
+<title>es.manueldonoso.academia.modelos.Asignatura Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.modelos.Asignatura</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_asignatura_1acef6eca585dbe37df8fb7639c47cbfaa"/>String <emphasis role="strong">getAsignatura</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_asignatura_1acc8abb288d2d7f0d1f03466b69f4228a"/>void <emphasis role="strong">setAsignatura</emphasis> (String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_asignatura">Asignatura</link>)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_asignatura_1a454005ae844738169e8cf43aa9ec23ad"/>boolean <emphasis role="strong">isActiva</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_asignatura_1a45338717ead2599f985b151c706a274a"/>void <emphasis role="strong">setActiva</emphasis> (boolean Activa)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/modelos/Asignatura.java</section>
+</section>

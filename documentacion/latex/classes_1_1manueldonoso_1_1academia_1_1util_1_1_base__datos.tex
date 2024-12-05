@@ -1,0 +1,613 @@
+\doxysection{es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos Class Reference}
+\hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos}{}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Connection \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a0c77c4bf25a70cdca7931785658a123f}{conectar\+Sqlite}} ()
+\item 
+static boolean \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a9390cf7d7d4161f666a9ebdbfd4b4deb}{is\+Connection}} (Connection conn)
+\item 
+static Connection \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_adbc97c94512b04f30401e54aba6d8ce5}{connect\+Mysql}} (String URL, String USER, String PASSWORD)
+\item 
+static Connection \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_acf3c198b87e6389df1a35d64fd00f8f8}{connect\+Mysql\+Local}} ()
+\item 
+static Connection \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_aac2fe1401d7a453b80f554e837656918}{connect\+Mysql\+Red}} ()
+\item 
+static Connection \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a3a1d50c7fcec18194e0d8d220250ab21}{connect\+Mysql\+Remota}} ()
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a2dda68faae09c0ba0a22bcc330d5c84c}{Registrar\+Producto\+Contrato}} (\mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario}{Usuario}} user)
+\item 
+static String \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a549291cd9b93e10b1c60c0f66209f6bf}{nombre\+Usuario\+Contrato}} ()
+\item 
+static String \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab3aa99787f62f82f192b10100bb732ec}{fecha\+Contrato}} ()
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a6af2c1133d0516a75fe3bc5803c35026}{Memorizar\+Usuario}} (String \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario}{Usuario}}, String Pass)
+\item 
+static String \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a8c0fb04eebf69ff5f6b4ba343856d3f0}{Usuario\+Memorizado}} ()
+\item 
+static String \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ae1b27bcc48e2ea35e984f14d7101dc8a}{Pass\+Memorizado}} ()
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab4a1b9ade69e6f225fc368d385cb4784}{insertar\+Usuarios}} (Connection conn)  throws SQLException 
+\item 
+static String \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_adc2415a489c8e2d286577c7a783de317}{verificar\+Usuario}} (Connection conn, String usuario, String pass)  throws SQLException 
+\item 
+static boolean \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab424eac1eacb17481807b6fc0b185642}{eliminar\+Todos\+Usuarios}} (Connection conn)  throws SQLException 
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a50bbcc4456fe6ef9a28759a17c6cddb1}{Cambio\+Contraseña}} (Connection conn, String usuario, String pass)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a85af2f6e312bdc2965cb46623804c279}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a85af2f6e312bdc2965cb46623804c279} 
+static \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario}{Usuario}} {\bfseries Buscar\+Usuario\+\_\+\+Usuario} (Connection conn, String usuario)  throws SQLException 
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ae6c9d4a2ddc8a7df04e5daa29c2df0f4}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ae6c9d4a2ddc8a7df04e5daa29c2df0f4} 
+static boolean {\bfseries Modificar\+Usuario} (Connection conn, \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario}{Usuario}} user)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a6706351deb4788bdd539c587fb8066b2}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a6706351deb4788bdd539c587fb8066b2} 
+static boolean {\bfseries Is\+Usuario} (Connection conn, String usuario)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a9827bc4e976b6eb2cdd8d7589619ba35}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a9827bc4e976b6eb2cdd8d7589619ba35} 
+static void {\bfseries Guardar\+Usuario\+Nuevo} (Connection conn, \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario}{Usuario}} user)  throws SQLException 
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ae86d9b49b604d65821cb04120ff98e92}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ae86d9b49b604d65821cb04120ff98e92} 
+static void {\bfseries Alta\+Asignatura} (Connection conn, String Asignatura)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a5fe0cac8128ad6f3931017c2e2f8784f}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a5fe0cac8128ad6f3931017c2e2f8784f} 
+static List$<$ String $>$ {\bfseries obtener\+Asignaturas\+Activas} (Connection conn)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_acfb6f7a068c443b733b3f81d5629dade}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_acfb6f7a068c443b733b3f81d5629dade} 
+static List$<$ String $>$ {\bfseries obtener\+Asignaturas\+In\+Activas} (Connection conn)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a4313dea660bced7b38e35e10d2588286}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a4313dea660bced7b38e35e10d2588286} 
+static void {\bfseries desactivar\+Asignatura} (Connection conn, String asignatura)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_acdfe0d79e6e5734f74db3d7afe54843d}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_acdfe0d79e6e5734f74db3d7afe54843d} 
+static void {\bfseries activar\+Asignatura} (Connection conn, String asignatura)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a96cf74ddd496cdd659ff0b972eb496f5}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a96cf74ddd496cdd659ff0b972eb496f5} 
+static Observable\+List$<$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario}{Usuario}} $>$ {\bfseries buscar\+User} (Connection conn, String fk\+\_\+\+Clase\+User, String Nombre, String Apellidos, String Telefono, String Email, String \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario}{Usuario}}, String Direccion)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a848e5e3cf40184ef19cbc3ea25e25abe}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a848e5e3cf40184ef19cbc3ea25e25abe} 
+static void {\bfseries Actualizar\+Usuario} (Connection conn, \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario}{Usuario}} user)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_acd8523ebfce3fe2752e872d6e69b5526}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_acd8523ebfce3fe2752e872d6e69b5526} 
+static void {\bfseries insertar\+Fichero} (Connection conn, String asignatura, String nombre\+Archivo, String ruta\+Archivo, String tema)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a859cd9bf60c727c50e3595162b499db7}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a859cd9bf60c727c50e3595162b499db7} 
+static void {\bfseries descargar\+Archivo} (Connection conn, String id, String nombre\+Archivo)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a7448fa1157222051e949f2f9a34a5a9f}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a7448fa1157222051e949f2f9a34a5a9f} 
+static void {\bfseries eliminar\+Archivo} (Connection conn, String id, String nombre\+Archivo)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ac1dd97d7d98e6f819a8aab28ee4353ed}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ac1dd97d7d98e6f819a8aab28ee4353ed} 
+static void {\bfseries guardar\+Examen\+Generado\+En\+Base\+De\+Datos} (Connection conn, String asignatura, String tema, List$<$ Map$<$ String, String $>$ $>$ respuestas)
+\item 
+static List$<$ String $>$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_af78bde446fb8ea048ba7802b15dc34a0}{Buscar\+Examenes}} (Connection conn, String asignatura)
+\item 
+static List$<$ String $>$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a93dc1042ce3fb389461ef7325b692fcb}{Buscar\+Examenes\+Realizados}} (Connection conn, String asignatura)
+\item 
+static Map$<$ Integer, Map$<$ String, String $>$ $>$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a1457beef6f5b6c560f408657c1162470}{Examen}} (Connection conn, String asignatura, String tema)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a3d93532804811fd55e5b5a636a63df07}{Guardar\+Examen\+Realizado}} (Connection conn, String asignatura, String tema, String nota, String usuario)
+\item 
+static List$<$ String $>$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab98230a6a34f152f614ac7005614ba9b}{obtener\+Temas\+Por\+Usuario\+YAsignatura}} (Connection conn, String usuario, String asignatura)  throws SQLException 
+\item 
+static List$<$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen}{examen}} $>$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ae41d2e58293ad3edaf10352ea6105810}{obtener\+Examenes\+Por\+Usuario\+YAsignatura}} (Connection conn, String usuario, String asignatura)  throws SQLException 
+\item 
+static List$<$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen}{examen}} $>$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a46e4722fe84014a389d646e5cc5107c4}{obtener\+Examenes\+Por\+Usuario\+YAsignatura\+Sin\+Profesor}} (Connection conn, String usuario, String asignatura)  throws SQLException 
+\item 
+static String \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a71804755ac108b1310fd6b3b4d568514}{Nota\+Examen\+Max}} (Connection conn, String usuario, String asignatura, String tema)
+\item 
+static boolean \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a7f8e89f471ecf1878412f8669c8a7a73}{actualizar\+Activo}} (Connection conn, String id, String activo)
+\item 
+static List$<$ String $>$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ac38d1aaea9f174f1c3bade87cd3f8b65}{obtener\+Usuarios\+Por\+Asignatura}} (Connection conn, String asignatura)  throws SQLException 
+\item 
+static List$<$ String $>$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a70278b6231a4337c7b004b55183a1f48}{obtener\+Usuarios\+Por\+Asignatura\+Sin\+Profesor}} (Connection conn, String asignatura)  throws SQLException 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+"{}\+Manuel Jesús Donoso Pérez"{}; 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a7f8e89f471ecf1878412f8669c8a7a73}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!actualizarActivo@{actualizarActivo}}
+\index{actualizarActivo@{actualizarActivo}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{actualizarActivo()}{actualizarActivo()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a7f8e89f471ecf1878412f8669c8a7a73} 
+static boolean es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+actualizar\+Activo (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{id}{, }\item[{String}]{activo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Actualiza el valor de la columna \textquotesingle{}activo\textquotesingle{} en la tabla \textquotesingle{}Material\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión existente a la base de datos. \\
+\hline
+{\em id} & El ID del material a actualizar (como String). \\
+\hline
+{\em activo} & El nuevo valor de la columna activo (como String, valores "{}0"{} o "{}1"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si la actualización fue exitosa, false en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_af78bde446fb8ea048ba7802b15dc34a0}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!BuscarExamenes@{BuscarExamenes}}
+\index{BuscarExamenes@{BuscarExamenes}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{BuscarExamenes()}{BuscarExamenes()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_af78bde446fb8ea048ba7802b15dc34a0} 
+static List$<$ String $>$ es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+Buscar\+Examenes (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{asignatura}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Busca los temas de examen correspondientes a una asignatura en la base de datos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión activa a la base de datos. \\
+\hline
+{\em asignatura} & El nombre de la asignatura cuyos temas se desean buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista con los temas asociados con la asignatura, o una lista vacía si no se encuentran temas. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a93dc1042ce3fb389461ef7325b692fcb}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!BuscarExamenesRealizados@{BuscarExamenesRealizados}}
+\index{BuscarExamenesRealizados@{BuscarExamenesRealizados}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{BuscarExamenesRealizados()}{BuscarExamenesRealizados()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a93dc1042ce3fb389461ef7325b692fcb} 
+static List$<$ String $>$ es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+Buscar\+Examenes\+Realizados (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{asignatura}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Busca los temas de examen correspondientes a una asignatura en la base de datos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión activa a la base de datos. \\
+\hline
+{\em asignatura} & El nombre de la asignatura cuyos temas se desean buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista con los temas asociados con la asignatura, o una lista vacía si no se encuentran temas. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a50bbcc4456fe6ef9a28759a17c6cddb1}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!CambioContraseña@{CambioContraseña}}
+\index{CambioContraseña@{CambioContraseña}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{CambioContraseña()}{CambioContraseña()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a50bbcc4456fe6ef9a28759a17c6cddb1} 
+static void es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+Cambio\+Contraseña (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{usuario}{, }\item[{String}]{pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Cambia la contraseña de un usuario en la tabla usuario\+\_\+tabla.
+
+Este método actualiza la contraseña de un usuario en la base de datos, guardándola en texto plano. Es importante recordar que almacenar contraseñas en texto plano no es seguro y solo debe usarse en entornos de desarrollo o cuando no se requiera seguridad.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos. \\
+\hline
+{\em usuario} & El nombre del usuario cuyo contraseña será cambiada. \\
+\hline
+{\em pass} & La nueva contraseña en texto plano. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a0c77c4bf25a70cdca7931785658a123f}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!conectarSqlite@{conectarSqlite}}
+\index{conectarSqlite@{conectarSqlite}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{conectarSqlite()}{conectarSqlite()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a0c77c4bf25a70cdca7931785658a123f} 
+static Connection es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+conectar\+Sqlite (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Establece una conexión con una base de datos SQLite. 
+
+Este método crea una conexión a la base de datos ubicada en "{}src/main/resources/db/db.\+db"{}. Si la conexión se establece correctamente, se devuelve un objeto {\ttfamily \doxylink{}{Connection}}. En caso de que ocurra algún error, se imprime el mensaje de error y se devuelve null. 
+
+\begin{DoxyReturn}{Returns}
+un objeto {\ttfamily \doxylink{}{Connection}} si la conexión es exitosa; null si ocurre una excepción. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_adbc97c94512b04f30401e54aba6d8ce5}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!connectMysql@{connectMysql}}
+\index{connectMysql@{connectMysql}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{connectMysql()}{connectMysql()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_adbc97c94512b04f30401e54aba6d8ce5} 
+static Connection es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+connect\+Mysql (\begin{DoxyParamCaption}\item[{String}]{URL}{, }\item[{String}]{USER}{, }\item[{String}]{PASSWORD}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Establece una conexión con una base de datos My\+SQL utilizando JDBC.
+
+Este método se encarga de crear una conexión a una base de datos My\+SQL especificando la URL de la base de datos, el nombre de usuario y la contraseña. Si la conexión es exitosa, se devuelve un objeto {\ttfamily \doxylink{}{Connection}}, de lo contrario, se maneja la excepción y se imprime un mensaje de error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em URL} & La URL de la base de datos, que incluye el nombre del host, el puerto y el nombre de la base de datos (por ejemplo, jdbc\+:mysql\+://localhost\+:3306/mi\+\_\+base). \\
+\hline
+{\em USER} & El nombre de usuario para la conexión a la base de datos. \\
+\hline
+{\em PASSWORD} & La contraseña asociada al usuario de la base de datos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una conexión {\ttfamily \doxylink{}{Connection}} a la base de datos, o {\ttfamily null} si no se pudo establecer la conexión. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_acf3c198b87e6389df1a35d64fd00f8f8}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!connectMysqlLocal@{connectMysqlLocal}}
+\index{connectMysqlLocal@{connectMysqlLocal}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{connectMysqlLocal()}{connectMysqlLocal()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_acf3c198b87e6389df1a35d64fd00f8f8} 
+static Connection es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+connect\+Mysql\+Local (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Establece una conexión con la base de datos My\+SQL local.
+
+Este método simplifica la conexión a una base de datos My\+SQL local utilizando las credenciales predeterminadas (usuario "{}root"{} y contraseña vacía). Utiliza el método {\ttfamily \doxylink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_adbc97c94512b04f30401e54aba6d8ce5}{connect\+Mysql(\+String, String, String)}} para establecer la conexión con la base de datos ubicada en "{}localhost"{} en el puerto 3306, y la base de datos "{}proyecto\+\_\+dam"{}.
+
+\begin{DoxyReturn}{Returns}
+Una conexión {\ttfamily \doxylink{}{Connection}} a la base de datos "{}proyecto\+\_\+dam"{} en el servidor local, o {\ttfamily null} si no se pudo establecer la conexión. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_aac2fe1401d7a453b80f554e837656918}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!connectMysqlRed@{connectMysqlRed}}
+\index{connectMysqlRed@{connectMysqlRed}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{connectMysqlRed()}{connectMysqlRed()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_aac2fe1401d7a453b80f554e837656918} 
+static Connection es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+connect\+Mysql\+Red (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Establece una conexión con la base de datos My\+SQL en una red remota.
+
+Este método simplifica la conexión a una base de datos My\+SQL que se encuentra en un servidor remoto, utilizando el método {\ttfamily \doxylink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_adbc97c94512b04f30401e54aba6d8ce5}{connect\+Mysql(\+String, String, String)}}. La base de datos se encuentra en la dirección IP "{}192.\+168.\+1.\+100"{}, en el puerto 3306, y se conecta a la base de datos "{}proyecto\+\_\+dam"{} utilizando el usuario "{}manuel"{} y una contraseña "{}manuel"{}.
+
+\begin{DoxyReturn}{Returns}
+Una conexión {\ttfamily \doxylink{}{Connection}} a la base de datos "{}proyecto\+\_\+dam"{} en el servidor remoto, o {\ttfamily null} si no se pudo establecer la conexión. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a3a1d50c7fcec18194e0d8d220250ab21}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!connectMysqlRemota@{connectMysqlRemota}}
+\index{connectMysqlRemota@{connectMysqlRemota}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{connectMysqlRemota()}{connectMysqlRemota()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a3a1d50c7fcec18194e0d8d220250ab21} 
+static Connection es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+connect\+Mysql\+Remota (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Establece una conexión con la base de datos My\+SQL en un servidor remoto a través de un dominio.
+
+Este método simplifica la conexión a una base de datos My\+SQL que se encuentra en un servidor remoto accesible a través del dominio "{}manueldonoso.\+duckdns.\+org"{}, en el puerto 3306. Utiliza el método {\ttfamily \doxylink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_adbc97c94512b04f30401e54aba6d8ce5}{connect\+Mysql(\+String, String, String)}} para establecer la conexión con la base de datos "{}proyecto\+\_\+dam"{} utilizando el usuario "{}manuel"{} y la contraseña "{}manuel"{}.
+
+\begin{DoxyReturn}{Returns}
+Una conexión {\ttfamily \doxylink{}{Connection}} a la base de datos "{}proyecto\+\_\+dam"{} en el servidor remoto, o {\ttfamily null} si no se pudo establecer la conexión. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab424eac1eacb17481807b6fc0b185642}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!eliminarTodosUsuarios@{eliminarTodosUsuarios}}
+\index{eliminarTodosUsuarios@{eliminarTodosUsuarios}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{eliminarTodosUsuarios()}{eliminarTodosUsuarios()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab424eac1eacb17481807b6fc0b185642} 
+static boolean es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+eliminar\+Todos\+Usuarios (\begin{DoxyParamCaption}\item[{Connection}]{conn}{}\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+Elimina todos los registros de la tabla {\ttfamily usuario\+\_\+tabla} en la base de datos. Este método no requiere ningún parámetro adicional, ya que elimina todos los registros existentes en la tabla.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si se eliminaron registros con éxito, {\ttfamily false} si no se afectaron registros o si ocurrió un error. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em java.\+sql.\+SQLException} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a1457beef6f5b6c560f408657c1162470}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!Examen@{Examen}}
+\index{Examen@{Examen}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{Examen()}{Examen()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a1457beef6f5b6c560f408657c1162470} 
+static Map$<$ Integer, Map$<$ String, String $>$ $>$ es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+Examen (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{asignatura}{, }\item[{String}]{tema}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Busca las preguntas de examen, junto con las respuestas correctas y opciones incorrectas, para una asignatura y tema específicos. El mapa contiene el número de la pregunta como clave y otro mapa con las respuestas como valor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión activa a la base de datos. \\
+\hline
+{\em asignatura} & El nombre de la asignatura cuyo examen se desea consultar. \\
+\hline
+{\em tema} & El tema específico dentro de la asignatura cuyo examen se desea consultar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un mapa con el número de pregunta como clave, y otro mapa con las respuestas (correcta e incorrectas) como valores. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab3aa99787f62f82f192b10100bb732ec}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!fechaContrato@{fechaContrato}}
+\index{fechaContrato@{fechaContrato}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{fechaContrato()}{fechaContrato()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab3aa99787f62f82f192b10100bb732ec} 
+static String es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+fecha\+Contrato (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene una fecha formateada de la tabla {\ttfamily Registro\+\_\+tabla} en el formato "{}día de la semana día mes año"{} (ejemplo\+: "{}martes 7 diciembre 2024"{}). La función utiliza {\ttfamily strftime} para extraer los componentes de la fecha y concatenarlos en el formato requerido.
+
+\begin{DoxyReturn}{Returns}
+Una cadena que representa la fecha en el formato especificado, o {\ttfamily null} si no hay registros en la tabla. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a3d93532804811fd55e5b5a636a63df07}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!GuardarExamenRealizado@{GuardarExamenRealizado}}
+\index{GuardarExamenRealizado@{GuardarExamenRealizado}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{GuardarExamenRealizado()}{GuardarExamenRealizado()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a3d93532804811fd55e5b5a636a63df07} 
+static void es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+Guardar\+Examen\+Realizado (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{asignatura}{, }\item[{String}]{tema}{, }\item[{String}]{nota}{, }\item[{String}]{usuario}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Guarda un examen realizado en la tabla Examenes\+\_\+\+Realizados\+\_\+\+Tabla.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos. \\
+\hline
+{\em asignatura} & La asignatura del examen. \\
+\hline
+{\em tema} & El tema del examen. \\
+\hline
+{\em nota} & La nota obtenida en el examen. \\
+\hline
+{\em usuario} & El usuario que realizó el examen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab4a1b9ade69e6f225fc368d385cb4784}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!insertarUsuarios@{insertarUsuarios}}
+\index{insertarUsuarios@{insertarUsuarios}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{insertarUsuarios()}{insertarUsuarios()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab4a1b9ade69e6f225fc368d385cb4784} 
+static void es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+insertar\+Usuarios (\begin{DoxyParamCaption}\item[{Connection}]{conn}{}\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+Inserta quince registros de usuarios en la tabla {\ttfamily usuario\+\_\+tabla}. Este método establece una conexión a la base de datos y usa {\ttfamily Prepared\+Statement} para insertar cinco filas de usuarios de tipo {\ttfamily ADMINISTRADOR}, cinco de tipo {\ttfamily PROFESOR} y cinco de tipo {\ttfamily ALUMNO}.
+
+Cada usuario tendrá valores específicos para los campos {\ttfamily Usuario}, {\ttfamily Nombre}, {\ttfamily Apellidos}, {\ttfamily Pass}, {\ttfamily Email}, {\ttfamily fk\+\_\+tipo}, y la fecha de alta ({\ttfamily fecha\+Alta}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em java.\+sql.\+SQLException} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a9390cf7d7d4161f666a9ebdbfd4b4deb}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!isConnection@{isConnection}}
+\index{isConnection@{isConnection}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{isConnection()}{isConnection()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a9390cf7d7d4161f666a9ebdbfd4b4deb} 
+static boolean es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+is\+Connection (\begin{DoxyParamCaption}\item[{Connection}]{conn}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Verifica si la conexión a la base de datos es válida (no es nula).
+
+Este método se utiliza para comprobar si una conexión a la base de datos es válida antes de intentar usarla en operaciones posteriores. Retorna {\ttfamily true} si la conexión no es nula, lo que indica que está activa y lista para su uso; de lo contrario, devuelve {\ttfamily false}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos que se desea verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si la conexión no es nula, {\ttfamily false} si la conexión es nula. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a6af2c1133d0516a75fe3bc5803c35026}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!MemorizarUsuario@{MemorizarUsuario}}
+\index{MemorizarUsuario@{MemorizarUsuario}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{MemorizarUsuario()}{MemorizarUsuario()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a6af2c1133d0516a75fe3bc5803c35026} 
+static void es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+Memorizar\+Usuario (\begin{DoxyParamCaption}\item[{String}]{Usuario}{, }\item[{String}]{Pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Actualiza el usuario y la contraseña almacenados en la tabla Usuario\+\_\+\+Guardado\+\_\+tabla. Este método sobrescribe los valores de las columnas {\ttfamily Usuario} y {\ttfamily Pass} para el registro con {\ttfamily id = 1}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Usuario} & el nombre de usuario que se desea almacenar. \\
+\hline
+{\em Pass} & la contraseña asociada al usuario. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a549291cd9b93e10b1c60c0f66209f6bf}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!nombreUsuarioContrato@{nombreUsuarioContrato}}
+\index{nombreUsuarioContrato@{nombreUsuarioContrato}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{nombreUsuarioContrato()}{nombreUsuarioContrato()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a549291cd9b93e10b1c60c0f66209f6bf} 
+static String es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+nombre\+Usuario\+Contrato (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene el nombre completo de un usuario desde la base de datos, concatenando los campos "{}nombre"{} y "{}\+Apellidos"{} de la tabla "{}\+Registro\+\_\+tabla"{}.
+
+\begin{DoxyReturn}{Returns}
+el nombre completo del usuario como un String (formato\+: "{}nombre \+Apellidos"{}), o {\ttfamily null} si no se encuentra ningún registro o ocurre un error en la conexión. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a71804755ac108b1310fd6b3b4d568514}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!NotaExamenMax@{NotaExamenMax}}
+\index{NotaExamenMax@{NotaExamenMax}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{NotaExamenMax()}{NotaExamenMax()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a71804755ac108b1310fd6b3b4d568514} 
+static String es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+Nota\+Examen\+Max (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{usuario}{, }\item[{String}]{asignatura}{, }\item[{String}]{tema}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene la nota más alta registrada para un usuario, asignatura y tema específicos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión activa a la base de datos. \\
+\hline
+{\em usuario} & El nombre de usuario para el cual se quiere obtener la nota. \\
+\hline
+{\em asignatura} & El nombre de la asignatura del examen. \\
+\hline
+{\em tema} & El tema específico del examen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La nota más alta como un String, o un mensaje de error si no se encuentran registros o si ocurre un problema. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ae41d2e58293ad3edaf10352ea6105810}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!obtenerExamenesPorUsuarioYAsignatura@{obtenerExamenesPorUsuarioYAsignatura}}
+\index{obtenerExamenesPorUsuarioYAsignatura@{obtenerExamenesPorUsuarioYAsignatura}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{obtenerExamenesPorUsuarioYAsignatura()}{obtenerExamenesPorUsuarioYAsignatura()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ae41d2e58293ad3edaf10352ea6105810} 
+static List$<$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen}{examen}} $>$ es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+obtener\+Examenes\+Por\+Usuario\+YAsignatura (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{usuario}{, }\item[{String}]{asignatura}{}\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene una lista de exámenes de la tabla Examen\+\_\+\+Realizados\+\_\+\+Tablas según el usuario y asignatura.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos. \\
+\hline
+{\em usuario} & El usuario para filtrar la consulta. \\
+\hline
+{\em asignatura} & La asignatura para filtrar la consulta. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de exámenes encontrados o una lista vacía si no hay resultados. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & Si ocurre un error al realizar la consulta SQL. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a46e4722fe84014a389d646e5cc5107c4}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!obtenerExamenesPorUsuarioYAsignaturaSinProfesor@{obtenerExamenesPorUsuarioYAsignaturaSinProfesor}}
+\index{obtenerExamenesPorUsuarioYAsignaturaSinProfesor@{obtenerExamenesPorUsuarioYAsignaturaSinProfesor}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{obtenerExamenesPorUsuarioYAsignaturaSinProfesor()}{obtenerExamenesPorUsuarioYAsignaturaSinProfesor()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a46e4722fe84014a389d646e5cc5107c4} 
+static List$<$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen}{examen}} $>$ es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+obtener\+Examenes\+Por\+Usuario\+YAsignatura\+Sin\+Profesor (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{usuario}{, }\item[{String}]{asignatura}{}\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene una lista de exámenes de la tabla Examen\+\_\+\+Realizados\+\_\+\+Tablas según el usuario y asignatura.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos. \\
+\hline
+{\em usuario} & El usuario para filtrar la consulta. \\
+\hline
+{\em asignatura} & La asignatura para filtrar la consulta. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de exámenes encontrados o una lista vacía si no hay resultados. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & Si ocurre un error al realizar la consulta SQL. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab98230a6a34f152f614ac7005614ba9b}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!obtenerTemasPorUsuarioYAsignatura@{obtenerTemasPorUsuarioYAsignatura}}
+\index{obtenerTemasPorUsuarioYAsignatura@{obtenerTemasPorUsuarioYAsignatura}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{obtenerTemasPorUsuarioYAsignatura()}{obtenerTemasPorUsuarioYAsignatura()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ab98230a6a34f152f614ac7005614ba9b} 
+static List$<$ String $>$ es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+obtener\+Temas\+Por\+Usuario\+YAsignatura (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{usuario}{, }\item[{String}]{asignatura}{}\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene una lista de temas de la tabla Examen\+\_\+\+Realizados\+\_\+\+Tablas según el usuario y asignatura.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos. \\
+\hline
+{\em usuario} & El usuario para filtrar la consulta. \\
+\hline
+{\em asignatura} & La asignatura para filtrar la consulta. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de temas encontrados o una lista vacía si no hay resultados. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & Si ocurre un error al realizar la consulta SQL. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ac38d1aaea9f174f1c3bade87cd3f8b65}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!obtenerUsuariosPorAsignatura@{obtenerUsuariosPorAsignatura}}
+\index{obtenerUsuariosPorAsignatura@{obtenerUsuariosPorAsignatura}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{obtenerUsuariosPorAsignatura()}{obtenerUsuariosPorAsignatura()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ac38d1aaea9f174f1c3bade87cd3f8b65} 
+static List$<$ String $>$ es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+obtener\+Usuarios\+Por\+Asignatura (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{asignatura}{}\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene una lista de usuarios que han realizado exámenes en una asignatura específica.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos. \\
+\hline
+{\em asignatura} & El nombre de la asignatura para filtrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de usuarios que han realizado exámenes en la asignatura. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & Si ocurre un error en la consulta SQL. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a70278b6231a4337c7b004b55183a1f48}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!obtenerUsuariosPorAsignaturaSinProfesor@{obtenerUsuariosPorAsignaturaSinProfesor}}
+\index{obtenerUsuariosPorAsignaturaSinProfesor@{obtenerUsuariosPorAsignaturaSinProfesor}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{obtenerUsuariosPorAsignaturaSinProfesor()}{obtenerUsuariosPorAsignaturaSinProfesor()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a70278b6231a4337c7b004b55183a1f48} 
+static List$<$ String $>$ es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+obtener\+Usuarios\+Por\+Asignatura\+Sin\+Profesor (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{asignatura}{}\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+Obtiene una lista de usuarios que han realizado exámenes en una asignatura específica.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos. \\
+\hline
+{\em asignatura} & El nombre de la asignatura para filtrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista de usuarios que han realizado exámenes en la asignatura. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & Si ocurre un error en la consulta SQL. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ae1b27bcc48e2ea35e984f14d7101dc8a}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!PassMemorizado@{PassMemorizado}}
+\index{PassMemorizado@{PassMemorizado}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{PassMemorizado()}{PassMemorizado()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_ae1b27bcc48e2ea35e984f14d7101dc8a} 
+static String es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+Pass\+Memorizado (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Recupera el nombre de usuario almacenado en la tabla Usuario\+\_\+\+Guardado\+\_\+tabla para el registro con id = 1.
+
+\begin{DoxyReturn}{Returns}
+el pass de usuario almacenado, o null si no se encuentra o ocurre un error. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a2dda68faae09c0ba0a22bcc330d5c84c}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!RegistrarProductoContrato@{RegistrarProductoContrato}}
+\index{RegistrarProductoContrato@{RegistrarProductoContrato}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{RegistrarProductoContrato()}{RegistrarProductoContrato()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a2dda68faae09c0ba0a22bcc330d5c84c} 
+static void es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+Registrar\+Producto\+Contrato (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario}{Usuario}}}]{user}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Registra un nuevo producto en las tablas "{}\+Registro\+\_\+tabla"{} y "{}usuario\+\_\+tabla"{} utilizando los datos de un objeto {\ttfamily Usuario}. Inserta un nuevo registro en la tabla "{}\+Registro\+\_\+tabla"{} con un valor fijo de {\ttfamily id} igual a {\ttfamily 1}, y en la tabla "{}usuario\+\_\+tabla"{} con los valores de {\ttfamily Usuario}, {\ttfamily Nombre}, {\ttfamily Apellidos}, y {\ttfamily Email}. La operación se realiza dentro de una transacción para garantizar la consistencia de ambas inserciones.
+
+Ejemplo de uso\+:
+
+
+\begin{DoxyPre}{\ttfamily \newlineUsuario user = new Usuario("{}usuario123"{}, "{}Manuel"{}, "{}Donoso"{}, "{}Manuel.Donoso@example.com"{});\newlineRegistrarProductoContrato(user);\newline}\end{DoxyPre}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & El objeto {\ttfamily Usuario} que contiene los datos a insertar en las tablas. El parámetro {\ttfamily Usuario} debe tener los métodos {\ttfamily get\+Usuario()}, {\ttfamily get\+Nombre()}, {\ttfamily get\+Apellidos()} y {\ttfamily get\+Email()} para obtener los valores que se insertarán en la base de datos. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a8c0fb04eebf69ff5f6b4ba343856d3f0}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!UsuarioMemorizado@{UsuarioMemorizado}}
+\index{UsuarioMemorizado@{UsuarioMemorizado}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{UsuarioMemorizado()}{UsuarioMemorizado()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_a8c0fb04eebf69ff5f6b4ba343856d3f0} 
+static String es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+Usuario\+Memorizado (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Recupera el nombre de usuario almacenado en la tabla Usuario\+\_\+\+Guardado\+\_\+tabla para el registro con id = 1.
+
+\begin{DoxyReturn}{Returns}
+el nombre de usuario almacenado, o null si no se encuentra o ocurre un error. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_adc2415a489c8e2d286577c7a783de317}\index{es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}!verificarUsuario@{verificarUsuario}}
+\index{verificarUsuario@{verificarUsuario}!es.manueldonoso.academia.util.Base\_datos@{es.manueldonoso.academia.util.Base\_datos}}
+\doxysubsubsection{\texorpdfstring{verificarUsuario()}{verificarUsuario()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos_adc2415a489c8e2d286577c7a783de317} 
+static String es.\+manueldonoso.\+academia.\+util.\+Base\+\_\+datos.\+verificar\+Usuario (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{usuario}{, }\item[{String}]{pass}{}\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+Verifica si un usuario con el nombre de usuario y contraseña proporcionados existe en la base de datos. Si el usuario existe, devuelve el valor de {\ttfamily fk\+\_\+tipo} correspondiente; si no, devuelve {\ttfamily null}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & La conexión a la base de datos. \\
+\hline
+{\em usuario} & El nombre de usuario a verificar. \\
+\hline
+{\em pass} & La contraseña del usuario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El valor de {\ttfamily fk\+\_\+tipo} si el usuario existe y la contraseña es correcta, o {\ttfamily null} si no coincide. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em java.\+sql.\+SQLException} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dam\+\_\+\+Proyecto\+\_\+\+Optimizado/proyecto\+\_\+dam\+\_\+optimizado/src/main/java/es/manueldonoso/academia/util/Base\+\_\+datos.\+java\end{DoxyCompactItemize}

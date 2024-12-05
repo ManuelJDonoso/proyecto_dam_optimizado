@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones" xml:lang="en-US">
+<title>es.manueldonoso.academia.util.validaciones Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.util.validaciones</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_1aa8c664f6a022e9528345ac9d8a1992e9">Email</link> (String texto)</para>
+</listitem>
+            <listitem><para>static boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_1afd838f08ddac163b53851331675576c2">telefono</link> (String texto)</para>
+</listitem>
+            <listitem><para>static boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_1a2f76e533aef86e2aafe70ffa9e71dc13">min3letras</link> (String texto)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Clase que contiene métodos estáticos para realizar validaciones comunes como correos electrónicos, números de teléfono y textos con un mínimo de tres letras.</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_1aa8c664f6a022e9528345ac9d8a1992e9"/><section>
+    <title>Email()</title>
+<indexterm><primary>Email</primary><secondary>es.manueldonoso.academia.util.validaciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.validaciones</primary><secondary>Email</secondary></indexterm>
+<para><computeroutput>static boolean es.manueldonoso.academia.util.validaciones.Email (String texto)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Valida si un texto dado tiene el formato de un correo electrónico. </para>
+
+<para>El formato válido se define mediante la siguiente expresión regular: <literallayout>
+^[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,6}$
+</literallayout> Donde: <itemizedlist>
+<listitem>
+
+<para><computeroutput>^[\w._%+-]+</computeroutput>: Representa el nombre del correo (puede contener letras, números, guiones bajos, puntos, y algunos caracteres especiales). </para>
+</listitem>
+<listitem>
+
+<para><computeroutput>&lt;/code&gt;: Separa el nombre del dominio. </computeroutput></para>
+</listitem>
+<listitem>
+
+<para><computeroutput><computeroutput>[\w.-]+</computeroutput>: Representa el dominio (puede contener letras, números, puntos y guiones). </computeroutput></para>
+</listitem>
+<listitem>
+
+<para><computeroutput><computeroutput>\.[a-zA-Z]{2,6}$</computeroutput>: Representa la extensión del dominio (entre 2 y 6 letras, como &quot;com&quot;, &quot;org&quot;). </computeroutput></para>
+</listitem>
+</itemizedlist>
+</para>
+
+<para><computeroutput>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>texto</entry><entry>
+<para>el texto a validar como correo electrónico. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><computeroutput>true</computeroutput> si el texto cumple con el formato de un correo electrónico válido; <computeroutput>false</computeroutput> en caso contrario.</para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>NullPointerException</entry><entry>
+<para>si el texto es <computeroutput>null</computeroutput>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </computeroutput></para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_1a2f76e533aef86e2aafe70ffa9e71dc13"/><section>
+    <title>min3letras()</title>
+<indexterm><primary>min3letras</primary><secondary>es.manueldonoso.academia.util.validaciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.validaciones</primary><secondary>min3letras</secondary></indexterm>
+<para><computeroutput>static boolean es.manueldonoso.academia.util.validaciones.min3letras (String texto)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Valida si un texto cumple con los siguientes requisitos: <itemizedlist>
+<listitem>
+
+<para>Comienza con exactamente tres letras consecutivas (mayúsculas o minúsculas). </para>
+</listitem>
+<listitem>
+
+<para>Puede contener espacios después de las tres letras iniciales. </para>
+</listitem>
+<listitem>
+
+<para>No puede contener números ni otros caracteres especiales. </para>
+</listitem>
+</itemizedlist>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>texto</entry><entry>
+<para>el texto que se desea validar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><computeroutput>true</computeroutput> si el texto cumple con los requisitos; <computeroutput>false</computeroutput> en caso contrario. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>NullPointerException</entry><entry>
+<para>si el texto es <computeroutput>null</computeroutput>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_1afd838f08ddac163b53851331675576c2"/><section>
+    <title>telefono()</title>
+<indexterm><primary>telefono</primary><secondary>es.manueldonoso.academia.util.validaciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.validaciones</primary><secondary>telefono</secondary></indexterm>
+<para><computeroutput>static boolean es.manueldonoso.academia.util.validaciones.telefono (String texto)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Valida si un texto dado cumple con un formato específico de número de teléfono. </para>
+
+<para>El texto puede cumplir con uno de los siguientes formatos: <itemizedlist>
+<listitem>
+
+<para><emphasis role="bold">Secuencia opcional:</emphasis> Comienza con <computeroutput>+</computeroutput> seguido de exactamente dos dígitos. </para>
+</listitem>
+<listitem>
+
+<para>Sin prefijo: <itemizedlist>
+<listitem>
+
+<para>Nueve dígitos consecutivos (<computeroutput>\d{9}</computeroutput>). </para>
+</listitem>
+<listitem>
+
+<para>Tres dígitos seguidos de un guion <computeroutput>-</computeroutput>, luego dos dígitos, otro guion <computeroutput>-</computeroutput>, dos dígitos más, otro guion <computeroutput>-</computeroutput>, y finalmente dos dígitos (<computeroutput>\d{3}-\d{2}-\d{2}-\d{2}</computeroutput>). </para>
+</listitem>
+<listitem>
+
+<para>Tres dígitos seguidos de un punto <computeroutput>.</computeroutput>, luego dos dígitos, otro punto <computeroutput>.</computeroutput>, dos dígitos más, otro punto <computeroutput>.</computeroutput>, y finalmente dos dígitos (<computeroutput>\d{3}\.\d{2}\.\d{2}\.\d{2}</computeroutput>). </para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+<listitem>
+
+<para>Con prefijo (<computeroutput>+XX</computeroutput>): <itemizedlist>
+<listitem>
+
+<para>Formato con guion: <computeroutput>+XX-\d{3}-\d{2}-\d{2}-\d{2}</computeroutput>. </para>
+</listitem>
+<listitem>
+
+<para>Formato con punto: <computeroutput>+XX.\d{3}.\d{2}.\d{2}.\d{2}</computeroutput>. </para>
+</listitem>
+</itemizedlist>
+</para>
+</listitem>
+</itemizedlist>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>texto</entry><entry>
+<para>el texto que se desea validar como número de teléfono. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><computeroutput>true</computeroutput> si el texto cumple con alguno de los formatos válidos; <computeroutput>false</computeroutput> en caso contrario. </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>NullPointerException</entry><entry>
+<para>si el texto es <computeroutput>null</computeroutput>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/util/validaciones.java</section>
+</section>

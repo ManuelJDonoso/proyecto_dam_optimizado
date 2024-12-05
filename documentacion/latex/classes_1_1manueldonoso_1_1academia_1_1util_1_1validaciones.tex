@@ -1,0 +1,123 @@
+\doxysection{es.\+manueldonoso.\+academia.\+util.\+validaciones Class Reference}
+\hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones}{}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones}\index{es.manueldonoso.academia.util.validaciones@{es.manueldonoso.academia.util.validaciones}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_aa8c664f6a022e9528345ac9d8a1992e9}{Email}} (String texto)
+\item 
+static boolean \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_afd838f08ddac163b53851331675576c2}{telefono}} (String texto)
+\item 
+static boolean \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_a2f76e533aef86e2aafe70ffa9e71dc13}{min3letras}} (String texto)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que contiene métodos estáticos para realizar validaciones comunes como correos electrónicos, números de teléfono y textos con un mínimo de tres letras.
+
+\begin{DoxyAuthor}{Author}
+"{}\+Manuel Jesús Donoso Pérez"{}; 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_aa8c664f6a022e9528345ac9d8a1992e9}\index{es.manueldonoso.academia.util.validaciones@{es.manueldonoso.academia.util.validaciones}!Email@{Email}}
+\index{Email@{Email}!es.manueldonoso.academia.util.validaciones@{es.manueldonoso.academia.util.validaciones}}
+\doxysubsubsection{\texorpdfstring{Email()}{Email()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_aa8c664f6a022e9528345ac9d8a1992e9} 
+static boolean es.\+manueldonoso.\+academia.\+util.\+validaciones.\+Email (\begin{DoxyParamCaption}\item[{String}]{texto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Valida si un texto dado tiene el formato de un correo electrónico. 
+
+El formato válido se define mediante la siguiente expresión regular\+: 
+\begin{DoxyPre}
+^[\textbackslash{}w.\_\%+-\/]+@[\textbackslash{}w.-\/]+\textbackslash{}.[a-\/zA-\/Z]\{2,6\}\$
+\end{DoxyPre}
+ Donde\+: 
+\begin{DoxyItemize}
+\item {\ttfamily \texorpdfstring{$^\wedge$}{\string^}\mbox{[}\textbackslash{}w.\+\_\+\%+-\/\mbox{]}+}\+: Representa el nombre del correo (puede contener letras, números, guiones bajos, puntos, y algunos caracteres especiales). 
+\item {\ttfamily \texorpdfstring{$<$}{<}/code\texorpdfstring{$>$}{>}\+: Separa el nombre del dominio. }
+\item {\ttfamily {\ttfamily \mbox{[}\textbackslash{}w.-\/\mbox{]}+}\+: Representa el dominio (puede contener letras, números, puntos y guiones). }
+\item {\ttfamily {\ttfamily \textbackslash{}.\mbox{[}a-\/z\+A-\/Z\mbox{]}\{2,6\}\$}\+: Representa la extensión del dominio (entre 2 y 6 letras, como "{}com"{}, "{}org"{}). }
+\end{DoxyItemize}
+
+{\ttfamily 
+\begin{DoxyParams}{Parameters}
+{\em texto} & el texto a validar como correo electrónico. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si el texto cumple con el formato de un correo electrónico válido; {\ttfamily false} en caso contrario.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Pointer\+Exception} & si el texto es {\ttfamily null}. \\
+\hline
+\end{DoxyExceptions}
+}\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_a2f76e533aef86e2aafe70ffa9e71dc13}\index{es.manueldonoso.academia.util.validaciones@{es.manueldonoso.academia.util.validaciones}!min3letras@{min3letras}}
+\index{min3letras@{min3letras}!es.manueldonoso.academia.util.validaciones@{es.manueldonoso.academia.util.validaciones}}
+\doxysubsubsection{\texorpdfstring{min3letras()}{min3letras()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_a2f76e533aef86e2aafe70ffa9e71dc13} 
+static boolean es.\+manueldonoso.\+academia.\+util.\+validaciones.\+min3letras (\begin{DoxyParamCaption}\item[{String}]{texto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Valida si un texto cumple con los siguientes requisitos\+: 
+\begin{DoxyItemize}
+\item Comienza con exactamente tres letras consecutivas (mayúsculas o minúsculas). 
+\item Puede contener espacios después de las tres letras iniciales. 
+\item No puede contener números ni otros caracteres especiales. 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em texto} & el texto que se desea validar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si el texto cumple con los requisitos; {\ttfamily false} en caso contrario. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Pointer\+Exception} & si el texto es {\ttfamily null}. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_afd838f08ddac163b53851331675576c2}\index{es.manueldonoso.academia.util.validaciones@{es.manueldonoso.academia.util.validaciones}!telefono@{telefono}}
+\index{telefono@{telefono}!es.manueldonoso.academia.util.validaciones@{es.manueldonoso.academia.util.validaciones}}
+\doxysubsubsection{\texorpdfstring{telefono()}{telefono()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones_afd838f08ddac163b53851331675576c2} 
+static boolean es.\+manueldonoso.\+academia.\+util.\+validaciones.\+telefono (\begin{DoxyParamCaption}\item[{String}]{texto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Valida si un texto dado cumple con un formato específico de número de teléfono. 
+
+El texto puede cumplir con uno de los siguientes formatos\+: 
+\begin{DoxyItemize}
+\item {\bfseries{Secuencia opcional\+:}} Comienza con {\ttfamily +} seguido de exactamente dos dígitos. 
+\item Sin prefijo\+: 
+\begin{DoxyItemize}
+\item Nueve dígitos consecutivos ({\ttfamily \textbackslash{}d\{9\}}). 
+\item Tres dígitos seguidos de un guion {\ttfamily -\/}, luego dos dígitos, otro guion {\ttfamily -\/}, dos dígitos más, otro guion {\ttfamily -\/}, y finalmente dos dígitos ({\ttfamily \textbackslash{}d\{3\}-\/\textbackslash{}d\{2\}-\/\textbackslash{}d\{2\}-\/\textbackslash{}d\{2\}}). 
+\item Tres dígitos seguidos de un punto {\ttfamily .}, luego dos dígitos, otro punto {\ttfamily .}, dos dígitos más, otro punto {\ttfamily .}, y finalmente dos dígitos ({\ttfamily \textbackslash{}d\{3\}\textbackslash{}.\textbackslash{}d\{2\}\textbackslash{}.\textbackslash{}d\{2\}\textbackslash{}.\textbackslash{}d\{2\}}). 
+\end{DoxyItemize}
+\item Con prefijo ({\ttfamily +XX})\+: 
+\begin{DoxyItemize}
+\item Formato con guion\+: {\ttfamily +XX-\/\textbackslash{}d\{3\}-\/\textbackslash{}d\{2\}-\/\textbackslash{}d\{2\}-\/\textbackslash{}d\{2\}}. 
+\item Formato con punto\+: {\ttfamily +XX.\textbackslash{}d\{3\}.\textbackslash{}d\{2\}.\textbackslash{}d\{2\}.\textbackslash{}d\{2\}}. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em texto} & el texto que se desea validar como número de teléfono. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si el texto cumple con alguno de los formatos válidos; {\ttfamily false} en caso contrario. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Pointer\+Exception} & si el texto es {\ttfamily null}. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dam\+\_\+\+Proyecto\+\_\+\+Optimizado/proyecto\+\_\+dam\+\_\+optimizado/src/main/java/es/manueldonoso/academia/util/validaciones.\+java\end{DoxyCompactItemize}

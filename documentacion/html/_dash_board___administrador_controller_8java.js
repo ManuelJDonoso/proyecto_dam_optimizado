@@ -1,4 +1,0 @@
-var _dash_board___administrador_controller_8java =
-[
-    [ "es.manueldonoso.academia.controller.DashBoard_AdministradorController", "classes_1_1manueldonoso_1_1academia_1_1controller_1_1_dash_board___administrador_controller.html", "classes_1_1manueldonoso_1_1academia_1_1controller_1_1_dash_board___administrador_controller" ]
-];

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_cambio___contrasena_controller" xml:lang="en-US">
+<title>es.manueldonoso.academia.controller.Cambio_ContrasenaController Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.controller.Cambio_ContrasenaController</primary></indexterm>
+<para>
+Inherits Initializable.</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_cambio___contrasena_controller_1a241c8d92ed4af900fdc792486ce920b4">initialize</link> (URL url, ResourceBundle rb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_cambio___contrasena_controller_1af68c675d5096e47b5739a12e98e749c5"/>boolean <emphasis role="strong">isBotonAceptarPulsado</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_cambio___contrasena_controller_1aaa27bcaada68d067a68ef43622562a0d"/>void <emphasis role="strong">resetBotonAceptar</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>FXML Controller class</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_cambio___contrasena_controller_1a241c8d92ed4af900fdc792486ce920b4"/><section>
+    <title>initialize()</title>
+<indexterm><primary>initialize</primary><secondary>es.manueldonoso.academia.controller.Cambio_ContrasenaController</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.controller.Cambio_ContrasenaController</primary><secondary>initialize</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.controller.Cambio_ContrasenaController.initialize (URL url, ResourceBundle rb)</computeroutput></para>
+<para>Initializes the controller class. </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/controller/Cambio_ContrasenaController.java</section>
+</section>

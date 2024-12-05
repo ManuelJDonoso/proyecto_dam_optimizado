@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1utilidades" xml:lang="en-US">
+<title>es.manueldonoso.academia.util.utilidades Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.util.utilidades</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1utilidades_1a0f6c98aa51aaa06f7d38e47f33439b95">log</link> (String message)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1utilidades_1a0f6c98aa51aaa06f7d38e47f33439b95"/><section>
+    <title>log()</title>
+<indexterm><primary>log</primary><secondary>es.manueldonoso.academia.util.utilidades</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.utilidades</primary><secondary>log</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.utilidades.log (String message)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Imprime un mensaje de log junto con información sobre la clase, el método y la línea desde donde fue llamado. Este método es útil para depuración.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>message</entry><entry>
+<para>El mensaje que se desea imprimir en el log. Puede ser cualquier texto que ayude a entender el estado del programa.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Ejemplo de uso: <literallayout><computeroutput><literallayout>&#160;&#xa;</literallayout>
+public static void main(String[] args) {<literallayout>&#160;&#xa;</literallayout>
+    log(&quot;Este es un mensaje de prueba&quot;);<literallayout>&#160;&#xa;</literallayout>
+}<literallayout>&#160;&#xa;</literallayout>
+</computeroutput></literallayout></para>
+
+<para>Salida esperada: <literallayout>
+[NombreClase:Linea] NombreMetodo: Este es un mensaje de prueba
+</literallayout></para>
+
+<para>Limitaciones: - Este método utiliza <computeroutput>Thread.currentThread().getStackTrace()</computeroutput>, lo que puede ser costoso si se llama frecuentemente en bucles o métodos muy utilizados. - No está diseñado para reemplazar un sistema de logging robusto como Log4j o SLF4J. </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/util/utilidades.java</section>
+</section>

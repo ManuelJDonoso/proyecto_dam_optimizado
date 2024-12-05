@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen" xml:lang="en-US">
+<title>es.manueldonoso.academia.modelos.examen Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.modelos.examen</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen_1afe7a08e01b866333ac2db631fa8231e3"/><emphasis role="strong">examen</emphasis> (String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen">examen</link>, Double nota)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen_1aaeb4d2850fec895289eee12782eb69a8"/>String <emphasis role="strong">getExamen</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen_1a87003d9887de24d39c1e244f5de34748"/>void <emphasis role="strong">setExamen</emphasis> (String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen">examen</link>)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen_1a34be9dc0f9e89e80424dab9545735125"/>Double <emphasis role="strong">getNota</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen_1af6667ac1c29f0b64fe30edf9912eee86"/>void <emphasis role="strong">setNota</emphasis> (Double nota)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen_1ac4128771fd17911e82ae01a5c292b863"/>String <emphasis role="strong">toString</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/modelos/examen.java</section>
+</section>

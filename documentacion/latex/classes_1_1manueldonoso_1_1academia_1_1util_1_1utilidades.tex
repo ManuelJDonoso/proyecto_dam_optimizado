@@ -1,0 +1,44 @@
+\doxysection{es.\+manueldonoso.\+academia.\+util.\+utilidades Class Reference}
+\hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1utilidades}{}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1utilidades}\index{es.manueldonoso.academia.util.utilidades@{es.manueldonoso.academia.util.utilidades}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1utilidades_a0f6c98aa51aaa06f7d38e47f33439b95}{log}} (String message)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+"{}\+Manuel Jesús Donoso Pérez"{}; 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1utilidades_a0f6c98aa51aaa06f7d38e47f33439b95}\index{es.manueldonoso.academia.util.utilidades@{es.manueldonoso.academia.util.utilidades}!log@{log}}
+\index{log@{log}!es.manueldonoso.academia.util.utilidades@{es.manueldonoso.academia.util.utilidades}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1utilidades_a0f6c98aa51aaa06f7d38e47f33439b95} 
+static void es.\+manueldonoso.\+academia.\+util.\+utilidades.\+log (\begin{DoxyParamCaption}\item[{String}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Imprime un mensaje de log junto con información sobre la clase, el método y la línea desde donde fue llamado. Este método es útil para depuración.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & El mensaje que se desea imprimir en el log. Puede ser cualquier texto que ayude a entender el estado del programa.\\
+\hline
+\end{DoxyParams}
+Ejemplo de uso\+: 
+\begin{DoxyPre}{\ttfamily \newlinepublic static void main(String[] args) \{\newline    log("{}Este es un mensaje de prueba"{});\newline\}\newline}\end{DoxyPre}
+
+
+Salida esperada\+: 
+\begin{DoxyPre}
+[NombreClase:Linea] NombreMetodo: Este es un mensaje de prueba
+\end{DoxyPre}
+
+
+Limitaciones\+: -\/ Este método utiliza {\ttfamily Thread.\+current\+Thread().get\+Stack\+Trace()}, lo que puede ser costoso si se llama frecuentemente en bucles o métodos muy utilizados. -\/ No está diseñado para reemplazar un sistema de logging robusto como Log4j o SLF4J. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dam\+\_\+\+Proyecto\+\_\+\+Optimizado/proyecto\+\_\+dam\+\_\+optimizado/src/main/java/es/manueldonoso/academia/util/utilidades.\+java\end{DoxyCompactItemize}

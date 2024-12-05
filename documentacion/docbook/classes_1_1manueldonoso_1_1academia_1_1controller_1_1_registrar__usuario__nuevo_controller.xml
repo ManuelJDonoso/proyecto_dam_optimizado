@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller" xml:lang="en-US">
+<title>es.manueldonoso.academia.controller.Registrar_usuario_nuevoController Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.controller.Registrar_usuario_nuevoController</primary></indexterm>
+<para>
+Inherits Initializable.</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller_1a3edade6a3a3ad72fb6ab84074f2c90db">initialize</link> (URL url, ResourceBundle rb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller_1aba7c5153d5b5b44855edacc6023ddf57"/>Connection <emphasis role="strong">getConn</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller_1aaf7fd674eb32a2fff546f2a677ba3455"/>void <emphasis role="strong">setConn</emphasis> (Connection conn)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller_1aa56a3b6b3f08eeadca6554f327174d4c"/>void <emphasis role="strong">generarUsuario</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller_1a80ae9c4c9df26b5cd2f98c1c82a27cc9"/>void <emphasis role="strong">add_listener_focusoff_TF</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller_1a8f68e4ad4ec65fda41a8e288f809a011"/>void <emphasis role="strong">setCB_asignaturas</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>FXML Controller class</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller_1a3edade6a3a3ad72fb6ab84074f2c90db"/><section>
+    <title>initialize()</title>
+<indexterm><primary>initialize</primary><secondary>es.manueldonoso.academia.controller.Registrar_usuario_nuevoController</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.controller.Registrar_usuario_nuevoController</primary><secondary>initialize</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.controller.Registrar_usuario_nuevoController.initialize (URL url, ResourceBundle rb)</computeroutput></para>
+<para>Initializes the controller class. </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/controller/Registrar_usuario_nuevoController.java</section>
+</section>

@@ -1,0 +1,798 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones" xml:lang="en-US">
+<title>es.manueldonoso.academia.util.Acciones Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a42da7daee913ff5541461da3cdfda406">abrirWeb</link> (String dir)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a68e04813b0e890b7fd9b1b6be8914697">abrirWebLocal</link> (String dir)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1acf8dcefc61a755daad7155f1a80a26e6">abrirPDF</link> (String filePath)</para>
+</listitem>
+            <listitem><para>static boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1abc708f32ceef9f26689287bc112369f2">existeArchivo</link> (String filePath)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a166124afb6f27aa7d0e1d731acc5e160">imagenView_cambiarImage</link> (Class&lt;?&gt; claseReferencia, ImageView imageView, String url)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a1b7f5d78471eac7c9ba864fe50359131">imagenView_cambiarImage</link> (Class&lt;?&gt; claseReferencia, ImageView imageView, byte[] imageData)</para>
+</listitem>
+            <listitem><para>static byte[] <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1ae1b62e4bfd4c75626f5c5624f8a0da0a">CapturarFoto</link> (ImageView imageView, BooleanProperty estadoCamara, AtomicReference&lt; Webcam &gt; selWebCam, AtomicReference&lt; BufferedImage &gt; bufferedImage, ObjectProperty&lt; Image &gt; imageProperty)</para>
+</listitem>
+            <listitem><para>static byte[] <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a9b2a90fe54bcac4ed9e3945eb1daf6ca">ImageToByte</link> (Image image)</para>
+</listitem>
+            <listitem><para>static byte[] <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1ac6a3ccce449c2551e5a54e9719ff0569">ImageToByte</link> (Stage stage)</para>
+</listitem>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1af06cc56aad1c4731c88ab06fb85e24c0">generaUsuario</link> (Connection conn, String nombre, String apellido)</para>
+</listitem>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a0fc297a2b76b472dfaee072759a780af">generarConsultaSQL</link> (String sql, Object... parametros)</para>
+</listitem>
+            <listitem><para>static java.sql.Date <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a7aeee477142fbbf9aa7d47276eae489d">utilDate_to_sqlDate</link> (java.util.Date date)</para>
+</listitem>
+            <listitem><para>static List&lt; Map&lt; String, String &gt; &gt; <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a5332ac694542c8a09da9dd3bdda6e8d5">capturarContenidoTextAreas</link> (VBox preguntas)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a8cd5b4e14694dd167f6219f6f4734b35">generarNumeroAleatorio</link> (int min, int max)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a765fa91871c9c5fa31f0e9438c300f67">enviarEmail</link> (String destinatario, String asunto, String mensaje)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a979b0ee5112084f53fa5f10e506ac128">enviarWhatsApp</link> (String numeroTelefono, String mensaje)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Clase que proporciona métodos utilitarios para trabajar con archivos, imágenes, cámaras web y abrir recursos en el navegador o aplicaciones predeterminadas.</para>
+
+<para>Incluye funcionalidades como abrir páginas web, cargar imágenes en componentes de interfaz, capturar fotos desde la cámara web, y manipular datos de imágenes y archivos.</para>
+
+<para>Ejemplo de uso: <literallayout>
+<link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a42da7daee913ff5541461da3cdfda406">Acciones.abrirWeb</link>(&quot;https://ejemplo.com&quot;);
+</literallayout></para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>1.0 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1acf8dcefc61a755daad7155f1a80a26e6"/><section>
+    <title>abrirPDF()</title>
+<indexterm><primary>abrirPDF</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>abrirPDF</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Acciones.abrirPDF (String filePath)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Abre un archivo PDF utilizando la aplicación predeterminada del sistema operativo.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>filePath</entry><entry>
+<para>Ruta del archivo PDF a abrir. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a42da7daee913ff5541461da3cdfda406"/><section>
+    <title>abrirWeb()</title>
+<indexterm><primary>abrirWeb</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>abrirWeb</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Acciones.abrirWeb (String dir)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Abre una página web en el navegador predeterminado del sistema utilizando la URL especificada.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dir</entry><entry>
+<para>La dirección URL de la página web a abrir, en formato de cadena.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>Este método utiliza la clase <computeroutput><link linkend="_">java.awt.Desktop</link></computeroutput> para abrir la URL en el navegador web predeterminado. Antes de intentar abrir la URL, se verifica si el sistema soporta la operación <computeroutput><link linkend="_">java.awt.Desktop.Action#BROWSE</link></computeroutput>. </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a68e04813b0e890b7fd9b1b6be8914697"/><section>
+    <title>abrirWebLocal()</title>
+<indexterm><primary>abrirWebLocal</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>abrirWebLocal</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Acciones.abrirWebLocal (String dir)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Abre un archivo HTML local en el navegador predeterminado del sistema. La ruta al archivo debe estar dentro del directorio de recursos del proyecto, típicamente <computeroutput>src/main/resources</computeroutput>, y se debe proporcionar como ruta relativa.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dir</entry><entry>
+<para>La ruta relativa al archivo HTML dentro del directorio de recursos, por ejemplo, &quot;/documentacion/html/index.html&quot;. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a5332ac694542c8a09da9dd3bdda6e8d5"/><section>
+    <title>capturarContenidoTextAreas()</title>
+<indexterm><primary>capturarContenidoTextAreas</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>capturarContenidoTextAreas</secondary></indexterm>
+<para><computeroutput>static List&lt; Map&lt; String, String &gt; &gt; es.manueldonoso.academia.util.Acciones.capturarContenidoTextAreas (VBox preguntas)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Captura el contenido de varios TextArea en un contenedor <computeroutput><link linkend="_">VBox</link></computeroutput>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>preguntas</entry><entry>
+<para>Contenedor principal con varios <computeroutput><link linkend="_">VBox</link></computeroutput> hijos. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Lista de mapas con las respuestas capturadas. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1ae1b62e4bfd4c75626f5c5624f8a0da0a"/><section>
+    <title>CapturarFoto()</title>
+<indexterm><primary>CapturarFoto</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>CapturarFoto</secondary></indexterm>
+<para><computeroutput>static byte[] es.manueldonoso.academia.util.Acciones.CapturarFoto (ImageView imageView, BooleanProperty estadoCamara, AtomicReference&lt; Webcam &gt; selWebCam, AtomicReference&lt; BufferedImage &gt; bufferedImage, ObjectProperty&lt; Image &gt; imageProperty)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Captura una foto de la cámara web y devuelve la imagen capturada como un arreglo de bytes (byte[]).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>imageView</entry><entry>
+<para>El componente <computeroutput><link linkend="_">ImageView</link></computeroutput> donde se muestra el flujo de la cámara. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>estadoCamara</entry><entry>
+<para>Una propiedad booleana que indica el estado de la cámara (activada o desactivada). </para>
+</entry>
+                            </row>
+                            <row>
+<entry>selWebCam</entry><entry>
+<para>Una referencia a la cámara web seleccionada. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>bufferedImage</entry><entry>
+<para>Una referencia a la última imagen capturada como <computeroutput><link linkend="_">BufferedImage</link></computeroutput>. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>imageProperty</entry><entry>
+<para>La propiedad de la imagen que enlaza con el <computeroutput><link linkend="_">ImageView</link></computeroutput> para mostrar el flujo de la cámara. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Un arreglo de bytes que representa la imagen capturada en formato JPG, o <computeroutput>null</computeroutput> si no se capturó ninguna imagen.</para>
+</formalpara>
+</para>
+
+<para>Este método controla el encendido y apagado de la cámara. Cuando la cámara está activada, inicia un flujo de captura de imágenes que se muestra en tiempo real en el <computeroutput><link linkend="_">ImageView</link></computeroutput>. Al desactivar la cámara, captura la última imagen como un arreglo de bytes en formato JPG y la devuelve.</para>
+
+<para>Si no hay cámaras disponibles, muestra una alerta de información y no realiza ninguna captura.</para>
+
+<para>Ejemplo de uso:</para>
+
+<para><literallayout>
+BooleanProperty estadoCamara = new SimpleBooleanProperty(false);
+AtomicReference Webcam selWebCam = new AtomicReference();
+AtomicReference BufferedImage bufferedImage = new AtomicReference();
+ObjectProperty Image imageProperty = new SimpleObjectProperty();
+
+byte[] foto = CapturarFoto(imageView, estadoCamara, selWebCam, bufferedImage, imageProperty);
+if (foto != null) {
+    // Procesar el arreglo de bytes de la imagen capturada
+}
+</literallayout> </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a765fa91871c9c5fa31f0e9438c300f67"/><section>
+    <title>enviarEmail()</title>
+<indexterm><primary>enviarEmail</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>enviarEmail</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Acciones.enviarEmail (String destinatario, String asunto, String mensaje)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Abre el cliente de correo predeterminado del sistema con un borrador de email preconfigurado utilizando los parámetros proporcionados.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>destinatario</entry><entry>
+<para>La dirección de correo electrónico del destinatario. Debe ser válida. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>asunto</entry><entry>
+<para>El asunto del correo. Puede incluir caracteres especiales, que serán codificados automáticamente. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mensaje</entry><entry>
+<para>El cuerpo del mensaje. También será codificado para evitar errores con caracteres especiales. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>UnsupportedOperationException</entry><entry>
+<para>Si la funcionalidad de correo no es soportada en el sistema operativo. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>IllegalArgumentException</entry><entry>
+<para>Si el formato del URI no es válido. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a979b0ee5112084f53fa5f10e506ac128"/><section>
+    <title>enviarWhatsApp()</title>
+<indexterm><primary>enviarWhatsApp</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>enviarWhatsApp</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Acciones.enviarWhatsApp (String numeroTelefono, String mensaje)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Abre WhatsApp en el navegador o en la aplicación de escritorio/móvil predeterminada para enviar un mensaje a un número de teléfono específico.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>numeroTelefono</entry><entry>
+<para>El número de teléfono en formato internacional (incluyendo el código de país, por ejemplo, &quot;34600111222&quot; para España). </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mensaje</entry><entry>
+<para>El mensaje a enviar. Puede contener caracteres especiales, que serán codificados automáticamente. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>UnsupportedOperationException</entry><entry>
+<para>Si la funcionalidad de navegador no está soportada. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>IllegalArgumentException</entry><entry>
+<para>Si el número de teléfono no es válido o el formato de URI falla. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1abc708f32ceef9f26689287bc112369f2"/><section>
+    <title>existeArchivo()</title>
+<indexterm><primary>existeArchivo</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>existeArchivo</secondary></indexterm>
+<para><computeroutput>static boolean es.manueldonoso.academia.util.Acciones.existeArchivo (String filePath)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Verifica si un archivo existe en la ruta especificada.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>filePath</entry><entry>
+<para>La ruta del archivo a verificar, en formato de cadena. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><computeroutput>true</computeroutput> si el archivo existe, o <computeroutput>false</computeroutput> si no existe.</para>
+</formalpara>
+</para>
+
+<para>Este método crea un objeto <computeroutput><link linkend="_">File</link></computeroutput> con la ruta especificada y utiliza el método <computeroutput><link linkend="_">File#exists()</link></computeroutput> para verificar la existencia del archivo.</para>
+
+<para><emphasis role="bold">Ejemplo de uso:</emphasis></para>
+
+<para><literallayout>
+    boolean archivoExiste = existeArchivo(&quot;ruta/al/archivo.txt&quot;);
+</literallayout> </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a0fc297a2b76b472dfaee072759a780af"/><section>
+    <title>generarConsultaSQL()</title>
+<indexterm><primary>generarConsultaSQL</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>generarConsultaSQL</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Acciones.generarConsultaSQL (String sql, Object... parametros)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Genera una consulta SQL reemplazando los marcadores de posición con valores específicos.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sql</entry><entry>
+<para>La consulta SQL con marcadores de posición. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>parametros</entry><entry>
+<para>Los valores a reemplazar en los marcadores. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Consulta SQL con valores reemplazados. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a8cd5b4e14694dd167f6219f6f4734b35"/><section>
+    <title>generarNumeroAleatorio()</title>
+<indexterm><primary>generarNumeroAleatorio</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>generarNumeroAleatorio</secondary></indexterm>
+<para><computeroutput>static int es.manueldonoso.academia.util.Acciones.generarNumeroAleatorio (int min, int max)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Genera un número aleatorio dentro de un rango específico.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>min</entry><entry>
+<para>El valor mínimo del rango, inclusivo. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>max</entry><entry>
+<para>El valor máximo del rango, inclusivo. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Un número entero aleatorio dentro del rango especificado (<computeroutput>[min, max]</computeroutput>). </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>IllegalArgumentException</entry><entry>
+<para>Si <computeroutput>min</computeroutput> es mayor que <computeroutput>max</computeroutput>.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>Este método utiliza la clase <computeroutput><link linkend="_">Random</link></computeroutput> para generar el número aleatorio.</para>
+
+<para><emphasis role="bold">Ejemplo de uso:</emphasis></para>
+
+<para><literallayout>
+    int numeroAleatorio = generarNumeroAleatorio(1, 10);
+</literallayout> </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1af06cc56aad1c4731c88ab06fb85e24c0"/><section>
+    <title>generaUsuario()</title>
+<indexterm><primary>generaUsuario</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>generaUsuario</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Acciones.generaUsuario (Connection conn, String nombre, String apellido)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Genera un nombre de usuario único basado en el nombre y apellido.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>conn</entry><entry>
+<para>Conexión a la base de datos. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nombre</entry><entry>
+<para>El nombre del usuario. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>apellido</entry><entry>
+<para>El apellido del usuario. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Nombre de usuario único. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a1b7f5d78471eac7c9ba864fe50359131"/><section>
+    <title>imagenView_cambiarImage()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>imagenView_cambiarImage</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>imagenView_cambiarImage</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Acciones.imagenView_cambiarImage (Class&lt;?&gt; claseReferencia, ImageView imageView, byte[] imageData)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Cambia la imagen mostrada en un <computeroutput><link linkend="_">ImageView</link></computeroutput> a partir de un arreglo de bytes.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>claseReferencia</entry><entry>
+<para>La clase de referencia, aunque no se utiliza directamente en el método, se incluye para seguir el formato del método original. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>imageView</entry><entry>
+<para>El componente <computeroutput><link linkend="_">ImageView</link></computeroutput> donde se mostrará la nueva imagen. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>imageData</entry><entry>
+<para>El arreglo de bytes que contiene los datos de la imagen a mostrar. El arreglo no debe ser nulo ni vacío.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>Este método toma un arreglo de bytes que representa una imagen, lo convierte en un objeto <computeroutput><link linkend="_">Image</link></computeroutput> y lo establece en el <computeroutput><link linkend="_">ImageView</link></computeroutput> proporcionado. Si el arreglo de bytes está vacío o nulo, se mostrará un mensaje de error en la consola.</para>
+
+<para>Si ocurre algún error durante la conversión o la actualización de la imagen, se captura la excepción y se muestra el mensaje de error.</para>
+
+<para>Ejemplo de uso:</para>
+
+<para><literallayout>
+byte[] imageBytes = ... // Obtener el arreglo de bytes de la imagen
+imagenView_cambiarImage(MyClass.class, imageView, imageBytes);
+</literallayout> </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a166124afb6f27aa7d0e1d731acc5e160"/><section>
+    <title>imagenView_cambiarImage()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>imagenView_cambiarImage</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>imagenView_cambiarImage</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Acciones.imagenView_cambiarImage (Class&lt;?&gt; claseReferencia, ImageView imageView, String url)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Cambia la imagen mostrada en un <computeroutput><link linkend="_">ImageView</link></computeroutput> dado, cargando la imagen desde una ruta específica.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>claseReferencia</entry><entry>
+<para>Una clase de referencia para el contexto de carga (no se utiliza en el método, pero podría ser útil si necesitas cargar desde recursos empaquetados). </para>
+</entry>
+                            </row>
+                            <row>
+<entry>imageView</entry><entry>
+<para>El <computeroutput><link linkend="_">ImageView</link></computeroutput> en el que se mostrará la nueva imagen. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>url</entry><entry>
+<para>La ruta local del archivo de imagen que se desea cargar y mostrar en el <computeroutput>ImageView</computeroutput>.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>Este método intenta cargar una imagen desde la ruta especificada, crea un objeto <computeroutput><link linkend="_">Image</link></computeroutput> y lo establece en el <computeroutput><link linkend="_">ImageView</link></computeroutput> dado. Si ocurre un error durante la carga de la imagen, el método captura la excepción y muestra un mensaje de error en la salida estándar.</para>
+
+<para><emphasis role="bold">Ejemplo de uso:</emphasis></para>
+
+<para><literallayout>
+    imagenView_cambiarImage(getClass(), imageView, &quot;ruta/a/la/imagen.png&quot;);
+</literallayout></para>
+
+<para><formalpara><title>See also</title>
+
+<para>ImageView </para>
+
+<para>Image </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a9b2a90fe54bcac4ed9e3945eb1daf6ca"/><section>
+    <title>ImageToByte()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>ImageToByte</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>ImageToByte</secondary></indexterm>
+<para><computeroutput>static byte[] es.manueldonoso.academia.util.Acciones.ImageToByte (Image image)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Convierte una imagen de tipo <computeroutput><link linkend="_">Image</link></computeroutput> en un arreglo de bytes (byte[]).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>image</entry><entry>
+<para>La imagen de tipo <computeroutput><link linkend="_">Image</link></computeroutput> que se convertirá a un arreglo de bytes. Si es <computeroutput>null</computeroutput>, se devuelve un arreglo de bytes vacío. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Un arreglo de bytes que representa la imagen en formato JPG.</para>
+</formalpara>
+</para>
+
+<para>Este método utiliza <computeroutput><link linkend="_">SwingFXUtils</link></computeroutput> para convertir la imagen de tipo <computeroutput><link linkend="_">Image</link></computeroutput> a un <computeroutput><link linkend="_">BufferedImage</link></computeroutput>, y luego utiliza <computeroutput><link linkend="_">ImageIO</link></computeroutput> para escribir la imagen en un flujo de salida en formato JPG.</para>
+
+<para>Ejemplo de uso:</para>
+
+<para><literallayout>
+Image image = new Image(&quot;file:example.jpg&quot;);
+byte[] imageBytes = ImageToByte(image);
+// Procesar el arreglo de bytes como se necesite
+</literallayout> </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1ac6a3ccce449c2551e5a54e9719ff0569"/><section>
+    <title>ImageToByte()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>ImageToByte</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>ImageToByte</secondary></indexterm>
+<para><computeroutput>static byte[] es.manueldonoso.academia.util.Acciones.ImageToByte (Stage stage)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Abre una ventana para seleccionar un archivo de imagen y convierte la imagen seleccionada en un arreglo de bytes (byte[]).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stage</entry><entry>
+<para>La ventana principal de la aplicación, necesaria para mostrar el diálogo de selección de archivo. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Un arreglo de bytes que representa la imagen seleccionada. Devuelve un arreglo vacío si no se selecciona ningún archivo o si ocurre algún error durante la lectura del archivo.</para>
+</formalpara>
+</para>
+
+<para>Este método abre un diálogo de selección de archivo mediante <computeroutput><link linkend="_">FileChooser</link></computeroutput>, permitiendo al usuario seleccionar una imagen con extensiones .jpg, .jpeg o .png. Si el usuario selecciona una imagen, se lee el archivo y se convierte en un arreglo de bytes para su posterior uso.</para>
+
+<para>Ejemplo de uso:</para>
+
+<para><literallayout>
+Stage stage = new Stage();
+byte[] imageBytes = ImageToByte(stage);
+if (imageBytes.length &gt; 0) {
+    // Procesar el arreglo de bytes de la imagen seleccionada
+}
+</literallayout> </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_1a7aeee477142fbbf9aa7d47276eae489d"/><section>
+    <title>utilDate_to_sqlDate()</title>
+<indexterm><primary>utilDate_to_sqlDate</primary><secondary>es.manueldonoso.academia.util.Acciones</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Acciones</primary><secondary>utilDate_to_sqlDate</secondary></indexterm>
+<para><computeroutput>static java.sql.Date es.manueldonoso.academia.util.Acciones.utilDate_to_sqlDate (java.util.Date date)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Convierte un objeto <computeroutput><link linkend="_">java.util.Date</link></computeroutput> en un <computeroutput><link linkend="_">java.sql.Date</link></computeroutput>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>date</entry><entry>
+<para>La fecha de tipo <computeroutput><link linkend="_">java.util.Date</link></computeroutput>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Fecha convertida a <computeroutput><link linkend="_">java.sql.Date</link></computeroutput>. </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/util/Acciones.java</section>
+</section>

@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta" xml:lang="en-US">
+<title>es.manueldonoso.academia.util.Alerta Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.util.Alerta</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_1a6192e27528063e27cb58de41b89f8e59">Error</link> (String titulo, String barra, String mensaje)</para>
+</listitem>
+            <listitem><para>static boolean <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_1a928f4664bf1e2108fd7ed90790dfd1ac">Confirmacion</link> (String titulo, String barra, String mensaje)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Clase utilitaria para mostrar diferentes tipos de alertas en la aplicación. Proporciona métodos para mostrar alertas de error y confirmación con un estilo personalizado.</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesus Donoso Perez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_1a928f4664bf1e2108fd7ed90790dfd1ac"/><section>
+    <title>Confirmacion()</title>
+<indexterm><primary>Confirmacion</primary><secondary>es.manueldonoso.academia.util.Alerta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Alerta</primary><secondary>Confirmacion</secondary></indexterm>
+<para><computeroutput>static boolean es.manueldonoso.academia.util.Alerta.Confirmacion (String titulo, String barra, String mensaje)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra una alerta de confirmación y devuelve la respuesta del usuario.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>titulo</entry><entry>
+<para>El título de la ventana de alerta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>barra</entry><entry>
+<para>El texto de la barra de encabezado. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mensaje</entry><entry>
+<para>El contenido del mensaje a mostrar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><computeroutput>true</computeroutput> si el usuario selecciona &quot;OK&quot;, <computeroutput>false</computeroutput> en caso contrario.</para>
+</formalpara>
+</para>
+
+<para>Este método utiliza la clase <computeroutput><link linkend="_">Alert</link></computeroutput> de JavaFX con el tipo <computeroutput>AlertType.CONFIRMATION</computeroutput>. Personaliza la ventana eliminando la barra de título y ajustando la opacidad.</para>
+
+<para><emphasis role="bold">Ejemplo de uso:</emphasis></para>
+
+<para><literallayout>
+    boolean confirmado = <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_1a928f4664bf1e2108fd7ed90790dfd1ac">Alerta.Confirmacion</link>(&quot;Salir&quot;, &quot;Confirmación requerida&quot;, &quot;¿Está seguro de salir?&quot;);
+    if (confirmado) {
+        System.exit(0);
+    }
+</literallayout> </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_1a6192e27528063e27cb58de41b89f8e59"/><section>
+    <title>Error()</title>
+<indexterm><primary>Error</primary><secondary>es.manueldonoso.academia.util.Alerta</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Alerta</primary><secondary>Error</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Alerta.Error (String titulo, String barra, String mensaje)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Muestra una alerta de error con un mensaje y un diseño personalizado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>titulo</entry><entry>
+<para>El título de la ventana de alerta. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>barra</entry><entry>
+<para>El texto de la barra de encabezado. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mensaje</entry><entry>
+<para>El contenido del mensaje a mostrar.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>Este método utiliza la clase <computeroutput><link linkend="_">Alert</link></computeroutput> de JavaFX con el tipo <computeroutput>AlertType.ERROR</computeroutput>. Personaliza la ventana eliminando la barra de título y ajustando la opacidad.</para>
+
+<para><emphasis role="bold">Ejemplo de uso:</emphasis></para>
+
+<para><literallayout>
+    <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_1a6192e27528063e27cb58de41b89f8e59">Alerta.Error</link>(&quot;Error crítico&quot;, &quot;Fallo de conexión&quot;, &quot;No se pudo conectar al servidor.&quot;);
+</literallayout> </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/util/Alerta.java</section>
+</section>

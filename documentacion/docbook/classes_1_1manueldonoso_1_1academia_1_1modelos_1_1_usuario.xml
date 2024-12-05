@@ -1,0 +1,547 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario" xml:lang="en-US">
+<title>es.manueldonoso.academia.modelos.Usuario Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario">TipoUsuario</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a03a838c0104ce0b0e81d81856737580c">getUsuario</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a9343b9b8c3538714f9535abc7174998c">setUsuario</link> (String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link>)</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1abcd6fc574affbfaf7d55a811d88a7b53">getNombre</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a82777db868fe88e2486f1928b80fdb88">setNombre</link> (String Nombre)</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1ac6ad615eb1edb5de10d1ee775644c97e">getApellidos</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1ad8ae03d251d78317d2706cd8709b6c0d">setApellidos</link> (String Apellidos)</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a6714f4175596d5d0481e374d6d24d65f">getDireccion</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a80b7164b4da1c609470987a9b43dd7e5">setDireccion</link> (String Direccion)</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1aa27e9ec09c8b145f2df9e649119449dd">getTelefono</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a760b44bc4467d080a78c405f1cfc6311">setTelefono</link> (String Telefono)</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1ab8f01eb00ae9973322a049f56bb6fb5d">getPass</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a20964753c97809dcafeefa435ece55d8">setPass</link> (String Pass)</para>
+</listitem>
+            <listitem><para><link linkend="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario">TipoUsuario</link> <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a010279311aa86d89d97fe3bea6f829d7">getTipo</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a314a21ffdadd8e87bdd23d2a0c960d52">setTipo</link> (<link linkend="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario">TipoUsuario</link> Tipo)</para>
+</listitem>
+            <listitem><para>byte[] <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a7bd7e19e4c880ea3318df1eaf1ecf559">getFoto</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a27543ae8ba4c12d20a91fc26231ce841">setFoto</link> (byte[] Foto)</para>
+</listitem>
+            <listitem><para>Date <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a4a1da6a769e60e97a70140bbfccd8529">getFechaAlta</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a9b7f1df37b4c7726de268de7743a3462">setFechaAlta</link> (Date FechaAlta)</para>
+</listitem>
+            <listitem><para>Date <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a81b461c7c5949032e8f8a0030d485b88">getFechaBaja</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a70029ff891d29925909b86701bb7849b">setFechaBaja</link> (Date FechaBaja)</para>
+</listitem>
+            <listitem><para>String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1ad88f2dfbacdda440a29bef7ee483ab1a">getEmail</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a6c5ba9c22f05e547f5060652395b556e">setEmail</link> (String Email)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1aa22b23e5bfcc66e00bd66456a2638bc9"/>List <emphasis role="strong">getAsignaturas</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a7ce21cbbddb0f8aaa174d905e4b6894a"/>void <emphasis role="strong">setAsignaturas</emphasis> (List Asignaturas)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1ae7ce698341b1dcd1e1eb6437689e010e"/>String <emphasis role="strong">toString</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Representa un usuario en el sistema con información básica de contacto y autenticación.</para>
+
+<para>La clase <computeroutput><link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link></computeroutput> contiene los datos de un usuario, incluyendo su nombre, apellidos, dirección, teléfono, contraseña, tipo de usuario, una foto en formato de arreglo de bytes, y fechas de alta y baja en el sistema. El tipo de usuario está limitado a los valores &quot;ADMINISTRADOR&quot;, &quot;PROFESOR&quot; o &quot;ALUMNO&quot;.</para>
+
+<para><formalpara><title>Author</title>
+
+<para>Manuel Jesús Donoso Pérez </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1ac6ad615eb1edb5de10d1ee775644c97e"/><section>
+    <title>getApellidos()</title>
+<indexterm><primary>getApellidos</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getApellidos</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Usuario.getApellidos ( )</computeroutput></para>
+<para>Obtiene los apellidos del usuario.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Los apellidos del usuario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a6714f4175596d5d0481e374d6d24d65f"/><section>
+    <title>getDireccion()</title>
+<indexterm><primary>getDireccion</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getDireccion</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Usuario.getDireccion ( )</computeroutput></para>
+<para>Obtiene la dirección del usuario.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>La dirección del usuario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1ad88f2dfbacdda440a29bef7ee483ab1a"/><section>
+    <title>getEmail()</title>
+<indexterm><primary>getEmail</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getEmail</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Usuario.getEmail ( )</computeroutput></para>
+<para>Obtiene el Email del usuario.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a4a1da6a769e60e97a70140bbfccd8529"/><section>
+    <title>getFechaAlta()</title>
+<indexterm><primary>getFechaAlta</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getFechaAlta</secondary></indexterm>
+<para><computeroutput>Date es.manueldonoso.academia.modelos.Usuario.getFechaAlta ( )</computeroutput></para>
+<para>Obtiene la fecha de alta del usuario en el sistema.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>La fecha de alta del usuario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a81b461c7c5949032e8f8a0030d485b88"/><section>
+    <title>getFechaBaja()</title>
+<indexterm><primary>getFechaBaja</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getFechaBaja</secondary></indexterm>
+<para><computeroutput>Date es.manueldonoso.academia.modelos.Usuario.getFechaBaja ( )</computeroutput></para>
+<para>Obtiene la fecha de baja del usuario en el sistema.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>La fecha de baja del usuario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a7bd7e19e4c880ea3318df1eaf1ecf559"/><section>
+    <title>getFoto()</title>
+<indexterm><primary>getFoto</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getFoto</secondary></indexterm>
+<para><computeroutput>byte[] es.manueldonoso.academia.modelos.Usuario.getFoto ( )</computeroutput></para>
+<para>Obtiene la foto del usuario.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>La foto del usuario en formato de arreglo de bytes. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1abcd6fc574affbfaf7d55a811d88a7b53"/><section>
+    <title>getNombre()</title>
+<indexterm><primary>getNombre</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getNombre</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Usuario.getNombre ( )</computeroutput></para>
+<para>Obtiene el nombre del usuario.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>El nombre del usuario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1ab8f01eb00ae9973322a049f56bb6fb5d"/><section>
+    <title>getPass()</title>
+<indexterm><primary>getPass</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getPass</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Usuario.getPass ( )</computeroutput></para>
+<para>Obtiene la contraseña del usuario.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>La contraseña del usuario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1aa27e9ec09c8b145f2df9e649119449dd"/><section>
+    <title>getTelefono()</title>
+<indexterm><primary>getTelefono</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getTelefono</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Usuario.getTelefono ( )</computeroutput></para>
+<para>Obtiene el número de teléfono del usuario.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>El número de teléfono del usuario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a010279311aa86d89d97fe3bea6f829d7"/><section>
+    <title>getTipo()</title>
+<indexterm><primary>getTipo</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getTipo</secondary></indexterm>
+<para><computeroutput><link linkend="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario">TipoUsuario</link> es.manueldonoso.academia.modelos.Usuario.getTipo ( )</computeroutput></para>
+<para>Obtiene el tipo de usuario.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>El tipo de usuario como uno de los valores de <computeroutput><link linkend="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario">TipoUsuario</link></computeroutput>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a03a838c0104ce0b0e81d81856737580c"/><section>
+    <title>getUsuario()</title>
+<indexterm><primary>getUsuario</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>getUsuario</secondary></indexterm>
+<para><computeroutput>String es.manueldonoso.academia.modelos.Usuario.getUsuario ( )</computeroutput></para>
+<para>Obtiene el nombre de usuario.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>El nombre de usuario. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1ad8ae03d251d78317d2706cd8709b6c0d"/><section>
+    <title>setApellidos()</title>
+<indexterm><primary>setApellidos</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setApellidos</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setApellidos (String Apellidos)</computeroutput></para>
+<para>Establece los apellidos del usuario.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Apellidos</entry><entry>
+<para>Los apellidos a asignar al usuario. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a80b7164b4da1c609470987a9b43dd7e5"/><section>
+    <title>setDireccion()</title>
+<indexterm><primary>setDireccion</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setDireccion</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setDireccion (String Direccion)</computeroutput></para>
+<para>Establece la dirección del usuario.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Direccion</entry><entry>
+<para>La dirección a asignar al usuario. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a6c5ba9c22f05e547f5060652395b556e"/><section>
+    <title>setEmail()</title>
+<indexterm><primary>setEmail</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setEmail</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setEmail (String Email)</computeroutput></para>
+<para>Establece el Email del usuario.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Email</entry><entry>
+<para>Establece el Email del usuario. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a9b7f1df37b4c7726de268de7743a3462"/><section>
+    <title>setFechaAlta()</title>
+<indexterm><primary>setFechaAlta</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setFechaAlta</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setFechaAlta (Date FechaAlta)</computeroutput></para>
+<para>Establece la fecha de alta del usuario en el sistema.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FechaAlta</entry><entry>
+<para>La fecha de alta a asignar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a70029ff891d29925909b86701bb7849b"/><section>
+    <title>setFechaBaja()</title>
+<indexterm><primary>setFechaBaja</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setFechaBaja</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setFechaBaja (Date FechaBaja)</computeroutput></para>
+<para>Establece la fecha de baja del usuario en el sistema.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>FechaBaja</entry><entry>
+<para>La fecha de baja a asignar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a27543ae8ba4c12d20a91fc26231ce841"/><section>
+    <title>setFoto()</title>
+<indexterm><primary>setFoto</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setFoto</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setFoto (byte[] Foto)</computeroutput></para>
+<para>Establece la foto del usuario.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Foto</entry><entry>
+<para>La foto a asignar al usuario en formato de arreglo de bytes. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a82777db868fe88e2486f1928b80fdb88"/><section>
+    <title>setNombre()</title>
+<indexterm><primary>setNombre</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setNombre</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setNombre (String Nombre)</computeroutput></para>
+<para>Establece el nombre del usuario.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Nombre</entry><entry>
+<para>El nombre a asignar al usuario. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a20964753c97809dcafeefa435ece55d8"/><section>
+    <title>setPass()</title>
+<indexterm><primary>setPass</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setPass</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setPass (String Pass)</computeroutput></para>
+<para>Establece la contraseña del usuario.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Pass</entry><entry>
+<para>La contraseña a asignar al usuario. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a760b44bc4467d080a78c405f1cfc6311"/><section>
+    <title>setTelefono()</title>
+<indexterm><primary>setTelefono</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setTelefono</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setTelefono (String Telefono)</computeroutput></para>
+<para>Establece el número de teléfono del usuario.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Telefono</entry><entry>
+<para>El número de teléfono a asignar al usuario. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a314a21ffdadd8e87bdd23d2a0c960d52"/><section>
+    <title>setTipo()</title>
+<indexterm><primary>setTipo</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setTipo</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setTipo (<link linkend="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario">TipoUsuario</link> Tipo)</computeroutput></para>
+<para>Establece el tipo de usuario.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Tipo</entry><entry>
+<para>El tipo de usuario, que debe ser uno de los valores de <computeroutput><link linkend="_enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario">TipoUsuario</link></computeroutput>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1a9343b9b8c3538714f9535abc7174998c"/><section>
+    <title>setUsuario()</title>
+<indexterm><primary>setUsuario</primary><secondary>es.manueldonoso.academia.modelos.Usuario</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.modelos.Usuario</primary><secondary>setUsuario</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.modelos.Usuario.setUsuario (String Usuario)</computeroutput></para>
+<para>Establece el nombre de usuario.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry><link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link></entry><entry>
+<para>El nombre de usuario a asignar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/modelos/Usuario.java</section>
+</section>

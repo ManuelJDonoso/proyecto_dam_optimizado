@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_video_ayuda_controller" xml:lang="en-US">
+<title>es.manueldonoso.academia.controller.VideoAyudaController Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.controller.VideoAyudaController</primary></indexterm>
+<para>
+Inherits Initializable.</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_video_ayuda_controller_1ad4ce3b8bb5db0dfb49945c1df5ce0aa1"/>void <emphasis role="strong">initialize</emphasis> (URL url, ResourceBundle rb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_video_ayuda_controller_1a769bd2f1ca48a586f10eea327c172f50"/>void <emphasis role="strong">setStage</emphasis> (Stage stage)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>FXML Controller class</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/controller/VideoAyudaController.java</section>
+</section>

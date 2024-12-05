@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller" xml:lang="en-US">
+<title>es.manueldonoso.academia.controller.LoginController Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.controller.LoginController</primary></indexterm>
+<para>
+Inherits Initializable.</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller_1a998ce665b4767371c9ec905ff52eeb48">initialize</link> (URL url, ResourceBundle rb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller_1ae22a60be6e09017ccebacf30eb795b0b"/>void <emphasis role="strong">botonContratoEnable</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller_1a7f17b7910a277a6d1c1af2fd6e36aae2"/>Connection <emphasis role="strong">getConecConnection</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller_1ad2c0d7664d71598d7bfa48807cb2f4c9"/>VBox <emphasis role="strong">root</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller_1ae74491d48ad171f7c7b4bd15e1502142"/>JFXButton <emphasis role="strong">btn_iniciar</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller_1a89d2c9b15f93137671c2168607666951"/>JFXTextField <emphasis role="strong">txt_nombre</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller_1ace0f56fd339d2f4eb156a42a65c43037"/>JFXPasswordField <emphasis role="strong">txt_pass</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller_1a0e3801e2e4f82fc0bb1efb3c520928ad"/>ImageView <emphasis role="strong">iv_base_conect</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>FXML Controller class</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller_1a998ce665b4767371c9ec905ff52eeb48"/><section>
+    <title>initialize()</title>
+<indexterm><primary>initialize</primary><secondary>es.manueldonoso.academia.controller.LoginController</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.controller.LoginController</primary><secondary>initialize</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.controller.LoginController.initialize (URL url, ResourceBundle rb)</computeroutput></para>
+<para>Initializes the controller class. </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/controller/LoginController.java</section>
+</section>

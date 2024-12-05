@@ -1,0 +1,85 @@
+\doxysection{es.\+manueldonoso.\+academia.\+util.\+Alerta Class Reference}
+\hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta}{}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta}\index{es.manueldonoso.academia.util.Alerta@{es.manueldonoso.academia.util.Alerta}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_a6192e27528063e27cb58de41b89f8e59}{Error}} (String titulo, String barra, String mensaje)
+\item 
+static boolean \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_a928f4664bf1e2108fd7ed90790dfd1ac}{Confirmacion}} (String titulo, String barra, String mensaje)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase utilitaria para mostrar diferentes tipos de alertas en la aplicación. Proporciona métodos para mostrar alertas de error y confirmación con un estilo personalizado.
+
+\begin{DoxyAuthor}{Author}
+"{}\+Manuel Jesus Donoso Perez"{}; 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_a928f4664bf1e2108fd7ed90790dfd1ac}\index{es.manueldonoso.academia.util.Alerta@{es.manueldonoso.academia.util.Alerta}!Confirmacion@{Confirmacion}}
+\index{Confirmacion@{Confirmacion}!es.manueldonoso.academia.util.Alerta@{es.manueldonoso.academia.util.Alerta}}
+\doxysubsubsection{\texorpdfstring{Confirmacion()}{Confirmacion()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_a928f4664bf1e2108fd7ed90790dfd1ac} 
+static boolean es.\+manueldonoso.\+academia.\+util.\+Alerta.\+Confirmacion (\begin{DoxyParamCaption}\item[{String}]{titulo}{, }\item[{String}]{barra}{, }\item[{String}]{mensaje}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Muestra una alerta de confirmación y devuelve la respuesta del usuario.
+
+
+\begin{DoxyParams}{Parameters}
+{\em titulo} & El título de la ventana de alerta. \\
+\hline
+{\em barra} & El texto de la barra de encabezado. \\
+\hline
+{\em mensaje} & El contenido del mensaje a mostrar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si el usuario selecciona "{}\+OK"{}, {\ttfamily false} en caso contrario.
+\end{DoxyReturn}
+
+
+Este método utiliza la clase {\ttfamily \doxylink{}{Alert}} de Java\+FX con el tipo {\ttfamily Alert\+Type.\+CONFIRMATION}. Personaliza la ventana eliminando la barra de título y ajustando la opacidad.
+
+{\bfseries{Ejemplo de uso\+:}}
+
+
+\begin{DoxyPre}
+    boolean confirmado = \doxylink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_a928f4664bf1e2108fd7ed90790dfd1ac}{Alerta.Confirmacion}("{}Salir"{}, "{}Confirmación requerida"{}, "{}¿Está seguro de salir?"{});
+    if (confirmado) \{
+        System.exit(0);
+    \}
+\end{DoxyPre}
+ \Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_a6192e27528063e27cb58de41b89f8e59}\index{es.manueldonoso.academia.util.Alerta@{es.manueldonoso.academia.util.Alerta}!Error@{Error}}
+\index{Error@{Error}!es.manueldonoso.academia.util.Alerta@{es.manueldonoso.academia.util.Alerta}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_a6192e27528063e27cb58de41b89f8e59} 
+static void es.\+manueldonoso.\+academia.\+util.\+Alerta.\+Error (\begin{DoxyParamCaption}\item[{String}]{titulo}{, }\item[{String}]{barra}{, }\item[{String}]{mensaje}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Muestra una alerta de error con un mensaje y un diseño personalizado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em titulo} & El título de la ventana de alerta. \\
+\hline
+{\em barra} & El texto de la barra de encabezado. \\
+\hline
+{\em mensaje} & El contenido del mensaje a mostrar.\\
+\hline
+\end{DoxyParams}
+
+
+Este método utiliza la clase {\ttfamily \doxylink{}{Alert}} de Java\+FX con el tipo {\ttfamily Alert\+Type.\+ERROR}. Personaliza la ventana eliminando la barra de título y ajustando la opacidad.
+
+{\bfseries{Ejemplo de uso\+:}}
+
+
+\begin{DoxyPre}
+    \doxylink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta_a6192e27528063e27cb58de41b89f8e59}{Alerta.Error}("{}Error crítico"{}, "{}Fallo de conexión"{}, "{}No se pudo conectar al servidor."{});
+\end{DoxyPre}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dam\+\_\+\+Proyecto\+\_\+\+Optimizado/proyecto\+\_\+dam\+\_\+optimizado/src/main/java/es/manueldonoso/academia/util/Alerta.\+java\end{DoxyCompactItemize}

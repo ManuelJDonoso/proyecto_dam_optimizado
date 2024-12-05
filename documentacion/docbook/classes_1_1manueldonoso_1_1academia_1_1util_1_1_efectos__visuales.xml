@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales" xml:lang="en-US">
+<title>es.manueldonoso.academia.util.Efectos_visuales Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.util.Efectos_visuales</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1ae59090b3f570cf5acf15e639094dbb48">closeEffectReducion</link> (Node node)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a395c2e63ad3331e080d6a12446c017ba">darMovimientoStage</link> (Stage stage)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a11b6178190c3a46a590bde3aed2b0aa2">Avatar</link> (ImageView iv, double radius)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a9f6cba83ec6219d31f7125bba66fb660">modificarTamañoImagen</link> (ImageView iv, double radius, double scale)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a5c44f6c2b427a55dd7657f1b15ffea3a">setBackgroundImage</link> (Pane pane, String imagePath)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1ac14ab93dfb690a225f2a207859585fa2"/>static void <emphasis role="strong">mensajeNotificacionError</emphasis> (String titulo, String mensaje)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a1e1016b080937f6a7335a63a9a638b4e"/>static void <emphasis role="strong">AnimacionComponenteTada</emphasis> (Node node)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a1beae3306343e3bd796604a2e353d2a1"/>static void <emphasis role="strong">efectoGaussian</emphasis> (Node node, double radio)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a7f98f2fe0c91d1a1651a4f6604dba695"/>static void <emphasis role="strong">eliminarEfecto</emphasis> (Node node)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Esta clase contiene métodos para aplicar efectos visuales y realizar ajustes estéticos en nodos, ventanas y otros elementos de la interfaz de usuario en JavaFX. Aquí se incluyen funcionalidades para cerrar ventanas con animaciones, moverlas, trabajar con imágenes circulares y establecer fondos personalizados en paneles.</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a11b6178190c3a46a590bde3aed2b0aa2"/><section>
+    <title>Avatar()</title>
+<indexterm><primary>Avatar</primary><secondary>es.manueldonoso.academia.util.Efectos_visuales</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Efectos_visuales</primary><secondary>Avatar</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Efectos_visuales.Avatar (ImageView iv, double radius)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Establece un avatar circular en el ImageView proporcionado, centrando la imagen dentro del círculo.</para>
+
+<para>Este método ajusta el tamaño del ImageView para que coincida con el radio proporcionado, preservando las proporciones de la imagen. Además, centra la imagen recortando la parte central y luego aplica un círculo como máscara para darle la forma circular.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>iv</entry><entry>
+<para>El ImageView donde se mostrará la imagen con forma circular. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>radius</entry><entry>
+<para>El radio del círculo, que determinará el tamaño de la imagen visible. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1ae59090b3f570cf5acf15e639094dbb48"/><section>
+    <title>closeEffectReducion()</title>
+<indexterm><primary>closeEffectReducion</primary><secondary>es.manueldonoso.academia.util.Efectos_visuales</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Efectos_visuales</primary><secondary>closeEffectReducion</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Efectos_visuales.closeEffectReducion (Node node)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Cierra la ventana aplicando un efecto de reducción de escala en el nodo especificado.</para>
+
+<para>Este método aplica una transición de escala a un nodo, reduciéndolo a un tamaño de 0 en los ejes X, Y y Z en el transcurso de 500 milisegundos. Una vez completada la animación, la ventana asociada al nodo se cierra automáticamente.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>node</entry><entry>
+<para>el nodo en cuya ventana se aplicará el efecto de cierre </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a395c2e63ad3331e080d6a12446c017ba"/><section>
+    <title>darMovimientoStage()</title>
+<indexterm><primary>darMovimientoStage</primary><secondary>es.manueldonoso.academia.util.Efectos_visuales</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Efectos_visuales</primary><secondary>darMovimientoStage</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Efectos_visuales.darMovimientoStage (Stage stage)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Permite mover la ventana (Stage) haciendo clic y arrastrando el mouse sobre la escena.</para>
+
+<para>Este método establece dos manejadores de eventos en la escena de la ventana especificada: uno para registrar la posición inicial del clic del mouse y otro para mover la ventana según el movimiento del mouse, calculando el desplazamiento basado en la posición inicial.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stage</entry><entry>
+<para>la ventana (Stage) que se podrá mover con el mouse </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a9f6cba83ec6219d31f7125bba66fb660"/><section>
+    <title>modificarTamañoImagen()</title>
+<indexterm><primary>modificarTamañoImagen</primary><secondary>es.manueldonoso.academia.util.Efectos_visuales</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Efectos_visuales</primary><secondary>modificarTamañoImagen</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Efectos_visuales.modificarTamañoImagen (ImageView iv, double radius, double scale)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Modifica el tamaño de la imagen sin cambiar el tamaño del radio. La imagen se escala proporcionalmente para ajustarse al radio del círculo, pero el radio no cambia.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>iv</entry><entry>
+<para>El ImageView que contiene la imagen. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>radius</entry><entry>
+<para>El radio del círculo que se usará para el clip. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>scale</entry><entry>
+<para>El factor de escala para cambiar el tamaño de la imagen. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_1a5c44f6c2b427a55dd7657f1b15ffea3a"/><section>
+    <title>setBackgroundImage()</title>
+<indexterm><primary>setBackgroundImage</primary><secondary>es.manueldonoso.academia.util.Efectos_visuales</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Efectos_visuales</primary><secondary>setBackgroundImage</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Efectos_visuales.setBackgroundImage (Pane pane, String imagePath)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Establece una imagen como fondo en el AnchorPane proporcionado.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pane</entry><entry>
+<para>Nodo al que se le va a modificar el fondo </para>
+</entry>
+                            </row>
+                            <row>
+<entry>imagePath</entry><entry>
+<para>La ruta de la imagen que se usará como fondo. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/util/Efectos_visuales.java</section>
+</section>

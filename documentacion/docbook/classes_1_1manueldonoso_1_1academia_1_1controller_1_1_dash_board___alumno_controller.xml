@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_dash_board___alumno_controller" xml:lang="en-US">
+<title>es.manueldonoso.academia.controller.DashBoard_AlumnoController Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.controller.DashBoard_AlumnoController</primary></indexterm>
+<para>
+Inherits Initializable.</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_dash_board___alumno_controller_1adcd89d4e61d4ba3febab6e513c8cd854"/>void <emphasis role="strong">initialize</emphasis> (URL location, ResourceBundle resources)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_dash_board___alumno_controller_1acc4e81df2ec4ddf203c2977dae495ac4"/>void <emphasis role="strong">SetConn</emphasis> (Connection conn)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_dash_board___alumno_controller_1a327af0246913fa59ea9409f20492eaf0"/>void <emphasis role="strong">CargarUsuario</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controlador para el panel de dashboard del alumno. Implementa la interfaz Initializable para la inicialización de los componentes gráficos. <formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/controller/DashBoard_AlumnoController.java</section>
+</section>

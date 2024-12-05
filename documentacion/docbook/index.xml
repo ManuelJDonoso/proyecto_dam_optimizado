@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>mi academia</title>
+    </info>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1util_1_1_alerta.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_asignatura.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_asignaturas___panel_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1util_1_1_base__datos.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_buscar_usuario_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_cambio___contrasena_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1util_1_1_contrato.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_contrato__registro_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_dash_board___administrador_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_dash_board___alumno_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_dash_board___profesor_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_escritorio___defecto_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1modelos_1_1examen.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_login_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1main_1_1main.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_mis_datos_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_modificar_datos_usuario_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel___examen_menu_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel__generar___examen_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1profesor_1_1_panel___nota__estadisticas_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1alumno_1_1_panel__notas__general_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel__pregunta_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel___subir_material_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel_material_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1util_1_1_p_d_f_generator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_plantilla__pregunta_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_pregunta.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_registrar__usuario__nuevo_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1util_1_1_session.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1util_1_1_stage__show.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="enumes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario_1_1_tipo_usuario.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1util_1_1utilidades.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1util_1_1validaciones.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classes_1_1manueldonoso_1_1academia_1_1controller_1_1_video_ayuda_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

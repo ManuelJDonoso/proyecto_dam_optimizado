@@ -1,0 +1,122 @@
+\doxysection{es.\+manueldonoso.\+academia.\+util.\+Efectos\+\_\+visuales Class Reference}
+\hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales}{}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales}\index{es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_ae59090b3f570cf5acf15e639094dbb48}{close\+Effect\+Reducion}} (Node node)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a395c2e63ad3331e080d6a12446c017ba}{dar\+Movimiento\+Stage}} (Stage stage)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a11b6178190c3a46a590bde3aed2b0aa2}{Avatar}} (Image\+View iv, double radius)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a9f6cba83ec6219d31f7125bba66fb660}{modificar\+Tamaño\+Imagen}} (Image\+View iv, double radius, double scale)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a5c44f6c2b427a55dd7657f1b15ffea3a}{set\+Background\+Image}} (Pane pane, String image\+Path)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_ac14ab93dfb690a225f2a207859585fa2}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_ac14ab93dfb690a225f2a207859585fa2} 
+static void {\bfseries mensaje\+Notificacion\+Error} (String titulo, String mensaje)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a1e1016b080937f6a7335a63a9a638b4e}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a1e1016b080937f6a7335a63a9a638b4e} 
+static void {\bfseries Animacion\+Componente\+Tada} (Node node)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a1beae3306343e3bd796604a2e353d2a1}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a1beae3306343e3bd796604a2e353d2a1} 
+static void {\bfseries efecto\+Gaussian} (Node node, double radio)
+\item 
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a7f98f2fe0c91d1a1651a4f6604dba695}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a7f98f2fe0c91d1a1651a4f6604dba695} 
+static void {\bfseries eliminar\+Efecto} (Node node)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Esta clase contiene métodos para aplicar efectos visuales y realizar ajustes estéticos en nodos, ventanas y otros elementos de la interfaz de usuario en Java\+FX. Aquí se incluyen funcionalidades para cerrar ventanas con animaciones, moverlas, trabajar con imágenes circulares y establecer fondos personalizados en paneles.
+
+\begin{DoxyAuthor}{Author}
+"{}\+Manuel Jesús Donoso Pérez"{}; 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a11b6178190c3a46a590bde3aed2b0aa2}\index{es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}!Avatar@{Avatar}}
+\index{Avatar@{Avatar}!es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}}
+\doxysubsubsection{\texorpdfstring{Avatar()}{Avatar()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a11b6178190c3a46a590bde3aed2b0aa2} 
+static void es.\+manueldonoso.\+academia.\+util.\+Efectos\+\_\+visuales.\+Avatar (\begin{DoxyParamCaption}\item[{Image\+View}]{iv}{, }\item[{double}]{radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Establece un avatar circular en el Image\+View proporcionado, centrando la imagen dentro del círculo.
+
+Este método ajusta el tamaño del Image\+View para que coincida con el radio proporcionado, preservando las proporciones de la imagen. Además, centra la imagen recortando la parte central y luego aplica un círculo como máscara para darle la forma circular.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iv} & El Image\+View donde se mostrará la imagen con forma circular. \\
+\hline
+{\em radius} & El radio del círculo, que determinará el tamaño de la imagen visible. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_ae59090b3f570cf5acf15e639094dbb48}\index{es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}!closeEffectReducion@{closeEffectReducion}}
+\index{closeEffectReducion@{closeEffectReducion}!es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}}
+\doxysubsubsection{\texorpdfstring{closeEffectReducion()}{closeEffectReducion()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_ae59090b3f570cf5acf15e639094dbb48} 
+static void es.\+manueldonoso.\+academia.\+util.\+Efectos\+\_\+visuales.\+close\+Effect\+Reducion (\begin{DoxyParamCaption}\item[{Node}]{node}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Cierra la ventana aplicando un efecto de reducción de escala en el nodo especificado.
+
+Este método aplica una transición de escala a un nodo, reduciéndolo a un tamaño de 0 en los ejes X, Y y Z en el transcurso de 500 milisegundos. Una vez completada la animación, la ventana asociada al nodo se cierra automáticamente.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & el nodo en cuya ventana se aplicará el efecto de cierre \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a395c2e63ad3331e080d6a12446c017ba}\index{es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}!darMovimientoStage@{darMovimientoStage}}
+\index{darMovimientoStage@{darMovimientoStage}!es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}}
+\doxysubsubsection{\texorpdfstring{darMovimientoStage()}{darMovimientoStage()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a395c2e63ad3331e080d6a12446c017ba} 
+static void es.\+manueldonoso.\+academia.\+util.\+Efectos\+\_\+visuales.\+dar\+Movimiento\+Stage (\begin{DoxyParamCaption}\item[{Stage}]{stage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Permite mover la ventana (Stage) haciendo clic y arrastrando el mouse sobre la escena.
+
+Este método establece dos manejadores de eventos en la escena de la ventana especificada\+: uno para registrar la posición inicial del clic del mouse y otro para mover la ventana según el movimiento del mouse, calculando el desplazamiento basado en la posición inicial.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stage} & la ventana (Stage) que se podrá mover con el mouse \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a9f6cba83ec6219d31f7125bba66fb660}\index{es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}!modificarTamañoImagen@{modificarTamañoImagen}}
+\index{modificarTamañoImagen@{modificarTamañoImagen}!es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}}
+\doxysubsubsection{\texorpdfstring{modificarTamañoImagen()}{modificarTamañoImagen()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a9f6cba83ec6219d31f7125bba66fb660} 
+static void es.\+manueldonoso.\+academia.\+util.\+Efectos\+\_\+visuales.\+modificar\+Tamaño\+Imagen (\begin{DoxyParamCaption}\item[{Image\+View}]{iv}{, }\item[{double}]{radius}{, }\item[{double}]{scale}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Modifica el tamaño de la imagen sin cambiar el tamaño del radio. La imagen se escala proporcionalmente para ajustarse al radio del círculo, pero el radio no cambia.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iv} & El Image\+View que contiene la imagen. \\
+\hline
+{\em radius} & El radio del círculo que se usará para el clip. \\
+\hline
+{\em scale} & El factor de escala para cambiar el tamaño de la imagen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a5c44f6c2b427a55dd7657f1b15ffea3a}\index{es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}!setBackgroundImage@{setBackgroundImage}}
+\index{setBackgroundImage@{setBackgroundImage}!es.manueldonoso.academia.util.Efectos\_visuales@{es.manueldonoso.academia.util.Efectos\_visuales}}
+\doxysubsubsection{\texorpdfstring{setBackgroundImage()}{setBackgroundImage()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_efectos__visuales_a5c44f6c2b427a55dd7657f1b15ffea3a} 
+static void es.\+manueldonoso.\+academia.\+util.\+Efectos\+\_\+visuales.\+set\+Background\+Image (\begin{DoxyParamCaption}\item[{Pane}]{pane}{, }\item[{String}]{image\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Establece una imagen como fondo en el Anchor\+Pane proporcionado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pane} & Nodo al que se le va a modificar el fondo \\
+\hline
+{\em image\+Path} & La ruta de la imagen que se usará como fondo. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dam\+\_\+\+Proyecto\+\_\+\+Optimizado/proyecto\+\_\+dam\+\_\+optimizado/src/main/java/es/manueldonoso/academia/util/Efectos\+\_\+visuales.\+java\end{DoxyCompactItemize}

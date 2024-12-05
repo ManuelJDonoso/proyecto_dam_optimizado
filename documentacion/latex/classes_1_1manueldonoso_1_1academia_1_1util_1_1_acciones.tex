@@ -1,0 +1,446 @@
+\doxysection{es.\+manueldonoso.\+academia.\+util.\+Acciones Class Reference}
+\hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones}{}\label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a42da7daee913ff5541461da3cdfda406}{abrir\+Web}} (String dir)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a68e04813b0e890b7fd9b1b6be8914697}{abrir\+Web\+Local}} (String dir)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_acf8dcefc61a755daad7155f1a80a26e6}{abrir\+PDF}} (String file\+Path)
+\item 
+static boolean \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_abc708f32ceef9f26689287bc112369f2}{existe\+Archivo}} (String file\+Path)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a166124afb6f27aa7d0e1d731acc5e160}{imagen\+View\+\_\+cambiar\+Image}} (Class$<$?$>$ clase\+Referencia, Image\+View image\+View, String url)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a1b7f5d78471eac7c9ba864fe50359131}{imagen\+View\+\_\+cambiar\+Image}} (Class$<$?$>$ clase\+Referencia, Image\+View image\+View, byte\mbox{[}$\,$\mbox{]} image\+Data)
+\item 
+static byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_ae1b62e4bfd4c75626f5c5624f8a0da0a}{Capturar\+Foto}} (Image\+View image\+View, Boolean\+Property estado\+Camara, Atomic\+Reference$<$ Webcam $>$ sel\+Web\+Cam, Atomic\+Reference$<$ Buffered\+Image $>$ buffered\+Image, Object\+Property$<$ Image $>$ image\+Property)
+\item 
+static byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a9b2a90fe54bcac4ed9e3945eb1daf6ca}{Image\+To\+Byte}} (Image image)
+\item 
+static byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_ac6a3ccce449c2551e5a54e9719ff0569}{Image\+To\+Byte}} (Stage stage)
+\item 
+static String \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_af06cc56aad1c4731c88ab06fb85e24c0}{genera\+Usuario}} (Connection conn, String nombre, String apellido)
+\item 
+static String \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a0fc297a2b76b472dfaee072759a780af}{generar\+Consulta\+SQL}} (String sql, Object... parametros)
+\item 
+static java.\+sql.\+Date \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a7aeee477142fbbf9aa7d47276eae489d}{util\+Date\+\_\+to\+\_\+sql\+Date}} (java.\+util.\+Date date)
+\item 
+static List$<$ Map$<$ String, String $>$ $>$ \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a5332ac694542c8a09da9dd3bdda6e8d5}{capturar\+Contenido\+Text\+Areas}} (VBox preguntas)
+\item 
+static int \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a8cd5b4e14694dd167f6219f6f4734b35}{generar\+Numero\+Aleatorio}} (int min, int max)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a765fa91871c9c5fa31f0e9438c300f67}{enviar\+Email}} (String destinatario, String asunto, String mensaje)
+\item 
+static void \mbox{\hyperlink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a979b0ee5112084f53fa5f10e506ac128}{enviar\+Whats\+App}} (String numero\+Telefono, String mensaje)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que proporciona métodos utilitarios para trabajar con archivos, imágenes, cámaras web y abrir recursos en el navegador o aplicaciones predeterminadas.
+
+Incluye funcionalidades como abrir páginas web, cargar imágenes en componentes de interfaz, capturar fotos desde la cámara web, y manipular datos de imágenes y archivos.
+
+Ejemplo de uso\+: 
+\begin{DoxyPre}
+\doxylink{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a42da7daee913ff5541461da3cdfda406}{Acciones.abrirWeb}("{}https://ejemplo.com"{});
+\end{DoxyPre}
+
+
+\begin{DoxyAuthor}{Author}
+"{}\+Manuel Jesús Donoso Pérez"{}; 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_acf8dcefc61a755daad7155f1a80a26e6}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!abrirPDF@{abrirPDF}}
+\index{abrirPDF@{abrirPDF}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{abrirPDF()}{abrirPDF()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_acf8dcefc61a755daad7155f1a80a26e6} 
+static void es.\+manueldonoso.\+academia.\+util.\+Acciones.\+abrir\+PDF (\begin{DoxyParamCaption}\item[{String}]{file\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Abre un archivo PDF utilizando la aplicación predeterminada del sistema operativo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & Ruta del archivo PDF a abrir. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a42da7daee913ff5541461da3cdfda406}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!abrirWeb@{abrirWeb}}
+\index{abrirWeb@{abrirWeb}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{abrirWeb()}{abrirWeb()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a42da7daee913ff5541461da3cdfda406} 
+static void es.\+manueldonoso.\+academia.\+util.\+Acciones.\+abrir\+Web (\begin{DoxyParamCaption}\item[{String}]{dir}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Abre una página web en el navegador predeterminado del sistema utilizando la URL especificada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & La dirección URL de la página web a abrir, en formato de cadena.\\
+\hline
+\end{DoxyParams}
+
+
+Este método utiliza la clase {\ttfamily \doxylink{}{java.\+awt.\+Desktop}} para abrir la URL en el navegador web predeterminado. Antes de intentar abrir la URL, se verifica si el sistema soporta la operación {\ttfamily \doxylink{}{java.\+awt.\+Desktop.\+Action\#\+BROWSE}}. \Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a68e04813b0e890b7fd9b1b6be8914697}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!abrirWebLocal@{abrirWebLocal}}
+\index{abrirWebLocal@{abrirWebLocal}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{abrirWebLocal()}{abrirWebLocal()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a68e04813b0e890b7fd9b1b6be8914697} 
+static void es.\+manueldonoso.\+academia.\+util.\+Acciones.\+abrir\+Web\+Local (\begin{DoxyParamCaption}\item[{String}]{dir}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Abre un archivo HTML local en el navegador predeterminado del sistema. La ruta al archivo debe estar dentro del directorio de recursos del proyecto, típicamente {\ttfamily src/main/resources}, y se debe proporcionar como ruta relativa.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & La ruta relativa al archivo HTML dentro del directorio de recursos, por ejemplo, "{}/documentacion/html/index.\+html"{}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a5332ac694542c8a09da9dd3bdda6e8d5}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!capturarContenidoTextAreas@{capturarContenidoTextAreas}}
+\index{capturarContenidoTextAreas@{capturarContenidoTextAreas}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{capturarContenidoTextAreas()}{capturarContenidoTextAreas()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a5332ac694542c8a09da9dd3bdda6e8d5} 
+static List$<$ Map$<$ String, String $>$ $>$ es.\+manueldonoso.\+academia.\+util.\+Acciones.\+capturar\+Contenido\+Text\+Areas (\begin{DoxyParamCaption}\item[{VBox}]{preguntas}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Captura el contenido de varios Text\+Area en un contenedor {\ttfamily \doxylink{}{VBox}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em preguntas} & Contenedor principal con varios {\ttfamily \doxylink{}{VBox}} hijos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista de mapas con las respuestas capturadas. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_ae1b62e4bfd4c75626f5c5624f8a0da0a}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!CapturarFoto@{CapturarFoto}}
+\index{CapturarFoto@{CapturarFoto}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{CapturarFoto()}{CapturarFoto()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_ae1b62e4bfd4c75626f5c5624f8a0da0a} 
+static byte\mbox{[}$\,$\mbox{]} es.\+manueldonoso.\+academia.\+util.\+Acciones.\+Capturar\+Foto (\begin{DoxyParamCaption}\item[{Image\+View}]{image\+View}{, }\item[{Boolean\+Property}]{estado\+Camara}{, }\item[{Atomic\+Reference$<$ Webcam $>$}]{sel\+Web\+Cam}{, }\item[{Atomic\+Reference$<$ Buffered\+Image $>$}]{buffered\+Image}{, }\item[{Object\+Property$<$ Image $>$}]{image\+Property}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Captura una foto de la cámara web y devuelve la imagen capturada como un arreglo de bytes (byte\mbox{[}\mbox{]}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+View} & El componente {\ttfamily \doxylink{}{Image\+View}} donde se muestra el flujo de la cámara. \\
+\hline
+{\em estado\+Camara} & Una propiedad booleana que indica el estado de la cámara (activada o desactivada). \\
+\hline
+{\em sel\+Web\+Cam} & Una referencia a la cámara web seleccionada. \\
+\hline
+{\em buffered\+Image} & Una referencia a la última imagen capturada como {\ttfamily \doxylink{}{Buffered\+Image}}. \\
+\hline
+{\em image\+Property} & La propiedad de la imagen que enlaza con el {\ttfamily \doxylink{}{Image\+View}} para mostrar el flujo de la cámara. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un arreglo de bytes que representa la imagen capturada en formato JPG, o {\ttfamily null} si no se capturó ninguna imagen.
+\end{DoxyReturn}
+
+
+Este método controla el encendido y apagado de la cámara. Cuando la cámara está activada, inicia un flujo de captura de imágenes que se muestra en tiempo real en el {\ttfamily \doxylink{}{Image\+View}}. Al desactivar la cámara, captura la última imagen como un arreglo de bytes en formato JPG y la devuelve.
+
+Si no hay cámaras disponibles, muestra una alerta de información y no realiza ninguna captura.
+
+Ejemplo de uso\+:
+
+
+\begin{DoxyPre}
+BooleanProperty estadoCamara = new SimpleBooleanProperty(false);
+AtomicReference Webcam selWebCam = new AtomicReference();
+AtomicReference BufferedImage bufferedImage = new AtomicReference();
+ObjectProperty Image imageProperty = new SimpleObjectProperty();
+
+byte[] foto = CapturarFoto(imageView, estadoCamara, selWebCam, bufferedImage, imageProperty);
+if (foto != null) \{
+    // Procesar el arreglo de bytes de la imagen capturada
+\}
+\end{DoxyPre}
+ \Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a765fa91871c9c5fa31f0e9438c300f67}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!enviarEmail@{enviarEmail}}
+\index{enviarEmail@{enviarEmail}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{enviarEmail()}{enviarEmail()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a765fa91871c9c5fa31f0e9438c300f67} 
+static void es.\+manueldonoso.\+academia.\+util.\+Acciones.\+enviar\+Email (\begin{DoxyParamCaption}\item[{String}]{destinatario}{, }\item[{String}]{asunto}{, }\item[{String}]{mensaje}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Abre el cliente de correo predeterminado del sistema con un borrador de email preconfigurado utilizando los parámetros proporcionados.
+
+
+\begin{DoxyParams}{Parameters}
+{\em destinatario} & La dirección de correo electrónico del destinatario. Debe ser válida. \\
+\hline
+{\em asunto} & El asunto del correo. Puede incluir caracteres especiales, que serán codificados automáticamente. \\
+\hline
+{\em mensaje} & El cuerpo del mensaje. También será codificado para evitar errores con caracteres especiales. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Unsupported\+Operation\+Exception} & Si la funcionalidad de correo no es soportada en el sistema operativo. \\
+\hline
+{\em Illegal\+Argument\+Exception} & Si el formato del URI no es válido. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a979b0ee5112084f53fa5f10e506ac128}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!enviarWhatsApp@{enviarWhatsApp}}
+\index{enviarWhatsApp@{enviarWhatsApp}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{enviarWhatsApp()}{enviarWhatsApp()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a979b0ee5112084f53fa5f10e506ac128} 
+static void es.\+manueldonoso.\+academia.\+util.\+Acciones.\+enviar\+Whats\+App (\begin{DoxyParamCaption}\item[{String}]{numero\+Telefono}{, }\item[{String}]{mensaje}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Abre Whats\+App en el navegador o en la aplicación de escritorio/móvil predeterminada para enviar un mensaje a un número de teléfono específico.
+
+
+\begin{DoxyParams}{Parameters}
+{\em numero\+Telefono} & El número de teléfono en formato internacional (incluyendo el código de país, por ejemplo, "{}34600111222"{} para España). \\
+\hline
+{\em mensaje} & El mensaje a enviar. Puede contener caracteres especiales, que serán codificados automáticamente. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Unsupported\+Operation\+Exception} & Si la funcionalidad de navegador no está soportada. \\
+\hline
+{\em Illegal\+Argument\+Exception} & Si el número de teléfono no es válido o el formato de URI falla. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_abc708f32ceef9f26689287bc112369f2}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!existeArchivo@{existeArchivo}}
+\index{existeArchivo@{existeArchivo}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{existeArchivo()}{existeArchivo()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_abc708f32ceef9f26689287bc112369f2} 
+static boolean es.\+manueldonoso.\+academia.\+util.\+Acciones.\+existe\+Archivo (\begin{DoxyParamCaption}\item[{String}]{file\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Verifica si un archivo existe en la ruta especificada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & La ruta del archivo a verificar, en formato de cadena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} si el archivo existe, o {\ttfamily false} si no existe.
+\end{DoxyReturn}
+
+
+Este método crea un objeto {\ttfamily \doxylink{}{File}} con la ruta especificada y utiliza el método {\ttfamily \doxylink{}{File\#exists()}} para verificar la existencia del archivo.
+
+{\bfseries{Ejemplo de uso\+:}}
+
+
+\begin{DoxyPre}
+    boolean archivoExiste = existeArchivo("{}ruta/al/archivo.txt"{});
+\end{DoxyPre}
+ \Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a0fc297a2b76b472dfaee072759a780af}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!generarConsultaSQL@{generarConsultaSQL}}
+\index{generarConsultaSQL@{generarConsultaSQL}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{generarConsultaSQL()}{generarConsultaSQL()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a0fc297a2b76b472dfaee072759a780af} 
+static String es.\+manueldonoso.\+academia.\+util.\+Acciones.\+generar\+Consulta\+SQL (\begin{DoxyParamCaption}\item[{String}]{sql}{, }\item[{Object...}]{parametros}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Genera una consulta SQL reemplazando los marcadores de posición con valores específicos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sql} & La consulta SQL con marcadores de posición. \\
+\hline
+{\em parametros} & Los valores a reemplazar en los marcadores. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Consulta SQL con valores reemplazados. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a8cd5b4e14694dd167f6219f6f4734b35}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!generarNumeroAleatorio@{generarNumeroAleatorio}}
+\index{generarNumeroAleatorio@{generarNumeroAleatorio}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{generarNumeroAleatorio()}{generarNumeroAleatorio()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a8cd5b4e14694dd167f6219f6f4734b35} 
+static int es.\+manueldonoso.\+academia.\+util.\+Acciones.\+generar\+Numero\+Aleatorio (\begin{DoxyParamCaption}\item[{int}]{min}{, }\item[{int}]{max}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Genera un número aleatorio dentro de un rango específico.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & El valor mínimo del rango, inclusivo. \\
+\hline
+{\em max} & El valor máximo del rango, inclusivo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un número entero aleatorio dentro del rango especificado ({\ttfamily \mbox{[}min, max\mbox{]}}). 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & Si {\ttfamily min} es mayor que {\ttfamily max}.\\
+\hline
+\end{DoxyExceptions}
+
+
+Este método utiliza la clase {\ttfamily \doxylink{}{Random}} para generar el número aleatorio.
+
+{\bfseries{Ejemplo de uso\+:}}
+
+
+\begin{DoxyPre}
+    int numeroAleatorio = generarNumeroAleatorio(1, 10);
+\end{DoxyPre}
+ \Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_af06cc56aad1c4731c88ab06fb85e24c0}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!generaUsuario@{generaUsuario}}
+\index{generaUsuario@{generaUsuario}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{generaUsuario()}{generaUsuario()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_af06cc56aad1c4731c88ab06fb85e24c0} 
+static String es.\+manueldonoso.\+academia.\+util.\+Acciones.\+genera\+Usuario (\begin{DoxyParamCaption}\item[{Connection}]{conn}{, }\item[{String}]{nombre}{, }\item[{String}]{apellido}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Genera un nombre de usuario único basado en el nombre y apellido.
+
+
+\begin{DoxyParams}{Parameters}
+{\em conn} & Conexión a la base de datos. \\
+\hline
+{\em nombre} & El nombre del usuario. \\
+\hline
+{\em apellido} & El apellido del usuario. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nombre de usuario único. 
+\end{DoxyReturn}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a1b7f5d78471eac7c9ba864fe50359131}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!imagenView\_cambiarImage@{imagenView\_cambiarImage}}
+\index{imagenView\_cambiarImage@{imagenView\_cambiarImage}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{imagenView\_cambiarImage()}{imagenView\_cambiarImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a1b7f5d78471eac7c9ba864fe50359131} 
+static void es.\+manueldonoso.\+academia.\+util.\+Acciones.\+imagen\+View\+\_\+cambiar\+Image (\begin{DoxyParamCaption}\item[{Class$<$?$>$}]{clase\+Referencia}{, }\item[{Image\+View}]{image\+View}{, }\item[{byte\mbox{[}$\,$\mbox{]}}]{image\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Cambia la imagen mostrada en un {\ttfamily \doxylink{}{Image\+View}} a partir de un arreglo de bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clase\+Referencia} & La clase de referencia, aunque no se utiliza directamente en el método, se incluye para seguir el formato del método original. \\
+\hline
+{\em image\+View} & El componente {\ttfamily \doxylink{}{Image\+View}} donde se mostrará la nueva imagen. \\
+\hline
+{\em image\+Data} & El arreglo de bytes que contiene los datos de la imagen a mostrar. El arreglo no debe ser nulo ni vacío.\\
+\hline
+\end{DoxyParams}
+
+
+Este método toma un arreglo de bytes que representa una imagen, lo convierte en un objeto {\ttfamily \doxylink{}{Image}} y lo establece en el {\ttfamily \doxylink{}{Image\+View}} proporcionado. Si el arreglo de bytes está vacío o nulo, se mostrará un mensaje de error en la consola.
+
+Si ocurre algún error durante la conversión o la actualización de la imagen, se captura la excepción y se muestra el mensaje de error.
+
+Ejemplo de uso\+:
+
+
+\begin{DoxyPre}
+byte[] imageBytes = ... // Obtener el arreglo de bytes de la imagen
+imagenView\_cambiarImage(MyClass.class, imageView, imageBytes);
+\end{DoxyPre}
+ \Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a166124afb6f27aa7d0e1d731acc5e160}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!imagenView\_cambiarImage@{imagenView\_cambiarImage}}
+\index{imagenView\_cambiarImage@{imagenView\_cambiarImage}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{imagenView\_cambiarImage()}{imagenView\_cambiarImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a166124afb6f27aa7d0e1d731acc5e160} 
+static void es.\+manueldonoso.\+academia.\+util.\+Acciones.\+imagen\+View\+\_\+cambiar\+Image (\begin{DoxyParamCaption}\item[{Class$<$?$>$}]{clase\+Referencia}{, }\item[{Image\+View}]{image\+View}{, }\item[{String}]{url}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Cambia la imagen mostrada en un {\ttfamily \doxylink{}{Image\+View}} dado, cargando la imagen desde una ruta específica.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clase\+Referencia} & Una clase de referencia para el contexto de carga (no se utiliza en el método, pero podría ser útil si necesitas cargar desde recursos empaquetados). \\
+\hline
+{\em image\+View} & El {\ttfamily \doxylink{}{Image\+View}} en el que se mostrará la nueva imagen. \\
+\hline
+{\em url} & La ruta local del archivo de imagen que se desea cargar y mostrar en el {\ttfamily Image\+View}.\\
+\hline
+\end{DoxyParams}
+
+
+Este método intenta cargar una imagen desde la ruta especificada, crea un objeto {\ttfamily \doxylink{}{Image}} y lo establece en el {\ttfamily \doxylink{}{Image\+View}} dado. Si ocurre un error durante la carga de la imagen, el método captura la excepción y muestra un mensaje de error en la salida estándar.
+
+{\bfseries{Ejemplo de uso\+:}}
+
+
+\begin{DoxyPre}
+    imagenView\_cambiarImage(getClass(), imageView, "{}ruta/a/la/imagen.png"{});
+\end{DoxyPre}
+
+
+\begin{DoxySeeAlso}{See also}
+Image\+View 
+
+Image 
+\end{DoxySeeAlso}
+\Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a9b2a90fe54bcac4ed9e3945eb1daf6ca}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!ImageToByte@{ImageToByte}}
+\index{ImageToByte@{ImageToByte}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{ImageToByte()}{ImageToByte()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a9b2a90fe54bcac4ed9e3945eb1daf6ca} 
+static byte\mbox{[}$\,$\mbox{]} es.\+manueldonoso.\+academia.\+util.\+Acciones.\+Image\+To\+Byte (\begin{DoxyParamCaption}\item[{Image}]{image}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convierte una imagen de tipo {\ttfamily \doxylink{}{Image}} en un arreglo de bytes (byte\mbox{[}\mbox{]}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & La imagen de tipo {\ttfamily \doxylink{}{Image}} que se convertirá a un arreglo de bytes. Si es {\ttfamily null}, se devuelve un arreglo de bytes vacío. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un arreglo de bytes que representa la imagen en formato JPG.
+\end{DoxyReturn}
+
+
+Este método utiliza {\ttfamily \doxylink{}{Swing\+FXUtils}} para convertir la imagen de tipo {\ttfamily \doxylink{}{Image}} a un {\ttfamily \doxylink{}{Buffered\+Image}}, y luego utiliza {\ttfamily \doxylink{}{Image\+IO}} para escribir la imagen en un flujo de salida en formato JPG.
+
+Ejemplo de uso\+:
+
+
+\begin{DoxyPre}
+Image image = new Image("{}file:example.jpg"{});
+byte[] imageBytes = ImageToByte(image);
+// Procesar el arreglo de bytes como se necesite
+\end{DoxyPre}
+ \Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_ac6a3ccce449c2551e5a54e9719ff0569}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!ImageToByte@{ImageToByte}}
+\index{ImageToByte@{ImageToByte}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{ImageToByte()}{ImageToByte()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_ac6a3ccce449c2551e5a54e9719ff0569} 
+static byte\mbox{[}$\,$\mbox{]} es.\+manueldonoso.\+academia.\+util.\+Acciones.\+Image\+To\+Byte (\begin{DoxyParamCaption}\item[{Stage}]{stage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Abre una ventana para seleccionar un archivo de imagen y convierte la imagen seleccionada en un arreglo de bytes (byte\mbox{[}\mbox{]}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em stage} & La ventana principal de la aplicación, necesaria para mostrar el diálogo de selección de archivo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un arreglo de bytes que representa la imagen seleccionada. Devuelve un arreglo vacío si no se selecciona ningún archivo o si ocurre algún error durante la lectura del archivo.
+\end{DoxyReturn}
+
+
+Este método abre un diálogo de selección de archivo mediante {\ttfamily \doxylink{}{File\+Chooser}}, permitiendo al usuario seleccionar una imagen con extensiones .jpg, .jpeg o .png. Si el usuario selecciona una imagen, se lee el archivo y se convierte en un arreglo de bytes para su posterior uso.
+
+Ejemplo de uso\+:
+
+
+\begin{DoxyPre}
+Stage stage = new Stage();
+byte[] imageBytes = ImageToByte(stage);
+if (imageBytes.length > 0) \{
+    // Procesar el arreglo de bytes de la imagen seleccionada
+\}
+\end{DoxyPre}
+ \Hypertarget{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a7aeee477142fbbf9aa7d47276eae489d}\index{es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}!utilDate\_to\_sqlDate@{utilDate\_to\_sqlDate}}
+\index{utilDate\_to\_sqlDate@{utilDate\_to\_sqlDate}!es.manueldonoso.academia.util.Acciones@{es.manueldonoso.academia.util.Acciones}}
+\doxysubsubsection{\texorpdfstring{utilDate\_to\_sqlDate()}{utilDate\_to\_sqlDate()}}
+{\footnotesize\ttfamily \label{classes_1_1manueldonoso_1_1academia_1_1util_1_1_acciones_a7aeee477142fbbf9aa7d47276eae489d} 
+static java.\+sql.\+Date es.\+manueldonoso.\+academia.\+util.\+Acciones.\+util\+Date\+\_\+to\+\_\+sql\+Date (\begin{DoxyParamCaption}\item[{java.\+util.\+Date}]{date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Convierte un objeto {\ttfamily \doxylink{}{java.\+util.\+Date}} en un {\ttfamily \doxylink{}{java.\+sql.\+Date}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & La fecha de tipo {\ttfamily \doxylink{}{java.\+util.\+Date}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fecha convertida a {\ttfamily \doxylink{}{java.\+sql.\+Date}}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Dam\+\_\+\+Proyecto\+\_\+\+Optimizado/proyecto\+\_\+dam\+\_\+optimizado/src/main/java/es/manueldonoso/academia/util/Acciones.\+java\end{DoxyCompactItemize}

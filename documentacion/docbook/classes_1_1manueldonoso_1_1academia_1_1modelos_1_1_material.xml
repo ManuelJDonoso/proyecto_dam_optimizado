@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material" xml:lang="en-US">
+<title>es.manueldonoso.academia.modelos.Material Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.modelos.Material</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1a51fe31c93cde4790a76eb972639d2a4b"/><emphasis role="strong">Material</emphasis> (String asignatura, String tema, String nombre, boolean activo)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1a88b9c27544c493746778d312a7fd8438"/>String <emphasis role="strong">getAsignatura</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1a76673d80710d4e18249e391b683ae728"/>void <emphasis role="strong">setAsignatura</emphasis> (String asignatura)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1a2916129703d351a4f4118a05e2066bde"/>String <emphasis role="strong">getTema</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1ad20765652c8af9e0a580e77e1b624330"/>void <emphasis role="strong">setTema</emphasis> (String tema)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1acbd665f465aa75849f25edf61654cbf8"/>String <emphasis role="strong">getNombre</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1a71e1a954e0881fca4b2eaeb43d9e2b03"/>void <emphasis role="strong">setNombre</emphasis> (String nombre)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1a6a6f13943b9e6bad17992ee916add835"/>boolean <emphasis role="strong">isActivo</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1a03a9272f00d6027e89039fe21cf48f46"/>void <emphasis role="strong">setActivo</emphasis> (boolean activo)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1aeeaaf048b6d4c3edc3591f69b60800e1"/>String <emphasis role="strong">getId</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_material_1a05a6e413db7cc9503c8dae5ba48e6bbe"/>void <emphasis role="strong">setId</emphasis> (String id)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/modelos/Material.java</section>
+</section>

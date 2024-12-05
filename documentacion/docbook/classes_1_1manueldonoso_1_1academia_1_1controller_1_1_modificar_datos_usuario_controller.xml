@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_modificar_datos_usuario_controller" xml:lang="en-US">
+<title>es.manueldonoso.academia.controller.ModificarDatosUsuarioController Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.controller.ModificarDatosUsuarioController</primary></indexterm>
+<para>
+Inherits Initializable.</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_modificar_datos_usuario_controller_1ad63b1bdd473d74621f7747db05f5c910">initialize</link> (URL url, ResourceBundle rb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_modificar_datos_usuario_controller_1a9911d784e8398fdc9cb92abdb1d23365"/>Connection <emphasis role="strong">getConn</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_modificar_datos_usuario_controller_1ae721dd64c95c9674377fb22e6523a57e"/>void <emphasis role="strong">setConn</emphasis> (Connection conn)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_modificar_datos_usuario_controller_1a55f619a4df5e9f9eb6dc5931149db1a4"/>void <emphasis role="strong">loadUserData</emphasis> (String user)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_modificar_datos_usuario_controller_1a024b6e2d87dd1962cbb6870065e3c190"/>void <emphasis role="strong">setCB_asignaturas</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>FXML Controller class</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_modificar_datos_usuario_controller_1ad63b1bdd473d74621f7747db05f5c910"/><section>
+    <title>initialize()</title>
+<indexterm><primary>initialize</primary><secondary>es.manueldonoso.academia.controller.ModificarDatosUsuarioController</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.controller.ModificarDatosUsuarioController</primary><secondary>initialize</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.controller.ModificarDatosUsuarioController.initialize (URL url, ResourceBundle rb)</computeroutput></para>
+<para>Initializes the controller class. </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/controller/ModificarDatosUsuarioController.java</section>
+</section>

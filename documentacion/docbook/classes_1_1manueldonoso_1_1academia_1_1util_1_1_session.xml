@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session" xml:lang="en-US">
+<title>es.manueldonoso.academia.util.Session Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.util.Session</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a572cd28fcaf3566a12791ac2b7f9cccc">getUsuario</link> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a1843394912b278d2e1ea7a94516786ae">setUsuario</link> (String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link>)</para>
+</listitem>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a9f92c9da6688d4fa6ba32d30c3d74427">getPass</link> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a2a88e5bb4f0990d01ce52d02046b7171">setPass</link> (String pass)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1aa4f4a1ceeba0b9e5aecb18e6630d232b">getPuntuacion</link> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a639432ee1e8d80f10971963dc8e8d365">setPuntuacion</link> (int Puntuacion)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1aa1bd9600a059fece9bf8af6a15ac15b2">sumar_Punto</link> (int modifificar)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1acc805c883245fb46e94bb33f2e782d85"/>static int <emphasis role="strong">getTotalPregunstas</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1af0c4689c899fbbdfed213df2cbf5ddba"/>static void <emphasis role="strong">setTotalPregunstas</emphasis> (int <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a6deb56b96e68a272f53e2530a3ff4e5e">totalPregunstas</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static int <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a6deb56b96e68a272f53e2530a3ff4e5e">totalPregunstas</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Clase que gestiona una sesión con información de usuario y contraseña. Proporciona métodos estáticos para establecer y obtener los valores de usuario y contraseña.</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a9f92c9da6688d4fa6ba32d30c3d74427"/><section>
+    <title>getPass()</title>
+<indexterm><primary>getPass</primary><secondary>es.manueldonoso.academia.util.Session</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Session</primary><secondary>getPass</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Session.getPass ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene la contraseña del usuario de la sesión actual.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>La contraseña como un <computeroutput>String</computeroutput>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1aa4f4a1ceeba0b9e5aecb18e6630d232b"/><section>
+    <title>getPuntuacion()</title>
+<indexterm><primary>getPuntuacion</primary><secondary>es.manueldonoso.academia.util.Session</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Session</primary><secondary>getPuntuacion</secondary></indexterm>
+<para><computeroutput>static int es.manueldonoso.academia.util.Session.getPuntuacion ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>devuelve la puntuacion del examen que esta realizando el usuario en esta session <formalpara><title>Returns</title>
+
+<para>Nota </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a572cd28fcaf3566a12791ac2b7f9cccc"/><section>
+    <title>getUsuario()</title>
+<indexterm><primary>getUsuario</primary><secondary>es.manueldonoso.academia.util.Session</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Session</primary><secondary>getUsuario</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Session.getUsuario ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene el nombre de usuario de la sesión actual.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>El nombre de usuario como un <computeroutput>String</computeroutput>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a2a88e5bb4f0990d01ce52d02046b7171"/><section>
+    <title>setPass()</title>
+<indexterm><primary>setPass</primary><secondary>es.manueldonoso.academia.util.Session</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Session</primary><secondary>setPass</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Session.setPass (String pass)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Establece la contraseña del usuario para la sesión actual.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pass</entry><entry>
+<para>La contraseña como un <computeroutput>String</computeroutput>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a639432ee1e8d80f10971963dc8e8d365"/><section>
+    <title>setPuntuacion()</title>
+<indexterm><primary>setPuntuacion</primary><secondary>es.manueldonoso.academia.util.Session</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Session</primary><secondary>setPuntuacion</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Session.setPuntuacion (int Puntuacion)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>establece la puntuacion del examen que esta realizando el usuario en esta session 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Puntuacion</entry><entry>
+<para>Nota </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a1843394912b278d2e1ea7a94516786ae"/><section>
+    <title>setUsuario()</title>
+<indexterm><primary>setUsuario</primary><secondary>es.manueldonoso.academia.util.Session</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Session</primary><secondary>setUsuario</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Session.setUsuario (String Usuario)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Establece el nombre de usuario para la sesión actual.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>Usuario</entry><entry>
+<para>El nombre de usuario como un <computeroutput>String</computeroutput>. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1aa1bd9600a059fece9bf8af6a15ac15b2"/><section>
+    <title>sumar_Punto()</title>
+<indexterm><primary>sumar_Punto</primary><secondary>es.manueldonoso.academia.util.Session</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Session</primary><secondary>sumar_Punto</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Session.sumar_Punto (int modifificar)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>altera el valor del resultado de la nota sin borrar el dato anterior. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>modifificar</entry><entry>
+<para>valor para añadir o restar. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_session_1a6deb56b96e68a272f53e2530a3ff4e5e"/><section>
+    <title>totalPregunstas</title>
+<indexterm><primary>totalPregunstas</primary><secondary>es.manueldonoso.academia.util.Session</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Session</primary><secondary>totalPregunstas</secondary></indexterm>
+<para><computeroutput>int es.manueldonoso.academia.util.Session.totalPregunstas<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>total pregunta examenes </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/util/Session.java</section>
+</section>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel_material_controller" xml:lang="en-US">
+<title>es.manueldonoso.academia.controller.PanelMaterialController Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.controller.PanelMaterialController</primary></indexterm>
+<para>
+Inherits Initializable.</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel_material_controller_1a46ddfdd1a79523d1611caf2a9476cb7a">initialize</link> (URL url, ResourceBundle rb)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel_material_controller_1a07a79375ad058dcc05a4cfe20dcb2456"/>Connection <emphasis role="strong">getConn</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel_material_controller_1a96cda60cdfe18b24eb2e00c68010d57a"/>void <emphasis role="strong">setConn</emphasis> (Connection conn)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel_material_controller_1a4ec2c6137d82799989de58e364861904"/>void <emphasis role="strong">loadUser</emphasis> (<link linkend="_classes_1_1manueldonoso_1_1academia_1_1modelos_1_1_usuario">Usuario</link> user)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel_material_controller_1a5aae6503ba561987e45083fdd30bb7ae"/>void <emphasis role="strong">cargarDatosDesdeBaseDeDatos</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>FXML Controller class</para>
+
+<para><formalpara><title>Author</title>
+
+<para>&quot;Manuel Jesús Donoso Pérez&quot;; </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1controller_1_1_panel_material_controller_1a46ddfdd1a79523d1611caf2a9476cb7a"/><section>
+    <title>initialize()</title>
+<indexterm><primary>initialize</primary><secondary>es.manueldonoso.academia.controller.PanelMaterialController</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.controller.PanelMaterialController</primary><secondary>initialize</secondary></indexterm>
+<para><computeroutput>void es.manueldonoso.academia.controller.PanelMaterialController.initialize (URL url, ResourceBundle rb)</computeroutput></para>
+<para>Initializes the controller class. </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/controller/PanelMaterialController.java</section>
+</section>

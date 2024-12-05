@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_contrato" xml:lang="en-US">
+<title>es.manueldonoso.academia.util.Contrato Class Reference</title>
+<indexterm><primary>es.manueldonoso.academia.util.Contrato</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static String <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_contrato_1a8bde5fe0b1104af443cc34f6f49f06f2">getContrato</link> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_contrato_1a5aa75700247faab12a8dd0f9bb871ca7">setUsuarioFinal</link> (String usuario, String fechaContrato)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Clase para gestionar la generación de un contrato de licencia de uso de software. Permite personalizar el contrato con el nombre del usuario final y la fecha del acuerdo.</para>
+
+<para><formalpara><title>Author</title>
+
+<para>donpe </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_contrato_1a8bde5fe0b1104af443cc34f6f49f06f2"/><section>
+    <title>getContrato()</title>
+<indexterm><primary>getContrato</primary><secondary>es.manueldonoso.academia.util.Contrato</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Contrato</primary><secondary>getContrato</secondary></indexterm>
+<para><computeroutput>static String es.manueldonoso.academia.util.Contrato.getContrato ( )<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Genera el contrato personalizado con el nombre del usuario final y la fecha.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>El contrato personalizado como un <computeroutput>String</computeroutput>.</para>
+</formalpara>
+</para>
+
+<para>Ejemplo de contrato generado: </para>
+
+<para><literallayout>
+<link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_contrato">Contrato</link> de Licencia de Uso de Software
+...
+Usuario final: Juan Pérez
+Fecha de contrato: lunes 20 noviembre de 2024
+</literallayout> </para>
+</section>
+<anchor xml:id="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_contrato_1a5aa75700247faab12a8dd0f9bb871ca7"/><section>
+    <title>setUsuarioFinal()</title>
+<indexterm><primary>setUsuarioFinal</primary><secondary>es.manueldonoso.academia.util.Contrato</secondary></indexterm>
+<indexterm><primary>es.manueldonoso.academia.util.Contrato</primary><secondary>setUsuarioFinal</secondary></indexterm>
+<para><computeroutput>static void es.manueldonoso.academia.util.Contrato.setUsuarioFinal (String usuario, String fechaContrato)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Configura el nombre del usuario final y la fecha del contrato.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>usuario</entry><entry>
+<para>El nombre del usuario final. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fechaContrato</entry><entry>
+<para>La fecha del contrato en formato de texto.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+
+<para>Este método debe llamarse antes de generar el contrato mediante <computeroutput><link linkend="_classes_1_1manueldonoso_1_1academia_1_1util_1_1_contrato_1a8bde5fe0b1104af443cc34f6f49f06f2">getContrato()</link></computeroutput>. </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Dam_Proyecto_Optimizado/proyecto_dam_optimizado/src/main/java/es/manueldonoso/academia/util/Contrato.java</section>
+</section>
